@@ -19,7 +19,8 @@
           "id",
           "summary",
           "depends_on",
-          "risk"
+          "risk",
+          "cacheable"
         ],
         "properties": {
           "id": {
@@ -41,6 +42,9 @@
               "medium",
               "high"
             ]
+          },
+          "cacheable": {
+            "type": "boolean"
           }
         }
       }

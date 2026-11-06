@@ -21,17 +21,18 @@ Read alongside: [memory.md](memory.md), [context.md](context.md), [token-budget.
 
 ### 2. Load the minimum context
 
-1. Read `.skilloffice/memory/state.json`. Note `openTasks`, `decisions`, `openIssues` and any unfinished `currentRun`.
-2. If `currentRun` is not null and not finished, ask the human whether to resume it or start a new run.
-3. Read the department `catalog.yaml` (one line per skill). Do NOT open individual skills yet.
-4. Read the last 20 lines of `ledger.jsonl` only if the request refers to earlier work.
+1. Check once whether the helper is installed: run `skilloffice --help`. If it works, use the helper for every memory, fingerprint and cache step in this run. If not, use the manual steps in [memory.md](memory.md) and [token-budget.md](token-budget.md).
+2. Read `.skilloffice/memory/state.json`. Note `openTasks`, `decisions`, `openIssues` and any unfinished `currentRun`.
+3. If `currentRun` is not null and not finished, ask the human whether to resume it or start a new run.
+4. Read the department `catalog.yaml` (one line per skill). Do NOT open individual skills yet.
+5. Read the last 20 lines of `ledger.jsonl` only if the request refers to earlier work.
 
 ### 3. Write the run plan
 
 1. Select the skills the request needs from the catalog.
 2. Add every skill listed in `depends_on` of a selected skill, if its output is not already available and valid.
 3. Order the skills so each one runs after its dependencies. Skills with no dependency between them may run in parallel only if the platform supports subagents. Otherwise run them one after another.
-4. For each selected skill, check whether a valid cached result exists (see [token-budget.md](token-budget.md)). If it does, mark the skill `skipped` with reason `cached result still valid`.
+4. For each selected skill that is cacheable (`cacheable: true` in its `skill.yaml`, shown in the catalog), check whether a valid cached result exists (helper: `skilloffice cache get --skill <id>@<version> --inputs <files> --requirements <files>`; see [token-budget.md](token-budget.md)). Use the same input and requirement lists as when the result was stored (step 4.6). On a hit, mark the skill `skipped` with reason `cached result still valid` and use the stored result as its findings.
 5. Write the plan to `state.json` as `currentRun.plan`, with `status: pending` for each skill to run, and set `correctionCyclesUsed: 0` and `maxCorrectionCycles: 1`.
 6. Log a `run_started` event (helper: `skilloffice log run_started --actor <manager> --summary "<request>"`; otherwise append the line by hand).
 7. Show the plan to the human in a short list: skill, why it runs or why it is skipped.
@@ -45,9 +46,14 @@ For each skill in plan order:
 3. Load only the context fields listed in its `skill.yaml` `context_needs` (see [context.md](context.md)).
 4. Pass it the handoffs from the skills it depends on, not full transcripts.
 5. When it finishes, save its handoff to `.skilloffice/memory/handoffs/<runId>/<nn>-<skill-name>.md` using [the handoff template](../templates/handoff.md).
-6. Set its status to `done` (or `failed` with a reason) and log `skill_completed` or `skill_skipped`.
-7. If a skill fails and later skills depend on it, mark those `skipped` with reason `dependency failed`, and continue with independent skills.
-8. If a skill needs input that is missing and cannot be inferred, pause and ask the human. Do not invent inputs.
+6. If the skill is cacheable and succeeded, store its result BEFORE any correction cycle so the next run can reuse it:
+   - inputs: the files it judged (for example `landing.html`);
+   - requirements: the files it judged them against, including the context profile files it read (for example `brief.md`, `.skilloffice/context/<profile>/brand.yaml`);
+   - result: its findings in short form (ids, severity, title, location, one-line fix).
+   With the helper: `skilloffice cache put --skill <id>@<version> --inputs <files> --requirements <files> --result "<findings>"`, and `skilloffice verify-file <file> --summary "<one line>" --by <id>` for each input. Without it, write the cache entry and `files.json` entries by hand as [token-budget.md](token-budget.md) describes. If the correction cycle later changes an input, its fingerprint changes and the stored result is ignored automatically.
+7. Set its status to `done` (or `failed` with a reason) and log `skill_completed` or `skill_skipped`.
+8. If a skill fails and later skills depend on it, mark those `skipped` with reason `dependency failed`, and continue with independent skills.
+9. If a skill needs input that is missing and cannot be inferred, pause and ask the human. Do not invent inputs.
 
 ### 5. Collect and consolidate findings
 

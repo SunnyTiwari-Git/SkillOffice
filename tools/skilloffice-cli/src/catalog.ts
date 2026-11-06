@@ -10,6 +10,7 @@ export interface CatalogEntry {
   summary: string;
   depends_on: string[];
   risk: string;
+  cacheable: boolean;
 }
 
 export interface Catalog {
@@ -28,6 +29,7 @@ export function buildCatalog(departmentDir: string): Catalog {
       summary: String(data['summary']),
       depends_on: Array.isArray(data['depends_on']) ? data['depends_on'].map(String) : [],
       risk: String(data['risk']),
+      cacheable: data['cacheable'] === true,
     }))
     .sort((a, b) => a.id.localeCompare(b.id));
   return { department: path.basename(path.resolve(departmentDir)), skills };

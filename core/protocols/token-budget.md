@@ -32,6 +32,8 @@ A cached result for a skill is valid only when ALL of these hold:
 
 Helper: `skilloffice cache get --skill <id>@<version> --inputs a.md,b.md --requirements brief.md` prints `HIT` with the stored result, or `MISS`. Store with `skilloffice cache put` using the same arguments plus `--result "<short result>"`. Paths are comma-separated. The version is part of the key, so a new skill version never reuses an old result.
 
+Without the helper, store the entry by hand as `.skilloffice/memory/cache/<skill-name>.json` with `skill` (id@version), `inputs` and `requirements` (each a map of path to sha256), `result` and `createdAt`. Reuse it only when the skill version and every listed hash still match.
+
 If any input or requirement changed, the cache entry is invalid. Re-run the skill.
 
 ## 4. Never cached
