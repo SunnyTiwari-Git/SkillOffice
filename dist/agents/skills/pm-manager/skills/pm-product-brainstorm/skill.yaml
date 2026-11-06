@@ -1,0 +1,32 @@
+id: 08-product-management/pm-product-brainstorm
+version: 0.1.0
+kind: skill
+department: 08-product-management
+summary: Thinking partner that frames a product problem, explores options, stress-tests assumptions and shortlists ideas with cheap tests.
+inputs:
+  - name: topic
+    description: The problem, opportunity, idea or strategic question to explore
+    required: true
+  - name: evidence
+    description: Research, data or feedback the user already has
+    required: false
+outputs:
+  - name: session_summary
+    description: Shortlisted ideas with riskiest assumptions and cheapest tests, plus open questions
+depends_on: []
+context_needs:
+  - company.description
+  - company.products_and_services
+  - company.target_audience
+  - company.markets
+  - company.differentiators
+  - marketing.competitors
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

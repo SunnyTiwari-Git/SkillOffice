@@ -6,10 +6,20 @@
       "plugin": "skilloffice-marketing-content-pr",
       "fixture": "fixtures/marketing-landing",
       "prompt": "Use the mkt-manager skill. Review landing.html against brief.md for brand consistency, copy quality and SEO. Do not publish or send anything. Save the consolidated report in .skilloffice/reports/.",
-      "allowedTools": ["Read", "Write", "Edit", "Glob", "Grep", "Skill"],
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
       "expect": {
         "reportGlob": ".skilloffice/reports/",
-        "ledgerEvents": ["run_started", "run_completed"]
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
       }
     },
     {
@@ -18,10 +28,111 @@
       "plugin": "skilloffice-software-development",
       "fixture": "fixtures/dev-bugfix",
       "prompt": "Use the dev-manager skill. The test in test/price.test.js fails. Fix the bug using your bug-fix playbook. Run tests with: node --test. Save the consolidated report in .skilloffice/reports/.",
-      "allowedTools": ["Read", "Write", "Edit", "Glob", "Grep", "Skill", "Bash(node --test*)"],
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill",
+        "Bash(node --test*)"
+      ],
       "expect": {
         "reportGlob": ".skilloffice/reports/",
-        "ledgerEvents": ["run_started", "run_completed"],
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ],
+        "command": "node --test"
+      }
+    },
+    {
+      "id": "sales-call-prep",
+      "department": "05-sales-business-development",
+      "plugin": "skilloffice-sales-business-development",
+      "fixture": "fixtures/sales-call-prep",
+      "prompt": "Use the sls-manager skill. Prepare me for the discovery call with Lakeside Outfitters using prospect-notes.md and wholesale-offer.md, and draft a follow-up email for after the call. Do not send anything and do not quote prices. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
+    },
+    {
+      "id": "product-spec-review",
+      "department": "08-product-management",
+      "plugin": "skilloffice-product-management",
+      "fixture": "fixtures/product-spec-review",
+      "prompt": "Use the pm-manager skill. Review prd-trail-finder.md and tell me what must change before engineering can start. Do not commit to any dates. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
+    },
+    {
+      "id": "design-page-review",
+      "department": "09-design-branding",
+      "plugin": "skilloffice-design-branding",
+      "fixture": "fixtures/design-page-review",
+      "prompt": "Use the dsn-manager skill. Review index.html and styles.css for design quality, accessibility, responsiveness and generic AI-looking patterns, against our brand. Do not publish anything. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
+    },
+    {
+      "id": "qa-suite-review",
+      "department": "11-quality-assurance",
+      "plugin": "skilloffice-quality-assurance",
+      "fixture": "fixtures/qa-suite-review",
+      "prompt": "Use the qa-manager skill. Review the test suite for src/shipping.js, design the missing test cases and add them. Run tests with: node --test. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill",
+        "Bash(node --test*)"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ],
         "command": "node --test"
       }
     }

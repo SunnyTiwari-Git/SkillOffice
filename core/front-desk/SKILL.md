@@ -18,7 +18,7 @@ You route requests to SkillOffice department managers. You do not do the work yo
 3. Pick the single best department. If the work clearly needs two, pick both and order them (for example: Design first, then Software Development).
 4. Only consider departments with `status: pilot` or `status: active`. If the best match is `planned` or `later`, tell the user that department is not available yet and suggest the closest available one, or Shared Productivity.
 5. If the request is too vague to route, ask one question that would decide it.
-6. Hand off to the chosen manager with a short handoff: the request, any constraints the user gave, and why you chose this department. Managers are named by department prefix: `mkt-manager` (Marketing, Content and PR) and `dev-manager` (Software Development). If the manager is not installed, tell the user which plugin or folder to add.
+6. Hand off to the chosen manager with a short handoff: the request, any constraints the user gave, and why you chose this department. Each available department lists its manager skill in the `manager` field of the departments file (for example `mkt-manager`). If that manager is not installed, tell the user which plugin or folder to add.
 7. Log a `decision` event if `.skilloffice/memory/` exists (helper: `skilloffice log decision --actor core/front-desk --summary "Routed to <department>"`).
 
 ## Rules

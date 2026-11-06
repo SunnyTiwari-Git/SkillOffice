@@ -1,0 +1,31 @@
+id: 08-product-management/pm-research-synthesis
+version: 0.1.0
+kind: skill
+department: 08-product-management
+summary: Synthesizes user research the user provides into prioritized, evidence-backed findings, segments, opportunities and recommendations.
+inputs:
+  - name: research_material
+    description: Interview notes, transcripts, survey exports, tickets or documents
+    required: true
+  - name: research_question
+    description: What the research set out to learn and the decision it informs
+    required: true
+outputs:
+  - name: synthesis
+    description: Findings with evidence, frequency and confidence, plus opportunities, recommendations and open questions
+depends_on: []
+context_needs:
+  - company.products_and_services
+  - company.target_audience
+  - marketing.ideal_customers
+  - regional.output_language
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

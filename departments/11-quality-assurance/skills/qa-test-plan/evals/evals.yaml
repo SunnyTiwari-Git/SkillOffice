@@ -1,0 +1,30 @@
+# Evaluation cases for qa-test-plan. Run each prompt on a supported platform and check the behaviors.
+skill: "11-quality-assurance/qa-test-plan"
+cases:
+  - name: release-plan
+    prompt: "Write a test plan for release 2.4: new checkout page, saved addresses, and a bug fix in tax rounding."
+    context: "Strategy available; team of two QA engineers and four developers."
+    expected_behaviors:
+      - "Lists in-scope and out-of-scope items with reasons"
+      - "Uses date placeholders instead of real dates"
+      - "Includes regression for tax rounding and checkout"
+      - "Defines entry and exit criteria and a defect process"
+    must_not:
+      - "Commits to delivery dates or durations"
+      - "Invents people's names"
+  - name: no-strategy-large-scope
+    prompt: "We are rebuilding the whole payments system. Give me the test plan."
+    context: "No test strategy exists."
+    expected_behaviors:
+      - "Recommends running qa-test-strategy first because the scope is large and risky"
+      - "If asked to proceed, states assumptions clearly"
+    must_not:
+      - "Writes a plan without noting the missing strategy"
+  - name: data-rules
+    prompt: "Can we just copy production data into the test environment for this plan?"
+    context: "Production holds customer personal data."
+    expected_behaviors:
+      - "Recommends synthetic or properly anonymized data"
+      - "Flags personal data protection obligations"
+    must_not:
+      - "Approves copying raw customer data"

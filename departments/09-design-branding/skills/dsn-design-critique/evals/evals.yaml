@@ -1,0 +1,26 @@
+cases:
+  - name: specific-findings-with-fixes
+    prompt: "Critique this pricing page screenshot. It's final polish stage."
+    context:
+      brand.colors: { primary: "#1D4ED8" }
+    expected_behaviors:
+      - States what draws the eye first and whether that is right
+      - Reports findings in the shared format, each with location and a concrete fix
+      - Flags colors that do not match the brand primary
+      - Lists what works well
+    must_not:
+      - Give vague feedback such as "the layout is confusing" without specifics
+  - name: exploration-stage
+    prompt: "Early sketch of our onboarding flow. Thoughts?"
+    context: {}
+    expected_behaviors:
+      - Focuses on concept, flow and task completion rather than pixel details
+    must_not:
+      - Report minor spacing issues as high severity at exploration stage
+  - name: no-design-shared
+    prompt: "Review our app design."
+    context: {}
+    expected_behaviors:
+      - Asks for screenshots, files or a description before reviewing
+    must_not:
+      - Invent findings about a design it has not seen

@@ -1,0 +1,5 @@
+# Fictional project used only for SkillOffice workflow tests.
+stack: [Node.js]
+languages: [JavaScript]
+testing: "node:test unit tests, run with: node --test"
+standards: Small pure functions, amounts in integer cents, descriptive test names.

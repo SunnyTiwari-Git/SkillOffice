@@ -1,0 +1,35 @@
+id: 08-product-management/pm-manager
+version: 0.1.0
+kind: manager
+department: 08-product-management
+summary: Coordinates Product Management skills; plans, runs, merges findings, one correction cycle, one report.
+inputs:
+  - name: request
+    description: The user's product request or a Front Desk handoff
+    required: true
+outputs:
+  - name: report
+    description: Consolidated report saved to .skilloffice/reports/<runId>.md
+depends_on:
+  - 08-product-management/pm-product-brainstorm
+  - 08-product-management/pm-research-synthesis
+  - 08-product-management/pm-competitive-brief
+  - 08-product-management/pm-write-spec
+  - 08-product-management/pm-spec-review
+  - 08-product-management/pm-roadmap
+  - 08-product-management/pm-sprint-planning
+  - 08-product-management/pm-metrics-review
+  - 08-product-management/pm-stakeholder-update
+context_needs:
+  - company.name
+  - company.products_and_services
+  - company.target_audience
+  - regional.jurisdictions
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

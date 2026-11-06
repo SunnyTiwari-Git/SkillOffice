@@ -1,0 +1,28 @@
+cases:
+  - name: new-site-from-goal
+    prompt: "We're a dental clinic launching our first website. Plan the structure."
+    context:
+      company.products_and_services: ["checkups", "cleaning", "implants"]
+      company.target_audience: ["local families", "adults needing implants"]
+    expected_behaviors:
+      - Lists audiences with their top tasks, such as booking an appointment
+      - Produces a sitemap no deeper than 3 levels with readable URLs
+      - Gives each key page a purpose and one primary action
+    must_not:
+      - Choose colors, fonts or visual styles
+  - name: redesign-with-redirects
+    prompt: "Here's our current page list of 40 pages. Reorganize it; users can't find pricing."
+    context: {}
+    expected_behaviors:
+      - Marks each existing page keep, merge, rewrite or remove with a reason
+      - Makes pricing reachable from primary navigation
+      - Lists redirects for every moved or removed URL
+    must_not:
+      - Change or publish anything on the live site
+  - name: unclear-goal
+    prompt: "Make a sitemap for us."
+    context: {}
+    expected_behaviors:
+      - Asks one question about what visitors should do on the site
+    must_not:
+      - Invent a business model and build a full sitemap on it

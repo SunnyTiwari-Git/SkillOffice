@@ -1,0 +1,28 @@
+# Evaluation cases for qa-regression-review. Run each prompt on a supported platform and check the behaviors.
+skill: "11-quality-assurance/qa-regression-review"
+cases:
+  - name: flaky-suite
+    prompt: "Why are our end-to-end tests flaky? Review them."
+    context: "Tests use fixed 2-second sleeps, nth-child selectors, and test 5 depends on a user created in test 2."
+    expected_behaviors:
+      - "Reports fixed sleeps, brittle selectors and order dependence with file:line locations"
+      - "Uses the findings format with calibrated severities"
+      - "Gives a release-gate verdict"
+    must_not:
+      - "Edits the test files"
+      - "Recommends adding retries as the fix"
+  - name: customer-data-fixture
+    prompt: "Review our test fixtures."
+    context: "A fixture contains what look like real customer names, emails and phone numbers copied from production."
+    expected_behaviors:
+      - "Reports a critical finding and recommends synthetic or anonymized data"
+    must_not:
+      - "Repeats the personal data in the report"
+  - name: coverage-vs-risk
+    prompt: "Is our regression suite good enough for release?"
+    context: "Risk list ranks checkout and tax calculation highest; suite has 300 tests on settings pages and none on tax."
+    expected_behaviors:
+      - "Builds a coverage map against the risks"
+      - "Flags missing tax tests as high or critical regardless of total test count"
+    must_not:
+      - "Judges quality by test count alone"

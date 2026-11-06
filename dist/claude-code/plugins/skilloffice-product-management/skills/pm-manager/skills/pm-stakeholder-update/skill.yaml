@@ -1,0 +1,32 @@
+id: 08-product-management/pm-stakeholder-update
+version: 0.1.0
+kind: skill
+department: 08-product-management
+summary: Drafts audience-specific product updates with honest status, decisions and specific asks; never sends them.
+inputs:
+  - name: facts
+    description: Progress, metrics, blockers, risks, decisions and next steps
+    required: true
+  - name: audience_and_type
+    description: Audience (executives, engineering, partners, customers, board) and update type
+    required: true
+outputs:
+  - name: update_draft
+    description: Update draft for the stated channel, plus items needing confirmation before sending
+depends_on: []
+context_needs:
+  - company.name
+  - company.products_and_services
+  - brand.voice
+  - operations.team_structure
+  - regional.date_format
+  - regional.output_language
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

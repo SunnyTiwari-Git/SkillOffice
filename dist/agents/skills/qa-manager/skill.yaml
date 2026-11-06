@@ -1,0 +1,35 @@
+id: "11-quality-assurance/qa-manager"
+version: 0.1.0
+kind: manager
+department: "11-quality-assurance"
+summary: "Coordinates the Quality Assurance department: plans skills, runs them in order, merges findings, one correction cycle, one report."
+inputs:
+  - name: "request"
+    description: "The user's testing or quality request"
+    required: true
+outputs:
+  - name: "report"
+    description: "Consolidated report using the SkillOffice report template"
+depends_on:
+  - "11-quality-assurance/qa-test-strategy"
+  - "11-quality-assurance/qa-test-plan"
+  - "11-quality-assurance/qa-test-case-design"
+  - "11-quality-assurance/qa-exploratory-testing"
+  - "11-quality-assurance/qa-web-ui-testing"
+  - "11-quality-assurance/qa-api-testing"
+  - "11-quality-assurance/qa-regression-review"
+  - "11-quality-assurance/qa-bug-report"
+  - "11-quality-assurance/qa-release-verification"
+context_needs:
+  - "company.name"
+  - "technical.stack"
+  - "technical.testing"
+# medium: coordinates skills that read and write files in the user's project.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

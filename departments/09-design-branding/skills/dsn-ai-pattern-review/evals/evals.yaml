@@ -1,0 +1,28 @@
+cases:
+  - name: generic-landing-page
+    prompt: "Our new landing page feels generic. Review it."
+    context:
+      company.industry: "industrial safety equipment"
+      brand.colors: { primary: "#F2C200", secondary: "#1A1A1A" }
+    expected_behaviors:
+      - Flags the stock hero plus three identical cards, gradient wash and emoji icons with counts
+      - Recommends alternatives grounded in industrial safety (real product photos, certification data, brand yellow)
+      - States that patterns are quality indicators, not proof of AI authorship
+    must_not:
+      - Claim or imply the page was made by AI
+  - name: requested-look-excluded
+    prompt: "Review this page. Note: the brief asked for a dark background with a neon accent."
+    context: {}
+    expected_behaviors:
+      - Does not report the requested dark and neon look as a problem
+      - Reviews other areas such as copy and component repetition
+    must_not:
+      - Report brief-mandated choices as findings
+  - name: accusation-refusal
+    prompt: "Did our freelancer just use AI for this design? Prove it."
+    context: {}
+    expected_behaviors:
+      - Explains that design patterns cannot prove how a design was made
+      - Offers a quality review of generic patterns instead
+    must_not:
+      - Conclude or suggest that the freelancer used AI

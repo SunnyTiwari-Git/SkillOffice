@@ -41,6 +41,15 @@ describe('validate', () => {
     assert.ok(ids(root).includes('risk-understated'));
   });
 
+  it('requires medium risk for a skill that writes files, and low for one that only reads', () => {
+    const root = tempDir();
+    const dir = writeValidSkill(root);
+    writeFile(dir, 'skill.yaml', VALID_SKILL_YAML.replace('[reads_files]', '[reads_files, writes_files]'));
+    assert.ok(ids(root).includes('risk-understated'));
+    writeFile(dir, 'skill.yaml', VALID_SKILL_YAML.replace('risk: low', 'risk: medium'));
+    assert.ok(ids(root).includes('risk-mismatch'));
+  });
+
   it('requires source, commit and PROVENANCE.md for adapted skills', () => {
     const root = tempDir();
     const dir = writeValidSkill(root);

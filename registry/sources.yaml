@@ -54,3 +54,15 @@ sources:
     reviewed_at: 2026-11-06
     used_for: [06-marketing-content-pr]
     notes: Indirect source. Techniques (diagnosis, three-question gate, decompose-and-lock) reached us through coreyhaines31-marketingskills copywriting, which credits this library. No files were copied from it directly.
+
+  - id: anthropics-skills
+    url: https://github.com/anthropics/skills
+    owner: Anthropic
+    license: Apache-2.0 (per skill; only frontend-design and webapp-testing used)
+    license_file: registry/licenses/anthropics-skills.txt
+    pinned_commit: ca45fc496a3436251f191354091d557da31c15b5
+    commit_date: 2026-10-28
+    reviewed_at: 2026-11-06
+    used_for: [09-design-branding, 11-quality-assurance]
+    notes: Licenses differ per skill. The docx, pdf, pptx and xlsx skills are proprietary and never used. webapp-testing scripts and examples (Python) are not imported. THIRD_PARTY_NOTICES.md covers fonts and code in other skills, not the two used.
+

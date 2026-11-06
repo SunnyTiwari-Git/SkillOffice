@@ -1,0 +1,34 @@
+id: "11-quality-assurance/qa-release-verification"
+version: 0.1.0
+kind: skill
+department: "11-quality-assurance"
+summary: "Checks release readiness from fresh evidence on the release build and recommends go, go with conditions or no-go. Never cached; never approves."
+inputs:
+  - name: "build"
+    description: "Build or version being released and the test environment"
+    required: true
+  - name: "criteria"
+    description: "Exit criteria from the test plan or strategy"
+    required: false
+  - name: "defects"
+    description: "Open defect list and change list for the release"
+    required: false
+outputs:
+  - name: "readiness_summary"
+    description: "Checklist with evidence, exit criteria status, open defects, rollback readiness, risks and a recommendation"
+depends_on: []
+context_needs:
+  - "technical.testing"
+  - "technical.deployment_process"
+  - "operations.team_structure"
+  - "regional.date_format"
+# medium: runs the project's own test commands through the platform's normal permission prompts and may write evidence files in the project.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+# Verification must always run fresh: never cached (core/protocols/token-budget.md).
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

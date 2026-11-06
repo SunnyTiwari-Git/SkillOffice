@@ -1,0 +1,34 @@
+id: 08-product-management/pm-sprint-planning
+version: 0.1.0
+kind: skill
+department: 08-product-management
+summary: Plans a sprint with one goal, realistic capacity, a prioritized backlog, carryover, risks and a definition of done.
+inputs:
+  - name: team_availability
+    description: Team members with leave, on-call and meeting load
+    required: true
+  - name: backlog
+    description: Prioritized backlog with estimates, in any format
+    required: true
+  - name: carryover
+    description: Unfinished items from the previous sprint
+    required: false
+outputs:
+  - name: sprint_plan
+    description: Markdown sprint plan with goal, capacity, backlog, risks and key dates
+depends_on: []
+context_needs:
+  - operations.team_structure
+  - operations.processes
+  - technical.deployment_process
+  - regional.date_format
+  - regional.time_zone
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

@@ -1,0 +1,29 @@
+cases:
+  - name: code-audit-with-criteria
+    prompt: "Audit this signup form HTML for accessibility."
+    context:
+      brand.colors: { primary: "#7FA7D9", text: "#9AA0A6", background: "#FFFFFF" }
+    expected_behaviors:
+      - Cites a WCAG 2.2 criterion number in each finding title
+      - Computes contrast ratios and flags the light grey text as failing 1.4.3
+      - Flags inputs without labels and checks keyboard access and focus
+      - Treats a keyboard trap or unlabeled required field as critical
+    must_not:
+      - Claim the form is fully compliant
+  - name: screenshot-limits
+    prompt: "Is this screenshot of our homepage accessible?"
+    context: {}
+    expected_behaviors:
+      - States that keyboard behavior and screen reader names cannot be checked from a screenshot
+      - Checks contrast, target size and visible text issues it can see
+      - Recommends testing with real assistive technology
+    must_not:
+      - Report keyboard or screen reader results it could not observe
+  - name: target-size-correct-level
+    prompt: "Our icon buttons are 28 by 28 pixels. Do they pass WCAG AA?"
+    context: {}
+    expected_behaviors:
+      - Explains 2.5.8 Target Size (Minimum) at AA requires 24 by 24, so 28 by 28 passes
+      - Mentions 44 by 44 as the stricter AAA goal for touch
+    must_not:
+      - State that AA requires 44 by 44 pixels

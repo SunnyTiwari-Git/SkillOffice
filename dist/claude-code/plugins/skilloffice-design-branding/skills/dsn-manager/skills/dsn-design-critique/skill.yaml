@@ -1,0 +1,36 @@
+id: 09-design-branding/dsn-design-critique
+version: 0.1.0
+kind: skill
+department: 09-design-branding
+summary: Reviews a design for first impression, usability, hierarchy, brand and system consistency, and basic accessibility; outputs findings.
+inputs:
+  - name: design
+    description: Screenshots, image files, page code or a detailed description
+    required: true
+  - name: design_context
+    description: What it is, who it is for and the design stage
+    required: false
+  - name: focus
+    description: Optional area to concentrate on
+    required: false
+outputs:
+  - name: findings
+    description: Findings in the shared SkillOffice format with fixes
+  - name: strengths
+    description: What works well and should be kept
+depends_on: []
+context_needs:
+  - company.target_audience
+  - brand.voice
+  - brand.colors
+  - brand.typography
+  - brand.guidelines_document
+risk: low
+side_effects:
+  - reads_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

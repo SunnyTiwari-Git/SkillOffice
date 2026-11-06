@@ -1,0 +1,38 @@
+id: 09-design-branding/dsn-site-structure
+version: 0.1.0
+kind: skill
+department: 09-design-branding
+summary: Plans information architecture - sitemap, page inventory, navigation, URLs, key user flows and page content hierarchy.
+inputs:
+  - name: goal
+    description: What visitors should be able to do on the site or section
+    required: true
+  - name: existing_content
+    description: Current page list, sitemap or URLs for a redesign
+    required: false
+  - name: research
+    description: Findings from user research, analytics or search terms
+    required: false
+outputs:
+  - name: sitemap
+    description: Page tree with URLs, navigation spec and redirect list
+  - name: page_hierarchies
+    description: Purpose, primary action and section order for key pages
+  - name: user_flows
+    description: Steps for the top user tasks
+depends_on: []
+context_needs:
+  - company.description
+  - company.products_and_services
+  - company.target_audience
+  - company.markets
+  - marketing.ideal_customers
+  - marketing.keywords
+  - regional.output_language
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

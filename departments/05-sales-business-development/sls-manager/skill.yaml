@@ -1,0 +1,37 @@
+id: 05-sales-business-development/sls-manager
+version: 0.1.0
+kind: manager
+department: 05-sales-business-development
+summary: Coordinates Sales and Business Development skills; plans, runs, merges findings, one correction cycle, one report.
+inputs:
+  - name: request
+    description: The user's sales request or a Front Desk handoff
+    required: true
+outputs:
+  - name: report
+    description: Consolidated report saved to .skilloffice/reports/<runId>.md
+depends_on:
+  - 05-sales-business-development/sls-account-research
+  - 05-sales-business-development/sls-prospecting
+  - 05-sales-business-development/sls-outreach
+  - 05-sales-business-development/sls-call-prep
+  - 05-sales-business-development/sls-call-summary
+  - 05-sales-business-development/sls-objection-handling
+  - 05-sales-business-development/sls-deal-review
+  - 05-sales-business-development/sls-pipeline-forecast
+  - 05-sales-business-development/sls-competitive-battlecard
+  - 05-sales-business-development/sls-win-loss-review
+  - 05-sales-business-development/sls-sales-enablement
+context_needs:
+  - company.name
+  - marketing.ideal_customers
+  - operations.processes
+  - regional.jurisdictions
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

@@ -1,0 +1,35 @@
+id: 05-sales-business-development/sls-prospecting
+version: 0.1.0
+kind: skill
+department: 05-sales-business-development
+summary: Builds and scores prospect lists, triages inbound leads and tiers accounts against the ICP, with sources and compliance rules.
+inputs:
+  - name: request
+    description: The prospecting goal, target count and region, or the leads or accounts to score
+    required: true
+  - name: lead_data
+    description: Pasted lead details or an uploaded lead or account list
+    required: false
+outputs:
+  - name: lead_sheet
+    description: Scored lead table or CSV with sources, confidence and verified dates, plus top targets
+  - name: triage_or_tiers
+    description: Lead priorities with routing, or account tiers with a motion per tier
+depends_on: []
+context_needs:
+  - company.products_and_services
+  - company.differentiators
+  - company.markets
+  - marketing.ideal_customers
+  - marketing.competitors
+  - regional.jurisdictions
+  - regional.date_format
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: coreyhaines31-marketingskills
+  upstream_commit: 88c79f6528a9347420e57ceb1fff9a60de651768

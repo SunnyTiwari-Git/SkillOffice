@@ -1,0 +1,40 @@
+id: 05-sales-business-development/sls-outreach
+version: 0.1.0
+kind: skill
+department: 05-sales-business-development
+summary: Drafts personalized outreach emails and multi-touch sequences for review, with a compliance checklist. Never sends.
+inputs:
+  - name: recipient
+    description: Person, role at a company, or list segment
+    required: true
+  - name: intent
+    description: Cold, warm follow-up, re-engagement, referral, event follow-up or reply to an objection
+    required: false
+  - name: hook
+    description: Specific trigger or observation, for example from sls-account-research
+    required: false
+outputs:
+  - name: drafts
+    description: Paste-ready subject lines and bodies for each touch
+  - name: compliance_checklist
+    description: Opt-out, consent and deliverability notes for the user
+depends_on: []
+context_needs:
+  - company.name
+  - company.products_and_services
+  - company.differentiators
+  - brand.voice
+  - brand.tone_donts
+  - marketing.ideal_customers
+  - marketing.competitors
+  - regional.output_language
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

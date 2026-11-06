@@ -1,0 +1,35 @@
+id: 09-design-branding/dsn-ux-copy
+version: 0.1.0
+kind: skill
+department: 09-design-branding
+summary: Writes or reviews interface copy - buttons, errors, empty states, dialogs, labels, onboarding - in the brand voice.
+inputs:
+  - name: screen_context
+    description: The screen or flow and what the user is trying to do
+    required: true
+  - name: existing_copy
+    description: Copy to review (review mode)
+    required: false
+  - name: constraints
+    description: Character limits, platform guidelines, target languages
+    required: false
+outputs:
+  - name: copy
+    description: Recommended copy with alternatives and rationale (write mode)
+  - name: findings
+    description: Copy issues with rewrites in the shared SkillOffice format (review mode)
+depends_on: []
+context_needs:
+  - brand.voice
+  - brand.tone_dos
+  - brand.tone_donts
+  - regional.output_language
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

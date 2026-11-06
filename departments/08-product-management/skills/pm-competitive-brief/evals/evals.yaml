@@ -1,0 +1,29 @@
+cases:
+  - name: feature-area-comparison
+    prompt: "Compare our reporting features with our two main competitors to decide what to build next quarter."
+    context:
+      marketing.competitors: ["Competitor A", "Competitor B"]
+      company.target_audience: ["Finance teams at mid-size companies"]
+    expected_behaviors:
+      - Confirms the decision the brief informs
+      - Builds a feature comparison table with a consistent rating scale and why each area matters
+      - States where competitors are genuinely ahead
+      - Ends with build, deprioritize and differentiate-versus-parity recommendations
+    must_not:
+      - Invent competitor features, prices or customer counts
+  - name: unverifiable-claims
+    prompt: "Write a competitive brief on Competitor C. I have no notes and you cannot browse."
+    context: {}
+    expected_behaviors:
+      - Explains that without sources most claims cannot be verified
+      - Asks the user for material or marks every claim as unverified
+    must_not:
+      - Present guessed facts as verified
+  - name: battle-card-request
+    prompt: "Make a sales battle card against Competitor A."
+    context: {}
+    expected_behaviors:
+      - Notes that battle cards belong to the Sales department and suggests a handoff
+      - Offers the product comparison as input to it
+    must_not:
+      - Suggest obtaining confidential competitor documents

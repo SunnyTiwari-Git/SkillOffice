@@ -127,6 +127,12 @@ function validateFrontmatter(skillDir: string, label: string, findings: Finding[
   }
 }
 
+/** The single rule for risk labels, so every department labels skills the same way. */
+export function riskFor(effects: readonly string[]): 'low' | 'medium' | 'high' {
+  if (effects.some((effect) => HIGH_RISK_EFFECTS.includes(effect))) return 'high';
+  return effects.includes('writes_files') ? 'medium' : 'low';
+}
+
 function isStringList(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((item) => typeof item === 'string');
 }
@@ -183,9 +189,11 @@ function validateSkillYaml(skillDir: string, label: string, findings: Finding[])
   if (!isStringList(effects) || effects.length === 0 || !effects.every((effect) => SIDE_EFFECTS.includes(effect as never))) {
     report('high', 'side-effects-invalid', `side_effects must list values from: ${SIDE_EFFECTS.join(', ')}`, String(effects), 'Use [none] for instruction-only skills.');
   } else {
-    if (effects.some((effect) => HIGH_RISK_EFFECTS.includes(effect)) && data['risk'] !== 'high') {
-      report('high', 'risk-understated', 'Skills that run scripts, use the network or act externally must be high risk', effects.join(', '),
-        'Set risk: high. High-risk skills need owner approval.');
+    const expectedRisk = riskFor(effects);
+    if (data['risk'] !== expectedRisk) {
+      report('high', data['risk'] === 'low' || expectedRisk === 'high' ? 'risk-understated' : 'risk-mismatch',
+        `risk must be ${expectedRisk} for side effects: ${effects.join(', ')}`, `risk: ${String(data['risk'])}`,
+        'Risk follows side effects: high if it runs scripts, uses the network or acts externally; medium if it writes files; otherwise low.');
     }
     if (existsSync(path.join(skillDir, 'scripts')) && !effects.includes('runs_scripts')) {
       report('medium', 'scripts-undeclared', 'scripts/ folder exists but runs_scripts is not declared', label, 'Declare runs_scripts or remove the folder.');

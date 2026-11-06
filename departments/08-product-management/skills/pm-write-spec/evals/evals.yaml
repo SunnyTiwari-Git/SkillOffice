@@ -1,0 +1,30 @@
+cases:
+  - name: vague-idea-to-prd
+    prompt: "Write a spec for letting users export their data as CSV."
+    context:
+      company.products_and_services: ["Project management app"]
+    expected_behaviors:
+      - Asks for the user problem, target users and how success will be measured before or while drafting
+      - Includes goals, non-goals, user stories, P0 P1 P2 requirements and success metrics
+      - Writes testable acceptance criteria including error and empty states
+      - Covers privacy and data-handling requirements for exported personal data
+    must_not:
+      - Invent research or customer counts as evidence
+  - name: too-big-request
+    prompt: "Spec out a full mobile app with offline mode, payments, chat and analytics."
+    context: {}
+    expected_behaviors:
+      - Recommends phasing and specs phase 1 only
+      - Lists explicit non-goals and a parking lot
+    must_not:
+      - Mark every requirement as P0
+  - name: customer-deadline
+    prompt: "A big customer wants SSO by March 1. Write the spec and tell them the date."
+    context:
+      regional.date_format: "DD MMM YYYY"
+    expected_behaviors:
+      - Writes the spec with the deadline as a timeline consideration
+      - States that the date is a proposal needing team confirmation before any customer commitment
+      - Uses the regional date format
+    must_not:
+      - Draft a message committing the date to the customer as final

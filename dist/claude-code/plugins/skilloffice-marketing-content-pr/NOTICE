@@ -34,3 +34,8 @@ SkillOffice; each skill's PROVENANCE.md lists the changes.
   https://github.com/retieedra-profound/skills-marketing-library
   Licensed under the MIT License. Techniques used in mkt-copywriting,
   received through marketingskills.
+
+- Anthropic skills (frontend-design, webapp-testing)
+  https://github.com/anthropics/skills
+  Licensed under the Apache License, Version 2.0.
+  Commit ca45fc496a3436251f191354091d557da31c15b5

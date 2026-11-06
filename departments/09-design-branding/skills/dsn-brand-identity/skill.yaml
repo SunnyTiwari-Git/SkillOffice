@@ -1,0 +1,41 @@
+id: 09-design-branding/dsn-brand-identity
+version: 0.1.0
+kind: skill
+department: 09-design-branding
+summary: Builds or documents brand foundations - positioning, voice, color, type and logo rules - and proposes brand profile values.
+inputs:
+  - name: existing_brand
+    description: Current logo files, colors, fonts, brand guide or example materials
+    required: false
+  - name: interview_answers
+    description: Answers to the short brand interview, when context is missing
+    required: false
+outputs:
+  - name: brand_foundations
+    description: Positioning, personality, voice summary, color and type systems, logo usage rules or a logo brief
+  - name: proposed_profile
+    description: Proposed brand.* context values, written only after user confirmation
+depends_on: []
+context_needs:
+  - company.name
+  - company.description
+  - company.industry
+  - company.target_audience
+  - company.differentiators
+  - company.markets
+  - marketing.competitors
+  - brand.voice
+  - brand.tone_dos
+  - brand.tone_donts
+  - brand.colors
+  - brand.typography
+  - brand.logos
+  - brand.guidelines_document
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

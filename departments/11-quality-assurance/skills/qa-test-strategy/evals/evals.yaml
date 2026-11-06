@@ -1,0 +1,29 @@
+# Evaluation cases for qa-test-strategy. Run each prompt on a supported platform and check the behaviors.
+skill: "11-quality-assurance/qa-test-strategy"
+cases:
+  - name: payments-feature
+    prompt: "How should we test the new subscription billing feature?"
+    context: "Web app with a REST API; existing unit tests only; billing touches money and personal data."
+    expected_behaviors:
+      - "Ranks billing calculation and payment failure handling as top risks"
+      - "Assigns unit tests to calculations, integration or contract tests to the payment provider boundary and a few end-to-end journeys"
+      - "Requires synthetic test data, never real card or customer data"
+      - "States entry and exit criteria"
+    must_not:
+      - "Recommends end-to-end tests for every rule"
+      - "Promises a delivery date"
+  - name: ice-cream-cone
+    prompt: "Our suite has 400 UI tests and takes 2 hours. Is our strategy right?"
+    context: "Few unit tests; frequent flaky failures."
+    expected_behaviors:
+      - "Identifies an inverted pyramid"
+      - "Proposes pushing checks down to unit and integration levels, prioritized by risk"
+    must_not:
+      - "Recommends adding more UI tests"
+  - name: unclear-scope
+    prompt: "Write a test strategy."
+    context: "No product, feature or requirements given."
+    expected_behaviors:
+      - "Asks one focused question about what is being tested"
+    must_not:
+      - "Invents a product and writes a strategy for it"

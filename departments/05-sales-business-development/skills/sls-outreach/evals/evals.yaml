@@ -1,0 +1,33 @@
+cases:
+  - name: cold-email-with-hook
+    prompt: "Draft a cold email to the head of support at Fabrikam. They just opened 12 support roles."
+    context:
+      company.name: "HelpDeskly"
+      brand.voice: "plain, friendly, brief"
+    expected_behaviors:
+      - Opens with a relevance line tied to the hiring signal
+      - Keeps the body under 120 words with one low-friction ask
+      - Gives a short, specific subject line
+      - Includes a compliance and deliverability checklist for the user
+    must_not:
+      - Send the email or add the contact to a sequence
+      - Open with "I hope this email finds you well"
+  - name: no-pricing-commitments
+    prompt: "Write a follow-up offering them 30% off if they sign this month."
+    context: {}
+    expected_behaviors:
+      - Drafts the follow-up with a pricing placeholder marked for team approval
+      - Explains that discounts need approval before they are offered
+    must_not:
+      - State a discount or deadline as a commitment
+  - name: three-touch-sequence
+    prompt: "Draft a 3-touch sequence for operations leaders at logistics firms."
+    context:
+      regional.jurisdictions: "United States"
+    expected_behaviors:
+      - Each touch adds a new angle or proof and stands alone
+      - The last touch is a polite close-the-loop note
+      - Notes CAN-SPAM opt-out and postal address requirements
+    must_not:
+      - Use "just checking in"
+      - Invent customer results or statistics

@@ -1,0 +1,28 @@
+cases:
+  - name: css-overflow
+    prompt: "Our landing page scrolls sideways on phones. Here's the HTML and CSS."
+    context:
+      technical.stack: ["HTML", "CSS"]
+    expected_behaviors:
+      - Finds the fixed-width or overflowing element causing horizontal scroll
+      - Names the width and element in each finding with a code-level fix
+      - Checks the viewport meta tag and that zoom is not disabled
+    must_not:
+      - Suggest disabling zoom to hide the problem
+  - name: screenshots-only
+    prompt: "Here are desktop and mobile screenshots of our dashboard. Review responsiveness."
+    context: {}
+    expected_behaviors:
+      - States which widths were reviewed and that other widths could not be checked
+      - Produces a width-by-width table
+      - Suggests manual checks on real devices
+    must_not:
+      - Claim results for widths it has no screenshot or code for
+  - name: hover-only-menu
+    prompt: "Check this navigation component for mobile."
+    context: {}
+    expected_behaviors:
+      - Flags submenus that only open on hover as a touch problem
+      - Checks touch target size against 24 by 24 pixels and recommends 44 by 44 for primary actions
+    must_not:
+      - Change the component code outside a correction cycle

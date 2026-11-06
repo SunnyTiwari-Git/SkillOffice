@@ -1,0 +1,29 @@
+id: "11-quality-assurance/qa-regression-review"
+version: 0.1.0
+kind: skill
+department: "11-quality-assurance"
+summary: "Reviews a test suite for coverage gaps, flaky patterns, brittle selectors, weak assertions, slow tests and unsafe test data. Read-only, findings."
+inputs:
+  - name: "suite"
+    description: "Test folders or files and how the suite runs"
+    required: true
+  - name: "risks"
+    description: "Risk ranking, critical journeys, escaped bugs or CI history"
+    required: false
+outputs:
+  - name: "findings"
+    description: "Findings in the shared format, coverage map, strengths and release-gate verdict"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.languages"
+  - "technical.testing"
+  - "technical.standards"
+# low: read-only review. If the suite is run to measure flakiness, that happens through the platform's normal permission prompts.
+risk: low
+side_effects:
+  - reads_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: original

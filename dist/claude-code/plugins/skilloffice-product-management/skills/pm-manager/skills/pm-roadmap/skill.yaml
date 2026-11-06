@@ -1,0 +1,33 @@
+id: 08-product-management/pm-roadmap
+version: 0.1.0
+kind: skill
+department: 08-product-management
+summary: Creates or updates a roadmap with prioritization, dependencies, a capacity check and a summary of what changed and why.
+inputs:
+  - name: roadmap
+    description: Current roadmap in any format, or a request to create one
+    required: true
+  - name: change
+    description: Add, update status, reprioritize, move timing or create
+    required: true
+  - name: capacity
+    description: Team size and availability for the period
+    required: false
+outputs:
+  - name: roadmap_view
+    description: Roadmap table with status, rationale, risks, capacity check and change summary
+depends_on: []
+context_needs:
+  - company.products_and_services
+  - operations.team_structure
+  - operations.processes
+  - regional.date_format
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

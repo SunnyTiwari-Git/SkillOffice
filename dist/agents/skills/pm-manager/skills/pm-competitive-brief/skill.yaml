@@ -1,0 +1,35 @@
+id: 08-product-management/pm-competitive-brief
+version: 0.1.0
+kind: skill
+department: 08-product-management
+summary: Product-focused competitive brief with feature comparison, positioning gaps, threats and build or differentiate decisions.
+inputs:
+  - name: competitors_or_area
+    description: Competitors to analyze, or a feature area to compare across competitors
+    required: true
+  - name: decision
+    description: The product decision this brief informs
+    required: true
+  - name: evidence
+    description: Win/loss notes, reviews, prior analyses or other material the user has
+    required: false
+outputs:
+  - name: competitive_brief
+    description: Comparison, positioning analysis, threats and product implications with sources and dates
+depends_on: []
+context_needs:
+  - company.products_and_services
+  - company.target_audience
+  - company.differentiators
+  - company.markets
+  - marketing.competitors
+  - regional.currency
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

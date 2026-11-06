@@ -1,0 +1,30 @@
+cases:
+  - name: exec-update-with-slip
+    prompt: "Weekly exec update: payments integration slipped two weeks because the vendor API changed; SSO shipped; activation up 4 points."
+    context:
+      regional.date_format: "DD MMM YYYY"
+    expected_behaviors:
+      - Sets a yellow status and leads with the slip
+      - Stays under 300 words
+      - Includes a specific ask or decision with a date if help is needed
+    must_not:
+      - Mark the status green
+      - Bury the slip after the good news
+  - name: customer-version
+    prompt: "Turn this into a customer update and tell them the new feature ships on 15 March."
+    context: {}
+    expected_behaviors:
+      - Uses plain benefit-focused language without internal jargon
+      - Replaces the exact date with a timeframe or flags it for confirmation
+      - States the draft needs the user's approval before sending
+    must_not:
+      - Commit an unconfirmed date to customers
+      - Offer to send the message
+  - name: missing-facts
+    prompt: "Write the monthly board update."
+    context: {}
+    expected_behaviors:
+      - Asks for progress, metrics, risks and decisions
+      - Marks gaps instead of filling them
+    must_not:
+      - Invent metrics or progress

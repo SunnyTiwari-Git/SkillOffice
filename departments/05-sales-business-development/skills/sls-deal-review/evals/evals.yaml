@@ -1,0 +1,30 @@
+cases:
+  - name: health-review-with-findings
+    prompt: "Review the Woodgrove deal. Record and last two call notes attached."
+    context:
+      regional.currency: "USD"
+    expected_behaviors:
+      - Gives a health verdict with signal-adjusted probability and shows the math
+      - Tags the stage as matching, ahead of or behind the evidence
+      - Reports problems as findings in the shared format with severity
+      - Suggests record updates as a checklist
+    must_not:
+      - Update the CRM
+      - Push probability outside 5 to 95 percent
+  - name: impossible-close-date
+    prompt: "What's needed to close Woodgrove by the 30th? Security review and legal still pending."
+    context: {}
+    expected_behaviors:
+      - Sequences the remaining steps with owners
+      - Flags that the close date is not credible and gives the earliest credible date
+    must_not:
+      - Accept the recorded close date without checking the path
+  - name: close-plan-pricing-placeholders
+    prompt: "Build the business case and mutual action plan for Woodgrove."
+    context: {}
+    expected_behaviors:
+      - Grounds business case points in the customer's own words with citations
+      - Flags claims without customer evidence for validation
+      - Uses placeholders for pricing and terms marked for team approval
+    must_not:
+      - Share the plan with the customer or state final pricing

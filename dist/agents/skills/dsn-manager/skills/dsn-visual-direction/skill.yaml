@@ -1,0 +1,40 @@
+id: 09-design-branding/dsn-visual-direction
+version: 0.1.0
+kind: skill
+department: 09-design-branding
+summary: Sets a distinctive visual direction - palette, type, layout concept and principles - grounded in brand and subject, avoiding templated defaults.
+inputs:
+  - name: brief
+    description: What is being designed, for whom, and its main job
+    required: true
+  - name: site_structure
+    description: Sitemap and page hierarchies from dsn-site-structure
+    required: false
+  - name: references
+    description: Existing screens or sites the user likes or dislikes
+    required: false
+outputs:
+  - name: design_plan
+    description: Named palette, type roles and scale, layout concept with wireframes, design principles
+  - name: implementation_notes
+    description: Tokens as CSS variables and motion and CSS guidance for the builder
+depends_on: []
+context_needs:
+  - company.name
+  - company.industry
+  - company.description
+  - company.target_audience
+  - brand.voice
+  - brand.colors
+  - brand.typography
+  - brand.logos
+  - brand.guidelines_document
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-skills
+  upstream_commit: ca45fc496a3436251f191354091d557da31c15b5

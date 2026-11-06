@@ -1,0 +1,33 @@
+id: 09-design-branding/dsn-user-research
+version: 0.1.0
+kind: skill
+department: 09-design-branding
+summary: Plans user research studies and synthesizes research data into themes, insights and prioritized recommendations.
+inputs:
+  - name: research_goal
+    description: The decision the research should inform (plan mode)
+    required: false
+  - name: research_data
+    description: Transcripts, notes, survey results, tickets or reviews (synthesis mode)
+    required: false
+outputs:
+  - name: research_plan
+    description: Question, method, participants, guide and consent steps
+  - name: synthesis
+    description: Themes with evidence, insights, segments and prioritized recommendations
+depends_on: []
+context_needs:
+  - company.name
+  - company.products_and_services
+  - company.target_audience
+  - regional.output_language
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

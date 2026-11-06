@@ -1,0 +1,30 @@
+id: 05-sales-business-development/sls-competitive-battlecard
+version: 0.1.0
+kind: skill
+department: 05-sales-business-development
+summary: In-deal competitive play, one-page battlecards and win-loss patterns by competitor, with dated, sourced, fair claims.
+inputs:
+  - name: competitor
+    description: The named competitor
+    required: true
+  - name: provided_material
+    description: Deal context, closed-deal data with a competitor column, customer quotes or public pages
+    required: false
+outputs:
+  - name: competitive_output
+    description: In-deal answer, battlecard or pattern report, with unverified items listed
+depends_on: []
+context_needs:
+  - company.products_and_services
+  - company.differentiators
+  - marketing.competitors
+  - regional.date_format
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

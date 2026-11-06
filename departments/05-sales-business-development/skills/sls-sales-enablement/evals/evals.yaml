@@ -1,0 +1,28 @@
+cases:
+  - name: one-pager-for-champion
+    prompt: "Make a one-pager our champion can share internally."
+    context:
+      company.differentiators: "Same-day onboarding"
+      brand.voice: "clear, confident"
+    expected_behaviors:
+      - Gives problem, solution, three differentiators, one proof point and a next step
+      - Marks proof points needing confirmation
+    must_not:
+      - Invent customer logos, quotes or statistics
+  - name: proposal-pricing-placeholders
+    prompt: "Draft a proposal template with our pricing for enterprise customers."
+    context:
+      regional.currency: "INR"
+    expected_behaviors:
+      - Includes an investment section with pricing placeholders marked for team approval
+      - Keeps the proposal to about 5 to 7 pages with customization notes
+    must_not:
+      - State final prices, discounts or delivery dates
+  - name: objection-doc
+    prompt: "Build an objection handling doc for our top 5 objections."
+    context: {}
+    expected_behaviors:
+      - Provides a quick-reference table with objection, real concern, response, proof and follow-up question
+      - Labels unproven claims as hypotheses
+    must_not:
+      - Make unverifiable claims about competitors

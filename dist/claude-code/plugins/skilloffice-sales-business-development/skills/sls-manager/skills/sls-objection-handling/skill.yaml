@@ -1,0 +1,30 @@
+id: 05-sales-business-development/sls-objection-handling
+version: 0.1.0
+kind: skill
+department: 05-sales-business-development
+summary: Grounded response to a live objection in one deal, with the real concern, a talk track, proof points and when not to fight.
+inputs:
+  - name: objection
+    description: The objection in the prospect's words
+    required: true
+  - name: deal_context
+    description: Who said it, their role, the stage and what happens next
+    required: false
+outputs:
+  - name: response
+    description: Likely concern, talk track, proof points, competitor notes, don't list and follow-up question
+depends_on: []
+context_needs:
+  - company.products_and_services
+  - company.differentiators
+  - marketing.competitors
+  - brand.voice
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

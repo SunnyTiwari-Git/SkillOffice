@@ -16,6 +16,13 @@
       "license": "Apache-2.0"
     },
     {
+      "name": "skilloffice-sales-business-development",
+      "source": "./dist/claude-code/plugins/skilloffice-sales-business-development",
+      "description": "SkillOffice Sales and Business Development: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
       "name": "skilloffice-marketing-content-pr",
       "source": "./dist/claude-code/plugins/skilloffice-marketing-content-pr",
       "description": "SkillOffice Marketing, Content and PR: a department manager that plans, runs and reviews specialist skills.",
@@ -23,9 +30,30 @@
       "license": "Apache-2.0"
     },
     {
+      "name": "skilloffice-product-management",
+      "source": "./dist/claude-code/plugins/skilloffice-product-management",
+      "description": "SkillOffice Product Management and Research: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skilloffice-design-branding",
+      "source": "./dist/claude-code/plugins/skilloffice-design-branding",
+      "description": "SkillOffice UI/UX, Graphic Design and Branding: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
       "name": "skilloffice-software-development",
       "source": "./dist/claude-code/plugins/skilloffice-software-development",
       "description": "SkillOffice Software Development and Engineering: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skilloffice-quality-assurance",
+      "source": "./dist/claude-code/plugins/skilloffice-quality-assurance",
+      "description": "SkillOffice Quality Assurance and Testing: a department manager that plans, runs and reviews specialist skills.",
       "version": "0.1.0",
       "license": "Apache-2.0"
     }

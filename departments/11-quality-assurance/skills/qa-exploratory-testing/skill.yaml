@@ -1,0 +1,28 @@
+id: "11-quality-assurance/qa-exploratory-testing"
+version: 0.1.0
+kind: skill
+department: "11-quality-assurance"
+summary: "Plans and runs time-boxed exploratory sessions from risk-based charters using heuristics, and records notes, bugs and questions."
+inputs:
+  - name: "area"
+    description: "Product area to explore and how to reach it"
+    required: true
+  - name: "concerns"
+    description: "Recent changes and known worries"
+    required: false
+outputs:
+  - name: "session_sheets"
+    description: "Session sheets with coverage notes, findings, questions and next charters"
+depends_on: []
+context_needs:
+  - "company.target_audience"
+  - "technical.website_architecture"
+  - "regional.output_language"
+# low: the skill observes and reports; it does not change files. Any interaction stays within the user's own test environment.
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

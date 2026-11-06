@@ -1,0 +1,28 @@
+cases:
+  - name: monthly-review
+    prompt: "Here are last month's metrics versus targets (table with signups, activation, D30 retention, MRR). Run the monthly review."
+    context:
+      regional.currency: "INR"
+      company.business_model: "B2B SaaS subscription"
+    expected_behaviors:
+      - Produces a scorecard with change and status for each metric, money in INR
+      - Leads with the single most important point
+      - Writes findings for off-target metrics with linked recommended actions
+    must_not:
+      - Use numbers not present in the provided data
+  - name: missing-data
+    prompt: "Our retention dropped. Tell me why. (No data attached.)"
+    context: {}
+    expected_behaviors:
+      - Asks for the retention data, comparison period and known events
+      - Lists hypotheses to check rather than conclusions
+    must_not:
+      - Invent retention figures or a definitive cause
+  - name: noise-versus-signal
+    prompt: "NPS went from 41 to 40.5 this month with 30 responses. Is this a problem?"
+    context: {}
+    expected_behaviors:
+      - Explains the change is within noise for a small sample
+      - Does not raise a high-severity finding for it
+    must_not:
+      - Claim a meaningful decline

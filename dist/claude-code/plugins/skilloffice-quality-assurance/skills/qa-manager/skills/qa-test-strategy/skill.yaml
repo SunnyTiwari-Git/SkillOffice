@@ -1,0 +1,37 @@
+id: "11-quality-assurance/qa-test-strategy"
+version: 0.1.0
+kind: skill
+department: "11-quality-assurance"
+summary: "Designs a risk-based test strategy: test levels per risk, what to automate, environments, test data, and entry and exit criteria."
+inputs:
+  - name: "scope"
+    description: "Product, feature, service or change to be tested"
+    required: true
+  - name: "requirements"
+    description: "Requirements or acceptance criteria"
+    required: false
+  - name: "current_state"
+    description: "Existing tests, tools, CI, known problem areas and incidents"
+    required: false
+outputs:
+  - name: "strategy"
+    description: "Test strategy document with risk ranking, levels, automation approach, criteria and gaps"
+depends_on: []
+context_needs:
+  - "company.industry"
+  - "technical.stack"
+  - "technical.languages"
+  - "technical.website_architecture"
+  - "technical.testing"
+  - "technical.deployment_process"
+  - "regional.jurisdictions"
+  - "regional.output_language"
+risk: low
+side_effects:
+  - none
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

@@ -30,7 +30,114 @@ skills:
     kind: core
     department: core
     status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 05-sales-business-development/sls-account-research
+    version: 0.1.0
+    kind: skill
+    department: 05-sales-business-development
+    status: draft
     risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 05-sales-business-development/sls-call-prep
+    version: 0.1.0
+    kind: skill
+    department: 05-sales-business-development
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 05-sales-business-development/sls-call-summary
+    version: 0.1.0
+    kind: skill
+    department: 05-sales-business-development
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 05-sales-business-development/sls-competitive-battlecard
+    version: 0.1.0
+    kind: skill
+    department: 05-sales-business-development
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 05-sales-business-development/sls-deal-review
+    version: 0.1.0
+    kind: skill
+    department: 05-sales-business-development
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 05-sales-business-development/sls-objection-handling
+    version: 0.1.0
+    kind: skill
+    department: 05-sales-business-development
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 05-sales-business-development/sls-outreach
+    version: 0.1.0
+    kind: skill
+    department: 05-sales-business-development
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 05-sales-business-development/sls-pipeline-forecast
+    version: 0.1.0
+    kind: skill
+    department: 05-sales-business-development
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 05-sales-business-development/sls-prospecting
+    version: 0.1.0
+    kind: skill
+    department: 05-sales-business-development
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: coreyhaines31-marketingskills
+    platforms_tested: []
+  - id: 05-sales-business-development/sls-sales-enablement
+    version: 0.1.0
+    kind: skill
+    department: 05-sales-business-development
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: coreyhaines31-marketingskills
+    platforms_tested: []
+  - id: 05-sales-business-development/sls-win-loss-review
+    version: 0.1.0
+    kind: skill
+    department: 05-sales-business-development
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 05-sales-business-development/sls-manager
+    version: 0.1.0
+    kind: manager
+    department: 05-sales-business-development
+    status: draft
+    risk: medium
     provenance: original
     platforms_tested: []
   - id: 06-marketing-content-pr/mkt-manager
@@ -38,7 +145,7 @@ skills:
     kind: manager
     department: 06-marketing-content-pr
     status: draft
-    risk: low
+    risk: medium
     provenance: original
     platforms_tested: []
   - id: 06-marketing-content-pr/mkt-brand-review
@@ -131,6 +238,197 @@ skills:
     provenance: adapted
     source_id: coreyhaines31-marketingskills
     platforms_tested: []
+  - id: 08-product-management/pm-manager
+    version: 0.1.0
+    kind: manager
+    department: 08-product-management
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 08-product-management/pm-competitive-brief
+    version: 0.1.0
+    kind: skill
+    department: 08-product-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 08-product-management/pm-metrics-review
+    version: 0.1.0
+    kind: skill
+    department: 08-product-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 08-product-management/pm-product-brainstorm
+    version: 0.1.0
+    kind: skill
+    department: 08-product-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 08-product-management/pm-research-synthesis
+    version: 0.1.0
+    kind: skill
+    department: 08-product-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 08-product-management/pm-roadmap
+    version: 0.1.0
+    kind: skill
+    department: 08-product-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 08-product-management/pm-spec-review
+    version: 0.1.0
+    kind: skill
+    department: 08-product-management
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 08-product-management/pm-sprint-planning
+    version: 0.1.0
+    kind: skill
+    department: 08-product-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 08-product-management/pm-stakeholder-update
+    version: 0.1.0
+    kind: skill
+    department: 08-product-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 08-product-management/pm-write-spec
+    version: 0.1.0
+    kind: skill
+    department: 08-product-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 09-design-branding/dsn-manager
+    version: 0.1.0
+    kind: manager
+    department: 09-design-branding
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 09-design-branding/dsn-accessibility-review
+    version: 0.1.0
+    kind: skill
+    department: 09-design-branding
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 09-design-branding/dsn-ai-pattern-review
+    version: 0.1.0
+    kind: skill
+    department: 09-design-branding
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 09-design-branding/dsn-brand-identity
+    version: 0.1.0
+    kind: skill
+    department: 09-design-branding
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 09-design-branding/dsn-design-critique
+    version: 0.1.0
+    kind: skill
+    department: 09-design-branding
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 09-design-branding/dsn-design-handoff
+    version: 0.1.0
+    kind: skill
+    department: 09-design-branding
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 09-design-branding/dsn-design-system
+    version: 0.1.0
+    kind: skill
+    department: 09-design-branding
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 09-design-branding/dsn-responsive-review
+    version: 0.1.0
+    kind: skill
+    department: 09-design-branding
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 09-design-branding/dsn-site-structure
+    version: 0.1.0
+    kind: skill
+    department: 09-design-branding
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 09-design-branding/dsn-user-research
+    version: 0.1.0
+    kind: skill
+    department: 09-design-branding
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 09-design-branding/dsn-ux-copy
+    version: 0.1.0
+    kind: skill
+    department: 09-design-branding
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 09-design-branding/dsn-visual-direction
+    version: 0.1.0
+    kind: skill
+    department: 09-design-branding
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-skills
+    platforms_tested: []
   - id: 10-software-development/dev-manager
     version: 0.1.0
     kind: manager
@@ -219,4 +517,86 @@ skills:
     risk: medium
     provenance: adapted
     source_id: obra-superpowers
+    platforms_tested: []
+  - id: 11-quality-assurance/qa-manager
+    version: 0.1.0
+    kind: manager
+    department: 11-quality-assurance
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 11-quality-assurance/qa-api-testing
+    version: 0.1.0
+    kind: skill
+    department: 11-quality-assurance
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 11-quality-assurance/qa-bug-report
+    version: 0.1.0
+    kind: skill
+    department: 11-quality-assurance
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 11-quality-assurance/qa-exploratory-testing
+    version: 0.1.0
+    kind: skill
+    department: 11-quality-assurance
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 11-quality-assurance/qa-regression-review
+    version: 0.1.0
+    kind: skill
+    department: 11-quality-assurance
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 11-quality-assurance/qa-release-verification
+    version: 0.1.0
+    kind: skill
+    department: 11-quality-assurance
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 11-quality-assurance/qa-test-case-design
+    version: 0.1.0
+    kind: skill
+    department: 11-quality-assurance
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 11-quality-assurance/qa-test-plan
+    version: 0.1.0
+    kind: skill
+    department: 11-quality-assurance
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 11-quality-assurance/qa-test-strategy
+    version: 0.1.0
+    kind: skill
+    department: 11-quality-assurance
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 11-quality-assurance/qa-web-ui-testing
+    version: 0.1.0
+    kind: skill
+    department: 11-quality-assurance
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: anthropics-skills
     platforms_tested: []

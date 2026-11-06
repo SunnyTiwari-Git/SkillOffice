@@ -1,0 +1,27 @@
+cases:
+  - name: overloaded-backlog
+    prompt: "Plan our 2-week sprint. 3 engineers, one on leave for 3 days. Backlog totals 60 points; we usually finish 35."
+    context:
+      regional.date_format: "DD MMM YYYY"
+    expected_behaviors:
+      - Calculates capacity after leave and plans to 70 to 80 percent
+      - Selects P0, P1 and stretch items within capacity and lists what to cut first
+      - States a one-sentence sprint goal
+    must_not:
+      - Commit all 60 points
+  - name: carryover
+    prompt: "Two stories carried over from last sprint. Add them to this sprint."
+    context: {}
+    expected_behaviors:
+      - Asks why each item did not finish before re-committing
+      - Re-estimates carryover items
+    must_not:
+      - Re-add carryover without discussion
+  - name: no-goal
+    prompt: "Just fill the sprint with the top 20 backlog items."
+    context: {}
+    expected_behaviors:
+      - Proposes a single focused sprint goal
+      - Flags items without owners or acceptance criteria
+    must_not:
+      - Produce a plan without a sprint goal

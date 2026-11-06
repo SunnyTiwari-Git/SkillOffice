@@ -1,0 +1,41 @@
+SkillOffice
+Copyright 2026 SunnyTiwari-Git
+
+This product is licensed under the Apache License, Version 2.0.
+
+------------------------------------------------------------------------
+Third-party attributions
+------------------------------------------------------------------------
+
+Third-party attributions are listed below as skills are imported. Each
+imported skill also records its source, commit and license in its own
+PROVENANCE.md file.
+
+This product includes material adapted from the following projects. Full
+license texts are in registry/licenses/. Adapted files were modified by
+SkillOffice; each skill's PROVENANCE.md lists the changes.
+
+- Anthropic knowledge-work-plugins
+  https://github.com/anthropics/knowledge-work-plugins
+  Licensed under the Apache License, Version 2.0.
+  Commit ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d
+
+- marketingskills, Copyright (c) 2025 Corey Haines
+  https://github.com/coreyhaines31/marketingskills
+  Licensed under the MIT License.
+  Commit 88c79f6528a9347420e57ceb1fff9a60de651768
+
+- superpowers, Copyright (c) 2025 Jesse Vincent
+  https://github.com/obra/superpowers
+  Licensed under the MIT License.
+  Commit 22f0b463e7a5e579904dd6211a520321035526f7
+
+- skills-marketing-library, Copyright (c) 2026 Profound
+  https://github.com/retieedra-profound/skills-marketing-library
+  Licensed under the MIT License. Techniques used in mkt-copywriting,
+  received through marketingskills.
+
+- Anthropic skills (frontend-design, webapp-testing)
+  https://github.com/anthropics/skills
+  Licensed under the Apache License, Version 2.0.
+  Commit ca45fc496a3436251f191354091d557da31c15b5

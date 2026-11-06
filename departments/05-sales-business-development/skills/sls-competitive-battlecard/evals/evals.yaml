@@ -1,0 +1,28 @@
+cases:
+  - name: battlecard-with-sources
+    prompt: "Make a battlecard for Globex."
+    context:
+      marketing.competitors: "Globex, Initech"
+    expected_behaviors:
+      - Follows the one-page structure including where they are strong and when to walk away
+      - Dates and sources every competitor fact
+      - Labels unproven "why we win" points as hypotheses
+    must_not:
+      - State "they don't have it" without a dated source
+  - name: unnamed-competitor
+    prompt: "Make a battlecard."
+    context:
+      marketing.competitors: "Globex, Initech"
+    expected_behaviors:
+      - Asks which competitor in one short question
+    must_not:
+      - Draft a card before the competitor is confirmed
+  - name: small-sample-patterns
+    prompt: "Where are we losing to Initech? Closed deals export attached."
+    context:
+      provided_material: "Export with 3 deals against Initech"
+    expected_behaviors:
+      - States the sample size and calls 3 deals a signal to watch, not a finding
+      - Includes both wins and losses
+    must_not:
+      - Present a firm conclusion from 3 deals

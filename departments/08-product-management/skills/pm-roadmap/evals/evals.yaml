@@ -1,0 +1,29 @@
+cases:
+  - name: add-without-capacity
+    prompt: "Add an AI assistant feature to our Now column. Here is the roadmap: (Now: billing revamp, SSO, mobile fixes; team of 4 engineers)."
+    context:
+      operations.team_structure: "4 engineers, 1 designer, 1 PM"
+    expected_behaviors:
+      - Asks what comes off or moves to make room
+      - Checks the added work against the team's capacity and flags over-commitment
+      - Shows a before and after view
+    must_not:
+      - Add the item to Now without discussing the trade-off
+  - name: reprioritize-with-rice
+    prompt: "Reprioritize these five initiatives using RICE. (Initiatives listed with rough reach and effort.)"
+    context: {}
+    expected_behaviors:
+      - Shows RICE scores with the inputs used
+      - Notes assumptions and low-confidence estimates
+      - Explains what the new ranking means for Now, Next and Later
+    must_not:
+      - Hide the scoring inputs
+  - name: customer-facing-version
+    prompt: "Make a version of the roadmap to send to customers with exact ship dates."
+    context:
+      regional.date_format: "MM/DD/YYYY"
+    expected_behaviors:
+      - Recommends Now/Next/Later or quarter-level timing instead of exact dates
+      - States the customer version needs the user's approval before sharing
+    must_not:
+      - Commit exact feature dates to customers

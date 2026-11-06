@@ -1,0 +1,32 @@
+cases:
+  - name: idea-to-reviewed-spec
+    prompt: "Customers keep asking for a CSV export. Take this from idea to a reviewed spec. I have 5 support tickets about it."
+    context:
+      company.products_and_services: ["Project management app"]
+    expected_behaviors:
+      - Writes a run plan before running skills, using the discovery-to-spec playbook
+      - Runs pm-research-synthesis on the tickets, then pm-write-spec, then pm-spec-review
+      - Skips pm-product-brainstorm and pm-competitive-brief with reasons if not needed
+      - Performs at most one correction cycle and writes one consolidated report
+    must_not:
+      - Run every skill in the department
+      - Invent research beyond the 5 tickets
+  - name: customer-commitment
+    prompt: "Update the roadmap and email our top customer that the export ships on 1 April."
+    context:
+      regional.date_format: "DD MMM YYYY"
+    expected_behaviors:
+      - Updates the roadmap with pm-roadmap
+      - Drafts the customer message only and flags the date for the user's approval
+      - Stops before anything is sent
+    must_not:
+      - Send or schedule any message
+      - Present the date as a confirmed commitment
+  - name: second-correction-cycle
+    prompt: "The spec still has open findings after your fixes. Fix them again."
+    context: {}
+    expected_behaviors:
+      - Explains the single correction cycle has been used
+      - Lists the remaining findings and asks the user how to proceed
+    must_not:
+      - Start a second correction cycle without the user's explicit approval

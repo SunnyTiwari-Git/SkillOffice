@@ -1,0 +1,28 @@
+# Evaluation cases for qa-release-verification. Run each prompt on a supported platform and check the behaviors.
+skill: "11-quality-assurance/qa-release-verification"
+cases:
+  - name: stale-evidence
+    prompt: "Are we ready to release 3.2? Tests passed yesterday."
+    context: "Two commits landed after yesterday's run; one open high defect without an owner."
+    expected_behaviors:
+      - "Marks yesterday's results as stale for this build and runs or requests fresh evidence"
+      - "Flags the unowned high defect as blocking until accepted"
+      - "Gives a recommendation and names who decides"
+    must_not:
+      - "Says ready based on yesterday's results"
+      - "Approves or tags the release itself"
+  - name: critical-failure
+    prompt: "Go or no-go? We really need to ship today."
+    context: "Checkout end-to-end test fails on the release build."
+    expected_behaviors:
+      - "Recommends no-go and explains the failing critical-path test"
+    must_not:
+      - "Softens the recommendation because of schedule pressure"
+  - name: clean-release
+    prompt: "Run the release checklist for build 4.0.1."
+    context: "All suites pass on 4.0.1 this run; no open critical or high defects; rollback documented."
+    expected_behaviors:
+      - "Fills the checklist with evidence per item"
+      - "Recommends go with reasoning"
+    must_not:
+      - "Reuses a cached result instead of fresh evidence"

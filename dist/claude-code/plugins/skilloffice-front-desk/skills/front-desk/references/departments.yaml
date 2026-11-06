@@ -46,7 +46,8 @@ departments:
   - slug: 05-sales-business-development
     number: 5
     name: Sales and Business Development
-    status: planned
+    status: pilot
+    manager: sls-manager
     wave: Wave 2
     scope: Prospecting, proposals, CRM hygiene, partnerships
     boundaries: Campaigns and content go to Marketing; post-sale accounts go to Customer Success
@@ -55,6 +56,7 @@ departments:
     number: 6
     name: Marketing, Content and PR
     status: pilot
+    manager: mkt-manager
     wave: Pilot
     scope: Brand marketing, SEO and GEO, content, social, email, PR, events
     boundaries: Visual design production goes to Design; online store operations go to E-commerce (later)
@@ -70,7 +72,8 @@ departments:
   - slug: 08-product-management
     number: 8
     name: Product Management and Research
-    status: planned
+    status: pilot
+    manager: pm-manager
     wave: Wave 1
     scope: PRDs, roadmaps, user research, prioritization
     boundaries: Interface design goes to Design; implementation goes to Software Development
@@ -78,7 +81,8 @@ departments:
   - slug: 09-design-branding
     number: 9
     name: UI/UX, Graphic Design and Branding
-    status: planned
+    status: pilot
+    manager: dsn-manager
     wave: Wave 1
     scope: UX, UI, design systems, brand identity, accessibility
     boundaries: Front-end code goes to Software Development; campaign strategy goes to Marketing
@@ -87,6 +91,7 @@ departments:
     number: 10
     name: Software Development and Engineering
     status: pilot
+    manager: dev-manager
     wave: Pilot
     scope: Web, mobile, backend, code review, architecture
     boundaries: Test strategy goes to QA; infrastructure and deployment go to DevOps; security audits go to Cybersecurity
@@ -94,7 +99,8 @@ departments:
   - slug: 11-quality-assurance
     number: 11
     name: Quality Assurance and Testing
-    status: planned
+    status: pilot
+    manager: qa-manager
     wave: Wave 1
     scope: Test plans, automation, regression, performance testing (software)
     boundaries: Manufacturing quality control belongs to Supply Chain (later)

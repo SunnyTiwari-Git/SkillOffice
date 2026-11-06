@@ -1,0 +1,29 @@
+cases:
+  - name: create-from-direction
+    prompt: "Here's our approved visual direction. Build the design system for our Next.js app."
+    context:
+      technical.stack: ["Next.js", "Tailwind CSS"]
+      brand.colors: { primary: "#0B6E4F" }
+    expected_behaviors:
+      - Works in create mode and defines role-named tokens as CSS variables in one global file
+      - Lists core components with every state and keyboard behavior
+      - Checks text and background token pairs against WCAG 2.2 AA
+    must_not:
+      - Use raw hex values inside component definitions
+  - name: audit-hardcoded-values
+    prompt: "Audit our components folder for design system problems."
+    context: {}
+    expected_behaviors:
+      - Works in audit mode and reports findings in the shared format with locations
+      - Groups repeated hardcoded values into one finding listing all locations
+    must_not:
+      - Edit files outside a correction cycle
+  - name: extend-reuses-tokens
+    prompt: "We need a date-range picker component."
+    context: {}
+    expected_behaviors:
+      - Explains why existing components are not enough
+      - Proposes properties, variants, states and accessibility using existing tokens
+      - Lists open questions
+    must_not:
+      - Invent new colors when existing tokens fit

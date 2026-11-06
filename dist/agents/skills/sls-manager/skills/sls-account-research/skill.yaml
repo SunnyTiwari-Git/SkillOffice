@@ -1,0 +1,36 @@
+id: 05-sales-business-development/sls-account-research
+version: 0.1.0
+kind: skill
+department: 05-sales-business-development
+summary: Sourced brief on a prospect or existing account with dated signals, ICP fit, ownership check and specific outreach hooks.
+inputs:
+  - name: company
+    description: Company name or website
+    required: true
+  - name: contact
+    description: Contact name or title to research
+    required: false
+  - name: provided_material
+    description: CRM export rows, notes, threads or public pages the user supplies
+    required: false
+outputs:
+  - name: research_brief
+    description: Ownership status, snapshot, dated signals, fit table, hooks and next step
+depends_on: []
+context_needs:
+  - company.name
+  - company.products_and_services
+  - company.differentiators
+  - marketing.ideal_customers
+  - marketing.competitors
+  - regional.date_format
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

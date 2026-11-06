@@ -1,0 +1,16 @@
+{
+  "name": "skilloffice-quality-assurance",
+  "version": "0.1.0",
+  "description": "SkillOffice Quality Assurance and Testing: a department manager that plans, runs and reviews specialist skills.",
+  "author": {
+    "name": "SunnyTiwari-Git"
+  },
+  "homepage": "https://github.com/SunnyTiwari-Git/SkillOffice",
+  "repository": "https://github.com/SunnyTiwari-Git/SkillOffice",
+  "license": "Apache-2.0",
+  "keywords": [
+    "skilloffice",
+    "agent-skills",
+    "11-quality-assurance"
+  ]
+}

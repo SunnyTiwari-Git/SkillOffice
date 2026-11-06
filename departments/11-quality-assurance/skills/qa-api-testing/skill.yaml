@@ -1,0 +1,33 @@
+id: "11-quality-assurance/qa-api-testing"
+version: 0.1.0
+kind: skill
+department: "11-quality-assurance"
+summary: "Tests HTTP APIs against their contract: status codes, validation, auth and authorization, pagination, errors and idempotency, in test environments only."
+inputs:
+  - name: "api"
+    description: "Endpoints to test, the contract or specification, and the local or test base URL"
+    required: true
+  - name: "test_cases"
+    description: "Designed cases from qa-test-case-design"
+    required: false
+outputs:
+  - name: "results"
+    description: "Results table per endpoint and case, plus findings for failures and contract mismatches"
+  - name: "test_files"
+    description: "API tests saved in the project, if requested"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.languages"
+  - "technical.testing"
+  - "technical.website_architecture"
+  - "regional.date_format"
+# medium: reads and writes files in the user's project and calls local or approved test endpoints through the platform's normal permission prompts.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

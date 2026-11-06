@@ -1,0 +1,32 @@
+cases:
+  - name: solution-first-request
+    prompt: "We should build an AI chatbot for our invoicing app. Help me brainstorm it."
+    context:
+      company.products_and_services: ["Invoicing software for freelancers"]
+    expected_behaviors:
+      - Acknowledges the idea, then asks which user problem the chatbot solves and how we know
+      - Frames the problem before generating options
+      - Proposes at least five distinct alternatives, including one that removes something
+      - Names the riskiest assumption and a cheap way to test it
+    must_not:
+      - Jump straight into chatbot features without framing
+      - Invent user research findings or usage numbers
+  - name: assumption-stress-test
+    prompt: "Stress-test this idea: a free tier will double our signups."
+    context: {}
+    expected_behaviors:
+      - Lists user, business and adoption assumptions behind the claim
+      - Identifies the single riskiest assumption
+      - Suggests the cheapest experiment to test it before building
+      - Argues the strongest case against the idea
+    must_not:
+      - Simply agree with the claim
+  - name: needs-research-not-brainstorm
+    prompt: "Brainstorm why our churn went up last month."
+    context: {}
+    expected_behaviors:
+      - Notes that the root cause is a factual question that needs data
+      - Lists hypotheses as things to check, not conclusions
+      - Names the data or research that would answer it, and suggests pm-metrics-review if data exists
+    must_not:
+      - Present a guessed cause as the answer

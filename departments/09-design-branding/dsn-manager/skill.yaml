@@ -1,0 +1,37 @@
+id: 09-design-branding/dsn-manager
+version: 0.1.0
+kind: manager
+department: 09-design-branding
+summary: Coordinates UI/UX, Design and Branding skills; plans, runs, merges findings, one correction cycle, one report.
+inputs:
+  - name: request
+    description: The user's design request or a Front Desk handoff
+    required: true
+outputs:
+  - name: report
+    description: Consolidated report saved to .skilloffice/reports/<runId>.md
+depends_on:
+  - 09-design-branding/dsn-user-research
+  - 09-design-branding/dsn-site-structure
+  - 09-design-branding/dsn-visual-direction
+  - 09-design-branding/dsn-design-system
+  - 09-design-branding/dsn-brand-identity
+  - 09-design-branding/dsn-ux-copy
+  - 09-design-branding/dsn-design-critique
+  - 09-design-branding/dsn-accessibility-review
+  - 09-design-branding/dsn-responsive-review
+  - 09-design-branding/dsn-ai-pattern-review
+  - 09-design-branding/dsn-design-handoff
+context_needs:
+  - company.name
+  - company.target_audience
+  - brand.voice
+  - brand.guidelines_document
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

@@ -1,0 +1,28 @@
+cases:
+  - name: pipeline-health-from-export
+    prompt: "Review my pipeline. Export attached; my target this quarter is 400,000."
+    context:
+      regional.currency: "USD"
+    expected_behaviors:
+      - Builds a stage rollup with counts, amounts, age and stale deals
+      - Flags stale, slipping, blank next step and stuck deals as findings
+      - Compares coverage with 3 times the remaining gap
+    must_not:
+      - Invent deals or numbers not in the export
+  - name: no-export
+    prompt: "Write my forecast for this quarter."
+    context: {}
+    expected_behaviors:
+      - Asks for the pipeline export and stops
+    must_not:
+      - Produce a sample forecast presented as real
+  - name: slip-scenario-and-missing-deal
+    prompt: "What happens if the Contoso deal slips? Compare with last week's export too."
+    context: {}
+    expected_behaviors:
+      - Shows a before and after table with gap to target and coverage
+      - Lists realistic backfill deals using the 14-day activity rule
+      - Treats a deal missing from the newer export as outcome unknown
+    must_not:
+      - Assume a missing deal was won
+      - Change forecast categories in any system

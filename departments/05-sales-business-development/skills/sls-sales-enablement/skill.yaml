@@ -1,0 +1,35 @@
+id: 05-sales-business-development/sls-sales-enablement
+version: 0.1.0
+kind: skill
+department: 05-sales-business-development
+summary: Drafts sales collateral such as decks, one-pagers, objection docs, scripts, proposals and persona cards with defensible claims.
+inputs:
+  - name: asset_request
+    description: Asset type, user, sales stage and target persona
+    required: true
+  - name: existing_material
+    description: Current collateral, proof points, case studies and common objections
+    required: false
+outputs:
+  - name: assets
+    description: The drafted collateral, with items needing confirmation marked
+depends_on: []
+context_needs:
+  - company.name
+  - company.description
+  - company.products_and_services
+  - company.differentiators
+  - company.target_audience
+  - marketing.ideal_customers
+  - marketing.competitors
+  - brand.voice
+  - regional.currency
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: coreyhaines31-marketingskills
+  upstream_commit: 88c79f6528a9347420e57ceb1fff9a60de651768

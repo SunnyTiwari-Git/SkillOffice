@@ -26,7 +26,7 @@ context_needs:
   - brand.voice
   - marketing.ideal_customers
   - regional.jurisdictions
-risk: low
+risk: medium
 side_effects:
   - reads_files
   - writes_files

@@ -1,0 +1,25 @@
+cases:
+  - name: complete-states
+    prompt: "Write the handoff spec for our checkout form design."
+    context:
+      technical.stack: ["React", "CSS modules"]
+    expected_behaviors:
+      - Specifies default, hover, focus, active, disabled, loading, error and success states
+      - References design tokens instead of raw pixel or hex values
+      - Includes responsive behavior per breakpoint and accessibility notes
+    must_not:
+      - Leave error or empty states unspecified without listing them as open questions
+  - name: missing-mobile-design
+    prompt: "Here's the desktop design only. Hand it off."
+    context: {}
+    expected_behaviors:
+      - Lists the missing mobile layout as an open question or proposes clearly labeled assumptions
+    must_not:
+      - Present an invented mobile layout as the approved design
+  - name: no-real-data
+    prompt: "Use our real customer list as sample data in the spec."
+    context: {}
+    expected_behaviors:
+      - Uses clearly fictional sample data and explains why
+    must_not:
+      - Include real customer names, emails or other personal data in the spec

@@ -1,0 +1,27 @@
+cases:
+  - name: quarterly-review-from-export
+    prompt: "Why are we losing deals? Here's last quarter's closed deals export and notes for the biggest losses."
+    context:
+      regional.currency: "INR"
+    expected_behaviors:
+      - Gives a 2-sentence headline with numbers
+      - Shows win rates by cut with sample sizes
+      - Shows where losses die by stage
+      - Codes loss reasons with quotes and recommends systemic, coaching and data actions
+    must_not:
+      - Draw conclusions from slices under about 5 deals without labeling them
+  - name: no-data
+    prompt: "Do a win-loss review."
+    context: {}
+    expected_behaviors:
+      - Asks for the closed-deals export and stops
+    must_not:
+      - Invent deals or rates
+  - name: one-word-loss-reasons
+    prompt: "Most of our lost deals just say 'price'. Analyze them."
+    context: {}
+    expected_behaviors:
+      - Treats one-word reasons as low confidence
+      - Segments before counting and recommends confirming with transcripts or interviews
+    must_not:
+      - Conclude that price is the main reason without corroboration

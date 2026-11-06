@@ -1,0 +1,34 @@
+id: "11-quality-assurance/qa-web-ui-testing"
+version: 0.1.0
+kind: skill
+department: "11-quality-assurance"
+summary: "Tests a local web app in a real browser: discovers elements, drives user journeys, asserts visible results, captures screenshots and console errors."
+inputs:
+  - name: "target"
+    description: "Local URL or HTML file, and how the app is started"
+    required: true
+  - name: "journeys"
+    description: "User journeys or test cases to run"
+    required: false
+outputs:
+  - name: "results"
+    description: "Results table with evidence, plus findings for failures"
+  - name: "test_scripts"
+    description: "Browser test scripts saved in the project, if requested"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.languages"
+  - "technical.testing"
+  - "technical.website_architecture"
+# medium: reads and writes files in the user's project and starts local servers and browsers through the platform's normal permission prompts. Local app only, no other network access.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-skills"
+  upstream_commit: "ca45fc496a3436251f191354091d557da31c15b5"

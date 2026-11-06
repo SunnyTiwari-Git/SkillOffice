@@ -1,0 +1,31 @@
+id: 05-sales-business-development/sls-call-summary
+version: 0.1.0
+kind: skill
+department: 05-sales-business-development
+summary: Turns a call transcript or notes into a summary, follow-up email draft, internal summary and a record update checklist.
+inputs:
+  - name: transcript_or_notes
+    description: The call transcript or the seller's notes
+    required: true
+  - name: deal_record
+    description: Attendee list and deal fields such as stage, amount and close date
+    required: false
+outputs:
+  - name: call_outputs
+    description: Summary, follow-up draft, internal summary, update checklist and commitments list
+depends_on: []
+context_needs:
+  - company.name
+  - brand.voice
+  - operations.processes
+  - regional.date_format
+  - regional.currency
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

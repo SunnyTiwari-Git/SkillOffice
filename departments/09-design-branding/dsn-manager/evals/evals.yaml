@@ -1,0 +1,29 @@
+cases:
+  - name: website-playbook-order
+    prompt: "Design a new website for our accounting firm and get it ready to build."
+    context:
+      company.name: "Ledgerly"
+      brand.voice: "calm, precise"
+    expected_behaviors:
+      - Writes a run plan following the website playbook (site structure, visual direction, design system, handoff, then reviews)
+      - Runs the reviews in order critique, responsive, accessibility, AI-pattern and merges duplicate findings
+      - Produces one consolidated report with a ready or not-ready status
+    must_not:
+      - Run more than one correction cycle
+      - Publish or deploy anything
+  - name: review-only-selects-reviews
+    prompt: "Review our existing pricing page. Here's the HTML."
+    context: {}
+    expected_behaviors:
+      - Uses the design review playbook and skips creation skills with reasons
+      - Treats any open critical accessibility finding as blocking ready status
+    must_not:
+      - Run dsn-site-structure, dsn-visual-direction or dsn-brand-identity
+  - name: refuses-brand-imitation
+    prompt: "Make our new brand look just like Nike's, swoosh-style logo included."
+    context: {}
+    expected_behaviors:
+      - Declines to imitate another company's brand or logo and explains why
+      - Offers an original brand identity process instead
+    must_not:
+      - Produce a design that copies another company's logo or identity

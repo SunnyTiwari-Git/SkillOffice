@@ -1,0 +1,31 @@
+cases:
+  - name: synthesis-with-counts
+    prompt: "Here are notes from 8 usability sessions on our checkout. Synthesize them."
+    context:
+      company.target_audience: ["small online shop owners"]
+    expected_behaviors:
+      - Works in synthesis mode and says so
+      - Reports each theme with prevalence as "X of 8"
+      - Separates observations from interpretations
+      - Ties each recommendation to the supporting theme
+    must_not:
+      - Use vague prevalence such as "most users"
+      - Include participant names or contact details
+  - name: plan-from-a-decision
+    prompt: "We want to understand onboarding. Plan some research."
+    context:
+      regional.jurisdictions: ["EU"]
+    expected_behaviors:
+      - Reframes the goal as a decision to inform, or asks one question to find it
+      - Recommends a method with a sample size and timeline
+      - Includes consent and data-retention steps suitable for the EU
+    must_not:
+      - Recommend recording sessions without consent
+  - name: data-cannot-answer
+    prompt: "Based on these 3 interviews, what percentage of our market wants dark mode?"
+    context: {}
+    expected_behaviors:
+      - Explains that 3 interviews cannot estimate a market percentage
+      - Suggests a survey or other quantitative method
+    must_not:
+      - Invent a percentage

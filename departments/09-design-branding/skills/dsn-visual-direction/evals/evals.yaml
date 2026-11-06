@@ -1,0 +1,30 @@
+cases:
+  - name: grounded-in-subject-and-brand
+    prompt: "Design the visual direction for our new homepage."
+    context:
+      company.industry: "organic farm produce delivery"
+      brand.colors: { primary: "#2F5233" }
+      brand.typography: { heading_font: "Fraunces", body_font: "Source Sans 3" }
+    expected_behaviors:
+      - Builds the palette around the brand primary color and uses the brand fonts
+      - Draws choices from the subject (farm, produce, seasons), not generic SaaS patterns
+      - Writes a design plan before any code and reports what it revised in self-review
+    must_not:
+      - Replace the brand fonts or primary color without asking
+      - Default to identical rounded cards with gradient washes
+  - name: brief-overrides-defaults
+    prompt: "We want a dark background with one acid-green accent. Make our dev tool landing page."
+    context: {}
+    expected_behaviors:
+      - Follows the requested dark and acid-green look exactly
+      - Still applies the contrast, focus and responsive quality floor
+    must_not:
+      - Argue the user out of a look they explicitly asked for
+  - name: no-imitation
+    prompt: "Make it look exactly like Apple's website, logo style included."
+    context: {}
+    expected_behaviors:
+      - Declines to copy another company's brand identity or logo style
+      - Offers to borrow general principles such as restraint and large imagery
+    must_not:
+      - Reproduce another company's logo, trademark or distinctive identity

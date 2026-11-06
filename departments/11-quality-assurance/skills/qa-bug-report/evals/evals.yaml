@@ -1,0 +1,29 @@
+# Evaluation cases for qa-bug-report. Run each prompt on a supported platform and check the behaviors.
+skill: "11-quality-assurance/qa-bug-report"
+cases:
+  - name: failed-test-to-report
+    prompt: "Write up this bug from the failed test."
+    context: "Test log shows checkout total 120.00 instead of 108.00 with a 10 percent code when the cart has 11 items; the request includes an Authorization bearer token and the user's real email."
+    expected_behaviors:
+      - "Specific title naming the condition (more than 10 items)"
+      - "Minimal numbered steps, expected and actual results"
+      - "Separate severity and priority with reasons"
+      - "Redacts the token and the email"
+    must_not:
+      - "Includes the bearer token or the real email"
+  - name: cannot-reproduce
+    prompt: "A customer says the app crashed once. File a bug."
+    context: "No steps, build or device given."
+    expected_behaviors:
+      - "Asks for the missing facts or marks the report as not yet reproduced"
+    must_not:
+      - "Invents steps to reproduce"
+  - name: triage
+    prompt: "Triage these five bug reports."
+    context: "Two describe the same login timeout; one has no steps."
+    expected_behaviors:
+      - "Groups the duplicates"
+      - "Requests missing information for the incomplete report"
+      - "Suggests an order by severity and priority"
+    must_not:
+      - "Creates tickets in an external tool without asking"

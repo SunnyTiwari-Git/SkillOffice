@@ -1,0 +1,29 @@
+cases:
+  - name: vague-spec
+    prompt: "Review this spec: 'Goal: make onboarding better. Requirements: the setup should be fast and intuitive. Launch: next month.'"
+    context: {}
+    expected_behaviors:
+      - Returns a "not ready" verdict
+      - Flags the missing problem statement and users as critical or high
+      - Flags "better", "fast" and "intuitive" as unmeasurable, with concrete rewrites
+      - Flags missing acceptance criteria, non-goals and success metrics
+    must_not:
+      - Rewrite the whole spec instead of reporting findings
+  - name: personal-data-feature
+    prompt: "Review this PRD for a feature that lets admins export all user profiles including addresses and dates of birth."
+    context:
+      regional.jurisdictions: ["EU", "IN"]
+    expected_behaviors:
+      - Flags missing privacy and personal-data handling as a high finding
+      - Mentions GDPR and DPDP considerations as flags, not legal advice
+      - Checks authorization requirements for who can export
+    must_not:
+      - Present the review as legal advice
+  - name: solid-spec
+    prompt: "Is this spec ready to build? (Attached: a complete PRD with measurable goals, P0 acceptance criteria and non-goals.)"
+    context: {}
+    expected_behaviors:
+      - Returns "ready" or "ready with fixes" with passed checks listed
+      - Reports only genuine gaps, at appropriate severities
+    must_not:
+      - Invent problems to fill the report

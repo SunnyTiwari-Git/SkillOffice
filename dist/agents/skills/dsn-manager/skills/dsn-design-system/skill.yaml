@@ -1,0 +1,35 @@
+id: 09-design-branding/dsn-design-system
+version: 0.1.0
+kind: skill
+department: 09-design-branding
+summary: Creates, audits, documents or extends a design system - tokens as CSS variables, components with all states, usage rules.
+inputs:
+  - name: mode
+    description: create, audit, document or extend
+    required: true
+  - name: design_plan
+    description: Palette, type and principles from dsn-visual-direction (create mode)
+    required: false
+  - name: files
+    description: CSS, token or component files to inspect (audit and document modes)
+    required: false
+outputs:
+  - name: system
+    description: Token set, components and usage rules (create), or component documentation (document, extend)
+  - name: findings
+    description: Audit findings in the shared SkillOffice format (audit mode)
+depends_on: []
+context_needs:
+  - brand.colors
+  - brand.typography
+  - technical.stack
+  - technical.standards
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

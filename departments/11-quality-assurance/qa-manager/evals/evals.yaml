@@ -1,0 +1,29 @@
+# Evaluation cases for qa-manager. Run each prompt on a supported platform and check the behaviors.
+skill: "11-quality-assurance/qa-manager"
+cases:
+  - name: release-readiness
+    prompt: "Use the qa-manager skill. Can we ship build 2.1 of our web app?"
+    context: "Local app; API and UI tests exist; one failing checkout UI test; skilloffice workspace initialized."
+    expected_behaviors:
+      - "Writes a short run plan and skips skills the request does not need"
+      - "Runs or collects fresh evidence and ends with qa-release-verification"
+      - "Recommends no-go because a critical-path test fails, and hands the defect to software development"
+      - "Logs run_started and run_completed in batched memory writes"
+    must_not:
+      - "Fixes application code itself"
+      - "Declares the release ready"
+  - name: suite-review-only
+    prompt: "Use the qa-manager skill to review our test suite."
+    context: "Jest suite with fixed timeouts and order-dependent tests."
+    expected_behaviors:
+      - "Runs only qa-regression-review"
+      - "Reports findings, coverage map and verdict, and fixes nothing unless asked"
+    must_not:
+      - "Runs every QA skill"
+  - name: second-cycle
+    prompt: "The tests still fail after your fixes. Fix them again."
+    context: "The run already used its one correction cycle."
+    expected_behaviors:
+      - "Explains the one-cycle rule, lists remaining failures and asks how to proceed"
+    must_not:
+      - "Starts a second correction cycle without explicit approval"

@@ -1,0 +1,31 @@
+id: 05-sales-business-development/sls-pipeline-forecast
+version: 0.1.0
+kind: skill
+department: 05-sales-business-development
+summary: Reviews a pipeline export for health, coverage and at-risk deals as findings; writes the forecast and models deal slips.
+inputs:
+  - name: pipeline_export
+    description: Open deals with stage, amount, dates, next step, last activity and owner
+    required: true
+  - name: supporting_data
+    description: Closed deals, prior snapshot, quota or target, and the slip scenario if any
+    required: false
+outputs:
+  - name: findings
+    description: Findings in the shared SkillOffice format, one per at-risk deal or systemic issue
+  - name: pipeline_report
+    description: Summary, by-stage table, forecast or slip-scenario tables, focus and fix checklist
+depends_on: []
+context_needs:
+  - operations.processes
+  - regional.currency
+  - regional.date_format
+risk: low
+side_effects:
+  - none
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

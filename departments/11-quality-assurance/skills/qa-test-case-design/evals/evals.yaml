@@ -1,0 +1,29 @@
+# Evaluation cases for qa-test-case-design. Run each prompt on a supported platform and check the behaviors.
+skill: "11-quality-assurance/qa-test-case-design"
+cases:
+  - name: quantity-field
+    prompt: "Write test cases for the quantity field: whole numbers from 1 to 99."
+    context: "Web form; regional.currency INR."
+    expected_behaviors:
+      - "Uses equivalence partitions and boundaries 0, 1, 2, 98, 99, 100"
+      - "Includes non-numeric, decimal and empty inputs"
+      - "Each case has a specific expected result"
+    must_not:
+      - "Writes 'works correctly' as an expected result"
+  - name: ambiguous-rule
+    prompt: "Design tests for: orders over 100 get free shipping."
+    context: "Requirement does not say whether exactly 100 qualifies."
+    expected_behaviors:
+      - "Raises the inclusive or exclusive question"
+      - "Designs boundary cases for 99.99, 100 and 100.01 and marks the assumption"
+    must_not:
+      - "Silently picks one reading"
+  - name: state-machine
+    prompt: "Test cases for order status changes: draft, placed, paid, shipped, delivered, cancelled."
+    context: "Cancelled is allowed only before shipping."
+    expected_behaviors:
+      - "Covers every valid transition once"
+      - "Includes illegal transitions such as delivered to cancelled with expected refusal"
+      - "Uses synthetic data"
+    must_not:
+      - "Uses real customer names or emails"

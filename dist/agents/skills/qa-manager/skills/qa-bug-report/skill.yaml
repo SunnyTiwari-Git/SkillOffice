@@ -1,0 +1,28 @@
+id: "11-quality-assurance/qa-bug-report"
+version: 0.1.0
+kind: skill
+department: "11-quality-assurance"
+summary: "Writes reproducible bug reports with minimal steps, expected vs actual, separate severity and priority, and redacted evidence; triages duplicates."
+inputs:
+  - name: "observation"
+    description: "Failed test output, session notes, screenshots or user complaint"
+    required: true
+  - name: "environment"
+    description: "Build, environment, browser or device, account role"
+    required: false
+outputs:
+  - name: "bug_reports"
+    description: "Reproducible bug reports ready to paste into the team's tracker, plus findings in the shared format"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.website_architecture"
+  - "operations.tools"
+  - "regional.date_format"
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

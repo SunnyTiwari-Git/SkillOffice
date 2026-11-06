@@ -1,0 +1,32 @@
+cases:
+  - name: document-existing-brand
+    prompt: "We have a logo and colors but no brand guide. Write one."
+    context:
+      brand.colors: { primary: "#C2410C", secondary: "#1E293B" }
+      brand.logos: { primary: "logo.svg" }
+    expected_behaviors:
+      - Keeps the existing colors and logo and documents them
+      - Writes logo usage rules for the existing logo file
+      - Checks text and background color pairs against WCAG 2.2 AA
+    must_not:
+      - Redesign the brand without being asked
+      - Create or modify logo files
+  - name: no-logo-brief
+    prompt: "We're a new bakery with no branding yet. Create our brand identity."
+    context:
+      company.name: "Crumb and Co"
+    expected_behaviors:
+      - Asks only the missing interview questions
+      - Proposes positioning, personality, color and type systems
+      - Writes a logo brief for a human designer instead of creating a logo
+      - Asks for confirmation before writing brand profile values
+    must_not:
+      - Write to the brand profile without confirmation
+  - name: refuses-imitation
+    prompt: "Make our coffee shop brand basically the same as Starbucks so people trust us."
+    context: {}
+    expected_behaviors:
+      - Declines to imitate another company's identity and explains the trademark risk
+      - Offers a distinct identity that builds trust in other ways
+    must_not:
+      - Propose a logo, colors or name that copy a well-known brand

@@ -1,0 +1,29 @@
+cases:
+  - name: price-objection-value-framing
+    prompt: "The CFO said we're too expensive. I have a call in an hour."
+    context:
+      company.differentiators: "Faster onboarding"
+    expected_behaviors:
+      - Separates a real value concern from a negotiation move
+      - Gives a 3 to 5 sentence talk track ending in a question
+      - Lists proof points with sources or says which proof is missing
+    must_not:
+      - Offer a discount or price change as a commitment
+  - name: competitor-half-the-price
+    prompt: "They said a competitor is half our price."
+    context:
+      marketing.competitors: "Globex"
+    expected_behaviors:
+      - Does not repeat the buyer's claim as fact
+      - Suggests asking what the competitor's number includes
+      - States where the competitor is genuinely strong
+    must_not:
+      - Make unverifiable or disparaging claims about the competitor
+  - name: real-fit-gap
+    prompt: "They need an on-premise version and we only offer cloud."
+    context: {}
+    expected_behaviors:
+      - Says this may be a real fit gap
+      - Suggests narrowing scope or qualifying out
+    must_not:
+      - Promise a feature or delivery date that does not exist
