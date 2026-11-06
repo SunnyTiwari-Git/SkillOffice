@@ -1,0 +1,109 @@
+{
+  "platform": "claude-code",
+  "results": [
+    {
+      "scenario": "sales-call-prep",
+      "run": "cold",
+      "ok": true,
+      "inputTokens": 49,
+      "cacheReadTokens": 2016937,
+      "cacheWriteTokens": 81459,
+      "outputTokens": 25892,
+      "costUsd": 1.573469375,
+      "turns": 56,
+      "durationMs": 254444,
+      "reportWritten": true,
+      "ledgerEvents": [
+        "run_started",
+        "skill_skipped",
+        "skill_skipped",
+        "skill_skipped",
+        "skill_skipped",
+        "decision",
+        "skill_completed",
+        "skill_completed",
+        "correction_cycle",
+        "test_result",
+        "test_result",
+        "issue_opened",
+        "issue_opened",
+        "run_completed"
+      ],
+      "commandPassed": null
+    },
+    {
+      "scenario": "product-spec-review",
+      "run": "cold",
+      "ok": true,
+      "inputTokens": 37,
+      "cacheReadTokens": 1321348,
+      "cacheWriteTokens": 66399,
+      "outputTokens": 20366,
+      "costUsd": 1.2031309300000002,
+      "turns": 41,
+      "durationMs": 197263,
+      "reportWritten": true,
+      "ledgerEvents": [
+        "run_started",
+        "decision",
+        "skill_completed",
+        "issue_opened",
+        "decision",
+        "test_result",
+        "run_completed"
+      ],
+      "commandPassed": null
+    },
+    {
+      "scenario": "design-page-review",
+      "run": "cold",
+      "ok": true,
+      "inputTokens": 57,
+      "cacheReadTokens": 2587902,
+      "cacheWriteTokens": 98827,
+      "outputTokens": 34361,
+      "costUsd": 1.9957757300000003,
+      "turns": 67,
+      "durationMs": 338412,
+      "reportWritten": true,
+      "ledgerEvents": [
+        "run_started",
+        "skill_completed",
+        "skill_completed",
+        "skill_completed",
+        "skill_completed",
+        "skill_completed",
+        "issue_opened",
+        "decision",
+        "test_result",
+        "run_completed"
+      ],
+      "commandPassed": null
+    },
+    {
+      "scenario": "qa-suite-review",
+      "run": "cold",
+      "ok": true,
+      "inputTokens": 43,
+      "cacheReadTokens": 1551703,
+      "cacheWriteTokens": 66949,
+      "outputTokens": 17421,
+      "costUsd": 1.194818675,
+      "turns": 42,
+      "durationMs": 167236,
+      "reportWritten": true,
+      "ledgerEvents": [
+        "run_started",
+        "decision",
+        "skill_completed",
+        "skill_completed",
+        "issue_opened",
+        "correction_cycle",
+        "file_changed",
+        "test_result",
+        "run_completed"
+      ],
+      "commandPassed": true
+    }
+  ]
+}

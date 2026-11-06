@@ -137,7 +137,9 @@ function main(): void {
   const { scenarios } = JSON.parse(readFileSync(path.join(WORKFLOWS, 'scenarios.json'), 'utf8')) as { scenarios: Scenario[] };
   const args = process.argv.slice(2);
   // --quick runs cold and warm only: enough to check that results are reused, not to measure savings.
+  // --cold-only runs one first run per scenario: enough to check that a department works end to end.
   const quick = args.includes('--quick');
+  const coldOnly = args.includes('--cold-only');
   const wanted = args.filter((arg) => !arg.startsWith('--'));
   const selected = wanted.length > 0 ? scenarios.filter((scenario) => wanted.includes(scenario.id)) : scenarios;
   const results: RunResult[] = [];
@@ -146,6 +148,12 @@ function main(): void {
     console.log(`\n${scenario.id}`);
     const cold = freshCopy(scenario.fixture);
     results.push(measure(cold, scenario, 'cold'));
+    if (coldOnly) {
+      const [result] = results.slice(-1);
+      console.log(`  project: ${cold}`);
+      console.log(`  cold            ${result?.ok ? 'ok ' : 'ERR'} cost=$${result?.costUsd.toFixed(4)} turns=${result?.turns} report=${result?.reportWritten} test=${result?.commandPassed ?? '-'}${result?.error ? ` ${result.error}` : ''}`);
+      continue;
+    }
     // Warm and its baseline start from the same post-cold project state.
     const baseline = mkdtempSync(path.join(tmpdir(), 'skilloffice-measure-'));
     cpSync(cold, baseline, { recursive: true });
@@ -161,7 +169,7 @@ function main(): void {
 
   const resultsDir = path.join(WORKFLOWS, 'results');
   mkdirSync(resultsDir, { recursive: true });
-  const file = path.join(resultsDir, `${new Date().toISOString().slice(0, 10)}-claude-code${quick ? '-quick' : ''}.json`);
+  const file = path.join(resultsDir, `${new Date().toISOString().slice(0, 10)}-claude-code${coldOnly ? '-cold' : quick ? '-quick' : ''}.json`);
   writeFileSync(file, `${JSON.stringify({ platform: 'claude-code', results }, null, 2)}\n`);
   console.log(`\nSaved ${path.relative(REPO_ROOT, file)}`);
 }
