@@ -1,0 +1,29 @@
+{
+  "name": "skilloffice",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Optional helper for SkillOffice: set up a workspace, validate and scan skills, track file fingerprints, cache results and keep shared memory.",
+  "license": "Apache-2.0",
+  "author": "SunnyTiwari-Git (https://github.com/SunnyTiwari-Git)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SunnyTiwari-Git/SkillOffice.git",
+    "directory": "tools/skilloffice-cli"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "skilloffice": "node src/cli.ts",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,16 @@
+# Operations profile. Do not put passwords, API keys or personal data here.
+
+tools:                    # Software in use, e.g. ["Slack", "Jira", "HubSpot", "Google Workspace"]
+  - ""
+
+team_structure: ""        # Short description of teams and roles (no personal details)
+
+processes:                # Named internal processes, one line each
+  - ""
+
+policies:                 # Policy names and where they live (path or URL)
+  - name: ""
+    location: ""
+
+sops:                     # Standard operating procedures (path or URL)
+  - ""

@@ -1,0 +1,166 @@
+# SkillOffice department registry.
+# status: pilot (being built first), planned (software-company departments, built in waves),
+#         active (released), later (after the software-company set).
+
+departments:
+  - slug: 00-shared-productivity
+    number: 0
+    name: Shared Productivity
+    status: planned
+    wave: Wave 1
+    scope: Meeting notes, document drafting, research, translation, email writing used by every department
+    boundaries: General-purpose helpers only; department-specific work belongs to that department
+
+  - slug: 01-executive-strategy
+    number: 1
+    name: Executive Management and Strategy
+    status: planned
+    wave: Wave 3
+    scope: Strategy, OKRs, board reporting, investor relations, M&A support
+    boundaries: Financial modeling details go to Finance; legal review goes to Legal
+
+  - slug: 02-hr-people-ops
+    number: 2
+    name: Human Resources and People Operations
+    status: planned
+    wave: Wave 2
+    scope: Recruiting, onboarding, policies, performance, learning and development, internal comms
+    boundaries: Employment law questions go to Legal; payroll calculations go to Finance
+
+  - slug: 03-finance-accounting
+    number: 3
+    name: Finance and Accounting
+    status: planned
+    wave: Wave 2
+    scope: Bookkeeping, FP&A, invoicing, tax preparation support, payroll support
+    boundaries: Purchasing and vendor selection go to Procurement
+
+  - slug: 04-legal-risk-compliance
+    number: 4
+    name: Legal, Risk and Compliance
+    status: planned
+    wave: Wave 3
+    scope: Contracts, privacy (GDPR, DPDP, CCPA), policy, enterprise risk, ESG reporting
+    boundaries: Security controls go to Cybersecurity; this department covers legal and regulatory meaning
+
+  - slug: 05-sales-business-development
+    number: 5
+    name: Sales and Business Development
+    status: planned
+    wave: Wave 2
+    scope: Prospecting, proposals, CRM hygiene, partnerships
+    boundaries: Campaigns and content go to Marketing; post-sale accounts go to Customer Success
+
+  - slug: 06-marketing-content-pr
+    number: 6
+    name: Marketing, Content and PR
+    status: pilot
+    wave: Pilot
+    scope: Brand marketing, SEO and GEO, content, social, email, PR, events
+    boundaries: Visual design production goes to Design; online store operations go to E-commerce (later)
+
+  - slug: 07-customer-support-success
+    number: 7
+    name: Customer Support and Customer Success
+    status: planned
+    wave: Wave 2
+    scope: Ticket triage, knowledge base, onboarding, health scores, churn reviews
+    boundaries: Bugs go to Software Development; contract changes go to Sales or Legal
+
+  - slug: 08-product-management
+    number: 8
+    name: Product Management and Research
+    status: planned
+    wave: Wave 1
+    scope: PRDs, roadmaps, user research, prioritization
+    boundaries: Interface design goes to Design; implementation goes to Software Development
+
+  - slug: 09-design-branding
+    number: 9
+    name: UI/UX, Graphic Design and Branding
+    status: planned
+    wave: Wave 1
+    scope: UX, UI, design systems, brand identity, accessibility
+    boundaries: Front-end code goes to Software Development; campaign strategy goes to Marketing
+
+  - slug: 10-software-development
+    number: 10
+    name: Software Development and Engineering
+    status: pilot
+    wave: Pilot
+    scope: Web, mobile, backend, code review, architecture
+    boundaries: Test strategy goes to QA; infrastructure and deployment go to DevOps; security audits go to Cybersecurity
+
+  - slug: 11-quality-assurance
+    number: 11
+    name: Quality Assurance and Testing
+    status: planned
+    wave: Wave 1
+    scope: Test plans, automation, regression, performance testing (software)
+    boundaries: Manufacturing quality control belongs to Supply Chain (later)
+
+  - slug: 12-it-operations
+    number: 12
+    name: IT Operations and Technical Support
+    status: planned
+    wave: Wave 3
+    scope: Help desk, device and SaaS administration, access requests (internal IT)
+    boundaries: Product infrastructure goes to DevOps
+
+  - slug: 13-devops-sre
+    number: 13
+    name: Cloud Infrastructure, DevOps and SRE
+    status: planned
+    wave: Wave 1
+    scope: CI/CD, infrastructure as code, monitoring, incident response (product infrastructure)
+    boundaries: Employee devices and SaaS admin go to IT Operations
+
+  - slug: 14-cybersecurity
+    number: 14
+    name: Cybersecurity
+    status: planned
+    wave: Wave 2
+    scope: Security review, threat modeling, vulnerability management, security policies
+    boundaries: Regulatory interpretation goes to Legal
+
+  - slug: 15-data-analytics-ai
+    number: 15
+    name: Data, Analytics and AI
+    status: planned
+    wave: Wave 3
+    scope: BI dashboards, SQL, data quality, ML and LLM integration
+    boundaries: Application code around models goes to Software Development
+
+  - slug: 16-operations-project-management
+    number: 16
+    name: Business Operations and Project Management
+    status: planned
+    wave: Wave 3
+    scope: Project plans, SOPs, process improvement, facilities, administration
+    boundaries: Vendor sourcing goes to Procurement
+
+  - slug: 17-procurement-vendor-management
+    number: 17
+    name: Procurement and Vendor Management
+    status: planned
+    wave: Wave 3
+    scope: Sourcing, RFPs, vendor reviews, contract renewals
+    boundaries: Contract legal review goes to Legal; payments go to Finance
+
+  - slug: 18-ecommerce-retail
+    number: 18
+    name: E-commerce and Retail Operations
+    status: later
+    wave: After the software-company set
+    scope: Product listings, marketplaces, merchandising, store operations, returns
+    boundaries: Campaigns go to Marketing; logistics go to Supply Chain
+
+  - slug: 19-supply-chain-logistics
+    number: 19
+    name: Supply Chain, Logistics and Manufacturing
+    status: later
+    wave: After the software-company set
+    scope: Inventory, demand planning, warehousing, shipping, production, quality control
+    boundaries: Supplier contracts go to Procurement and Legal
+
+# Industry packs (later): healthcare-admin, education, hospitality, professional-services, real-estate, logistics, manufacturing

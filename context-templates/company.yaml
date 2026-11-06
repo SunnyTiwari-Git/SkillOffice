@@ -1,0 +1,21 @@
+# Company profile. Fill in only what applies. Leave unknown fields empty.
+# Skills read only the fields they declare in their skill.yaml context_needs.
+
+name: ""                  # Legal or trading name, e.g. "Acme Studio"
+industry: ""              # e.g. "software development", "e-commerce", "healthcare administration"
+business_model: ""        # e.g. "B2B services", "SaaS subscription", "D2C retail"
+size: ""                  # e.g. "1-10", "11-50", "51-200", "200+"
+website: ""               # Public website URL
+description: ""           # 2-3 sentences: what the company does and for whom
+
+products_and_services:    # One line each
+  - ""
+
+target_audience:          # Who buys or uses the products
+  - ""
+
+markets:                  # Countries or regions served, e.g. ["IN", "US"]
+  - ""
+
+differentiators:          # Why customers choose you, one line each
+  - ""

@@ -1,0 +1,23 @@
+# TEMPLATE: copy to departments/<slug>/manager/skill.yaml and replace placeholders.
+id: "{{department_slug}}/manager"
+version: 0.1.0
+kind: manager
+department: "{{department_slug}}"
+summary: "Coordinates {{department_name}} skills: plans, runs, merges findings, one fix cycle, one report"
+inputs:
+  - name: request
+    description: The user's request or the Front Desk handoff
+    required: true
+outputs:
+  - name: report
+    description: Consolidated report saved to .skilloffice/reports/<runId>.md
+depends_on: []
+context_needs: []
+risk: low
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

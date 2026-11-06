@@ -1,0 +1,13 @@
+{
+  "name": "skilloffice-repo",
+  "private": true,
+  "description": "Convenience scripts for working on the SkillOffice repository. The helper tool lives in tools/skilloffice-cli.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "setup": "npm --prefix tools/skilloffice-cli ci --ignore-scripts",
+    "test": "npm --prefix tools/skilloffice-cli test && npm --prefix tools/skilloffice-cli run typecheck",
+    "validate": "node tools/skilloffice-cli/src/cli.ts validate",
+    "scan": "node tools/skilloffice-cli/src/cli.ts scan",
+    "check": "npm test && npm run validate && npm run scan"
+  }
+}

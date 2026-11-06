@@ -1,0 +1,19 @@
+# Every released SkillOffice skill.
+#
+# Example entry:
+#
+# - id: 06-marketing-content-pr/copy-review
+#   version: 0.1.0
+#   department: 06-marketing-content-pr
+#   status: draft              # draft | released | deprecated
+#   risk: low
+#   provenance: original       # original | adapted
+#   platforms_tested:
+#     - platform: claude-code
+#       date: 2026-11-06
+#       result: pass
+#     - platform: antigravity
+#       date: 2026-11-06
+#       result: pass
+
+skills: []

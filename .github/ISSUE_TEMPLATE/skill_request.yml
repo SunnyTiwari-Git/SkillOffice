@@ -1,0 +1,23 @@
+name: Skill request
+description: Suggest a new skill or department workflow.
+labels: [skill-request]
+body:
+  - type: input
+    id: department
+    attributes:
+      label: Department
+      description: For example Sales, Marketing, Finance or Software Development.
+    validations:
+      required: true
+  - type: textarea
+    id: job
+    attributes:
+      label: What job should the skill do?
+      description: Describe the task, the expected input and the expected output.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Existing open-source skill (optional)
+      description: Link to an existing skill we could review. It will go through the security and license intake before any use.

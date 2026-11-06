@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SunnyTiwari-Git/SkillOffice/core/schemas/config.schema.json",
+  "title": ".skilloffice/config.yaml",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "activeProfile",
+    "platforms",
+    "departments",
+    "memory",
+    "privacy"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "activeProfile": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "departments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "memory": {
+      "type": "object",
+      "required": [
+        "retentionDays"
+      ],
+      "properties": {
+        "retentionDays": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "required": [
+        "commitContext"
+      ],
+      "properties": {
+        "commitContext": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+# Brand profile. Put logo and image files in the brand-assets/ folder next to this file.
+
+voice: ""                 # e.g. "friendly, plain-spoken, confident; no jargon"
+tone_dos:                 # Phrases or habits to use
+  - ""
+tone_donts:               # Phrases or habits to avoid
+  - ""
+
+colors:                   # Hex values
+  primary: ""             # e.g. "#1A73E8"
+  secondary: ""
+  accent: ""
+  background: ""
+  text: ""
+
+typography:
+  heading_font: ""        # e.g. "Inter"
+  body_font: ""
+
+logos:                    # Paths relative to brand-assets/
+  primary: ""             # e.g. "logo.svg"
+  icon: ""
+  dark_background: ""
+
+guidelines_document: ""   # Path or URL to a full brand guide, if one exists

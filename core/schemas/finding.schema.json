@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SunnyTiwari-Git/SkillOffice/core/schemas/finding.schema.json",
+  "title": "A review finding",
+  "type": "object",
+  "required": [
+    "id",
+    "severity",
+    "title",
+    "location",
+    "evidence",
+    "recommendation",
+    "source_skill",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "critical",
+        "high",
+        "medium",
+        "low",
+        "info"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "string"
+    },
+    "recommendation": {
+      "type": "string"
+    },
+    "source_skill": {
+      "type": "string"
+    },
+    "duplicate_of": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "open",
+        "fixed",
+        "accepted",
+        "wont_fix"
+      ]
+    }
+  }
+}

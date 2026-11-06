@@ -1,0 +1,18 @@
+# Technical profile. Never put credentials, tokens or connection strings here.
+
+stack:                    # e.g. ["Next.js", "Node.js", "MongoDB", "React Native"]
+  - ""
+
+languages:                # e.g. ["TypeScript", "Python"]
+  - ""
+
+website_architecture: ""  # Short description, e.g. "Next.js App Router, SSR, Vercel"
+
+hosting: ""               # e.g. "AWS", "Vercel", "on-premises"
+
+standards:                # Coding standards or links to them
+  - ""
+
+deployment_process: ""    # e.g. "PR review, CI tests, deploy from main"
+
+testing: ""               # e.g. "Jest unit tests, Playwright end-to-end"

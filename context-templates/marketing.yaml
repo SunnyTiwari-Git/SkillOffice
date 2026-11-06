@@ -1,0 +1,18 @@
+# Marketing profile.
+
+ideal_customers:          # Short persona descriptions
+  - ""
+
+channels:                 # Channels in use, e.g. ["SEO", "LinkedIn", "email", "Google Ads"]
+  - ""
+
+campaign_preferences: ""  # e.g. "educational content over discounts"
+
+competitors:              # Name and website, one per line
+  - name: ""
+    website: ""
+
+content_guidelines: ""    # Rules for content, e.g. "cite sources; no fear-based claims"
+
+keywords:                 # Priority search terms
+  - ""

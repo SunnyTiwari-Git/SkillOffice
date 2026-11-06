@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SunnyTiwari-Git/SkillOffice/core/schemas/state.schema.json",
+  "title": ".skilloffice/memory/state.json",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "activeProfile",
+    "currentRun",
+    "openTasks",
+    "decisions",
+    "openIssues"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "activeProfile": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "currentRun": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "manager",
+            "request",
+            "startedAt",
+            "plan",
+            "correctionCyclesUsed",
+            "maxCorrectionCycles"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "manager": {
+              "type": "string"
+            },
+            "request": {
+              "type": "string"
+            },
+            "startedAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "plan": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "skill",
+                  "status"
+                ],
+                "properties": {
+                  "skill": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "enum": [
+                      "pending",
+                      "running",
+                      "done",
+                      "skipped",
+                      "failed"
+                    ]
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "correctionCyclesUsed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "maxCorrectionCycles": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      ]
+    },
+    "openTasks": {
+      "type": "array"
+    },
+    "decisions": {
+      "type": "array"
+    },
+    "openIssues": {
+      "type": "array"
+    }
+  }
+}

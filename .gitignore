@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Generated platform packages (built by CI, never edited by hand)
+dist/
+
+# Local SkillOffice workspace (private company context and memory)
+.skilloffice/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and coverage
+*.log
+coverage/

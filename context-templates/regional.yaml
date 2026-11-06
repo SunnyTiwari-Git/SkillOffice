@@ -1,0 +1,9 @@
+# Regional settings. Skills that output money, dates, units or legal statements read this file.
+
+currency: ""              # ISO code, e.g. "INR" or "USD"
+date_format: ""           # e.g. "DD MMM YYYY" (India) or "MM/DD/YYYY" (US)
+units: ""                 # "metric" or "imperial"
+output_language: ""       # e.g. "en-IN", "en-US"
+time_zone: ""             # e.g. "Asia/Kolkata", "America/Los_Angeles"
+jurisdictions:            # Where legal and compliance rules apply, e.g. ["IN"], ["US-CA"], ["EU"]
+  - ""

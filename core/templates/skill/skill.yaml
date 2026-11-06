@@ -1,0 +1,30 @@
+# TEMPLATE: copy to departments/<slug>/skills/<skill-name>/skill.yaml and replace placeholders.
+id: "{{department_slug}}/{{skill_name}}"
+version: 0.1.0
+kind: skill
+department: "{{department_slug}}"
+summary: "{{one_line_summary_max_160_chars}}"
+inputs:
+  - name: "{{input_name}}"
+    description: "{{input_description}}"
+    required: true
+outputs:
+  - name: "{{output_name}}"
+    description: "{{output_description}}"
+depends_on: []
+# Dot paths into the active context profile, for example company.name, brand.voice, regional.currency
+context_needs: []
+# low: instructions only. medium: reads or writes local files. high: scripts, network, credentials or external actions.
+risk: low
+# Any of: none, reads_files, writes_files, runs_scripts, network, external_actions
+side_effects:
+  - none
+cacheable: true
+# Filled in by testing, for example: { platform: claude-code, date: 2026-11-06, result: pass }
+platforms_tested: []
+provenance:
+  type: original
+  # For adapted skills:
+  # type: adapted
+  # source_id: <id from registry/sources.yaml>
+  # upstream_commit: <full commit sha>

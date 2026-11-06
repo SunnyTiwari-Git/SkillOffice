@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SunnyTiwari-Git/SkillOffice/core/schemas/ledger-event.schema.json",
+  "title": "One line of .skilloffice/memory/ledger.jsonl",
+  "type": "object",
+  "required": [
+    "ts",
+    "runId",
+    "actor",
+    "type",
+    "summary",
+    "data"
+  ],
+  "properties": {
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "runId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "enum": [
+        "run_started",
+        "skill_completed",
+        "skill_skipped",
+        "decision",
+        "file_changed",
+        "test_result",
+        "issue_opened",
+        "issue_resolved",
+        "correction_cycle",
+        "run_completed",
+        "note"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data": {
+      "type": "object"
+    }
+  }
+}

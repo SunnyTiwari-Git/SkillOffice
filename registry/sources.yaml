@@ -1,0 +1,14 @@
+# Every upstream repository SkillOffice adapts skills from.
+# A source is added only after its security review is complete (see registry/security-reviews/).
+#
+# Example entry:
+#
+# - id: anthropic-knowledge-work-plugins
+#   url: https://github.com/anthropics/knowledge-work-plugins
+#   owner: Anthropic
+#   license: Apache-2.0
+#   pinned_commit: <full 40-character commit sha>
+#   reviewed_at: 2026-11-06
+#   notes: MCP connector files (.mcp.json) are not imported
+
+sources: []
