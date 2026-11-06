@@ -39,6 +39,8 @@ Read alongside: [memory.md](memory.md), [context.md](context.md), [token-budget.
 
 ### 4. Execute the skills
 
+Keep memory writes few: collect the events from this stage and write them in one batch when the stage ends (see "Writing rules" in [memory.md](memory.md)). Every separate write is an extra conversation step, and extra steps are the largest token cost.
+
 For each skill in plan order:
 
 1. Set its status to `running`.

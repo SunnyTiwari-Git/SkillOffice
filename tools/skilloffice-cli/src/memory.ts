@@ -111,30 +111,83 @@ function applyToState(state: MemoryState, event: LedgerEvent, request: LogReques
   }
 }
 
-/** Appends one event to the ledger (redacted) and updates state.json, under the memory lock. */
-export async function logEvent(root: string, request: LogRequest): Promise<LedgerEvent> {
+function assertRequest(request: LogRequest, position: string): void {
   assertEventType(request.type);
-  if (request.actor.trim() === '' || request.summary.trim() === '') {
-    throw new UserFacingError('actor and summary are required.');
+  if (typeof request.actor !== 'string' || request.actor.trim() === '' || typeof request.summary !== 'string' || request.summary.trim() === '') {
+    throw new UserFacingError(`${position}actor and summary are required.`);
   }
+}
+
+/**
+ * Appends events to the ledger (redacted) and updates state.json under one lock.
+ * All events are checked before anything is written: one invalid event writes nothing.
+ */
+export async function logEvents(root: string, requests: readonly LogRequest[]): Promise<LedgerEvent[]> {
+  if (requests.length === 0) throw new UserFacingError('No events to log.');
+  requests.forEach((request, index) => assertRequest(request, requests.length > 1 ? `Event ${index + 1}: ` : ''));
   const paths = requireWorkspace(root);
   return withMemoryLock(paths, () => {
-    const state = readState(paths);
-    const type = request.type as LedgerEventType;
-    const runId = request.runId ?? (type === 'run_started' ? randomUUID() : state.currentRun?.id ?? null);
-    const event: LedgerEvent = {
-      ts: new Date().toISOString(),
-      runId,
-      actor: request.actor,
-      type,
-      summary: redact(request.summary),
-      data: redactValue(request.data ?? {}),
-    };
-    const nextState = applyToState(state, event, request);
-    appendFileSync(paths.ledger, `${JSON.stringify(event)}\n`);
-    writeJsonAtomic(paths.state, nextState);
-    return event;
+    let state = readState(paths);
+    const events: LedgerEvent[] = [];
+    requests.forEach((request, index) => {
+      const type = request.type as LedgerEventType;
+      const event: LedgerEvent = {
+        ts: new Date().toISOString(),
+        runId: request.runId ?? (type === 'run_started' ? randomUUID() : state.currentRun?.id ?? null),
+        actor: request.actor,
+        type,
+        summary: redact(request.summary),
+        data: redactValue(request.data ?? {}),
+      };
+      try {
+        state = applyToState(state, event, request);
+      } catch (error) {
+        if (requests.length > 1 && error instanceof UserFacingError) {
+          error.message = `Event ${index + 1}: ${error.message} Nothing from this batch was written.`;
+        }
+        throw error;
+      }
+      events.push(event);
+    });
+    appendFileSync(paths.ledger, events.map((event) => `${JSON.stringify(event)}\n`).join(''));
+    writeJsonAtomic(paths.state, state);
+    return events;
   });
+}
+
+export async function logEvent(root: string, request: LogRequest): Promise<LedgerEvent> {
+  const [event] = await logEvents(root, [request]);
+  return event as LedgerEvent;
+}
+
+/** Parses JSON Lines input for a batch: one event object per non-empty line. */
+export function parseBatch(text: string): LogRequest[] {
+  return text
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line !== '')
+    .map((line, index) => {
+      let value: unknown;
+      try {
+        value = JSON.parse(line);
+      } catch (error) {
+        throw new UserFacingError(`Batch line ${index + 1} is not valid JSON (${(error as Error).message}).`);
+      }
+      if (value === null || typeof value !== 'object' || Array.isArray(value)) {
+        throw new UserFacingError(`Batch line ${index + 1} must be a JSON object.`);
+      }
+      const item = value as Record<string, unknown>;
+      return {
+        type: String(item['type'] ?? ''),
+        actor: String(item['actor'] ?? ''),
+        summary: String(item['summary'] ?? ''),
+        runId: typeof item['runId'] === 'string' ? item['runId'] : undefined,
+        data: item['data'] !== null && typeof item['data'] === 'object' && !Array.isArray(item['data'])
+          ? (item['data'] as Record<string, unknown>)
+          : undefined,
+        // Approving an extra correction cycle needs the explicit --human-approved flag, never a batch line.
+      };
+    });
 }
 
 export function readLedger(paths: WorkspacePaths): LedgerEvent[] {

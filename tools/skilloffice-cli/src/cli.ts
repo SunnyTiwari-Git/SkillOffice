@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 import { buildPackages } from './build.ts';
@@ -6,10 +7,11 @@ import { cacheGet, cachePut } from './cache.ts';
 import { writeCatalog } from './catalog.ts';
 import { readContextFields } from './context.ts';
 import { UserFacingError } from './errors.ts';
+import { collectEvidence, formatEvidence } from './evidence.ts';
 import { fileStatus, verifyFile } from './fingerprint.ts';
 import { formatFindings, isBlocking, type Finding } from './findings.ts';
 import { initWorkspace } from './init.ts';
-import { forget, logEvent } from './memory.ts';
+import { forget, logEvent, logEvents, parseBatch } from './memory.ts';
 import { scanPaths } from './scan.ts';
 import { validatePaths } from './validate.ts';
 
@@ -33,7 +35,9 @@ Workspace (run inside your project, or pass --root):
                                        Reuse a result while inputs and requirements are unchanged
   log <type> --actor skill --summary s [--run id] [--data json] [--human-approved]
                                        Append to the memory ledger (redacted)
+  log --batch <file|->                 Append several events at once (JSON Lines; all or nothing)
   forget --all | --older-than <days>   Delete memory (context is kept)
+  evidence [dir]                       Platform test results from the files a run left behind
 
 Skill library:
   validate [paths...]                  Check skills against the Agent Skills spec and skill.yaml rules
@@ -97,6 +101,7 @@ async function run(argv: string[]): Promise<number> {
       all: { type: 'boolean' },
       'older-than': { type: 'string' },
       layout: { type: 'string' },
+      batch: { type: 'string' },
     },
   });
   const flags = values as Flags;
@@ -155,8 +160,16 @@ async function run(argv: string[]): Promise<number> {
       throw new UserFacingError('Use "cache get" or "cache put".');
     }
     case 'log': {
+      const batch = flags['batch'];
+      if (typeof batch === 'string') {
+        const input = batch === '-' ? readFileSync(0, 'utf8') : readFileSync(path.resolve(root, batch), 'utf8');
+        const events = await logEvents(root, parseBatch(input));
+        const runId = events.at(-1)?.runId;
+        print(events, asJson, () => `Logged ${events.length} events${runId ? ` (run ${runId})` : ''}`);
+        return EXIT_OK;
+      }
       const type = args[0];
-      if (!type) throw new UserFacingError('Name the event type, for example skill_completed.');
+      if (!type) throw new UserFacingError('Name the event type, for example skill_completed, or use --batch.');
       const event = await logEvent(root, {
         type,
         actor: text(flags, 'actor'),
@@ -190,6 +203,11 @@ async function run(argv: string[]): Promise<number> {
       if (!target) throw new UserFacingError('Name the department folder.');
       const catalog = writeCatalog(path.resolve(root, target));
       print(catalog, asJson, () => `Wrote catalog.yaml with ${catalog.skills.length} skill(s).`);
+      return EXIT_OK;
+    }
+    case 'evidence': {
+      const report = collectEvidence(path.resolve(root, args[0] ?? '.'));
+      print(report, asJson, () => formatEvidence(report));
       return EXIT_OK;
     }
     case 'build': {

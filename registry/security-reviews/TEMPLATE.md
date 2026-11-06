@@ -38,6 +38,7 @@
 - [ ] Every script read; scripts removed unless essential: {{list kept and why}}
 - [ ] MCP or connector files (.mcp.json and similar) removed, or kept and labeled high risk
 - [ ] Network access: {{none / describe}}
+- [ ] Indirect sources: credits, "adapted from" notes or links to other projects inside the skill and its references checked. Each one's license verified, recorded in `registry/sources.yaml` and `NOTICE`, and its license text added to `PROVENANCE.md`: {{none / list}}
 - [ ] File-system access: {{none / describe}}
 - [ ] External dependencies: {{none / list with pinned versions}}
 

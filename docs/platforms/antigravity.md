@@ -28,4 +28,4 @@ Antigravity runs inside Google's tools, so these tests are run by hand. It takes
    - Did it avoid publishing or sending anything?
 4. Run the same prompt a second time without changing files. Did it say it reused earlier results?
 5. Repeat steps 1 to 4 with `tests/workflows/fixtures/dev-bugfix/` and the `dev-bugfix` prompt. Also check that `node --test` passes afterwards.
-6. Record the results in `tests/platforms/antigravity.md` (a template is there), or send them to your AI assistant to record.
+6. Fill in the results from evidence, not from the assistant's summary. From the SkillOffice folder, run `node tools/skilloffice-cli/src/cli.ts evidence <test folder>` for each test folder. It prints the results table from the files the run left behind. Copy it into `tests/platforms/antigravity.md`, and check "did not publish or send anything" by hand.

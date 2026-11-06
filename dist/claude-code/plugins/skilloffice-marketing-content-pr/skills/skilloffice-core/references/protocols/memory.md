@@ -67,6 +67,16 @@ Paths are relative to the project root.
 2. Write your change.
 3. Delete the lock.
 4. With the helper: `skilloffice log <type> --actor <id> --summary "<text>" [--data '<json>']` handles locking and redaction for ledger lines. `skilloffice verify-file <path> --summary "<text>" --by <id>` updates `files.json`.
+5. Record events in batches, not one command per event. Every extra step re-sends the whole conversation, so batching saves more tokens than almost anything else. Write events at milestones only: after planning, after the skills run, after the correction cycle, and at the end. With the helper, send them in one command:
+
+   ```bash
+   skilloffice log --batch - <<'EOF'
+   {"type":"skill_completed","actor":"06-marketing-content-pr/mkt-seo-audit","summary":"4 findings"}
+   {"type":"skill_skipped","actor":"06-marketing-content-pr/mkt-copywriting","summary":"Not requested"}
+   EOF
+   ```
+
+   Each line is one event with `type`, `actor`, `summary` and optional `data`. The batch is applied in order under one lock. If any event is invalid, nothing from the batch is written.
 
 ## Redaction: what never goes into memory
 
