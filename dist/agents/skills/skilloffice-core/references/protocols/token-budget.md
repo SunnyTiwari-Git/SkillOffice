@@ -13,11 +13,13 @@ Save tokens without ever trading away correctness or security.
 Before reading a file:
 
 1. Look it up in `.skilloffice/memory/files.json`.
-2. Compute its current sha256 (helper: `skilloffice status <path>`; otherwise read it).
+2. Compute its current sha256, using the first option available:
+   - the helper: `skilloffice status <path>`;
+   - a built-in hashing command, which only reads the file and changes nothing: `shasum -a 256 <path>` (macOS), `sha256sum <path>` (Linux) or `Get-FileHash -Algorithm SHA256 <path>` (Windows PowerShell). These are safe to run; if the platform asks for permission, ask once and explain that it lets future runs skip unchanged files.
 3. If the fingerprint matches and the stored summary answers your question, use the summary. Do not reread the file.
-4. If it changed, or the summary is not enough, read it. After reviewing it, record the new fingerprint and summary (helper: `skilloffice verify-file <path> --summary "<text>" --by <skill-id>`).
+4. If it changed, or the summary is not enough, read it. After reviewing it, record the new fingerprint and summary (helper: `skilloffice verify-file <path> --summary "<text>" --by <skill-id>`; otherwise add the entry to `files.json` by hand with the hash from step 2).
 
-Without the helper you cannot compute fingerprints reliably. In that case use the summary only to decide what to read, and read any file you are about to judge.
+If no hashing option is available, you cannot compare fingerprints. Use the summary only to decide what to read, read any file you are about to judge, and say in the report that results could not be reused.
 
 ## 3. Reusing cached results
 

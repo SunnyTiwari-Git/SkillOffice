@@ -49,6 +49,17 @@ interface RunResult {
 const WORKFLOWS = path.join(REPO_ROOT, 'tests', 'workflows');
 const MAX_TURNS = '60';
 
+/** Puts a `skilloffice` command on PATH, the way an installed helper would be. */
+function helperBinDir(): string {
+  const bin = mkdtempSync(path.join(tmpdir(), 'skilloffice-bin-'));
+  const cli = path.join(REPO_ROOT, 'tools', 'skilloffice-cli', 'src', 'cli.ts');
+  writeFileSync(path.join(bin, 'skilloffice'), `#!/bin/sh\nexec node "${cli}" "$@"\n`, { mode: 0o755 });
+  return bin;
+}
+
+const HELPER_BIN = helperBinDir();
+const HELPER_TOOLS = ['Bash(skilloffice *)', 'Bash(shasum -a 256 *)', 'Bash(sha256sum *)'];
+
 function runClaude(project: string, scenario: Scenario): Record<string, unknown> {
   const plugin = path.join(REPO_ROOT, 'dist', 'claude-code', 'plugins', scenario.plugin);
   if (!existsSync(plugin)) throw new Error(`Plugin not built: ${plugin}. Run "npm run build" first.`);
@@ -59,11 +70,17 @@ function runClaude(project: string, scenario: Scenario): Record<string, unknown>
       '--output-format', 'json',
       '--plugin-dir', plugin,
       '--permission-mode', 'acceptEdits',
-      '--allowedTools', scenario.allowedTools.join(','),
+      '--allowedTools', [...scenario.allowedTools, ...HELPER_TOOLS].join(','),
       '--max-turns', MAX_TURNS,
       '--no-session-persistence',
     ],
-    { cwd: project, encoding: 'utf8', timeout: 20 * 60_000, maxBuffer: 64 * 1024 * 1024 },
+    {
+      cwd: project,
+      encoding: 'utf8',
+      timeout: 20 * 60_000,
+      maxBuffer: 64 * 1024 * 1024,
+      env: { ...process.env, PATH: `${HELPER_BIN}${path.delimiter}${process.env['PATH'] ?? ''}` },
+    },
   );
   if (result.error) throw result.error;
   try {

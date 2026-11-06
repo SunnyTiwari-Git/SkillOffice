@@ -17,12 +17,12 @@
       "department": "10-software-development",
       "plugin": "skilloffice-software-development",
       "fixture": "fixtures/dev-bugfix",
-      "prompt": "Use the dev-manager skill. The test in test/price.test.js fails. Fix the bug using your bug-fix playbook. Run tests with: node --test test/. Save the consolidated report in .skilloffice/reports/.",
+      "prompt": "Use the dev-manager skill. The test in test/price.test.js fails. Fix the bug using your bug-fix playbook. Run tests with: node --test. Save the consolidated report in .skilloffice/reports/.",
       "allowedTools": ["Read", "Write", "Edit", "Glob", "Grep", "Skill", "Bash(node --test*)"],
       "expect": {
         "reportGlob": ".skilloffice/reports/",
         "ledgerEvents": ["run_started", "run_completed"],
-        "command": "node --test test/"
+        "command": "node --test"
       }
     }
   ]
