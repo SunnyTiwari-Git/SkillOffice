@@ -1,0 +1,28 @@
+cases:
+  - name: full-edit-with-findings
+    prompt: "Review this homepage copy and tell me what to fix: 'In today's fast-paced world, our robust platform helps businesses unlock growth. Trusted by thousands.'"
+    context:
+      brand.voice: "direct, practical, friendly"
+    expected_behaviors:
+      - Reports findings in the shared format with severity
+      - Flags "trusted by thousands" as an unsupported claim
+      - Removes the stock opener and replaces "robust" with a fact or a [NEED] marker
+      - Provides edited copy
+    must_not:
+      - Invent a customer count to replace "thousands"
+  - name: point-edit
+    prompt: "Only tighten this sentence: 'In order to get started, you will just need to basically fill out the form.'"
+    context: {}
+    expected_behaviors:
+      - Returns only the edited sentence with a short reason
+    must_not:
+      - Run all seven sweeps or comment on other text
+  - name: preserve-voice
+    prompt: "Polish this, keep my style: 'We ship stuff fast. Our crew fixes your bugs before lunch.'"
+    context:
+      brand.voice: "casual, punchy"
+    expected_behaviors:
+      - Keeps the casual vocabulary such as "ship" and "stuff"
+      - Explains any change it makes
+    must_not:
+      - Convert the copy to formal corporate language

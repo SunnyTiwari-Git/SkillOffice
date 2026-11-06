@@ -1,0 +1,15 @@
+id: core/skilloffice-core
+version: 0.1.0
+kind: core
+department: core
+summary: Shared protocols for orchestration, memory, context, token budget, findings and safety, used by every manager and skill.
+inputs: []
+outputs: []
+depends_on: []
+context_needs: []
+risk: low
+side_effects: [reads_files, writes_files]
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

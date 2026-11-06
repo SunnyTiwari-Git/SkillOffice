@@ -1,0 +1,36 @@
+id: "10-software-development/dev-implementation-plan"
+version: 0.1.0
+kind: skill
+department: "10-software-development"
+summary: "Writes a test-first, task-by-task implementation plan from an approved design, then executes it with a progress record and recorded rulings."
+inputs:
+  - name: "design"
+    description: "Approved design or spec"
+    required: true
+  - name: "plan"
+    description: "An existing plan to execute"
+    required: false
+outputs:
+  - name: "plan_document"
+    description: "Implementation plan with tasks, interfaces and test steps"
+  - name: "progress_record"
+    description: "Per-task completion and rulings"
+depends_on: 
+  - "10-software-development/dev-test-driven-development"
+  - "10-software-development/dev-systematic-debugging"
+context_needs:
+  - "technical.stack"
+  - "technical.testing"
+  - "technical.standards"
+  - "technical.deployment_process"
+# medium: reads and writes files in the user's project; commands run through the platform's normal permission prompts.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "obra-superpowers"
+  upstream_commit: "22f0b463e7a5e579904dd6211a520321035526f7"

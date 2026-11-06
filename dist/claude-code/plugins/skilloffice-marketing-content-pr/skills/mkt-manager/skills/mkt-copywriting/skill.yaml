@@ -1,0 +1,39 @@
+id: 06-marketing-content-pr/mkt-copywriting
+version: 0.1.0
+kind: skill
+department: 06-marketing-content-pr
+summary: Writes or rewrites page copy, headlines and CTAs in the brand voice, with supportable claims and no generic AI-sounding phrasing.
+inputs:
+  - name: brief_or_copy
+    description: A brief, or existing copy to rewrite or point-edit
+    required: true
+  - name: primary_action
+    description: The one action the reader should take
+    required: true
+  - name: proof_points
+    description: Numbers, testimonials or case studies the copy may use
+    required: false
+outputs:
+  - name: copy
+    description: Page copy by section with annotations and alternatives, or changed lines for a point edit
+depends_on: []
+context_needs:
+  - company.name
+  - company.description
+  - company.products_and_services
+  - company.differentiators
+  - brand.voice
+  - brand.tone_dos
+  - brand.tone_donts
+  - marketing.ideal_customers
+  - regional.output_language
+  - regional.currency
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: coreyhaines31-marketingskills
+  upstream_commit: 88c79f6528a9347420e57ceb1fff9a60de651768

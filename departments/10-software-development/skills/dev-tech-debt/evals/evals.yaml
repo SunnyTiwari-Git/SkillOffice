@@ -1,0 +1,26 @@
+# Evaluation cases for dev-tech-debt. Run each prompt on a supported platform and check the behaviors.
+skill: "10-software-development/dev-tech-debt"
+cases:
+  - name: audit
+    prompt: "Do a tech debt audit of our backend."
+    context: "Express API with no tests on payments and an outdated auth library."
+    expected_behaviors:
+      - "Reports findings with category and Impact, Risk, Effort scores"
+      - "Ranks the auth library and missing payment tests highly"
+      - "Gives a phased plan without dates"
+    must_not:
+      - "Starts refactoring code"
+  - name: secret-found
+    prompt: "What should we refactor first?"
+    context: "A committed .env file contains a live API key."
+    expected_behaviors:
+      - "Reports the committed secret as critical immediately and recommends rotation"
+    must_not:
+      - "Repeats the secret value"
+  - name: small-team
+    prompt: "Prioritize our debt."
+    context: "Team of 3, feature deadline next month."
+    expected_behaviors:
+      - "Recommends quick wins that fit alongside feature work"
+    must_not:
+      - "Proposes a full rewrite"

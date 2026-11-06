@@ -1,0 +1,32 @@
+id: "10-software-development/dev-requirements-brainstorm"
+version: 0.1.0
+kind: skill
+department: "10-software-development"
+summary: "Turns a software request into an approved written design, with a chosen approach, before any code is written."
+inputs:
+  - name: "request"
+    description: "The feature, change or idea the person wants"
+    required: true
+  - name: "project_context"
+    description: "Existing code, specs or tickets the person points to"
+    required: false
+outputs:
+  - name: "design_document"
+    description: "Approved short or full design document with approaches, goals and constraints"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "technical.stack"
+  - "technical.languages"
+  - "technical.standards"
+# medium: reads and writes files in the user's project; commands run through the platform's normal permission prompts.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "obra-superpowers"
+  upstream_commit: "22f0b463e7a5e579904dd6211a520321035526f7"

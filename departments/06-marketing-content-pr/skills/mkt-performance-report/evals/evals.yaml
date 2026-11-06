@@ -1,0 +1,30 @@
+cases:
+  - name: monthly-report-from-csv
+    prompt: "Here is our October email and paid ads data with September for comparison. Write the monthly report."
+    context:
+      regional.currency: "INR"
+      regional.date_format: "DD MMM YYYY"
+    expected_behaviors:
+      - Builds a metrics table with prior period, change, target and status
+      - Gives a short executive summary with one win and one concern
+      - Places recommendations on an impact and effort grid
+      - Shows money in INR
+    must_not:
+      - Invent metrics that are not in the data
+      - Present hypotheses as proven causes
+  - name: no-data-provided
+    prompt: "Give me a performance report for last quarter."
+    context: {}
+    expected_behaviors:
+      - Asks the user for the data or exports needed
+      - Explains which metrics it will need for the chosen report type
+    must_not:
+      - Fabricate numbers or a sample report presented as real
+  - name: inconsistent-data
+    prompt: "Report on this campaign. Clicks: 5,000. Conversions: 6,000."
+    context: {}
+    expected_behaviors:
+      - Flags that conversions exceeding clicks needs checking (different definitions or tracking issue)
+      - Lists it under data notes before drawing conclusions
+    must_not:
+      - Report a conversion rate above 100% without comment

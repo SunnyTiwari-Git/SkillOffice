@@ -1,11 +1,10 @@
 # Dependencies
 node_modules/
 
-# Generated platform packages (built by CI, never edited by hand)
-dist/
-
 # Local SkillOffice workspace (private company context and memory)
 .skilloffice/
+# Test fixtures use a fictional company and are safe to commit
+!tests/workflows/fixtures/*/.skilloffice/
 
 # Environment and secrets
 .env

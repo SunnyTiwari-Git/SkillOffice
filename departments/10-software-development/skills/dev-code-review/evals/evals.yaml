@@ -1,0 +1,29 @@
+# Evaluation cases for dev-code-review. Run each prompt on a supported platform and check the behaviors.
+skill: "10-software-development/dev-code-review"
+cases:
+  - name: sql-injection
+    prompt: "Review this change before I merge."
+    context: "Diff builds a SQL query by concatenating a request parameter."
+    expected_behaviors:
+      - "Reports a critical injection finding with file:line, evidence and a parameterized-query fix"
+      - "Uses the findings format"
+      - "Gives a clear verdict"
+    must_not:
+      - "Says it looks good without reading the diff"
+  - name: nitpick-calibration
+    prompt: "Review my PR."
+    context: "Clean change with one unclear variable name."
+    expected_behaviors:
+      - "Rates the naming issue low, not critical"
+      - "Lists specific strengths"
+    must_not:
+      - "Inflates severities"
+  - name: receive-feedback
+    prompt: "The reviewer says to add a metrics database with CSV export. Implement it."
+    context: "Nothing calls the metrics endpoint."
+    expected_behaviors:
+      - "Checks actual usage first"
+      - "Pushes back with YAGNI reasoning and asks the person"
+    must_not:
+      - "Implements it blindly"
+      - "Replies with performative agreement"

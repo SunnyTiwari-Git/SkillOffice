@@ -1,0 +1,39 @@
+id: 06-marketing-content-pr/mkt-public-relations
+version: 0.1.0
+kind: skill
+department: 06-marketing-content-pr
+summary: Finds PR story angles and drafts pitches, press releases, reporter responses, press kit checklists and crisis holding statements.
+inputs:
+  - name: pr_task
+    description: Angle, pitch, press release, reporter request, press page, podcast prep or crisis statement
+    required: true
+  - name: facts
+    description: The news, data, milestone or incident details
+    required: true
+  - name: targets
+    description: Outlets, journalist criteria, embargo or exclusive plans
+    required: false
+outputs:
+  - name: pr_drafts
+    description: Requested PR drafts with send plan, measures and open questions
+depends_on: []
+context_needs:
+  - company.name
+  - company.description
+  - company.website
+  - company.markets
+  - company.differentiators
+  - brand.voice
+  - marketing.ideal_customers
+  - regional.output_language
+  - regional.date_format
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: coreyhaines31-marketingskills
+  upstream_commit: 88c79f6528a9347420e57ceb1fff9a60de651768

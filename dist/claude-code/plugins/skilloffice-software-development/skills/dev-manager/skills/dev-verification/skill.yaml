@@ -1,0 +1,30 @@
+id: "10-software-development/dev-verification"
+version: 0.1.0
+kind: skill
+department: "10-software-development"
+summary: "Runs fresh checks (tests, lint, build, requirements checklist) and reports actual results before any claim that work is done."
+inputs:
+  - name: "claim"
+    description: "What is about to be claimed as done or fixed"
+    required: true
+  - name: "requirements"
+    description: "Plan or spec to check against"
+    required: false
+outputs:
+  - name: "verification_report"
+    description: "Table of checks, commands and actual results"
+depends_on: []
+context_needs:
+  - "technical.testing"
+  - "technical.stack"
+# medium: reads and writes files in the user's project; commands run through the platform's normal permission prompts.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "obra-superpowers"
+  upstream_commit: "22f0b463e7a5e579904dd6211a520321035526f7"

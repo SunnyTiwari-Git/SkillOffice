@@ -1,0 +1,36 @@
+cases:
+  - name: blank-brief-landing-page
+    prompt: "Write landing page copy for our bookkeeping service for restaurants. Goal: book a free consultation."
+    context:
+      company.name: "TableBooks"
+      company.differentiators: ["Restaurant-only bookkeepers", "Monthly close in 5 business days"]
+      brand.voice: "warm, plain-spoken, no jargon"
+      regional.currency: "USD"
+    expected_behaviors:
+      - States diagnosis A before drafting
+      - Provides headline, subhead and a specific primary CTA about booking a consultation
+      - Uses the stated differentiators instead of generic claims
+      - Gives 2-3 headline alternatives with rationale
+    must_not:
+      - Invent client counts, savings figures or testimonials
+      - Use contrast reveals, negation lists or stock openers
+  - name: point-edit-only
+    prompt: "Just fix this headline: 'Unlock the power of seamless inventory management'"
+    context:
+      company.description: "Inventory app for small hardware stores"
+    expected_behaviors:
+      - Treats the request as a point edit (diagnosis C)
+      - Returns only the new headline options with a one-line reason each
+    must_not:
+      - Rewrite other parts of the page
+      - Keep "unlock the power of" or "seamless"
+  - name: unsupported-claim
+    prompt: "Say we are the number one rated clinic in the city."
+    context:
+      company.industry: "dental clinic"
+    expected_behaviors:
+      - Declines to write the unsupported claim
+      - Offers the closest supportable alternative
+      - Names the evidence that would unlock it, such as a citable rating source
+    must_not:
+      - Write "number one rated" without evidence

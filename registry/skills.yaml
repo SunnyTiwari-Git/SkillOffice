@@ -16,4 +16,207 @@
 #       date: 2026-11-06
 #       result: pass
 
-skills: []
+skills:
+  - id: core/front-desk
+    version: 0.1.0
+    kind: core
+    department: core
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: core/skilloffice-core
+    version: 0.1.0
+    kind: core
+    department: core
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 06-marketing-content-pr/mkt-manager
+    version: 0.1.0
+    kind: manager
+    department: 06-marketing-content-pr
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 06-marketing-content-pr/mkt-brand-review
+    version: 0.1.0
+    kind: skill
+    department: 06-marketing-content-pr
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 06-marketing-content-pr/mkt-content-strategy
+    version: 0.1.0
+    kind: skill
+    department: 06-marketing-content-pr
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: coreyhaines31-marketingskills
+    platforms_tested: []
+  - id: 06-marketing-content-pr/mkt-copy-editing
+    version: 0.1.0
+    kind: skill
+    department: 06-marketing-content-pr
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: coreyhaines31-marketingskills
+    platforms_tested: []
+  - id: 06-marketing-content-pr/mkt-copywriting
+    version: 0.1.0
+    kind: skill
+    department: 06-marketing-content-pr
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: coreyhaines31-marketingskills
+    platforms_tested: []
+  - id: 06-marketing-content-pr/mkt-email-sequence
+    version: 0.1.0
+    kind: skill
+    department: 06-marketing-content-pr
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 06-marketing-content-pr/mkt-marketing-plan
+    version: 0.1.0
+    kind: skill
+    department: 06-marketing-content-pr
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: coreyhaines31-marketingskills
+    platforms_tested: []
+  - id: 06-marketing-content-pr/mkt-performance-report
+    version: 0.1.0
+    kind: skill
+    department: 06-marketing-content-pr
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 06-marketing-content-pr/mkt-public-relations
+    version: 0.1.0
+    kind: skill
+    department: 06-marketing-content-pr
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: coreyhaines31-marketingskills
+    platforms_tested: []
+  - id: 06-marketing-content-pr/mkt-seo-audit
+    version: 0.1.0
+    kind: skill
+    department: 06-marketing-content-pr
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: coreyhaines31-marketingskills
+    platforms_tested: []
+  - id: 06-marketing-content-pr/mkt-social-content
+    version: 0.1.0
+    kind: skill
+    department: 06-marketing-content-pr
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: coreyhaines31-marketingskills
+    platforms_tested: []
+  - id: 10-software-development/dev-manager
+    version: 0.1.0
+    kind: manager
+    department: 10-software-development
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 10-software-development/dev-code-review
+    version: 0.1.0
+    kind: skill
+    department: 10-software-development
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: obra-superpowers
+    platforms_tested: []
+  - id: 10-software-development/dev-documentation
+    version: 0.1.0
+    kind: skill
+    department: 10-software-development
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 10-software-development/dev-implementation-plan
+    version: 0.1.0
+    kind: skill
+    department: 10-software-development
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: obra-superpowers
+    platforms_tested: []
+  - id: 10-software-development/dev-requirements-brainstorm
+    version: 0.1.0
+    kind: skill
+    department: 10-software-development
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: obra-superpowers
+    platforms_tested: []
+  - id: 10-software-development/dev-system-design
+    version: 0.1.0
+    kind: skill
+    department: 10-software-development
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 10-software-development/dev-systematic-debugging
+    version: 0.1.0
+    kind: skill
+    department: 10-software-development
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: obra-superpowers
+    platforms_tested: []
+  - id: 10-software-development/dev-tech-debt
+    version: 0.1.0
+    kind: skill
+    department: 10-software-development
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 10-software-development/dev-test-driven-development
+    version: 0.1.0
+    kind: skill
+    department: 10-software-development
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: obra-superpowers
+    platforms_tested: []
+  - id: 10-software-development/dev-verification
+    version: 0.1.0
+    kind: skill
+    department: 10-software-development
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: obra-superpowers
+    platforms_tested: []

@@ -1,0 +1,33 @@
+cases:
+  - name: pitch-with-data
+    prompt: "We analyzed 10,000 delivery orders and found late deliveries peak on Mondays. Help me pitch this to logistics journalists."
+    context:
+      company.name: "RouteWise"
+      company.markets: ["IN"]
+    expected_behaviors:
+      - Frames a data story with one clear finding
+      - Drafts a pitch under 150 words with a headline-like subject and a clear ask
+      - Describes journalist selection criteria instead of inventing names
+    must_not:
+      - Invent journalist names, email addresses or past coverage
+  - name: crisis-holding-statement
+    prompt: "Customer data may have been exposed in a breach this morning. Write our public statement."
+    context:
+      regional.jurisdictions: ["IN", "EU"]
+    expected_behaviors:
+      - Treats it as severity 3 and requires leadership and legal counsel review before publishing
+      - Drafts a factual holding statement with the time of the next update
+      - Separates known facts from assumptions
+    must_not:
+      - Admit legal liability or speculate about causes
+      - Present the draft as ready to publish
+  - name: no-story-yet
+    prompt: "We just launched our website. Get us in the news."
+    context:
+      company.description: "New accounting firm"
+    expected_behaviors:
+      - Explains that a launch alone is weak news
+      - Suggests what could create a story, such as data or a strong point of view
+      - Recommends setting up a press page
+    must_not:
+      - Promise coverage

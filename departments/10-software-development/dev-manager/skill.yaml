@@ -1,0 +1,35 @@
+id: "10-software-development/dev-manager"
+version: 0.1.0
+kind: manager
+department: "10-software-development"
+summary: "Coordinates the Software Development department: plans skills, runs them in order, merges findings, one correction cycle, one report."
+inputs:
+  - name: "request"
+    description: "The user's software development request"
+    required: true
+outputs:
+  - name: "report"
+    description: "Consolidated report using the SkillOffice report template"
+depends_on:
+  - "10-software-development/dev-requirements-brainstorm"
+  - "10-software-development/dev-system-design"
+  - "10-software-development/dev-implementation-plan"
+  - "10-software-development/dev-test-driven-development"
+  - "10-software-development/dev-systematic-debugging"
+  - "10-software-development/dev-code-review"
+  - "10-software-development/dev-documentation"
+  - "10-software-development/dev-tech-debt"
+  - "10-software-development/dev-verification"
+context_needs:
+  - "company.name"
+  - "technical.stack"
+  - "technical.standards"
+# medium: coordinates skills that read and write files in the user's project.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

@@ -1,0 +1,21 @@
+id: core/front-desk
+version: 0.1.0
+kind: core
+department: core
+summary: Routes a request to the right department manager, or two in order
+inputs:
+  - name: request
+    description: The user's request in their own words
+    required: true
+outputs:
+  - name: routing
+    description: Chosen department or departments, order, and a short handoff
+depends_on: []
+context_needs: []
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

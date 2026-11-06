@@ -1,0 +1,27 @@
+id: "10-software-development/dev-test-driven-development"
+version: 0.1.0
+kind: skill
+department: "10-software-development"
+summary: "Enforces red-green-refactor: write a failing test, watch it fail, write minimal code, run the whole suite, then refactor."
+inputs:
+  - name: "behavior"
+    description: "The feature, bug or change to implement"
+    required: true
+outputs:
+  - name: "tests_and_code"
+    description: "Tests seen failing then passing, and the minimal implementation"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.testing"
+# medium: reads and writes files in the user's project; commands run through the platform's normal permission prompts.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "obra-superpowers"
+  upstream_commit: "22f0b463e7a5e579904dd6211a520321035526f7"

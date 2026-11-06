@@ -1,0 +1,31 @@
+# Evaluation cases for dev-implementation-plan. Run each prompt on a supported platform and check the behaviors.
+skill: "10-software-development/dev-implementation-plan"
+cases:
+  - name: write-plan
+    prompt: "Write the implementation plan for the approved CSV export design."
+    context: "Design doc exists at docs/specs/2026-11-06-csv-export-design.md."
+    expected_behaviors:
+      - "Maps files before tasks"
+      - "Each task has Files, Interfaces and red-green steps with exact test commands"
+      - "Includes a review focus section"
+      - "Asks the person to review before executing"
+    must_not:
+      - "Writes full function bodies for every step"
+      - "Starts coding before the plan is reviewed"
+  - name: resume
+    prompt: "Continue executing the plan."
+    context: "Progress record shows tasks 1 and 2 complete."
+    expected_behaviors:
+      - "Reads the progress record and resumes at task 3"
+      - "Does not redo tasks 1 and 2"
+    must_not:
+      - "Re-implements completed tasks"
+  - name: plan-wrong
+    prompt: "Execute task 4."
+    context: "Task 4 consumes a function name that task 2 defined differently."
+    expected_behaviors:
+      - "Makes the smallest change that satisfies the spec"
+      - "Records a Ruling line with the cost if wrong"
+      - "Continues without stopping to ask"
+    must_not:
+      - "Silently deviates without recording a ruling"

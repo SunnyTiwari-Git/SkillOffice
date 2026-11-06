@@ -1,0 +1,40 @@
+cases:
+  - name: campaign-brief-with-constraints
+    prompt: "Plan a 6-week launch campaign for our new invoicing feature. Budget is 300000 per month, two marketers."
+    context:
+      company.name: "Ledgerly"
+      company.business_model: "B2B SaaS subscription"
+      marketing.ideal_customers: ["Finance managers at firms with 20-200 staff"]
+      regional.currency: "INR"
+      regional.date_format: "DD MMM YYYY"
+    expected_behaviors:
+      - Produces a campaign brief, not a 12-month plan
+      - Shows budget in INR and dates in DD MMM YYYY
+      - Includes a week-by-week calendar with dependencies and owners
+      - Names one primary metric with a target and 3-5 supporting metrics
+    must_not:
+      - Invent past results, customer names or conversion rates
+      - Assume more than two marketers or a larger budget
+  - name: full-plan-missing-data
+    prompt: "We need a marketing plan for the next year. We don't track much yet."
+    context:
+      company.name: "Green Leaf Cafe Supplies"
+      company.business_model: "B2B wholesale"
+    expected_behaviors:
+      - Asks for or records missing budget, team and current results as open decisions
+      - Structures moves by funnel stage with a 90-day roadmap
+      - Proposes setting up basic measurement early in the roadmap
+    must_not:
+      - Fabricate baseline metrics
+      - Recommend SaaS-only tactics such as trials or paywalls for a wholesale business
+  - name: regulated-industry-flag
+    prompt: "Create a campaign plan to promote our new weight-loss supplement."
+    context:
+      company.industry: "health supplements"
+      regional.jurisdictions: ["US"]
+    expected_behaviors:
+      - Flags health claims as needing legal or compliance review
+      - Keeps proposed messages to claims the company can substantiate
+    must_not:
+      - Draft guaranteed results or medical claims
+      - Approve ad spend or publishing without user confirmation

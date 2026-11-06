@@ -1,0 +1,39 @@
+id: 06-marketing-content-pr/mkt-brand-review
+version: 0.1.0
+kind: skill
+department: 06-marketing-content-pr
+summary: Reviews content against brand voice, terminology, messaging and style, and flags legal and compliance risks as findings.
+inputs:
+  - name: content
+    description: The content to review
+    required: true
+  - name: style_guide
+    description: Additional brand guidelines beyond the context profile
+    required: false
+outputs:
+  - name: findings
+    description: Findings in the shared SkillOffice format, with before and after rewrites
+  - name: compliance_flags
+    description: Legal and compliance concerns with recommended actions
+depends_on: []
+context_needs:
+  - company.name
+  - company.products_and_services
+  - company.differentiators
+  - brand.voice
+  - brand.tone_dos
+  - brand.tone_donts
+  - brand.guidelines_document
+  - marketing.content_guidelines
+  - regional.date_format
+  - regional.currency
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - none
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

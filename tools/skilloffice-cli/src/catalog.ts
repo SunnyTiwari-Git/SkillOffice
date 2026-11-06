@@ -14,7 +14,6 @@ export interface CatalogEntry {
 
 export interface Catalog {
   department: string;
-  generated_at: string;
   skills: CatalogEntry[];
 }
 
@@ -31,7 +30,7 @@ export function buildCatalog(departmentDir: string): Catalog {
       risk: String(data['risk']),
     }))
     .sort((a, b) => a.id.localeCompare(b.id));
-  return { department: path.basename(path.resolve(departmentDir)), generated_at: new Date().toISOString(), skills };
+  return { department: path.basename(path.resolve(departmentDir)), skills };
 }
 
 export function writeCatalog(departmentDir: string): Catalog {

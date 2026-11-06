@@ -1,0 +1,30 @@
+# Evaluation cases for dev-requirements-brainstorm. Run each prompt on a supported platform and check the behaviors.
+skill: "10-software-development/dev-requirements-brainstorm"
+cases:
+  - name: clear-small-task
+    prompt: "Make the primary button on the settings page blue."
+    context: "Existing web app with a settings page."
+    expected_behaviors:
+      - "Recognizes the request is complete and does it without a brainstorm"
+      - "States what was changed"
+    must_not:
+      - "Asks a list of questions about the button"
+  - name: vague-feature
+    prompt: "Add a loyalty program to our app."
+    context: "Retail mobile app, no spec."
+    expected_behaviors:
+      - "Asks one open question about why they want it and what success looks like"
+      - "Does not write code before a design is approved"
+      - "Later lays out 2 to 3 approaches with a recommendation"
+    must_not:
+      - "Offers a menu of features before understanding the goal"
+      - "Starts scaffolding code"
+  - name: spec-given
+    prompt: "Here is our spec for CSV export of invoices. Build it."
+    context: "Spec file provided with columns and filters."
+    expected_behaviors:
+      - "Reads the spec and the related code first"
+      - "Echoes the request back in about 200 words and flags any conflict found"
+      - "Gets the design approved before implementation"
+    must_not:
+      - "Reopens decisions already made in the spec"

@@ -1,0 +1,34 @@
+id: 06-marketing-content-pr/mkt-copy-editing
+version: 0.1.0
+kind: skill
+department: 06-marketing-content-pr
+summary: Reviews existing copy in seven focused sweeps plus an AI-pattern check and returns findings with edited copy.
+inputs:
+  - name: copy
+    description: The existing copy to edit
+    required: true
+  - name: goal
+    description: What the copy is for and the action the reader should take
+    required: false
+outputs:
+  - name: findings
+    description: Findings in the shared SkillOffice format
+  - name: edited_copy
+    description: Copy with edits applied, or changed lines for a point edit
+depends_on: []
+context_needs:
+  - brand.voice
+  - brand.tone_dos
+  - brand.tone_donts
+  - marketing.ideal_customers
+  - marketing.content_guidelines
+  - regional.output_language
+risk: low
+side_effects:
+  - none
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: coreyhaines31-marketingskills
+  upstream_commit: 88c79f6528a9347420e57ceb1fff9a60de651768

@@ -1,0 +1,37 @@
+id: 06-marketing-content-pr/mkt-social-content
+version: 0.1.0
+kind: skill
+department: 06-marketing-content-pr
+summary: Plans and drafts social posts, carousels, short-video scripts and repurposed content with a calendar and review routine.
+inputs:
+  - name: goal_and_platforms
+    description: Social goal and the platforms to cover
+    required: true
+  - name: source_content
+    description: Long content to repurpose, or topics to post about
+    required: false
+outputs:
+  - name: social_content
+    description: Strategy, post drafts, scripts or a weekly calendar, depending on the request
+depends_on: []
+context_needs:
+  - company.name
+  - company.description
+  - company.differentiators
+  - brand.voice
+  - brand.tone_dos
+  - brand.tone_donts
+  - marketing.ideal_customers
+  - marketing.channels
+  - marketing.content_guidelines
+  - regional.output_language
+  - regional.time_zone
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: coreyhaines31-marketingskills
+  upstream_commit: 88c79f6528a9347420e57ceb1fff9a60de651768

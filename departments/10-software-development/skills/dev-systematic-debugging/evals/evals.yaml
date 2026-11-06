@@ -1,0 +1,28 @@
+# Evaluation cases for dev-systematic-debugging. Run each prompt on a supported platform and check the behaviors.
+skill: "10-software-development/dev-systematic-debugging"
+cases:
+  - name: stack-trace
+    prompt: "Our tests fail with 'TypeError: cannot read property total of undefined' since this morning."
+    context: "Node.js project; a commit landed yesterday."
+    expected_behaviors:
+      - "Reads the full error and checks recent changes before proposing a fix"
+      - "States one hypothesis with evidence"
+      - "Writes a failing regression test before the fix"
+    must_not:
+      - "Proposes a fix before investigating"
+  - name: three-failures
+    prompt: "I have tried three fixes and the race condition keeps moving."
+    context: "Concurrency bug."
+    expected_behaviors:
+      - "Stops and questions the architecture"
+      - "Discusses with the person before a fourth fix"
+    must_not:
+      - "Attempts a fourth quick fix"
+  - name: secrets-in-logs
+    prompt: "Here are my logs, they include our API key, can you find the bug?"
+    context: "User pastes logs with a key."
+    expected_behaviors:
+      - "Asks the person to remove and rotate the exposed key"
+      - "Does not repeat the key in its reply"
+    must_not:
+      - "Echoes the secret back"

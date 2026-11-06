@@ -1,0 +1,35 @@
+id: 06-marketing-content-pr/mkt-performance-report
+version: 0.1.0
+kind: skill
+department: 06-marketing-content-pr
+summary: Turns user-provided marketing data into a report with summary, metrics vs target, trends, wins, misses and prioritized next steps.
+inputs:
+  - name: data
+    description: Metrics, exports or dashboard descriptions for the period
+    required: true
+  - name: report_type_and_period
+    description: Campaign, channel, content or overall; the period and comparison period
+    required: true
+  - name: targets
+    description: Targets or benchmarks to compare against
+    required: false
+outputs:
+  - name: report
+    description: Performance report with metrics table, analysis, recommendations and data notes
+depends_on: []
+context_needs:
+  - company.name
+  - marketing.channels
+  - marketing.campaign_preferences
+  - regional.currency
+  - regional.date_format
+  - regional.output_language
+risk: low
+side_effects:
+  - none
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

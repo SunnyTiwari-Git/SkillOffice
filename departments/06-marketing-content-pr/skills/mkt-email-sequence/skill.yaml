@@ -1,0 +1,38 @@
+id: 06-marketing-content-pr/mkt-email-sequence
+version: 0.1.0
+kind: skill
+department: 06-marketing-content-pr
+summary: Designs automated email sequences with full copy, timing, branching, exit rules, flow diagram, tests and metrics.
+inputs:
+  - name: sequence_type_and_goal
+    description: Sequence type and the conversion it should drive
+    required: true
+  - name: audience_and_trigger
+    description: Who enters the sequence and what event starts it
+    required: true
+  - name: assets
+    description: Offers, links and content the emails can use
+    required: false
+outputs:
+  - name: sequence
+    description: Overview, full email drafts, flow diagram, logic rules, tests, metrics and compliance notes
+depends_on: []
+context_needs:
+  - company.name
+  - company.products_and_services
+  - company.differentiators
+  - brand.voice
+  - brand.tone_donts
+  - marketing.ideal_customers
+  - regional.output_language
+  - regional.time_zone
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

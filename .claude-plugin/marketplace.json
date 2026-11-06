@@ -1,0 +1,33 @@
+{
+  "name": "skilloffice",
+  "owner": {
+    "name": "SunnyTiwari-Git"
+  },
+  "metadata": {
+    "description": "Department-based AI skills for businesses.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "skilloffice-front-desk",
+      "source": "./dist/claude-code/plugins/skilloffice-front-desk",
+      "description": "Routes a request to the right SkillOffice department.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skilloffice-marketing-content-pr",
+      "source": "./dist/claude-code/plugins/skilloffice-marketing-content-pr",
+      "description": "SkillOffice Marketing, Content and PR: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skilloffice-software-development",
+      "source": "./dist/claude-code/plugins/skilloffice-software-development",
+      "description": "SkillOffice Software Development and Engineering: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    }
+  ]
+}

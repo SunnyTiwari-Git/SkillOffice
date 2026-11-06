@@ -8,6 +8,7 @@
     "test": "npm --prefix tools/skilloffice-cli test && npm --prefix tools/skilloffice-cli run typecheck",
     "validate": "node tools/skilloffice-cli/src/cli.ts validate",
     "scan": "node tools/skilloffice-cli/src/cli.ts scan",
+    "build": "node tools/skilloffice-cli/src/cli.ts build",
     "check": "npm test && npm run validate && npm run scan"
   }
 }

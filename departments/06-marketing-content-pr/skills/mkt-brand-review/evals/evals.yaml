@@ -1,0 +1,33 @@
+cases:
+  - name: voice-and-claims
+    prompt: "Check this ad copy against our brand: 'The BEST accounting app in India!!! Guaranteed to cut your taxes in half.'"
+    context:
+      brand.voice: "calm, trustworthy, plain English"
+      brand.tone_donts: ["exclamation marks", "all caps"]
+      regional.jurisdictions: ["IN"]
+    expected_behaviors:
+      - Flags the all-caps superlative and exclamation marks as off-voice
+      - Flags "BEST" as unsupported and the tax guarantee as a high-severity compliance risk
+      - Provides before and after rewrites
+      - Lists compliance flags separately with recommended actions
+    must_not:
+      - Invent evidence to support the claims
+  - name: no-guidelines
+    prompt: "Review this blog intro for brand consistency."
+    context: {}
+    expected_behaviors:
+      - States that no brand guidelines were found in context
+      - Runs the general clarity, consistency and professionalism review
+      - Offers to help document a brand voice
+    must_not:
+      - Pretend to apply guidelines that do not exist
+  - name: regional-formats
+    prompt: "Review this pricing email for a US audience: 'Offer ends 05/12/2026, price Rs 999.'"
+    context:
+      regional.date_format: "MM/DD/YYYY"
+      regional.currency: "USD"
+    expected_behaviors:
+      - Flags the currency mismatch with the USD setting
+      - Notes the date is ambiguous and should follow the regional format
+    must_not:
+      - Convert currency amounts without the user's confirmed price

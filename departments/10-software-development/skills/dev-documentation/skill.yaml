@@ -1,0 +1,33 @@
+id: "10-software-development/dev-documentation"
+version: 0.1.0
+kind: skill
+department: "10-software-development"
+summary: "Writes and updates READMEs, API references, runbooks, architecture documents and onboarding guides for their real readers."
+inputs:
+  - name: "subject"
+    description: "The code, system or process to document"
+    required: true
+  - name: "audience"
+    description: "Who will read it"
+    required: false
+outputs:
+  - name: "documents"
+    description: "New or updated documentation files"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "technical.stack"
+  - "technical.standards"
+  - "regional.output_language"
+  - "regional.date_format"
+# medium: reads and writes files in the user's project; commands run through the platform's normal permission prompts.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

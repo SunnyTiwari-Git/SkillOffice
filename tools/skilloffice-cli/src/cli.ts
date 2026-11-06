@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import path from 'node:path';
 import { parseArgs } from 'node:util';
+import { buildPackages } from './build.ts';
 import { cacheGet, cachePut } from './cache.ts';
 import { writeCatalog } from './catalog.ts';
 import { readContextFields } from './context.ts';
@@ -38,6 +39,7 @@ Skill library:
   validate [paths...]                  Check skills against the Agent Skills spec and skill.yaml rules
   scan [paths...]                      Static security scan (nothing is executed)
   catalog <department-dir>             Regenerate a department's catalog.yaml
+  build [--layout manager-only|full]   Build dist/ packages for Claude Code and .agents/skills (run at repo root)
 
 Options: --root <dir>  --json  --help`;
 
@@ -94,6 +96,7 @@ async function run(argv: string[]): Promise<number> {
       'human-approved': { type: 'boolean' },
       all: { type: 'boolean' },
       'older-than': { type: 'string' },
+      layout: { type: 'string' },
     },
   });
   const flags = values as Flags;
@@ -187,6 +190,15 @@ async function run(argv: string[]): Promise<number> {
       if (!target) throw new UserFacingError('Name the department folder.');
       const catalog = writeCatalog(path.resolve(root, target));
       print(catalog, asJson, () => `Wrote catalog.yaml with ${catalog.skills.length} skill(s).`);
+      return EXIT_OK;
+    }
+    case 'build': {
+      const layout = flags['layout'] ?? 'manager-only';
+      if (layout !== 'manager-only' && layout !== 'full') throw new UserFacingError('--layout must be manager-only or full.');
+      const result = buildPackages(root, layout);
+      print(result, asJson, () =>
+        `Built ${result.claudePlugins.length} Claude Code plugin(s) and ${result.agentsSkills.length} .agents/skills package(s) for: ${result.departments.join(', ') || 'no departments yet'}.`,
+      );
       return EXIT_OK;
     }
     default:

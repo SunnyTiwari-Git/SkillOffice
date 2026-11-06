@@ -41,3 +41,7 @@ jobs:
         run: node src/cli.ts validate --root ../..
       - name: Security scan of skills (static, nothing executed)
         run: node src/cli.ts scan --root ../..
+      - name: Committed packages match the source
+        run: |
+          node src/cli.ts build --root ../..
+          git -C ../.. diff --exit-code -- dist .claude-plugin || { echo "dist/ is out of date. Run: npm run build"; exit 1; }

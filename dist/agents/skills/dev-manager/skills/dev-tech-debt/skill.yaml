@@ -1,0 +1,31 @@
+id: "10-software-development/dev-tech-debt"
+version: 0.1.0
+kind: skill
+department: "10-software-development"
+summary: "Identifies, categorizes and prioritizes technical debt with evidence and a phased remediation plan that fits alongside feature work."
+inputs:
+  - name: "scope"
+    description: "Repository, service or area to assess"
+    required: true
+outputs:
+  - name: "findings"
+    description: "Debt findings in the shared format with scores"
+  - name: "remediation_plan"
+    description: "Prioritized table and phased plan"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.standards"
+  - "technical.hosting"
+  - "company.size"
+# medium: reads and writes files in the user's project; commands run through the platform's normal permission prompts.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

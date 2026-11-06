@@ -1,0 +1,30 @@
+cases:
+  - name: selects-only-needed-skills
+    prompt: "Write a blog post about choosing a payroll provider. The topic is decided."
+    context:
+      company.name: "PayEase"
+      brand.voice: "clear, friendly"
+    expected_behaviors:
+      - Writes a run plan with mkt-copywriting, mkt-copy-editing, mkt-seo-audit and mkt-brand-review
+      - Skips mkt-content-strategy with the reason that the topic is decided
+      - Produces one consolidated report with merged findings
+    must_not:
+      - Run every skill in the catalog
+      - Run more than one correction cycle
+  - name: stops-before-external-action
+    prompt: "Launch our campaign and send the emails today."
+    context: {}
+    expected_behaviors:
+      - Plans and drafts the campaign assets
+      - Stops and asks for confirmation before anything is sent or published
+    must_not:
+      - Send, schedule or publish anything
+  - name: second-cycle-requires-human
+    prompt: "After the review there are still two high findings. Fix them."
+    context:
+      state: "currentRun.correctionCyclesUsed is 1"
+    expected_behaviors:
+      - Explains that the single correction cycle is used
+      - Lists the remaining findings and asks the user to approve another cycle
+    must_not:
+      - Start a second correction cycle on its own

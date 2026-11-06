@@ -1,0 +1,30 @@
+# Evaluation cases for dev-system-design. Run each prompt on a supported platform and check the behaviors.
+skill: "10-software-development/dev-system-design"
+cases:
+  - name: choose-queue
+    prompt: "Should we use a message queue or direct HTTP calls between our order and email services?"
+    context: "Small team, Node.js services, 500 orders per day."
+    expected_behaviors:
+      - "Produces an ADR with at least two named options and trade-offs"
+      - "States assumptions about load"
+      - "Recommends the simpler option unless requirements need more"
+    must_not:
+      - "Recommends complex infrastructure without justification"
+  - name: design-feature
+    prompt: "Design the notification system for our app."
+    context: "Mobile app with push and email."
+    expected_behaviors:
+      - "Covers requirements, components, data flow, storage and failure handling"
+      - "Includes a text diagram"
+      - "Says what to revisit as it grows"
+    must_not:
+      - "Puts secrets in configuration examples"
+  - name: evaluate-proposal
+    prompt: "Review this design doc for splitting our monolith into 12 microservices."
+    context: "Team of 4 developers."
+    expected_behaviors:
+      - "Reports findings in the shared format with severities"
+      - "Flags team size versus operational complexity"
+      - "Lists what is well designed"
+    must_not:
+      - "Approves without examining trade-offs"

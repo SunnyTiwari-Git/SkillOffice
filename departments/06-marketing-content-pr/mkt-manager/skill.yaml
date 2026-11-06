@@ -1,0 +1,36 @@
+id: 06-marketing-content-pr/mkt-manager
+version: 0.1.0
+kind: manager
+department: 06-marketing-content-pr
+summary: Coordinates Marketing, Content and PR skills; plans, runs, merges findings, one correction cycle, one report.
+inputs:
+  - name: request
+    description: The user's marketing request or a Front Desk handoff
+    required: true
+outputs:
+  - name: report
+    description: Consolidated report saved to .skilloffice/reports/<runId>.md
+depends_on:
+  - 06-marketing-content-pr/mkt-marketing-plan
+  - 06-marketing-content-pr/mkt-content-strategy
+  - 06-marketing-content-pr/mkt-copywriting
+  - 06-marketing-content-pr/mkt-copy-editing
+  - 06-marketing-content-pr/mkt-seo-audit
+  - 06-marketing-content-pr/mkt-email-sequence
+  - 06-marketing-content-pr/mkt-social-content
+  - 06-marketing-content-pr/mkt-public-relations
+  - 06-marketing-content-pr/mkt-brand-review
+  - 06-marketing-content-pr/mkt-performance-report
+context_needs:
+  - company.name
+  - brand.voice
+  - marketing.ideal_customers
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

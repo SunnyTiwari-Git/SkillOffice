@@ -1,0 +1,38 @@
+id: 06-marketing-content-pr/mkt-seo-audit
+version: 0.1.0
+kind: skill
+department: 06-marketing-content-pr
+summary: Audits a site or pages for crawl, index, technical, on-page, content and international SEO issues; returns prioritized findings.
+inputs:
+  - name: site_or_pages
+    description: Site URL, page URLs or page files to audit
+    required: true
+  - name: scope
+    description: Full audit, specific pages, technical, keyword research, content gap or competitor comparison
+    required: false
+  - name: exports
+    description: Search Console, analytics or crawler exports the user can share
+    required: false
+outputs:
+  - name: findings
+    description: Findings in the shared SkillOffice format
+  - name: action_plan
+    description: Quick wins and strategic investments with impact and effort
+depends_on: []
+context_needs:
+  - company.website
+  - company.description
+  - company.markets
+  - marketing.keywords
+  - marketing.competitors
+  - marketing.ideal_customers
+  - regional.output_language
+risk: low
+side_effects:
+  - none
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: coreyhaines31-marketingskills
+  upstream_commit: 88c79f6528a9347420e57ceb1fff9a60de651768

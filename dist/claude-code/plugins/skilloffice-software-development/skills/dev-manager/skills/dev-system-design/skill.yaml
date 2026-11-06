@@ -1,0 +1,35 @@
+id: "10-software-development/dev-system-design"
+version: 0.1.0
+kind: skill
+department: "10-software-development"
+summary: "Designs systems, APIs and data models, records architecture decisions (ADRs) and evaluates design proposals with explicit trade-offs."
+inputs:
+  - name: "requirements"
+    description: "Functional and non-functional requirements, or an approved design"
+    required: true
+  - name: "proposal"
+    description: "An existing design to evaluate"
+    required: false
+outputs:
+  - name: "design_or_adr"
+    description: "Design document or architecture decision record"
+  - name: "findings"
+    description: "Findings in the shared format when evaluating a proposal"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.hosting"
+  - "technical.website_architecture"
+  - "technical.standards"
+  - "company.size"
+# medium: reads and writes files in the user's project; commands run through the platform's normal permission prompts.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

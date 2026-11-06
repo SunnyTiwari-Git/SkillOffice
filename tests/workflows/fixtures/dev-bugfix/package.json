@@ -1,0 +1,8 @@
+{
+  "name": "skilloffice-fixture-dev-bugfix",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/"
+  }
+}

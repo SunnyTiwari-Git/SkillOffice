@@ -11,4 +11,46 @@
 #   reviewed_at: 2026-11-06
 #   notes: MCP connector files (.mcp.json) are not imported
 
-sources: []
+sources:
+  - id: anthropics-knowledge-work-plugins
+    url: https://github.com/anthropics/knowledge-work-plugins
+    owner: Anthropic
+    license: Apache-2.0
+    license_file: registry/licenses/anthropics-knowledge-work-plugins.txt
+    pinned_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d
+    commit_date: 2026-11-05
+    reviewed_at: 2026-11-06
+    used_for: [06-marketing-content-pr, 10-software-development]
+    notes: Upstream has no NOTICE file. MCP connector files (.mcp.json for Slack, Canva, Figma, HubSpot, Amplitude and others) are not imported.
+
+  - id: coreyhaines31-marketingskills
+    url: https://github.com/coreyhaines31/marketingskills
+    owner: Corey Haines
+    license: MIT
+    license_file: registry/licenses/coreyhaines31-marketingskills.txt
+    pinned_commit: 88c79f6528a9347420e57ceb1fff9a60de651768
+    commit_date: 2026-10-30
+    reviewed_at: 2026-11-06
+    used_for: [06-marketing-content-pr]
+    notes: Instruction-only skills selected. Tool integrations, CLIs and tests in the upstream repo are not imported.
+
+  - id: obra-superpowers
+    url: https://github.com/obra/superpowers
+    owner: Jesse Vincent
+    license: MIT
+    license_file: registry/licenses/obra-superpowers.txt
+    pinned_commit: 22f0b463e7a5e579904dd6211a520321035526f7
+    commit_date: 2026-11-03
+    reviewed_at: 2026-11-06
+    used_for: [10-software-development]
+    notes: Scripts (brainstorming local web server, find-polluter.sh, example .ts) and session hooks are not imported. A keychain debugging example was replaced.
+
+  - id: profound-skills-marketing-library
+    url: https://github.com/retieedra-profound/skills-marketing-library
+    owner: Profound
+    license: MIT
+    license_file: registry/licenses/profound-skills-marketing-library.txt
+    pinned_commit: 80293f156c27d3f90aedebfb3c27309769b2eec6
+    reviewed_at: 2026-11-06
+    used_for: [06-marketing-content-pr]
+    notes: Indirect source. Techniques (diagnosis, three-question gate, decompose-and-lock) reached us through coreyhaines31-marketingskills copywriting, which credits this library. No files were copied from it directly.

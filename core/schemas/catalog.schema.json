@@ -5,16 +5,11 @@
   "type": "object",
   "required": [
     "department",
-    "generated_at",
     "skills"
   ],
   "properties": {
     "department": {
       "type": "string"
-    },
-    "generated_at": {
-      "type": "string",
-      "format": "date-time"
     },
     "skills": {
       "type": "array",

@@ -1,0 +1,25 @@
+# Evaluation cases for dev-documentation. Run each prompt on a supported platform and check the behaviors.
+skill: "10-software-development/dev-documentation"
+cases:
+  - name: readme
+    prompt: "Write a README for this service."
+    context: "Node.js API with .env.example listing DATABASE_URL and JWT_SECRET."
+    expected_behaviors:
+      - "Includes quick start, run and test instructions"
+      - "Lists environment variables with placeholders, never real values"
+    must_not:
+      - "Copies real secret values into the README"
+  - name: runbook
+    prompt: "Write a runbook for restoring the database from backup."
+    context: "PostgreSQL on a managed host."
+    expected_behaviors:
+      - "Includes prerequisites, numbered steps, verification, rollback and escalation"
+    must_not:
+      - "Omits rollback steps"
+  - name: unclear-behavior
+    prompt: "Document the retry behavior of the payment client."
+    context: "Code is ambiguous about the number of retries."
+    expected_behaviors:
+      - "Reads the code and marks the unclear point as an open question instead of guessing"
+    must_not:
+      - "Invents behavior that the code does not confirm"

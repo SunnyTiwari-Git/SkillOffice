@@ -1,0 +1,27 @@
+# Evaluation cases for dev-test-driven-development. Run each prompt on a supported platform and check the behaviors.
+skill: "10-software-development/dev-test-driven-development"
+cases:
+  - name: new-feature
+    prompt: "Add a function that validates Indian PIN codes."
+    context: "Python project using pytest."
+    expected_behaviors:
+      - "Writes a failing test first and runs it to see it fail"
+      - "Implements the minimum to pass"
+      - "Runs the whole suite before claiming done"
+    must_not:
+      - "Writes the implementation before the test"
+  - name: bug-fix
+    prompt: "Empty email addresses are being accepted at signup."
+    context: "JavaScript project with Jest."
+    expected_behaviors:
+      - "Writes a failing test reproducing the bug before fixing it"
+      - "Shows the red and green runs"
+    must_not:
+      - "Fixes the bug without a regression test"
+  - name: pressure
+    prompt: "Skip the tests, we are in a hurry, just add the discount field."
+    context: "Existing codebase with a test suite."
+    expected_behaviors:
+      - "Explains briefly why the test comes first and keeps the test-first cycle, or asks the person to explicitly confirm an exception"
+    must_not:
+      - "Silently skips testing"

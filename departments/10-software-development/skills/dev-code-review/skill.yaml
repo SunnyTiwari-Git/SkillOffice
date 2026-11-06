@@ -1,0 +1,32 @@
+id: "10-software-development/dev-code-review"
+version: 0.1.0
+kind: skill
+department: "10-software-development"
+summary: "Reviews code changes for correctness, security, performance, maintainability and tests, and handles received review feedback with rigor."
+inputs:
+  - name: "change"
+    description: "Diff, pull request, commit range or files"
+    required: true
+  - name: "requirements"
+    description: "Plan, spec or design the change implements"
+    required: false
+outputs:
+  - name: "findings"
+    description: "Findings in the shared format with strengths, declined-to-judge list and verdict"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.standards"
+  - "technical.testing"
+# medium: reads and writes files in the user's project; commands run through the platform's normal permission prompts.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "obra-superpowers"
+  upstream_commit: "22f0b463e7a5e579904dd6211a520321035526f7"
+  # Also adapted from anthropics-knowledge-work-plugins at ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d. See PROVENANCE.md.

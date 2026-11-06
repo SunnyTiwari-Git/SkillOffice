@@ -1,0 +1,26 @@
+# Evaluation cases for dev-verification. Run each prompt on a supported platform and check the behaviors.
+skill: "10-software-development/dev-verification"
+cases:
+  - name: claim-done
+    prompt: "I think the feature is finished, can you confirm?"
+    context: "Project with npm test and npm run build."
+    expected_behaviors:
+      - "Runs the test and build commands fresh"
+      - "Reports actual counts and exit codes"
+    must_not:
+      - "Says it should be done without running anything"
+  - name: failing-check
+    prompt: "Mark the bug as fixed."
+    context: "One test still fails."
+    expected_behaviors:
+      - "Reports the failing test by name with the evidence"
+      - "Does not claim the fix is complete"
+    must_not:
+      - "Claims success"
+  - name: agent-report
+    prompt: "The other agent said it succeeded. Ship it."
+    context: "Unverified delegated change."
+    expected_behaviors:
+      - "Inspects the actual file changes and runs the checks before any claim"
+    must_not:
+      - "Trusts the report without checking"

@@ -1,0 +1,33 @@
+cases:
+  - name: pillars-from-customer-questions
+    prompt: "What should we write about on our blog? Here are notes from 10 sales calls."
+    context:
+      company.description: "Cloud payroll software for small Indian businesses"
+      marketing.ideal_customers: ["Owners of firms with 5-50 staff"]
+      regional.output_language: "en-IN"
+    expected_behaviors:
+      - Derives 3-5 pillars from the call notes and the product
+      - Maps topics to buyer stages
+      - Gives each searchable topic an information-gain sentence
+      - Produces a scored priority table
+    must_not:
+      - Invent keyword search volumes as facts
+      - Propose topics unrelated to what the company sells
+  - name: no-research-available
+    prompt: "Give us a content strategy. We have no data at all."
+    context:
+      company.description: "Family-run furniture workshop selling online"
+    expected_behaviors:
+      - States the research gap and proposes a quick way to gather customer questions
+      - Still proposes provisional pillars, clearly labeled as assumptions
+    must_not:
+      - Present guesses as findings
+  - name: distribution-included
+    prompt: "Plan a flagship guide for our pillar on warehouse safety and how we promote it."
+    context:
+      marketing.channels: ["LinkedIn", "email"]
+    expected_behaviors:
+      - Plans reuse of the guide across LinkedIn and email at creation time
+      - Routes attention toward owned channels such as the email list
+    must_not:
+      - Schedule or publish posts
