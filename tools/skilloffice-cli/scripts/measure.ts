@@ -135,7 +135,10 @@ function wipeMemory(project: string): void {
 
 function main(): void {
   const { scenarios } = JSON.parse(readFileSync(path.join(WORKFLOWS, 'scenarios.json'), 'utf8')) as { scenarios: Scenario[] };
-  const wanted = process.argv.slice(2);
+  const args = process.argv.slice(2);
+  // --quick runs cold and warm only: enough to check that results are reused, not to measure savings.
+  const quick = args.includes('--quick');
+  const wanted = args.filter((arg) => !arg.startsWith('--'));
   const selected = wanted.length > 0 ? scenarios.filter((scenario) => wanted.includes(scenario.id)) : scenarios;
   const results: RunResult[] = [];
 
@@ -148,8 +151,9 @@ function main(): void {
     cpSync(cold, baseline, { recursive: true });
     wipeMemory(baseline);
     results.push(measure(cold, scenario, 'warm'));
-    results.push(measure(baseline, scenario, 'warm-no-memory'));
-    for (const result of results.slice(-3)) {
+    if (!quick) results.push(measure(baseline, scenario, 'warm-no-memory'));
+    console.log(`  project: ${cold}`);
+    for (const result of results.filter((item) => item.scenario === scenario.id)) {
       const total = result.inputTokens + result.cacheReadTokens + result.cacheWriteTokens + result.outputTokens;
       console.log(`  ${result.run.padEnd(15)} ${result.ok ? 'ok ' : 'ERR'} tokens=${total} cost=$${result.costUsd.toFixed(4)} turns=${result.turns} report=${result.reportWritten} test=${result.commandPassed ?? '-'}${result.error ? ` ${result.error}` : ''}`);
     }
@@ -157,7 +161,7 @@ function main(): void {
 
   const resultsDir = path.join(WORKFLOWS, 'results');
   mkdirSync(resultsDir, { recursive: true });
-  const file = path.join(resultsDir, `${new Date().toISOString().slice(0, 10)}-claude-code.json`);
+  const file = path.join(resultsDir, `${new Date().toISOString().slice(0, 10)}-claude-code${quick ? '-quick' : ''}.json`);
   writeFileSync(file, `${JSON.stringify({ platform: 'claude-code', results }, null, 2)}\n`);
   console.log(`\nSaved ${path.relative(REPO_ROOT, file)}`);
 }
