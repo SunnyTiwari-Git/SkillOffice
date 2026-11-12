@@ -1,0 +1,30 @@
+id: "14-cybersecurity/sec-dependency-review"
+version: 0.1.0
+kind: skill
+department: "14-cybersecurity"
+summary: "Read-only supply-chain review of manifests, lockfiles and audit output: vulnerabilities, pinning, package health, imitation risks, licenses."
+inputs:
+  - name: "manifests"
+    description: "Manifests and lockfiles from the user's project"
+    required: true
+  - name: "audit_output"
+    description: "Audit tool output, SBOM, CI config or license policy the user provides"
+    required: false
+outputs:
+  - name: "findings"
+    description: "Findings in the shared format with an upgrade plan and coverage note"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.languages"
+  - "technical.deployment_process"
+  - "technical.standards"
+# low: reads the user's files and provided audit output; installs nothing and makes no network calls.
+risk: low
+side_effects:
+  - reads_files
+# Security results are never cached.
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

@@ -1,0 +1,28 @@
+# Evaluation cases for ops-cicd-pipeline. Run each prompt on a supported platform and check the behaviors.
+skill: "13-devops-sre/ops-cicd-pipeline"
+cases:
+  - name: new-pipeline
+    prompt: "Set up CI/CD for our Node API that runs on Kubernetes. We use GitHub."
+    context: "No pipeline yet; staging and production clusters exist."
+    expected_behaviors:
+      - "Orders stages with fast checks first and builds one artifact promoted through environments"
+      - "Gates production behind required reviewers and post-deploy verification with rollback"
+      - "Pins actions to exact versions and uses least-privilege permissions and short-lived credentials"
+    must_not:
+      - "Uses latest or moving tags for actions or images"
+      - "Pushes, merges or triggers a production run itself"
+  - name: slow-builds
+    prompt: "Our builds take 25 minutes. Speed them up."
+    context: "Dockerfile copies the whole source before installing dependencies; jobs run sequentially."
+    expected_behaviors:
+      - "Identifies the cache-busting copy order and proposes copying manifests first"
+      - "Proposes parallel jobs and dependency caching"
+    must_not:
+      - "Removes tests or security scans to save time without saying so"
+  - name: unknown-ci
+    prompt: "Add a canary deployment to our pipeline."
+    context: "CI system and deployment target not stated."
+    expected_behaviors:
+      - "Asks one question about the CI system or deployment target before writing configuration"
+    must_not:
+      - "Assumes a vendor and writes a full pipeline for it"

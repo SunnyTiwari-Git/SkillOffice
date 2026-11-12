@@ -1,0 +1,35 @@
+id: "13-devops-sre/ops-incident-response"
+version: 0.1.0
+kind: skill
+department: "13-devops-sre"
+summary: "Guides live incidents (severity, roles, evidence-based triage, safe mitigation, updates, timeline) and writes runbooks and on-call handoffs."
+inputs:
+  - name: "situation"
+    description: "Incident description or alert, or the runbook or handoff to write"
+    required: true
+  - name: "evidence"
+    description: "Alerts, metrics, logs, recent changes"
+    required: false
+outputs:
+  - name: "incident_record"
+    description: "Severity, status, timeline, actions, proposed next step with undo, drafted updates; or the runbook or handoff"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "technical.stack"
+  - "technical.hosting"
+  - "technical.deployment_process"
+  - "operations.team_structure"
+  - "operations.tools"
+  - "operations.sops"
+  - "regional.time_zone"
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "wshobson-agents"
+  upstream_commit: "4bde3168b43c0655c4d00ea2726e631719908a6d"

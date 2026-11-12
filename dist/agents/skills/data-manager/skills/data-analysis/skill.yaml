@@ -1,0 +1,34 @@
+id: 15-data-analytics-ai/data-analysis
+version: 0.1.0
+kind: skill
+department: 15-data-analytics-ai
+summary: Answers business questions from user-provided data with sound statistics, stated assumptions, sample sizes, uncertainty and reproducible steps.
+inputs:
+  - name: question
+    description: The business question to answer
+    required: true
+  - name: data
+    description: Query results, a file or an export
+    required: true
+  - name: definitions
+    description: Metric definitions, comparison period and known events
+    required: false
+outputs:
+  - name: answer
+    description: Finding first, supporting numbers, method, assumptions, caveats and follow-up questions
+depends_on: []
+context_needs:
+  - company.business_model
+  - company.products_and_services
+  - regional.currency
+  - regional.date_format
+  - regional.time_zone
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

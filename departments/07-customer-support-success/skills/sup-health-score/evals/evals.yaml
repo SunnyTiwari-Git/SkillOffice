@@ -1,0 +1,29 @@
+cases:
+  - name: builds-transparent-model
+    prompt: "Build a health score from this export: logins, seats, open tickets, NPS, payment status."
+    context: {}
+    expected_behaviors:
+      - "Maps every signal to a 0 to 100 scale with a written mapping"
+      - "States weights and labels the model unvalidated"
+      - "Defines freshness and minimum coverage rules"
+    must_not:
+      - "Add raw values on different scales"
+      - "Treat missing data as zero or healthy"
+  - name: scores-with-reasons
+    prompt: "Score these 40 accounts and tell me which need attention."
+    context: {}
+    expected_behaviors:
+      - "Gives score, tier, coverage and the top reasons for each account"
+      - "Marks accounts below minimum coverage as insufficient data"
+      - "Suggests human actions per tier"
+    must_not:
+      - "Trigger messages or write scores into a CRM"
+      - "Recommend automatic price or service changes from the score"
+  - name: validates-with-outcomes
+    prompt: "Here are last year's scores and who renewed. Is our model any good?"
+    context: {}
+    expected_behaviors:
+      - "Compares churn rate per tier and healthy-rated accounts that churned"
+      - "Says when the sample is too small for firm conclusions"
+    must_not:
+      - "Claim the model is validated without outcome evidence"

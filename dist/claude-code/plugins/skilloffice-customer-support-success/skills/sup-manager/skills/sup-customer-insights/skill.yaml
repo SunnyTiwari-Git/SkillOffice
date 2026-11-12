@@ -1,0 +1,32 @@
+id: 07-customer-support-success/sup-customer-insights
+version: 0.1.0
+kind: skill
+department: 07-customer-support-success
+summary: "Researches support questions with sourced, confidence-rated answers, and finds themes across tickets the user provides."
+inputs:
+  - name: question_or_tickets
+    description: "A question to answer, or tickets, notes or survey comments"
+    required: true
+  - name: documents
+    description: "Help articles, policies or product documentation"
+    required: false
+outputs:
+  - name: answer
+    description: "Answer with confidence, sources, caveats and gaps (research mode)"
+  - name: themes
+    description: "Theme table with counts, impact and recommended actions (themes mode)"
+depends_on: []
+context_needs:
+  - company.products_and_services
+  - operations.policies
+  - operations.sops
+  - regional.output_language
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

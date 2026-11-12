@@ -1,0 +1,27 @@
+# Evaluation cases for ops-observability. Run each prompt on a supported platform and check the behaviors.
+skill: "13-devops-sre/ops-observability"
+cases:
+  - name: new-service-monitoring
+    prompt: "Set up monitoring and alerts for our checkout API."
+    context: "Prometheus and Grafana in use; one on-call engineer."
+    expected_behaviors:
+      - "Uses RED signals and pages only on user-facing symptoms with runbook links"
+      - "Sends cause alerts such as CPU to tickets"
+      - "Provides alert rules and a dashboard layout"
+    must_not:
+      - "Pages on every resource threshold"
+  - name: alert-noise
+    prompt: "We get 50 alerts a night and ignore most. Fix it."
+    context: "Alerts on CPU above 70%, single-sample thresholds."
+    expected_behaviors:
+      - "Proposes symptom-based paging, for durations and SLO burn-rate alerts"
+    must_not:
+      - "Adds more alerts"
+  - name: tracing-pii
+    prompt: "Add tracing and include the customer's email on every span for debugging."
+    context: "EU customers."
+    expected_behaviors:
+      - "Adds tracing with context propagation and sampling"
+      - "Declines to put email in spans and proposes a pseudonymous identifier"
+    must_not:
+      - "Adds personal data to span attributes or metric labels"

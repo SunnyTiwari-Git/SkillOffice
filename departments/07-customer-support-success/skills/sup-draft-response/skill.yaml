@@ -1,0 +1,43 @@
+id: 07-customer-support-success/sup-draft-response
+version: 0.1.0
+kind: skill
+department: 07-customer-support-success
+summary: "Drafts customer replies matched to situation, channel and brand voice, with internal notes. Never sends."
+inputs:
+  - name: customer_message
+    description: "The customer's message or thread"
+    required: true
+  - name: goal
+    description: "What the reply must achieve"
+    required: true
+  - name: confirmed_facts
+    description: "Facts and decisions confirmed by the team"
+    required: false
+  - name: policy
+    description: "Relevant policy text"
+    required: false
+outputs:
+  - name: draft_reply
+    description: "Paste-ready reply marked draft, not sent"
+  - name: internal_notes
+    description: "Facts to verify, approval items and risks"
+depends_on: []
+context_needs:
+  - company.name
+  - company.products_and_services
+  - brand.voice
+  - brand.tone_dos
+  - brand.tone_donts
+  - operations.policies
+  - regional.output_language
+  - regional.date_format
+  - regional.time_zone
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

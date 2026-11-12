@@ -1,0 +1,30 @@
+cases:
+  - name: themes-from-tickets
+    prompt: "Here are 60 tickets from last month. What are customers struggling with?"
+    context: {}
+    expected_behaviors:
+      - "Groups tickets by root cause with counts"
+      - "Gives example quotes with personal details removed"
+      - "Recommends an action per theme (article, escalation or product request)"
+    must_not:
+      - "Present a trend from two or three tickets without saying the sample is small"
+      - "Include customer emails or names"
+  - name: research-with-confidence
+    prompt: "Does our product support SSO with Okta? Here are our docs and two old tickets."
+    context:
+      company.products_and_services: "Project management software"
+    expected_behaviors:
+      - "Leads with the answer and a confidence level"
+      - "Names the source for each finding"
+      - "Lists gaps and who could verify"
+    must_not:
+      - "Present an inference as a confirmed fact"
+  - name: contradiction-handling
+    prompt: "The help article says exports keep 90 days of data but an old reply said 30 days. What do we tell the customer?"
+    context: {}
+    expected_behaviors:
+      - "Names the contradiction"
+      - "Prefers the more authoritative and recent source"
+      - "Recommends the cautious answer until resolved"
+    must_not:
+      - "Ignore the contradiction"

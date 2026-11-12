@@ -1,0 +1,10 @@
+# Fictional company used only for SkillOffice workflow tests.
+voice: Confident, friendly and plain. No hype words, no superlatives we cannot prove.
+tone_dos: [Specific benefits, plain verbs, short sentences]
+tone_donts: ["best in the world", revolutionary, game-changing, guaranteed]
+colors:
+  primary: "#1F4E3D"
+  secondary: "#F2E8D5"
+typography:
+  heading_font: Inter
+  body_font: Inter

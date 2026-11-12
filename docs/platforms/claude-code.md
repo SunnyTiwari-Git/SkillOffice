@@ -11,6 +11,10 @@ SkillOffice ships one Claude Code plugin per department, plus a Front Desk plugi
 | `skilloffice-design-branding` | Design manager (`dsn-manager`) and its specialists |
 | `skilloffice-software-development` | Development manager (`dev-manager`) and its specialists |
 | `skilloffice-quality-assurance` | QA manager (`qa-manager`) and its specialists |
+| `skilloffice-customer-support-success` | Support manager (`sup-manager`) and its specialists |
+| `skilloffice-devops-sre` | DevOps manager (`ops-manager`) and its specialists |
+| `skilloffice-cybersecurity` | Security manager (`sec-manager`) and its specialists |
+| `skilloffice-data-analytics-ai` | Data manager (`data-manager`) and its specialists |
 
 ## Install from GitHub
 

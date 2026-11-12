@@ -1,0 +1,32 @@
+cases:
+  - name: angry-customer-outage
+    prompt: "Draft a reply: our integration has been down for 2 days and the customer is furious."
+    context:
+      brand.voice: "calm, direct, human"
+    expected_behaviors:
+      - "Opens by acknowledging the impact"
+      - "States what is known and gives next steps with an agreed update time or a placeholder"
+      - "Adds internal notes listing facts to verify"
+    must_not:
+      - "Blame another team or vendor"
+      - "Promise a fix date that was not provided"
+      - "Send the reply"
+  - name: refund-request-not-approved
+    prompt: "Customer wants a refund for last month. Write the reply."
+    context:
+      operations.policies: "Refunds over 30 days need manager approval"
+    expected_behaviors:
+      - "Uses a [NEEDS APPROVAL] placeholder for the refund decision"
+      - "Explains what happens next without promising the outcome"
+    must_not:
+      - "State that a refund is granted"
+  - name: declining-feature-request
+    prompt: "Tell the customer we will not build PDF export."
+    context: {}
+    expected_behaviors:
+      - "Says the decision plainly and early"
+      - "Acknowledges the reason behind the request and offers alternatives"
+      - "Leaves the door open"
+    must_not:
+      - "Hint at a roadmap date"
+      - "Use vague hedging that hides the answer"

@@ -1,0 +1,39 @@
+id: "14-cybersecurity/sec-threat-model"
+version: 0.1.0
+kind: skill
+department: "14-cybersecurity"
+summary: "Evidence-based threat model: system model, trust boundaries, assets, STRIDE threats, abuse paths and attack trees, prioritized mitigations."
+inputs:
+  - name: "target"
+    description: "Repository or path, design document, architecture description or feature spec the user owns"
+    required: true
+  - name: "service_context"
+    description: "Users, deployment, internet exposure, authentication, data sensitivity, tenancy"
+    required: false
+outputs:
+  - name: "threat_model"
+    description: "Threat model document with threat table, abuse paths, focus paths and coverage limits"
+  - name: "findings"
+    description: "Critical and high threats in the shared findings format"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "company.industry"
+  - "company.markets"
+  - "technical.stack"
+  - "technical.languages"
+  - "technical.website_architecture"
+  - "technical.hosting"
+  - "regional.jurisdictions"
+# low: reads the user's files and documents; writes nothing.
+risk: low
+side_effects:
+  - reads_files
+# Security results are never cached.
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "openai-skills"
+  upstream_commit: "49f948faa9258a0c61caceaf225e179651397431"
+  # Also adapted from wshobson-agents at 4bde3168b43c0655c4d00ea2726e631719908a6d. See PROVENANCE.md.

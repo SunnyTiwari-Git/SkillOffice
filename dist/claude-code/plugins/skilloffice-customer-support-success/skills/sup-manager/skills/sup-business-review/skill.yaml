@@ -1,0 +1,35 @@
+id: 07-customer-support-success/sup-business-review
+version: 0.1.0
+kind: skill
+department: 07-customer-support-success
+summary: "Prepares a quarterly business review for one account with outcomes, adoption, risks, next goals and a meeting outline."
+inputs:
+  - name: account_and_goals
+    description: "The account and its goals"
+    required: true
+  - name: data
+    description: "Usage, outcome metrics, support summary, health score, previous notes"
+    required: false
+  - name: attendees
+    description: "Attendees and their roles"
+    required: false
+outputs:
+  - name: review_pack
+    description: "Agenda, slide outline, talking points, risks and actions"
+  - name: follow_up
+    description: "Draft follow-up note, not sent"
+depends_on: []
+context_needs:
+  - company.name
+  - company.products_and_services
+  - brand.voice
+  - regional.date_format
+  - regional.currency
+  - regional.output_language
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

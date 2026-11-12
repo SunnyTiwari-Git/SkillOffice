@@ -1,0 +1,35 @@
+id: 15-data-analytics-ai/data-visualization
+version: 0.1.0
+kind: skill
+department: 15-data-analytics-ai
+summary: Picks the right chart for a message and builds it honestly and accessibly from user data, with an insight title, alt text and data table.
+inputs:
+  - name: data
+    description: The table, results or file to chart
+    required: true
+  - name: message
+    description: The question or message the chart must answer, and its audience
+    required: true
+  - name: preferences
+    description: Requested chart type, tool or library, and brand colors
+    required: false
+outputs:
+  - name: chart
+    description: Chart or chart code, image files if requested, rationale, alt text and summary table
+depends_on: []
+context_needs:
+  - brand.colors
+  - brand.typography
+  - regional.currency
+  - regional.date_format
+  - regional.units
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

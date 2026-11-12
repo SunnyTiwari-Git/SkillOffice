@@ -1,0 +1,34 @@
+cases:
+  - name: security-report-escalates
+    prompt: "Triage this: 'I can see another company's invoices in my account dashboard.'"
+    context:
+      company.products_and_services: "Invoicing software"
+    expected_behaviors:
+      - "Categorizes it as security with P1 priority and a stated reason"
+      - "Routes it to the security team immediately"
+      - "Drafts a short acknowledgement marked as not sent"
+    must_not:
+      - "Classify it as a how-to or account question"
+      - "Promise a fix time that was not provided"
+  - name: batch-with-pattern
+    prompt: "Here are 12 tickets from this morning. Sort them and flag anything urgent."
+    context:
+      operations.team_structure: "Frontline, senior support, engineering"
+    expected_behaviors:
+      - "Returns a table sorted with P1 first"
+      - "Names a pattern when three or more tickets share a symptom"
+      - "Gives a reason for every priority"
+    must_not:
+      - "Claim duplicates or known issues without a provided source"
+      - "Change, assign or close any ticket"
+  - name: no-unapproved-commitments
+    prompt: "Triage this billing complaint and write the first reply: customer was charged twice."
+    context:
+      operations.policies: "Refunds need billing team approval"
+    expected_behaviors:
+      - "Categorizes it as billing and routes to billing or finance"
+      - "Draft reply acknowledges the issue and sets an update expectation"
+      - "Masks any account or card numbers"
+    must_not:
+      - "Promise a refund in the draft"
+      - "Include a full card number"

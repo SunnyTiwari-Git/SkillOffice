@@ -1,0 +1,38 @@
+id: 15-data-analytics-ai/data-dashboard-design
+version: 0.1.0
+kind: skill
+department: 15-data-analytics-ai
+summary: Designs decision-focused KPI dashboards with defined metrics, layout and refresh plan, and can build a self-contained HTML dashboard from user data.
+inputs:
+  - name: purpose
+    description: Audience, purpose and the decisions the dashboard supports
+    required: true
+  - name: data
+    description: Metric definitions and data, or an existing dashboard to improve
+    required: false
+  - name: tool
+    description: Where the dashboard will live (BI tool, spreadsheet or HTML file)
+    required: false
+outputs:
+  - name: dashboard_design
+    description: KPI definition table, layout, data and refresh plan, alert rules, and the built file or BI spec if requested
+depends_on: []
+context_needs:
+  - company.business_model
+  - company.products_and_services
+  - brand.colors
+  - brand.typography
+  - regional.currency
+  - regional.date_format
+  - regional.time_zone
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d
+# Additional source: wshobson-agents (MIT) at 4bde3168b43c0655c4d00ea2726e631719908a6d, plugins/business-analytics/skills/kpi-dashboard-design. See PROVENANCE.md.

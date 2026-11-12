@@ -1,0 +1,39 @@
+id: 07-customer-support-success/sup-escalation
+version: 0.1.0
+kind: skill
+department: 07-customer-support-success
+summary: "Packages an issue into an escalation brief with impact, reproduction steps, the specific ask, deadline and follow-up plan."
+inputs:
+  - name: issue
+    description: "Issue summary and the ticket thread or notes"
+    required: true
+  - name: impact_data
+    description: "Affected customers, account tier, SLA status"
+    required: false
+  - name: troubleshooting
+    description: "Steps already tried, logs or error text"
+    required: false
+outputs:
+  - name: escalation_brief
+    description: "Structured brief for the target team"
+  - name: follow_up_plan
+    description: "Internal and customer update rhythm"
+  - name: interim_update
+    description: "Draft customer update, not sent"
+depends_on: []
+context_needs:
+  - company.products_and_services
+  - operations.team_structure
+  - operations.processes
+  - operations.policies
+  - regional.time_zone
+  - regional.currency
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

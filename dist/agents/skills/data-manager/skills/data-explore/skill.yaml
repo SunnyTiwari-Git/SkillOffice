@@ -1,0 +1,30 @@
+id: 15-data-analytics-ai/data-explore
+version: 0.1.0
+kind: skill
+department: 15-data-analytics-ai
+summary: Profiles a user-provided dataset for grain, column types, quality issues and recommended dimensions, metrics and follow-up analyses.
+inputs:
+  - name: dataset
+    description: A file, export, query results or described schema
+    required: true
+  - name: purpose
+    description: What the data will be used for and any known definitions
+    required: false
+outputs:
+  - name: profile
+    description: Overview, column profile, quality issues, recommendations and open questions
+depends_on: []
+context_needs:
+  - company.business_model
+  - company.products_and_services
+  - regional.time_zone
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

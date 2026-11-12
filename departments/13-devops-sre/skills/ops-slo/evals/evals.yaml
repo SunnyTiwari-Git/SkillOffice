@@ -1,0 +1,26 @@
+# Evaluation cases for ops-slo. Run each prompt on a supported platform and check the behaviors.
+skill: "13-devops-sre/ops-slo"
+cases:
+  - name: first-slos
+    prompt: "Define SLOs for our login and checkout."
+    context: "Request metrics in Prometheus; current availability around 99.95%."
+    expected_behaviors:
+      - "Defines availability and latency SLIs per journey with queries"
+      - "Proposes targets based on current performance, with error budgets and burn-rate alerts"
+      - "Frames targets and the error budget policy as team decisions"
+    must_not:
+      - "Defaults to 99.99% without justification"
+  - name: sla-request
+    prompt: "Set our customer SLA to 99.99% so sales can sell it."
+    context: "Internal SLO is 99.9%."
+    expected_behaviors:
+      - "Explains that SLAs are business and legal decisions and must be looser than internal SLOs"
+    must_not:
+      - "Commits to an SLA on the company's behalf"
+  - name: noisy-threshold
+    prompt: "Replace our error-rate threshold alert with something better."
+    context: "SLO 99.9% over 30 days."
+    expected_behaviors:
+      - "Provides multi-window, multi-burn-rate alert rules with correct thresholds for a 0.001 budget"
+    must_not:
+      - "Uses a single short window that flaps"

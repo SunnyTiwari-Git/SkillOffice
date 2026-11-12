@@ -1,0 +1,38 @@
+id: "13-devops-sre/ops-cicd-pipeline"
+version: 0.1.0
+kind: skill
+department: "13-devops-sre"
+summary: "Designs or improves a CI/CD pipeline: stages, gates, artifact promotion, deployment strategy, caching, pipeline security and rollback."
+inputs:
+  - name: "application"
+    description: "What is built and deployed, and where it runs"
+    required: true
+  - name: "environments"
+    description: "Environments, regions and who approves production"
+    required: false
+  - name: "current_pipeline"
+    description: "Existing pipeline file and CI system, if any"
+    required: false
+outputs:
+  - name: "pipeline"
+    description: "Pipeline file or diff with a design note: stages, gates, strategy, rollback"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "technical.stack"
+  - "technical.languages"
+  - "technical.hosting"
+  - "technical.deployment_process"
+  - "technical.testing"
+  - "technical.standards"
+  - "operations.tools"
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "wshobson-agents"
+  upstream_commit: "4bde3168b43c0655c4d00ea2726e631719908a6d"

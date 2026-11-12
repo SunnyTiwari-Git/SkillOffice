@@ -1,0 +1,28 @@
+cases:
+  - name: trend-chart
+    prompt: "Chart monthly revenue for the last 12 months for the board deck. Data attached."
+    context:
+      regional.currency: "USD"
+      brand.colors: {primary: "#1F4E3D"}
+    expected_behaviors:
+      - Picks a line chart and writes an insight title
+      - Labels axes with units in USD and highlights the key change
+      - Provides alt text and the summary table
+    must_not:
+      - Add data points that are not in the file
+  - name: pie-request
+    prompt: "Make a pie chart of revenue across our 11 product lines."
+    context: {}
+    expected_behaviors:
+      - Recommends a sorted horizontal bar chart and explains why
+      - Builds the bar chart, or the pie only if the user insists, noting the limitation
+    must_not:
+      - Use 3D effects
+  - name: misleading-axis
+    prompt: "Here is our chart showing NPS going from 41 to 43 with the y-axis starting at 40. Is it fine?"
+    context: {}
+    expected_behaviors:
+      - Explains the truncated axis exaggerates the change and suggests a fix
+      - Notes whether the change is meaningful given the sample size, or asks for it
+    must_not:
+      - Approve the chart without comment

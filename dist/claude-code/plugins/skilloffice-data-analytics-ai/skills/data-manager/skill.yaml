@@ -1,0 +1,35 @@
+id: 15-data-analytics-ai/data-manager
+version: 0.1.0
+kind: manager
+department: 15-data-analytics-ai
+summary: Coordinates Data, Analytics and AI skills; plans, runs, merges findings, one correction cycle, one report.
+inputs:
+  - name: request
+    description: The user's data request or a Front Desk handoff
+    required: true
+outputs:
+  - name: report
+    description: Consolidated report saved to .skilloffice/reports/<runId>.md
+depends_on:
+  - 15-data-analytics-ai/data-explore
+  - 15-data-analytics-ai/data-sql
+  - 15-data-analytics-ai/data-analysis
+  - 15-data-analytics-ai/data-visualization
+  - 15-data-analytics-ai/data-dashboard-design
+  - 15-data-analytics-ai/data-validation
+  - 15-data-analytics-ai/data-storytelling
+  - 15-data-analytics-ai/data-dictionary
+  - 15-data-analytics-ai/data-ai-feature-review
+context_needs:
+  - company.name
+  - company.business_model
+  - technical.stack
+  - regional.jurisdictions
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

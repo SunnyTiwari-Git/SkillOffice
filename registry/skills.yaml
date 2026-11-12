@@ -238,6 +238,101 @@ skills:
     provenance: adapted
     source_id: coreyhaines31-marketingskills
     platforms_tested: []
+  - id: 07-customer-support-success/sup-business-review
+    version: 0.1.0
+    kind: skill
+    department: 07-customer-support-success
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 07-customer-support-success/sup-churn-prevention
+    version: 0.1.0
+    kind: skill
+    department: 07-customer-support-success
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: coreyhaines31-marketingskills
+    platforms_tested: []
+  - id: 07-customer-support-success/sup-customer-insights
+    version: 0.1.0
+    kind: skill
+    department: 07-customer-support-success
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 07-customer-support-success/sup-draft-response
+    version: 0.1.0
+    kind: skill
+    department: 07-customer-support-success
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 07-customer-support-success/sup-escalation
+    version: 0.1.0
+    kind: skill
+    department: 07-customer-support-success
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 07-customer-support-success/sup-health-score
+    version: 0.1.0
+    kind: skill
+    department: 07-customer-support-success
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 07-customer-support-success/sup-kb-article
+    version: 0.1.0
+    kind: skill
+    department: 07-customer-support-success
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 07-customer-support-success/sup-onboarding
+    version: 0.1.0
+    kind: skill
+    department: 07-customer-support-success
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: coreyhaines31-marketingskills
+    platforms_tested: []
+  - id: 07-customer-support-success/sup-response-review
+    version: 0.1.0
+    kind: skill
+    department: 07-customer-support-success
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 07-customer-support-success/sup-ticket-triage
+    version: 0.1.0
+    kind: skill
+    department: 07-customer-support-success
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 07-customer-support-success/sup-manager
+    version: 0.1.0
+    kind: manager
+    department: 07-customer-support-success
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
   - id: 08-product-management/pm-manager
     version: 0.1.0
     kind: manager
@@ -599,4 +694,275 @@ skills:
     risk: medium
     provenance: adapted
     source_id: anthropics-skills
+    platforms_tested: []
+  - id: 13-devops-sre/ops-manager
+    version: 0.1.0
+    kind: manager
+    department: 13-devops-sre
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 13-devops-sre/ops-cicd-pipeline
+    version: 0.1.0
+    kind: skill
+    department: 13-devops-sre
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 13-devops-sre/ops-cloud-cost-review
+    version: 0.1.0
+    kind: skill
+    department: 13-devops-sre
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 13-devops-sre/ops-deploy-verification
+    version: 0.1.0
+    kind: skill
+    department: 13-devops-sre
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 13-devops-sre/ops-incident-response
+    version: 0.1.0
+    kind: skill
+    department: 13-devops-sre
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 13-devops-sre/ops-infrastructure-as-code
+    version: 0.1.0
+    kind: skill
+    department: 13-devops-sre
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 13-devops-sre/ops-kubernetes
+    version: 0.1.0
+    kind: skill
+    department: 13-devops-sre
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 13-devops-sre/ops-observability
+    version: 0.1.0
+    kind: skill
+    department: 13-devops-sre
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 13-devops-sre/ops-postmortem
+    version: 0.1.0
+    kind: skill
+    department: 13-devops-sre
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 13-devops-sre/ops-secrets-management
+    version: 0.1.0
+    kind: skill
+    department: 13-devops-sre
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 13-devops-sre/ops-slo
+    version: 0.1.0
+    kind: skill
+    department: 13-devops-sre
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 14-cybersecurity/sec-manager
+    version: 0.1.0
+    kind: manager
+    department: 14-cybersecurity
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 14-cybersecurity/sec-dependency-review
+    version: 0.1.0
+    kind: skill
+    department: 14-cybersecurity
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 14-cybersecurity/sec-incident-triage
+    version: 0.1.0
+    kind: skill
+    department: 14-cybersecurity
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 14-cybersecurity/sec-sast-setup
+    version: 0.1.0
+    kind: skill
+    department: 14-cybersecurity
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 14-cybersecurity/sec-secrets-exposure-review
+    version: 0.1.0
+    kind: skill
+    department: 14-cybersecurity
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 14-cybersecurity/sec-secure-code-review
+    version: 0.1.0
+    kind: skill
+    department: 14-cybersecurity
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: openai-skills
+    platforms_tested: []
+  - id: 14-cybersecurity/sec-security-policy
+    version: 0.1.0
+    kind: skill
+    department: 14-cybersecurity
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 14-cybersecurity/sec-security-requirements
+    version: 0.1.0
+    kind: skill
+    department: 14-cybersecurity
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 14-cybersecurity/sec-threat-mitigation
+    version: 0.1.0
+    kind: skill
+    department: 14-cybersecurity
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 14-cybersecurity/sec-threat-model
+    version: 0.1.0
+    kind: skill
+    department: 14-cybersecurity
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: openai-skills
+    platforms_tested: []
+  - id: 15-data-analytics-ai/data-manager
+    version: 0.1.0
+    kind: manager
+    department: 15-data-analytics-ai
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 15-data-analytics-ai/data-ai-feature-review
+    version: 0.1.0
+    kind: skill
+    department: 15-data-analytics-ai
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 15-data-analytics-ai/data-analysis
+    version: 0.1.0
+    kind: skill
+    department: 15-data-analytics-ai
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 15-data-analytics-ai/data-dashboard-design
+    version: 0.1.0
+    kind: skill
+    department: 15-data-analytics-ai
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 15-data-analytics-ai/data-dictionary
+    version: 0.1.0
+    kind: skill
+    department: 15-data-analytics-ai
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 15-data-analytics-ai/data-explore
+    version: 0.1.0
+    kind: skill
+    department: 15-data-analytics-ai
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 15-data-analytics-ai/data-sql
+    version: 0.1.0
+    kind: skill
+    department: 15-data-analytics-ai
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 15-data-analytics-ai/data-storytelling
+    version: 0.1.0
+    kind: skill
+    department: 15-data-analytics-ai
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: wshobson-agents
+    platforms_tested: []
+  - id: 15-data-analytics-ai/data-validation
+    version: 0.1.0
+    kind: skill
+    department: 15-data-analytics-ai
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 15-data-analytics-ai/data-visualization
+    version: 0.1.0
+    kind: skill
+    department: 15-data-analytics-ai
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
     platforms_tested: []

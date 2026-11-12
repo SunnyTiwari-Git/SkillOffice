@@ -30,6 +30,13 @@
       "license": "Apache-2.0"
     },
     {
+      "name": "skilloffice-customer-support-success",
+      "source": "./dist/claude-code/plugins/skilloffice-customer-support-success",
+      "description": "SkillOffice Customer Support and Customer Success: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
       "name": "skilloffice-product-management",
       "source": "./dist/claude-code/plugins/skilloffice-product-management",
       "description": "SkillOffice Product Management and Research: a department manager that plans, runs and reviews specialist skills.",
@@ -54,6 +61,27 @@
       "name": "skilloffice-quality-assurance",
       "source": "./dist/claude-code/plugins/skilloffice-quality-assurance",
       "description": "SkillOffice Quality Assurance and Testing: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skilloffice-devops-sre",
+      "source": "./dist/claude-code/plugins/skilloffice-devops-sre",
+      "description": "SkillOffice Cloud Infrastructure, DevOps and SRE: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skilloffice-cybersecurity",
+      "source": "./dist/claude-code/plugins/skilloffice-cybersecurity",
+      "description": "SkillOffice Cybersecurity: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skilloffice-data-analytics-ai",
+      "source": "./dist/claude-code/plugins/skilloffice-data-analytics-ai",
+      "description": "SkillOffice Data, Analytics and AI: a department manager that plans, runs and reviews specialist skills.",
       "version": "0.1.0",
       "license": "Apache-2.0"
     }

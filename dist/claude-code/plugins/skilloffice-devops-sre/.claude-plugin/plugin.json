@@ -1,0 +1,16 @@
+{
+  "name": "skilloffice-devops-sre",
+  "version": "0.1.0",
+  "description": "SkillOffice Cloud Infrastructure, DevOps and SRE: a department manager that plans, runs and reviews specialist skills.",
+  "author": {
+    "name": "SunnyTiwari-Git"
+  },
+  "homepage": "https://github.com/SunnyTiwari-Git/SkillOffice",
+  "repository": "https://github.com/SunnyTiwari-Git/SkillOffice",
+  "license": "Apache-2.0",
+  "keywords": [
+    "skilloffice",
+    "agent-skills",
+    "13-devops-sre"
+  ]
+}

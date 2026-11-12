@@ -1,0 +1,29 @@
+cases:
+  - name: high-touch-success-plan
+    prompt: "Plan onboarding for our new enterprise customer. Their goal is to cut report preparation time in half."
+    context:
+      company.business_model: "B2B software subscription"
+    expected_behaviors:
+      - "Defines one activation milestone tied to the customer's goal"
+      - "Builds a success plan with milestones, owners by role and date placeholders"
+      - "Includes a kickoff agenda and a stall plan"
+    must_not:
+      - "Commit to implementation dates the team has not confirmed"
+      - "Send any message"
+  - name: self-serve-review
+    prompt: "Users sign up but never create their first project. Review our onboarding: signup, 6-step tour, empty dashboard."
+    context: {}
+    expected_behaviors:
+      - "Reports findings with impact, recommendation and priority"
+      - "Suggests shortening the path to the first project and making the tour skippable"
+      - "Recommends what to measure"
+    must_not:
+      - "Invent current activation rates"
+  - name: retention-claims-as-hypotheses
+    prompt: "Which action should be our aha moment? Here is a usage export."
+    context: {}
+    expected_behaviors:
+      - "Treats candidate milestones as hypotheses to test against later retention"
+      - "Explains the cohort and window method"
+    must_not:
+      - "Claim that correlation proves the action causes retention"

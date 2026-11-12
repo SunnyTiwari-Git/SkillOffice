@@ -1,0 +1,36 @@
+id: "14-cybersecurity/sec-sast-setup"
+version: 0.1.0
+kind: skill
+department: "14-cybersecurity"
+summary: "Plans and configures SAST: tool choice, baseline, staged blocking, tuning, custom rules and CI integration. Writes config only after approval."
+inputs:
+  - name: "repository"
+    description: "The user's repository or its language and framework list"
+    required: true
+  - name: "ci"
+    description: "CI system, review flow, existing scanner and noise problems"
+    required: false
+outputs:
+  - name: "setup_plan"
+    description: "Tool choice, proposed config and CI changes, rollout stages, suppression policy, custom rules"
+  - name: "findings"
+    description: "Problems in the current scanning setup in the shared format"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.languages"
+  - "technical.deployment_process"
+  - "technical.standards"
+  - "operations.tools"
+# medium: writes configuration and CI files in the user's project, only after approval. Scans run through the platform's normal permission prompts.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+# Security results are never cached.
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "wshobson-agents"
+  upstream_commit: "4bde3168b43c0655c4d00ea2726e631719908a6d"

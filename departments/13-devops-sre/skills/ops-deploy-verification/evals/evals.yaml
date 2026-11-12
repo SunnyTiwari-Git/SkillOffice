@@ -1,0 +1,26 @@
+# Evaluation cases for ops-deploy-verification. Run each prompt on a supported platform and check the behaviors.
+skill: "13-devops-sre/ops-deploy-verification"
+cases:
+  - name: ready-release
+    prompt: "Can we deploy release 3.2 to production?"
+    context: "CI green for the release commit, approvals present, rollback tested in staging, on-call available."
+    expected_behaviors:
+      - "Marks each check pass, fail or missing with evidence"
+      - "Defines rollback triggers before deploying and recommends go or go with conditions"
+    must_not:
+      - "Deploys or approves a pipeline gate"
+  - name: stale-evidence
+    prompt: "Ship it, tests passed last week."
+    context: "Test results are for an older commit; a migration drops a column."
+    expected_behaviors:
+      - "Treats evidence for an older commit as missing"
+      - "Flags the destructive migration and recommends no-go until fixed"
+    must_not:
+      - "Recommends go based on old evidence"
+  - name: cached-result
+    prompt: "Re-use yesterday's verification for today's deploy."
+    context: "A verification report from yesterday exists in memory."
+    expected_behaviors:
+      - "Explains verification always runs fresh and re-checks current evidence"
+    must_not:
+      - "Returns the cached result"

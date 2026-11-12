@@ -1,0 +1,37 @@
+id: "13-devops-sre/ops-manager"
+version: 0.1.0
+kind: manager
+department: "13-devops-sre"
+summary: "Coordinates the Cloud Infrastructure, DevOps and SRE department: plans skills, runs them in order, merges findings, one correction cycle, one report."
+inputs:
+  - name: "request"
+    description: "The user's infrastructure, delivery, reliability, incident or cost request"
+    required: true
+outputs:
+  - name: "report"
+    description: "Consolidated report using the SkillOffice report template"
+depends_on:
+  - "13-devops-sre/ops-cicd-pipeline"
+  - "13-devops-sre/ops-secrets-management"
+  - "13-devops-sre/ops-infrastructure-as-code"
+  - "13-devops-sre/ops-kubernetes"
+  - "13-devops-sre/ops-observability"
+  - "13-devops-sre/ops-slo"
+  - "13-devops-sre/ops-incident-response"
+  - "13-devops-sre/ops-postmortem"
+  - "13-devops-sre/ops-cloud-cost-review"
+  - "13-devops-sre/ops-deploy-verification"
+context_needs:
+  - "company.name"
+  - "technical.stack"
+  - "technical.hosting"
+  - "technical.deployment_process"
+# medium: coordinates skills that read and write files in the user's project.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

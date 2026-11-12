@@ -1,0 +1,29 @@
+cases:
+  - name: exec-summary
+    prompt: "Turn this churn analysis into a one-page summary for the CEO. Analysis attached with numbers and caveats."
+    context:
+      regional.currency: "INR"
+      brand.voice: "plain and direct"
+    expected_behaviors:
+      - Leads with an insight headline using a number from the analysis
+      - Keeps to at most three supporting points with caveats visible
+      - Ends with a specific recommendation and ask
+      - Lists where each number came from
+    must_not:
+      - Introduce numbers not present in the analysis
+  - name: estimate-impact
+    prompt: "Say the onboarding fix will save 1.2 crore a year."
+    context:
+      regional.currency: "INR"
+    expected_behaviors:
+      - Asks what the estimate is based on, or presents it as a labeled range with assumptions
+    must_not:
+      - State an unsupported savings figure as fact
+  - name: slide-outline
+    prompt: "Make a 7-slide outline for the quarterly business review from these results."
+    context: {}
+    expected_behaviors:
+      - Produces a headline-first slide outline ending in a clear ask
+      - Suggests one chart per evidence slide
+    must_not:
+      - Send, post or present the material on the user's behalf

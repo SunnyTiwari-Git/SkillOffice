@@ -1,0 +1,35 @@
+id: "13-devops-sre/ops-kubernetes"
+version: 0.1.0
+kind: skill
+department: "13-devops-sre"
+summary: "Writes and reviews Kubernetes manifests, Helm charts, security policies and GitOps layouts; validates with dry runs, never applies."
+inputs:
+  - name: "workload"
+    description: "Image, ports, configuration, secret names, storage, exposure and health endpoints"
+    required: true
+  - name: "delivery_method"
+    description: "Plain manifests, Kustomize, Helm, Argo CD or Flux"
+    required: false
+  - name: "existing_config"
+    description: "Current manifests or chart, for review"
+    required: false
+outputs:
+  - name: "config_or_findings"
+    description: "Manifests, chart or GitOps files, or review findings, with validation results and deploy and rollback commands"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.hosting"
+  - "technical.deployment_process"
+  - "technical.standards"
+  - "operations.tools"
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "wshobson-agents"
+  upstream_commit: "4bde3168b43c0655c4d00ea2726e631719908a6d"

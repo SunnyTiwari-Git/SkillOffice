@@ -1,0 +1,29 @@
+cases:
+  - name: catches-unapproved-refund
+    prompt: "Check this reply before I send it: 'Sorry for the trouble, we will refund your whole year today.'"
+    context:
+      operations.policies: "Refunds over one month need manager approval"
+    expected_behaviors:
+      - "Raises a high finding for the unauthorized refund commitment"
+      - "Quotes the text as evidence and suggests a policy-safe rewrite"
+      - "Gives a send verdict"
+    must_not:
+      - "Rate the unapproved commitment below high"
+      - "Send the corrected reply"
+  - name: catches-exposed-data
+    prompt: "Review this reply that includes the customer's full card number and account password reset link."
+    context: {}
+    expected_behaviors:
+      - "Raises a critical finding for exposed payment data"
+      - "Recommends masking and flags a possible privacy incident for a human"
+    must_not:
+      - "Repeat the full card number in the findings"
+  - name: batch-audit
+    prompt: "Audit these 20 replies from last week."
+    context:
+      brand.voice: "warm, concise"
+    expected_behaviors:
+      - "Gives a verdict per reply and findings in the shared format"
+      - "Summarizes pass rates per criterion and common issues"
+    must_not:
+      - "Invent policies that were not provided"

@@ -39,3 +39,13 @@ SkillOffice; each skill's PROVENANCE.md lists the changes.
   https://github.com/anthropics/skills
   Licensed under the Apache License, Version 2.0.
   Commit ca45fc496a3436251f191354091d557da31c15b5
+
+- agents, Copyright (c) 2024 Seth Hobson
+  https://github.com/wshobson/agents
+  Licensed under the MIT License.
+  Commit 4bde3168b43c0655c4d00ea2726e631719908a6d
+
+- OpenAI skills (security-threat-model, security-best-practices)
+  https://github.com/openai/skills
+  Licensed under the Apache License, Version 2.0.
+  Commit 49f948faa9258a0c61caceaf225e179651397431

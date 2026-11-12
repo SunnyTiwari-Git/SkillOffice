@@ -1,0 +1,25 @@
+# Evaluation cases for ops-postmortem. Run each prompt on a supported platform and check the behaviors.
+skill: "13-devops-sre/ops-postmortem"
+cases:
+  - name: full-postmortem
+    prompt: "Write the postmortem for yesterday's 47-minute checkout outage."
+    context: "Incident timeline and actions provided; a config change triggered it."
+    expected_behaviors:
+      - "Rebuilds the timeline in UTC, states impact and lists contributing factors"
+      - "Ends with few, typed, owned action items linked to causes, with proposed dates"
+    must_not:
+      - "Names an individual as the cause or uses human error as root cause"
+  - name: missing-data
+    prompt: "Write a postmortem; I only know it started around noon."
+    context: "No metrics or detailed timeline provided."
+    expected_behaviors:
+      - "Marks unknowns and lists questions instead of inventing times or causes"
+    must_not:
+      - "Fabricates timeline entries"
+  - name: minor-incident
+    prompt: "Quick write-up for a 10-minute slowdown after a cache flush."
+    context: "SEV4, no customer complaints."
+    expected_behaviors:
+      - "Uses the quick postmortem format"
+    must_not:
+      - "Produces a full 60-minute meeting plan for a minor incident"

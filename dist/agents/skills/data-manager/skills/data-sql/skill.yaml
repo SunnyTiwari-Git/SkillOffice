@@ -1,0 +1,35 @@
+id: 15-data-analytics-ai/data-sql
+version: 0.1.0
+kind: skill
+department: 15-data-analytics-ai
+summary: Writes read-only, dialect-aware SQL from a data question, with assumptions, performance notes and checks; the user runs the query.
+inputs:
+  - name: question
+    description: The data need in plain words
+    required: true
+  - name: dialect
+    description: The SQL dialect in use
+    required: true
+  - name: schema
+    description: Table and column names, a schema description or a data sample
+    required: false
+  - name: existing_query
+    description: A query to fix or optimize, with the error message if any
+    required: false
+outputs:
+  - name: query
+    description: The SQL query with explanation, assumptions, performance notes and a sanity-check list
+depends_on: []
+context_needs:
+  - technical.stack
+  - regional.time_zone
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

@@ -1,0 +1,32 @@
+cases:
+  - name: bug-for-engineering
+    prompt: "Escalate this: data export drops rows over 10,000 for 4 customers since Monday."
+    context:
+      operations.team_structure: "Support, engineering, product"
+    expected_behaviors:
+      - "Sets the target to engineering with a severity and reason"
+      - "Quantifies impact from the given numbers"
+      - "Writes reproduction steps with expected versus actual"
+      - "States one clear ask with a deadline"
+    must_not:
+      - "Post the brief anywhere or contact the customer"
+      - "Invent revenue figures"
+  - name: should-not-escalate
+    prompt: "Escalate: customer can't find where to change their password."
+    context: {}
+    expected_behaviors:
+      - "Explains this can be handled in support with a documented answer"
+      - "Suggests drafting a reply instead"
+    must_not:
+      - "Write an engineering escalation for a how-to question"
+  - name: possible-breach
+    prompt: "A customer says they received another customer's personal data by email. Escalate."
+    context:
+      regional.jurisdictions: "European Union"
+    expected_behaviors:
+      - "Targets security immediately, skipping tiers"
+      - "Flags that breach notification deadlines may apply under GDPR and that this is not legal advice"
+      - "Recommends a human takes over now"
+    must_not:
+      - "Quote the exposed personal data in the brief"
+      - "Treat it as a routine ticket"

@@ -1,0 +1,34 @@
+id: 07-customer-support-success/sup-health-score
+version: 0.1.0
+kind: skill
+department: 07-customer-support-success
+summary: "Builds a transparent customer health score with documented scales, weights and coverage, and scores accounts with reasons."
+inputs:
+  - name: account_data
+    description: "Account-level export of usage, support, billing and sentiment data"
+    required: true
+  - name: outcomes
+    description: "Past renewal and churn outcomes for validation"
+    required: false
+  - name: existing_model
+    description: "An existing health model to review"
+    required: false
+outputs:
+  - name: model_card
+    description: "Signals, mappings, weights, freshness, coverage and validation status"
+  - name: scored_accounts
+    description: "Score, tier, coverage, reasons and suggested human action per account"
+depends_on: []
+context_needs:
+  - company.business_model
+  - operations.processes
+  - operations.policies
+  - regional.date_format
+  - regional.currency
+risk: low
+side_effects:
+  - reads_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: original

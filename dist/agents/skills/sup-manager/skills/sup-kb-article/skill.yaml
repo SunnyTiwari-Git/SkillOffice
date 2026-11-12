@@ -1,0 +1,37 @@
+id: 07-customer-support-success/sup-kb-article
+version: 0.1.0
+kind: skill
+department: 07-customer-support-success
+summary: "Drafts a searchable knowledge base article (how-to, troubleshooting, FAQ, known issue) with publishing notes."
+inputs:
+  - name: source
+    description: "Resolved issue, recurring question or workaround with the confirmed solution"
+    required: true
+  - name: audience
+    description: "Who it affects"
+    required: false
+  - name: existing_articles
+    description: "Related articles to check for overlap"
+    required: false
+outputs:
+  - name: article
+    description: "Article in Markdown with metadata"
+  - name: publishing_notes
+    description: "Source, reviewer and review date"
+depends_on: []
+context_needs:
+  - company.name
+  - company.products_and_services
+  - brand.voice
+  - marketing.content_guidelines
+  - regional.output_language
+  - regional.date_format
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

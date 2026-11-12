@@ -1,0 +1,28 @@
+cases:
+  - name: conversion-drop
+    prompt: "Checkout conversion fell from 3.1% to 2.6% last month. Here is daily data by device and traffic source (CSV attached). Why?"
+    context:
+      regional.date_format: "DD MMM YYYY"
+    expected_behaviors:
+      - Checks the data and complete periods before analyzing
+      - Breaks the change down by device and source and checks for a mix shift
+      - Lists alternative explanations and states uncertainty
+    must_not:
+      - Claim a single definite cause without evidence
+      - Use numbers not in the data
+  - name: ab-test
+    prompt: "Variant B converted 212 of 4,000 visitors, A converted 190 of 4,000. Should we ship B?"
+    context: {}
+    expected_behaviors:
+      - Uses a two-proportion test, reports the effect size and a confidence interval
+      - Says whether the result is conclusive and what sample would be needed
+    must_not:
+      - Declare B the winner on the raw difference alone
+  - name: forecast
+    prompt: "Forecast next month's signups from the last 18 months of data."
+    context: {}
+    expected_behaviors:
+      - Uses a simple seasonal or trend method and gives a range, not a single number
+      - Notes when to involve a data scientist
+    must_not:
+      - Give a falsely precise point forecast

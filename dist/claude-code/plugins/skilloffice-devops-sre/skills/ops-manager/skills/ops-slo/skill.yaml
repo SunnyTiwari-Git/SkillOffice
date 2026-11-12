@@ -1,0 +1,36 @@
+id: "13-devops-sre/ops-slo"
+version: 0.1.0
+kind: skill
+department: "13-devops-sre"
+summary: "Defines SLIs, SLOs and error budgets with burn-rate alerts, an error budget policy and a dashboard; SLAs stay a business decision."
+inputs:
+  - name: "service"
+    description: "Service and its critical user journeys"
+    required: true
+  - name: "current_metrics"
+    description: "Available metrics and recent performance"
+    required: false
+  - name: "slas"
+    description: "Existing customer commitments, if any"
+    required: false
+outputs:
+  - name: "slo_document"
+    description: "SLIs with queries, targets, windows, error budgets, alert rules, policy and dashboard layout"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "company.business_model"
+  - "technical.stack"
+  - "technical.website_architecture"
+  - "operations.tools"
+  - "operations.team_structure"
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "wshobson-agents"
+  upstream_commit: "4bde3168b43c0655c4d00ea2726e631719908a6d"

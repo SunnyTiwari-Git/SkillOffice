@@ -66,3 +66,25 @@ sources:
     used_for: [09-design-branding, 11-quality-assurance]
     notes: Licenses differ per skill. The docx, pdf, pptx and xlsx skills are proprietary and never used. webapp-testing scripts and examples (Python) are not imported. THIRD_PARTY_NOTICES.md covers fonts and code in other skills, not the two used.
 
+  - id: wshobson-agents
+    url: https://github.com/wshobson/agents
+    owner: Seth Hobson
+    license: MIT
+    license_file: registry/licenses/wshobson-agents.txt
+    pinned_commit: 4bde3168b43c0655c4d00ea2726e631719908a6d
+    commit_date: 2026-11-05
+    reviewed_at: 2026-11-07
+    used_for: [13-devops-sre, 14-cybersecurity, 15-data-analytics-ai]
+    notes: Only skills/ content used. helm-chart-scaffolding/scripts/validate-chart.sh not imported. The gitops-workflow line that decodes and prints an Argo CD admin password from a Kubernetes secret is not imported (credential exposure).
+
+  - id: openai-skills
+    url: https://github.com/openai/skills
+    owner: OpenAI
+    license: Apache-2.0 (per skill; only security-threat-model and security-best-practices used)
+    license_file: registry/licenses/openai-skills.txt
+    pinned_commit: 49f948faa9258a0c61caceaf225e179651397431
+    commit_date: 2026-06-23
+    reviewed_at: 2026-11-07
+    used_for: [14-cybersecurity]
+    notes: Each skill carries its own LICENSE.txt; neither used skill has a NOTICE file. The javascript-jquery reference that triggered a scanner false positive is not imported.
+

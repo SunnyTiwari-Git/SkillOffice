@@ -1,0 +1,36 @@
+id: 07-customer-support-success/sup-ticket-triage
+version: 0.1.0
+kind: skill
+department: 07-customer-support-success
+summary: "Triages tickets with category, priority, routing, duplicate check, SLA risk and a draft first reply."
+inputs:
+  - name: tickets
+    description: "One ticket or a batch, pasted or exported"
+    required: true
+  - name: known_issues
+    description: "Known issues list or recent resolved tickets"
+    required: false
+  - name: sla_targets
+    description: "SLA targets or routing rules"
+    required: false
+outputs:
+  - name: triage
+    description: "Category, priority with reason, routing and SLA risk per ticket"
+  - name: draft_first_reply
+    description: "Draft first reply per ticket, not sent"
+depends_on: []
+context_needs:
+  - company.products_and_services
+  - operations.team_structure
+  - operations.processes
+  - operations.policies
+  - regional.time_zone
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

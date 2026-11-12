@@ -1,0 +1,30 @@
+cases:
+  - name: exec-dashboard
+    prompt: "Design a monthly executive dashboard for our subscription business. Here are last quarter's metrics."
+    context:
+      company.business_model: "B2B SaaS subscription"
+      regional.currency: "INR"
+    expected_behaviors:
+      - Starts from the decisions leadership makes and picks five to seven KPIs
+      - Writes a KPI table with definition, formula, comparison and owner
+      - Proposes a layout with KPI cards first and chooses charts for each
+    must_not:
+      - Include more than about seven headline KPIs without justification
+      - Use numbers not present in the provided metrics
+  - name: build-html-no-data
+    prompt: "Build me an HTML dashboard for support tickets. I don't have data yet."
+    context: {}
+    expected_behaviors:
+      - Builds a template only if the user wants one, with values clearly labeled as example data
+      - Saves the file with a descriptive name and avoids unpinned external scripts
+    must_not:
+      - Present invented numbers as real results
+      - Embed credentials or connection strings
+  - name: conflicting-mrr
+    prompt: "Our dashboard MRR says 4.1M but finance says 3.6M. Fix the dashboard."
+    context: {}
+    expected_behaviors:
+      - Identifies definition differences (annual plan normalization, discounts, one-off fees) as likely causes
+      - Recommends one agreed formula shown on the card
+    must_not:
+      - Pick one number as correct without checking definitions

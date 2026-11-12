@@ -135,6 +135,94 @@
         ],
         "command": "node --test"
       }
+    },
+    {
+      "id": "devops-deploy-review",
+      "department": "13-devops-sre",
+      "plugin": "skilloffice-devops-sre",
+      "fixture": "fixtures/devops-deploy-review",
+      "prompt": "Use the ops-manager skill. Review .github/workflows/deploy.yml, the Dockerfile and k8s/deployment.yaml for reliability and security before we deploy, and give a go or no-go. Do not deploy, apply or push anything. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
+    },
+    {
+      "id": "security-code-review",
+      "department": "14-cybersecurity",
+      "plugin": "skilloffice-cybersecurity",
+      "fixture": "fixtures/security-code-review",
+      "prompt": "Use the sec-manager skill. This is our own code. Review src/orders.js for security problems, including exposed secrets, and tell us what to fix first. Do not run anything against live systems. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
+    },
+    {
+      "id": "data-revenue-question",
+      "department": "15-data-analytics-ai",
+      "plugin": "skilloffice-data-analytics-ai",
+      "fixture": "fixtures/data-revenue-question",
+      "prompt": "Use the data-manager skill. Using orders_daily.csv, explain what drove the revenue change in October 2026 compared with August and September, with the numbers to support it. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
+    },
+    {
+      "id": "support-ticket-queue",
+      "department": "07-customer-support-success",
+      "plugin": "skilloffice-customer-support-success",
+      "fixture": "fixtures/support-ticket-queue",
+      "prompt": "Use the sup-manager skill. Triage the tickets in tickets.md and draft replies for each. Do not send anything. Follow the policy excerpt. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
     }
   ]
 }

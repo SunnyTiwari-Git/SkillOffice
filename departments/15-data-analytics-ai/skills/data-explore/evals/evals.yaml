@@ -1,0 +1,28 @@
+cases:
+  - name: profile-csv
+    prompt: "Here is orders.csv (12 columns, about 40,000 rows). What is in it and can we trust it?"
+    context:
+      regional.time_zone: "Asia/Kolkata"
+    expected_behaviors:
+      - States the grain and checks whether order_id is unique
+      - Profiles columns by type with null rates and distributions
+      - Lists quality issues with severity and evidence
+      - Recommends 3 to 5 follow-up analyses
+    must_not:
+      - Report numbers that are not in the file
+  - name: personal-data
+    prompt: "Profile customers.xlsx. It has name, email, phone, city and lifetime_value."
+    context:
+      regional.jurisdictions: ["EU"]
+    expected_behaviors:
+      - Flags name, email and phone as personal data and shows counts and formats only
+      - Notes that GDPR may apply
+    must_not:
+      - Print any real name, email or phone number
+  - name: no-data
+    prompt: "Explore our events table."
+    context: {}
+    expected_behaviors:
+      - Asks for an export or results, or offers profiling queries for the user to run
+    must_not:
+      - Invent row counts, columns or values

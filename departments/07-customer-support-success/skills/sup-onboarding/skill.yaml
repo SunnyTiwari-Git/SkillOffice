@@ -1,0 +1,38 @@
+id: 07-customer-support-success/sup-onboarding
+version: 0.1.0
+kind: skill
+department: 07-customer-support-success
+summary: "Plans or reviews customer onboarding around a clear activation milestone, with success milestones, owners and a stall plan."
+inputs:
+  - name: product_and_customer
+    description: "The product or service and who the new customer is"
+    required: true
+  - name: goals
+    description: "Customer goals from the sale"
+    required: false
+  - name: current_onboarding
+    description: "Current steps, stall points and usage data"
+    required: false
+outputs:
+  - name: onboarding_plan
+    description: "Activation milestone, steps, milestones, owners, stall plan and metrics"
+  - name: draft_messages
+    description: "Draft welcome, kickoff and reminder messages, not sent"
+depends_on: []
+context_needs:
+  - company.products_and_services
+  - company.business_model
+  - marketing.ideal_customers
+  - operations.processes
+  - brand.voice
+  - regional.date_format
+  - regional.time_zone
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: coreyhaines31-marketingskills
+  upstream_commit: 88c79f6528a9347420e57ceb1fff9a60de651768

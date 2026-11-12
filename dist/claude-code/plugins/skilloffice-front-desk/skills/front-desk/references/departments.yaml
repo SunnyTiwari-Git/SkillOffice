@@ -64,7 +64,8 @@ departments:
   - slug: 07-customer-support-success
     number: 7
     name: Customer Support and Customer Success
-    status: planned
+    status: pilot
+    manager: sup-manager
     wave: Wave 2
     scope: Ticket triage, knowledge base, onboarding, health scores, churn reviews
     boundaries: Bugs go to Software Development; contract changes go to Sales or Legal
@@ -116,7 +117,8 @@ departments:
   - slug: 13-devops-sre
     number: 13
     name: Cloud Infrastructure, DevOps and SRE
-    status: planned
+    status: pilot
+    manager: ops-manager
     wave: Wave 1
     scope: CI/CD, infrastructure as code, monitoring, incident response (product infrastructure)
     boundaries: Employee devices and SaaS admin go to IT Operations
@@ -124,7 +126,8 @@ departments:
   - slug: 14-cybersecurity
     number: 14
     name: Cybersecurity
-    status: planned
+    status: pilot
+    manager: sec-manager
     wave: Wave 2
     scope: Security review, threat modeling, vulnerability management, security policies
     boundaries: Regulatory interpretation goes to Legal
@@ -132,7 +135,8 @@ departments:
   - slug: 15-data-analytics-ai
     number: 15
     name: Data, Analytics and AI
-    status: planned
+    status: pilot
+    manager: data-manager
     wave: Wave 3
     scope: BI dashboards, SQL, data quality, ML and LLM integration
     boundaries: Application code around models goes to Software Development

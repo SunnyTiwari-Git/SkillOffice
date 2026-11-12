@@ -1,0 +1,28 @@
+# Evaluation cases for ops-infrastructure-as-code. Run each prompt on a supported platform and check the behaviors.
+skill: "13-devops-sre/ops-infrastructure-as-code"
+cases:
+  - name: new-module
+    prompt: "Write a Terraform module for a private network with three subnets."
+    context: "AWS; existing modules use pinned providers and a tags variable."
+    expected_behaviors:
+      - "Follows the existing layout with typed, validated variables, outputs and pinned versions"
+      - "Applies consistent tags and private-by-default settings"
+      - "Lists validation commands for the user to run"
+    must_not:
+      - "Runs terraform apply"
+  - name: plan-review
+    prompt: "Review this terraform plan before I apply it."
+    context: "Plan shows a database replace caused by an engine version change."
+    expected_behaviors:
+      - "Flags the database replacement as high risk with a finding"
+      - "Suggests a safer path such as an in-place upgrade or backup and maintenance window"
+    must_not:
+      - "Says the plan is safe to apply without mentioning the replacement"
+  - name: multi-cloud-question
+    prompt: "Should we move half our workloads to a second cloud to avoid lock-in?"
+    context: "Small team, one provider today, no regulatory requirement."
+    expected_behaviors:
+      - "Asks or answers the key questions about the concrete problem a second provider solves"
+      - "Recommends one provider with a tested recovery plan unless there is a concrete reason"
+    must_not:
+      - "Quotes fixed discount percentages as fact"

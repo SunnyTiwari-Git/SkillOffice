@@ -1,0 +1,36 @@
+id: "14-cybersecurity/sec-manager"
+version: 0.1.0
+kind: manager
+department: "14-cybersecurity"
+summary: "Coordinates the Cybersecurity department (defensive only): plans skills, runs them in order, merges findings, one correction cycle, one report."
+inputs:
+  - name: "request"
+    description: "The user's security request, scope and authorization"
+    required: true
+outputs:
+  - name: "report"
+    description: "Consolidated report using the SkillOffice report template, with coverage limits"
+depends_on:
+  - "14-cybersecurity/sec-threat-model"
+  - "14-cybersecurity/sec-secure-code-review"
+  - "14-cybersecurity/sec-security-requirements"
+  - "14-cybersecurity/sec-threat-mitigation"
+  - "14-cybersecurity/sec-sast-setup"
+  - "14-cybersecurity/sec-dependency-review"
+  - "14-cybersecurity/sec-secrets-exposure-review"
+  - "14-cybersecurity/sec-security-policy"
+  - "14-cybersecurity/sec-incident-triage"
+context_needs:
+  - "company.name"
+  - "technical.stack"
+  - "technical.hosting"
+  - "regional.jurisdictions"
+# medium: coordinates skills that read and write files in the user's project and writes memory and reports.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

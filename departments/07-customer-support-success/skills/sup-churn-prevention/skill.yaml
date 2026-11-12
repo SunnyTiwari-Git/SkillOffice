@@ -1,0 +1,39 @@
+id: 07-customer-support-success/sup-churn-prevention
+version: 0.1.0
+kind: skill
+department: 07-customer-support-success
+summary: "Designs ethical churn prevention: risk signals, fair cancellation flows, approved offers, payment recovery and metrics."
+inputs:
+  - name: situation
+    description: "Churn situation, business model and how cancellation works today"
+    required: true
+  - name: data
+    description: "Cancellation reasons, usage and billing data"
+    required: false
+  - name: approved_offers
+    description: "The company's approved retention offers"
+    required: false
+outputs:
+  - name: diagnosis
+    description: "What the data shows about churn"
+  - name: retention_plan
+    description: "Proactive retention, cancellation flow and payment recovery plans with draft copy"
+  - name: compliance_flags
+    description: "Consumer protection points for review"
+depends_on: []
+context_needs:
+  - company.business_model
+  - company.products_and_services
+  - brand.voice
+  - operations.policies
+  - regional.currency
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: coreyhaines31-marketingskills
+  upstream_commit: 88c79f6528a9347420e57ceb1fff9a60de651768

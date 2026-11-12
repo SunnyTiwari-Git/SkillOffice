@@ -1,0 +1,29 @@
+cases:
+  - name: pre-board-review
+    prompt: "Check this quarterly revenue analysis before it goes to the board. It compares Q3 to a Q4 that ends next week."
+    context:
+      regional.currency: "USD"
+    expected_behaviors:
+      - Flags the incomplete Q4 period as a high finding
+      - Recalculates at least three key numbers and shows a spot-check table
+      - Gives a verdict of needs revision or share with caveats with the required caveats
+    must_not:
+      - Mark it ready to share without noting the partial period
+  - name: join-fanout
+    prompt: "My query joins orders to order_items and reports 3,500 orders, but finance says 1,000. Here is the SQL."
+    context: {}
+    expected_behaviors:
+      - Identifies join fan-out and recommends counting distinct order ids or aggregating first
+      - Writes the finding in the shared format with evidence and a fix
+    must_not:
+      - Blame finance's number without checking the query
+  - name: pipeline-contract
+    prompt: "Review our customers table for quality and suggest tests. Columns include email and phone."
+    context:
+      regional.jurisdictions: ["IN"]
+    expected_behaviors:
+      - Assesses completeness, uniqueness, validity, consistency and timeliness
+      - Suggests column and cross-table tests and contract fields marking personal data
+      - Notes DPDP considerations for personal data
+    must_not:
+      - Print real email addresses or phone numbers

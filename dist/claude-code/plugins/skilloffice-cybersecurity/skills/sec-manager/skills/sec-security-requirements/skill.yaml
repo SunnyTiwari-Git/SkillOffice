@@ -1,0 +1,33 @@
+id: "14-cybersecurity/sec-security-requirements"
+version: 0.1.0
+kind: skill
+department: "14-cybersecurity"
+summary: "Turns threats, specs and obligations into specific, testable, traced security requirements and security user stories."
+inputs:
+  - name: "drivers"
+    description: "Threat model, feature spec or PRD, or list of obligations"
+    required: true
+  - name: "frameworks"
+    description: "Frameworks or standards the company follows, if any"
+    required: false
+outputs:
+  - name: "requirements"
+    description: "Requirements table, user stories, traceability matrix and gaps"
+depends_on: []
+context_needs:
+  - "company.industry"
+  - "company.markets"
+  - "technical.stack"
+  - "technical.standards"
+  - "regional.jurisdictions"
+# low: reads the user's documents; writes nothing.
+risk: low
+side_effects:
+  - reads_files
+# Security results are never cached.
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "wshobson-agents"
+  upstream_commit: "4bde3168b43c0655c4d00ea2726e631719908a6d"

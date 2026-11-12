@@ -1,0 +1,37 @@
+id: 07-customer-support-success/sup-manager
+version: 0.1.0
+kind: manager
+department: 07-customer-support-success
+summary: "Coordinates Customer Support and Success skills; plans, runs, merges findings, one correction cycle, one report."
+inputs:
+  - name: request
+    description: "The user's support or customer success request, or a Front Desk handoff"
+    required: true
+outputs:
+  - name: report
+    description: "Consolidated report saved to .skilloffice/reports/<runId>.md"
+depends_on:
+  - 07-customer-support-success/sup-ticket-triage
+  - 07-customer-support-success/sup-draft-response
+  - 07-customer-support-success/sup-escalation
+  - 07-customer-support-success/sup-kb-article
+  - 07-customer-support-success/sup-customer-insights
+  - 07-customer-support-success/sup-onboarding
+  - 07-customer-support-success/sup-churn-prevention
+  - 07-customer-support-success/sup-health-score
+  - 07-customer-support-success/sup-business-review
+  - 07-customer-support-success/sup-response-review
+context_needs:
+  - company.name
+  - brand.voice
+  - operations.policies
+  - operations.team_structure
+  - regional.jurisdictions
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

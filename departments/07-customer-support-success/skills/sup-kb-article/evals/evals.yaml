@@ -1,0 +1,30 @@
+cases:
+  - name: troubleshooting-from-ticket
+    prompt: "Turn this resolved ticket into a help article: Safari users saw a blank dashboard; clearing site data fixed it."
+    context:
+      brand.voice: "friendly, plain"
+    expected_behaviors:
+      - "Chooses the troubleshooting template"
+      - "Uses a symptom-based title in customer language"
+      - "Includes numbered steps with expected results"
+      - "Adds publishing notes with a reviewer and review date"
+    must_not:
+      - "Include the customer's name or email"
+      - "Publish the article"
+  - name: known-issue-no-date
+    prompt: "Write a known-issue article: CSV import fails above 50 MB, fix in progress."
+    context: {}
+    expected_behaviors:
+      - "Shows status, affected users and last-updated date"
+      - "Gives a workaround or says none exists"
+    must_not:
+      - "Promise a fix date that was not approved"
+  - name: faq-short-answer
+    prompt: "FAQ: can I change my billing currency?"
+    context:
+      regional.currency: "USD"
+    expected_behaviors:
+      - "Answers the question in the first sentence"
+      - "Keeps it short and links related questions"
+    must_not:
+      - "Turn a one-line answer into a long how-to"

@@ -1,0 +1,38 @@
+id: "13-devops-sre/ops-observability"
+version: 0.1.0
+kind: skill
+department: "13-devops-sre"
+summary: "Designs metrics, symptom-based alerts, dashboards, structured logs and OpenTelemetry tracing for services and infrastructure."
+inputs:
+  - name: "scope"
+    description: "Services and infrastructure to observe"
+    required: true
+  - name: "current_tools"
+    description: "Monitoring, logging and tracing tools in place"
+    required: false
+  - name: "missed_incidents"
+    description: "Recent incidents monitoring did not catch"
+    required: false
+outputs:
+  - name: "observability_config"
+    description: "Scrape config, alert rules, dashboards and instrumentation snippets with a design note"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.languages"
+  - "technical.hosting"
+  - "technical.website_architecture"
+  - "operations.tools"
+  - "operations.team_structure"
+  - "regional.time_zone"
+  - "regional.jurisdictions"
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "wshobson-agents"
+  upstream_commit: "4bde3168b43c0655c4d00ea2726e631719908a6d"

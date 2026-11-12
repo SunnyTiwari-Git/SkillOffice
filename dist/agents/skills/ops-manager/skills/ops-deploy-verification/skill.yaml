@@ -1,0 +1,32 @@
+id: "13-devops-sre/ops-deploy-verification"
+version: 0.1.0
+kind: skill
+department: "13-devops-sre"
+summary: "Go or no-go deploy recommendation from fresh evidence, with rollback triggers and a post-deploy plan; never cached, never deploys."
+inputs:
+  - name: "release"
+    description: "Version or commit, changes and services affected"
+    required: true
+  - name: "evidence"
+    description: "CI results, approvals, test reports, migration and flag plans, monitoring links"
+    required: true
+outputs:
+  - name: "recommendation"
+    description: "Filled checklist, rollback triggers, post-deploy plan and go, conditional go or no-go with reasons"
+depends_on: []
+context_needs:
+  - "technical.deployment_process"
+  - "technical.hosting"
+  - "technical.testing"
+  - "operations.team_structure"
+  - "operations.sops"
+  - "regional.time_zone"
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

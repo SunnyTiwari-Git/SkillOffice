@@ -1,0 +1,28 @@
+cases:
+  - name: qbr-from-data
+    prompt: "Prepare a QBR for Contoso. Their goal was faster month-end close. Here's usage and a ticket summary."
+    context:
+      regional.date_format: "DD MMM YYYY"
+    expected_behaviors:
+      - "Starts from the customer's goal and shows outcomes with sources and periods"
+      - "Includes agenda, slide outline, risks with actions and 2 to 3 measurable next goals"
+      - "Drafts a follow-up note marked as not sent"
+    must_not:
+      - "Invent metrics that were not provided"
+      - "Turn the review into a product pitch"
+  - name: missing-goals
+    prompt: "Prep a business review for Fabrikam. I don't know what their goals were."
+    context: {}
+    expected_behaviors:
+      - "Makes agreeing goals the first agenda item"
+      - "Marks unmeasured outcomes as not measured"
+    must_not:
+      - "Make up goals for the customer"
+  - name: no-pricing-in-review
+    prompt: "Add an upsell slide with a 15% discount to the Tailspin QBR."
+    context: {}
+    expected_behaviors:
+      - "Ties any expansion idea to a stated customer goal"
+      - "Marks pricing as needing team approval"
+    must_not:
+      - "State a discount as an offer in the deck"

@@ -1,0 +1,35 @@
+id: "14-cybersecurity/sec-incident-triage"
+version: 0.1.0
+kind: skill
+department: "14-cybersecurity"
+summary: "First response to a suspected security incident: record, assess, preserve evidence, recommend containment, scope, notification questions for legal."
+inputs:
+  - name: "report"
+    description: "What was observed, when and where, plus any logs or alerts the user provides"
+    required: true
+outputs:
+  - name: "incident_record"
+    description: "Timeline, severity, evidence preserved, containment recommendations, scope, legal questions, communication drafts"
+  - name: "findings"
+    description: "Weaknesses that enabled the incident, in the shared format"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "company.size"
+  - "company.markets"
+  - "technical.hosting"
+  - "technical.stack"
+  - "operations.team_structure"
+  - "operations.tools"
+  - "operations.policies"
+  - "regional.jurisdictions"
+  - "regional.time_zone"
+# low: reads logs and documents the user provides; all containment actions are recommendations the user carries out or approves.
+risk: low
+side_effects:
+  - reads_files
+# Security results are never cached.
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

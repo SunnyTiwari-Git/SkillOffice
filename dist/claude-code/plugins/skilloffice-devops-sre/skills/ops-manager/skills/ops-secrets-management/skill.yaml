@@ -1,0 +1,33 @@
+id: "13-devops-sre/ops-secrets-management"
+version: 0.1.0
+kind: skill
+department: "13-devops-sre"
+summary: "Designs secret storage, injection, rotation, scanning and leak response; works with secret names only, never values."
+inputs:
+  - name: "secrets_needed"
+    description: "Secrets the application needs, by name and purpose only"
+    required: true
+  - name: "platform"
+    description: "Where the app runs and which CI system deploys it"
+    required: false
+outputs:
+  - name: "secrets_plan"
+    description: "Inventory by name, store choice, injection design, access policy, rotation schedule, scanning and leak runbook"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.hosting"
+  - "technical.deployment_process"
+  - "operations.tools"
+  - "operations.policies"
+  - "regional.jurisdictions"
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "wshobson-agents"
+  upstream_commit: "4bde3168b43c0655c4d00ea2726e631719908a6d"

@@ -1,0 +1,35 @@
+id: "13-devops-sre/ops-infrastructure-as-code"
+version: 0.1.0
+kind: skill
+department: "13-devops-sre"
+summary: "Writes and reviews infrastructure as code: modules, state, tagging, pinned providers, plan review and cloud choices; never applies."
+inputs:
+  - name: "goal"
+    description: "New resources, a module, a change, a plan to review, or a provider decision"
+    required: true
+  - name: "existing_code"
+    description: "Current infrastructure code and plan output, if any"
+    required: false
+outputs:
+  - name: "code_or_findings"
+    description: "Infrastructure code changes or plan review findings, with validation steps and risks"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "technical.hosting"
+  - "technical.stack"
+  - "technical.standards"
+  - "technical.deployment_process"
+  - "operations.tools"
+  - "operations.policies"
+  - "regional.jurisdictions"
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "wshobson-agents"
+  upstream_commit: "4bde3168b43c0655c4d00ea2726e631719908a6d"

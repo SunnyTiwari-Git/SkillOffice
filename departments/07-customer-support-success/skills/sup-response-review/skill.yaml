@@ -1,0 +1,32 @@
+id: 07-customer-support-success/sup-response-review
+version: 0.1.0
+kind: skill
+department: 07-customer-support-success
+summary: "Reviews support replies for accuracy, tone, policy compliance, unauthorized promises and exposed personal data."
+inputs:
+  - name: replies
+    description: "Replies with the customer messages they answer"
+    required: true
+  - name: facts_and_policies
+    description: "Confirmed facts, policy text and help articles"
+    required: false
+outputs:
+  - name: findings
+    description: "Findings in the shared SkillOffice format with rewrites"
+  - name: verdicts
+    description: "Send verdict per reply and a batch summary"
+depends_on: []
+context_needs:
+  - brand.voice
+  - brand.tone_dos
+  - brand.tone_donts
+  - operations.policies
+  - regional.output_language
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: original

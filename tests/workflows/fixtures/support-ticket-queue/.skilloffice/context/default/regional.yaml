@@ -1,0 +1,6 @@
+currency: USD
+date_format: MM/DD/YYYY
+units: imperial
+output_language: en-US
+time_zone: America/Los_Angeles
+jurisdictions: [United States]

@@ -1,0 +1,30 @@
+id: "14-cybersecurity/sec-secrets-exposure-review"
+version: 0.1.0
+kind: skill
+department: "14-cybersecurity"
+summary: "Read-only search for hardcoded and exposed secrets in the user's code and config, with masked evidence, rotation advice and secret-management review."
+inputs:
+  - name: "scope"
+    description: "Repository, folders or files the user owns"
+    required: true
+  - name: "history"
+    description: "Whether to examine version history"
+    required: false
+outputs:
+  - name: "findings"
+    description: "Findings with masked values, rotation steps and coverage note"
+depends_on: []
+context_needs:
+  - "technical.stack"
+  - "technical.hosting"
+  - "technical.deployment_process"
+  - "operations.tools"
+# low: reads the user's files only; never uses or tests a found credential.
+risk: low
+side_effects:
+  - reads_files
+# Security results are never cached.
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original
