@@ -169,7 +169,9 @@ function main(): void {
 
   const resultsDir = path.join(WORKFLOWS, 'results');
   mkdirSync(resultsDir, { recursive: true });
-  const file = path.join(resultsDir, `${new Date().toISOString().slice(0, 10)}-claude-code${coldOnly ? '-cold' : quick ? '-quick' : ''}.json`);
+  // Timestamped to the second so a later run never overwrites earlier results.
+  const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  const file = path.join(resultsDir, `${stamp}-claude-code${coldOnly ? '-cold' : quick ? '-quick' : ''}.json`);
   writeFileSync(file, `${JSON.stringify({ platform: 'claude-code', results }, null, 2)}\n`);
   console.log(`\nSaved ${path.relative(REPO_ROOT, file)}`);
 }

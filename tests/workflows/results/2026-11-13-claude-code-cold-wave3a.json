@@ -1,0 +1,102 @@
+{
+  "platform": "claude-code",
+  "results": [
+    {
+      "scenario": "finance-bank-reconciliation",
+      "run": "cold",
+      "ok": true,
+      "inputTokens": 35,
+      "cacheReadTokens": 1408345,
+      "cacheWriteTokens": 81767,
+      "outputTokens": 23521,
+      "costUsd": 1.406662975,
+      "turns": 48,
+      "durationMs": 221017,
+      "reportWritten": true,
+      "ledgerEvents": [
+        "run_started",
+        "skill_completed",
+        "skill_completed",
+        "decision",
+        "test_result",
+        "run_completed"
+      ],
+      "commandPassed": null
+    },
+    {
+      "scenario": "legal-vendor-contract",
+      "run": "cold",
+      "ok": true,
+      "inputTokens": 39,
+      "cacheReadTokens": 1543679,
+      "cacheWriteTokens": 78472,
+      "outputTokens": 26435,
+      "costUsd": 1.46549403,
+      "turns": 41,
+      "durationMs": 255647,
+      "reportWritten": true,
+      "ledgerEvents": [
+        "run_started",
+        "decision",
+        "skill_skipped",
+        "skill_skipped",
+        "skill_skipped",
+        "skill_completed",
+        "skill_completed",
+        "decision",
+        "correction_cycle",
+        "test_result",
+        "test_result",
+        "decision",
+        "run_completed"
+      ],
+      "commandPassed": null
+    },
+    {
+      "scenario": "hr-job-ad-review",
+      "run": "cold",
+      "ok": true,
+      "inputTokens": 27,
+      "cacheReadTokens": 820711,
+      "cacheWriteTokens": 46897,
+      "outputTokens": 15334,
+      "costUsd": 0.8462341299999999,
+      "turns": 26,
+      "durationMs": 160666,
+      "reportWritten": true,
+      "ledgerEvents": [
+        "run_started",
+        "decision",
+        "skill_completed",
+        "correction_cycle",
+        "run_completed"
+      ],
+      "commandPassed": null
+    },
+    {
+      "scenario": "exec-business-case",
+      "run": "cold",
+      "ok": true,
+      "inputTokens": 47,
+      "cacheReadTokens": 1991995,
+      "cacheWriteTokens": 83570,
+      "outputTokens": 26122,
+      "costUsd": 1.5897145300000004,
+      "turns": 59,
+      "durationMs": 265478,
+      "reportWritten": true,
+      "ledgerEvents": [
+        "run_started",
+        "skill_skipped",
+        "skill_completed",
+        "skill_completed",
+        "skill_completed",
+        "correction_cycle",
+        "test_result",
+        "decision",
+        "run_completed"
+      ],
+      "commandPassed": null
+    }
+  ]
+}
