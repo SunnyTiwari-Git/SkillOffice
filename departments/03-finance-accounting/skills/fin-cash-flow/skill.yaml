@@ -1,0 +1,33 @@
+id: 03-finance-accounting/fin-cash-flow
+version: 0.1.0
+kind: skill
+department: 03-finance-accounting
+summary: Builds a 13-week or 30/60/90-day cash forecast from a confirmed opening balance, with low, expected and high cases and named risks.
+inputs:
+  - name: opening_balance
+    description: Opening cash balance and its as-of date
+    required: true
+  - name: receivables_and_history
+    description: Receivables aging and recent payment history
+    required: true
+  - name: payables_and_fixed_costs
+    description: Payables due and scheduled fixed costs
+    required: true
+outputs:
+  - name: forecast
+    description: Weekly or windowed forecast with three cases, running balances, named risks and assumptions
+depends_on: []
+context_needs:
+  - company.name
+  - regional.currency
+  - regional.date_format
+  - regional.time_zone
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

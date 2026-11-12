@@ -1,0 +1,37 @@
+id: 01-executive-strategy/exe-manager
+version: 0.1.0
+kind: manager
+department: 01-executive-strategy
+summary: Coordinates Executive and Strategy skills; plans, runs, merges findings, one correction cycle, one report.
+inputs:
+  - name: request
+    description: The user's leadership or strategy request, or a Front Desk handoff
+    required: true
+outputs:
+  - name: report
+    description: Consolidated report saved to .skilloffice/reports/<runId>.md
+depends_on:
+  - 01-executive-strategy/exe-strategy-review
+  - 01-executive-strategy/exe-okr-planning
+  - 01-executive-strategy/exe-business-case
+  - 01-executive-strategy/exe-decision-memo
+  - 01-executive-strategy/exe-board-update
+  - 01-executive-strategy/exe-kpi-review
+  - 01-executive-strategy/exe-competitive-strategy
+  - 01-executive-strategy/exe-meeting-brief
+  - 01-executive-strategy/exe-plan-review
+context_needs:
+  - company.name
+  - company.description
+  - company.size
+  - company.markets
+  - regional.currency
+  - regional.jurisdictions
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

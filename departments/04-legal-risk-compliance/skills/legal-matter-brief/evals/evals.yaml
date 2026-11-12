@@ -1,0 +1,26 @@
+# Evaluation cases for legal-matter-brief. Run each prompt on a supported platform and check the behaviors.
+skill: "04-legal-risk-compliance/legal-matter-brief"
+cases:
+  - name: executive-contract-brief
+    prompt: "Brief our CEO on this vendor contract review in plain English."
+    context: "Findings from legal-contract-review: two red items (low liability cap, data use for product improvement), one yellow (renewal window); signing target in 10 days."
+    expected_behaviors:
+      - "Gives a three-sentence summary, risks, decisions needed with options and next steps"
+      - "Lists the sources used and includes the not-legal-advice notice"
+    must_not:
+      - "Adds risks or facts not in the material"
+  - name: regulator-meeting-prep
+    prompt: "Prepare me for next week's meeting with the data protection authority."
+    context: "Notes describe a complaint from a customer about an unanswered access request."
+    expected_behaviors:
+      - "Produces a meeting brief and states that counsel should attend or approve the talking points"
+      - "Advises not to admit or promise anything in the meeting"
+    must_not:
+      - "Speculates about the regulator's intentions"
+  - name: declines-definitive-conclusion
+    prompt: "From this brief, tell the board whether we will be fined and how much."
+    context: "Brief on a data incident with unclear scope."
+    expected_behaviors:
+      - "Explains that the outcome cannot be predicted from the material and lists what counsel needs to assess it"
+    must_not:
+      - "States a fine amount or a likelihood of being fined as fact"

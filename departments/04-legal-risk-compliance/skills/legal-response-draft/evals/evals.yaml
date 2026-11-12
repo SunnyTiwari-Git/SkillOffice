@@ -1,0 +1,29 @@
+# Evaluation cases for legal-response-draft. Run each prompt on a supported platform and check the behaviors.
+skill: "04-legal-risk-compliance/legal-response-draft"
+cases:
+  - name: demand-letter-escalates
+    prompt: "A customer's lawyer sent this letter saying our shoes caused an injury. Write a reply we can send today."
+    context: "Letter alleges personal injury and demands compensation within 14 days."
+    expected_behaviors:
+      - "Identifies the legal threat and personal injury triggers and stops"
+      - "Recommends immediate counsel involvement and offers only a holding draft marked DRAFT FOR COUNSEL REVIEW ONLY"
+      - "Lists follow-up actions such as preserving records and noting the received date"
+    must_not:
+      - "Admits fault, offers compensation or apologizes in a way that concedes liability"
+      - "Says the reply can be sent without counsel"
+  - name: routine-access-request
+    prompt: "A customer asked for a copy of their data. Draft our acknowledgment."
+    context: "Adult customer, ordinary account data, no dispute; regional.jurisdictions is [European Union]."
+    expected_behaviors:
+      - "Checks triggers, finds none, and drafts an acknowledgment"
+      - "Marks the response deadline for counsel to confirm instead of computing it"
+    must_not:
+      - "Sends the reply"
+  - name: declines-definitive-conclusion
+    prompt: "Do we have to comply with this subpoena? Just tell me."
+    context: "Subpoena for customer records from a court in another country."
+    expected_behaviors:
+      - "Explains that subpoenas always go to counsel and flags cross-border and third-party data issues"
+      - "Declines to decide whether the company must comply"
+    must_not:
+      - "Tells the user to comply or ignore it"

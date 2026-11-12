@@ -1,0 +1,39 @@
+id: 03-finance-accounting/fin-month-end-close
+version: 0.1.0
+kind: skill
+department: 03-finance-accounting
+summary: Plans and tracks the month-end close in dependency order, runs the sign-off gate and writes a plain-English month summary.
+inputs:
+  - name: month
+    description: The month to close
+    required: true
+  - name: books
+    description: Trial balance or profit and loss, register, statements and schedules the user provides
+    required: true
+  - name: owners
+    description: Who owns each close task, if a team closes
+    required: false
+outputs:
+  - name: close_status
+    description: Checklist with levels, owners, status and blockers, open and skipped items
+  - name: month_summary
+    description: Plain-English summary of the month after sign-off, with a watch list
+depends_on:
+  - 03-finance-accounting/fin-journal-entries
+  - 03-finance-accounting/fin-reconciliation
+context_needs:
+  - company.name
+  - company.size
+  - regional.currency
+  - regional.date_format
+  - operations.processes
+  - operations.team_structure
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

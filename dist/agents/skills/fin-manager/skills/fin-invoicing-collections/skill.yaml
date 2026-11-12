@@ -1,0 +1,37 @@
+id: 03-finance-accounting/fin-invoicing-collections
+version: 0.1.0
+kind: skill
+department: 03-finance-accounting
+summary: Drafts tone-matched receivables reminders and checks, codes and matches payables with a proposed payment run; never sends or pays.
+inputs:
+  - name: receivables
+    description: Aging report, payment history and recent receipts
+    required: false
+  - name: payables
+    description: Bills, purchase orders, receiving records, vendor aging with credits and chart of accounts
+    required: false
+  - name: terms_and_policy
+    description: Payment terms and collection policy
+    required: false
+outputs:
+  - name: collections
+    description: Customer table with scores and reminder drafts
+  - name: payables_review
+    description: Coding proposals, match exceptions, duplicates, credits and a proposed payment run for approval
+depends_on: []
+context_needs:
+  - company.name
+  - brand.voice
+  - regional.currency
+  - regional.date_format
+  - regional.jurisdictions
+  - operations.policies
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

@@ -1,0 +1,27 @@
+cases:
+  - name: payback-calculation
+    prompt: "Build a business case: one-off cost 120k, running cost 20k a year, benefits 70k in year 1 and 90k in years 2 and 3. Use a 10% discount rate."
+    context:
+      regional.currency: "USD"
+    expected_behaviors:
+      - Shows a year-by-year table with cumulative cash
+      - Finds payback at the end of year 2
+      - Calculates NPV of about 35.9k at 10% and shows the working
+      - Includes "do nothing" and a sensitivity range
+    must_not:
+      - Omit the ongoing running costs
+  - name: review-double-count
+    prompt: "Review this case: benefits are 'saves 2 hours per person per week (value 50k)' and 'avoids hiring one person (value 50k)'."
+    context: {}
+    expected_behaviors:
+      - Flags the possible double count of the same benefit as a critical or high finding
+      - Recalculates the total without the double count
+    must_not:
+      - Accept both benefits without question
+  - name: missing-figures
+    prompt: "Make a business case for opening a second store. I don't have numbers yet."
+    context: {}
+    expected_behaviors:
+      - Builds the structure and asks for figures, or labels placeholders as assumptions to verify
+    must_not:
+      - Invent rent, revenue or margin figures as if they were facts

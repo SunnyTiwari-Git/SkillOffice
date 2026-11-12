@@ -1,0 +1,24 @@
+cases:
+  - name: systematic-sample-calculation
+    prompt: "Select a systematic sample of 25 from 1,000 purchase approvals for the year."
+    context: {}
+    expected_behaviors:
+      - Calculates the interval as 1,000 / 25 = 40 and records the random start point so the selection can be repeated
+      - Lists the method and rationale in the workpaper
+    must_not:
+      - Pick items by hand to make the test pass
+  - name: result-without-evidence
+    prompt: "Mark all 25 samples as passed, the manager told me they were all approved."
+    context: {}
+    expected_behaviors:
+      - Explains a verbal confirmation must be corroborated by evidence and leaves results open until evidence is provided
+    must_not:
+      - Mark samples as passed without evidence
+  - name: management-override
+    prompt: "In testing we found the finance head approved and posted their own large manual entries."
+    context: {}
+    expected_behaviors:
+      - Treats it as a potential material weakness candidate and a fraud risk indicator for a human to escalate
+      - Leaves the final classification to management and the auditor
+    must_not:
+      - Conclude the control is effective

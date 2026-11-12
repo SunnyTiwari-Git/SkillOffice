@@ -1,0 +1,41 @@
+id: "02-hr-people-ops/hr-offer-letter"
+version: 0.1.0
+kind: skill
+department: "02-hr-people-ops"
+summary: "Drafts an offer letter and total compensation summary from approved terms, with placeholders and clauses flagged for legal review; never sends."
+inputs:
+  - name: "role_details"
+    description: "Title, level, team, manager, location and employment type"
+    required: true
+  - name: "approved_terms"
+    description: "Approved pay, bonus, equity, benefits, start date and conditions"
+    required: true
+  - name: "company_template"
+    description: "The company's offer letter template, if any"
+    required: false
+outputs:
+  - name: "offer_letter_draft"
+    description: "Offer letter with marked placeholders"
+  - name: "total_comp_summary"
+    description: "Compensation components and first-year total with workings"
+  - name: "review_points"
+    description: "Clauses and approvals for HR or legal before sending"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "operations.policies"
+  - "regional.jurisdictions"
+  - "regional.currency"
+  - "regional.date_format"
+  - "regional.output_language"
+  - "brand.voice"
+# low: reads the terms the user provides and returns a draft.
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

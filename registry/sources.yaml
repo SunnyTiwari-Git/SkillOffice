@@ -20,7 +20,7 @@ sources:
     pinned_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d
     commit_date: 2026-11-05
     reviewed_at: 2026-11-06
-    used_for: [06-marketing-content-pr, 10-software-development]
+    used_for: [02-hr-people-ops, 03-finance-accounting, 04-legal-risk-compliance, 06-marketing-content-pr, 10-software-development]
     notes: Upstream has no NOTICE file. MCP connector files (.mcp.json for Slack, Canva, Figma, HubSpot, Amplitude and others) are not imported.
 
   - id: coreyhaines31-marketingskills

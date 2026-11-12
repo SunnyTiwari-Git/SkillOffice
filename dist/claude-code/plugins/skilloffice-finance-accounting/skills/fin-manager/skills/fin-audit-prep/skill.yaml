@@ -1,0 +1,35 @@
+id: 03-finance-accounting/fin-audit-prep
+version: 0.1.0
+kind: skill
+department: 03-finance-accounting
+summary: Drafts control matrices, repeatable sample selections, test workpapers, deficiency summaries and auditor request lists.
+inputs:
+  - name: scope
+    description: Control area and testing period
+    required: true
+  - name: controls_or_process
+    description: Control descriptions or a process narrative
+    required: true
+  - name: populations
+    description: Transaction listings to sample from
+    required: false
+outputs:
+  - name: workpapers
+    description: Control matrix, sample selection with method and seed, workpapers, deficiency summary and request list
+depends_on: []
+context_needs:
+  - company.name
+  - company.size
+  - regional.jurisdictions
+  - regional.date_format
+  - operations.processes
+  - operations.policies
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

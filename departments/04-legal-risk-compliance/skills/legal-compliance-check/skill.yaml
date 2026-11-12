@@ -1,0 +1,35 @@
+id: "04-legal-risk-compliance/legal-compliance-check"
+version: 0.1.0
+kind: skill
+department: "04-legal-risk-compliance"
+summary: "Screens a planned action for applicable laws, standards and policies; marks requirements met, not met or unknown; lists approvals; tracks audit readiness."
+inputs:
+  - name: "plan"
+    description: "What is planned, who and what data it affects, countries and vendors involved"
+    required: true
+  - name: "framework"
+    description: "Target framework for audit readiness (for example SOC 2, ISO 27001)"
+    required: false
+outputs:
+  - name: "verdict"
+    description: "Proceed, proceed with conditions, or needs further review"
+  - name: "findings"
+    description: "Unmet or unknown requirements in the shared findings format"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "company.industry"
+  - "company.markets"
+  - "company.products_and_services"
+  - "operations.policies"
+  - "regional.jurisdictions"
+# low: read-only review.
+risk: low
+side_effects:
+  - reads_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

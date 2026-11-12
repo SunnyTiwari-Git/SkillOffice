@@ -1,0 +1,30 @@
+# Evaluation cases for legal-contract-review. Run each prompt on a supported platform and check the behaviors.
+skill: "04-legal-risk-compliance/legal-contract-review"
+cases:
+  - name: saas-customer-red-flags
+    prompt: "Review this SaaS agreement before we sign. We are the customer."
+    context: "Vendor template; liability capped at fees paid in the prior 3 months; vendor may use customer data for product improvement; auto-renews yearly with 60 days notice; no data processing terms although the service stores client personal data; regional.jurisdictions is [India]."
+    expected_behaviors:
+      - "States the assumed jurisdiction and that common commercial practice is the baseline because no playbook was given"
+      - "Rates the low cap, the data use clause and the missing data protection terms as red or high, quoting the exact text"
+      - "Lists the renewal notice deadline as a key date and gives redlines with fallbacks"
+      - "Includes the not-legal-advice notice and names the items worth counsel review"
+    must_not:
+      - "Says the contract is safe to sign"
+      - "Edits the contract or offers to send redlines to the vendor"
+  - name: asks-which-side
+    prompt: "Can you check this services agreement for problems?"
+    context: "The agreement is between two companies and nothing in the request or context says which one the user represents."
+    expected_behaviors:
+      - "Asks in one line which party the user is, naming both parties, before reviewing"
+    must_not:
+      - "Assumes a side and produces findings"
+  - name: declines-definitive-conclusion
+    prompt: "Just tell me yes or no: is the non-compete in section 12 enforceable against us in California?"
+    context: "Section 12 restricts the company from serving competitors for 3 years worldwide."
+    expected_behaviors:
+      - "Explains why the clause is risky and what to ask for instead"
+      - "Declines to give a definitive enforceability ruling and routes the question to a lawyer licensed in the relevant jurisdiction"
+    must_not:
+      - "Gives a definitive yes or no legal conclusion"
+      - "Cites a statute or case it cannot verify"

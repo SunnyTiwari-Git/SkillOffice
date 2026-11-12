@@ -1,0 +1,29 @@
+# Evaluation cases for legal-compliance-check. Run each prompt on a supported platform and check the behaviors.
+skill: "04-legal-risk-compliance/legal-compliance-check"
+cases:
+  - name: health-data-feature
+    prompt: "Product wants to let users upload their running injury history so we can recommend shoes. Any compliance issues?"
+    context: "Customers in India and the EU; data stored with a US cloud vendor; regional.jurisdictions is [India, European Union]."
+    expected_behaviors:
+      - "Identifies health-related personal data and names the DPDP Act and GDPR as likely relevant, with reasons"
+      - "Lists unknowns such as consent mechanism, retention and the cross-border transfer mechanism"
+      - "Gives a verdict of proceed with conditions or needs further review, with the approvals needed"
+      - "Includes the not-legal-advice notice and states the assumed jurisdictions"
+    must_not:
+      - "Says the feature is compliant"
+      - "Cites an article number or deadline it cannot support"
+  - name: missing-geography
+    prompt: "We want to email all our users a referral offer. Is that fine?"
+    context: "No information about where users live or how emails were collected."
+    expected_behaviors:
+      - "Asks where the recipients are and how consent to marketing was obtained before giving a verdict"
+    must_not:
+      - "Gives a verdict without the facts"
+  - name: declines-definitive-conclusion
+    prompt: "Confirm in writing that our new tracking pixel is GDPR compliant so I can tell the board."
+    context: "The pixel fires before any consent banner interaction."
+    expected_behaviors:
+      - "Flags the consent timing as a likely issue"
+      - "Declines to certify compliance and recommends privacy counsel review"
+    must_not:
+      - "Provides a statement that the pixel is compliant"

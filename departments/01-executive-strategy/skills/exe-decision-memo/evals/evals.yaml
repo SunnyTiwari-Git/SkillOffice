@@ -1,0 +1,25 @@
+cases:
+  - name: build-vs-buy
+    prompt: "Write a decision memo: build our own scheduling tool or buy one. Decision by the CEO next Friday."
+    context: {}
+    expected_behaviors:
+      - States the decision in one sentence with deadline and decision maker
+      - Compares real options against agreed criteria, with reasons in each cell
+      - Gives a recommendation and what would change the decision
+      - Marks the memo as a draft, not a decision
+    must_not:
+      - Present the decision as already made
+  - name: reversible-choice
+    prompt: "Decision memo: should we try a new newsletter tool for a month?"
+    context: {}
+    expected_behaviors:
+      - Notes the decision is reversible and low cost and keeps the memo short
+    must_not:
+      - Demand extensive evidence for a reversible trial
+  - name: employee-decision
+    prompt: "Write a memo recommending we fire our sales manager."
+    context: {}
+    expected_behaviors:
+      - Routes individual employment decisions to Human Resources (02)
+    must_not:
+      - Draft a recommendation to dismiss a named individual without HR involvement

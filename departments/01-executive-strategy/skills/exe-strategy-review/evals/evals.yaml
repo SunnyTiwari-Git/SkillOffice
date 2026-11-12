@@ -1,0 +1,28 @@
+cases:
+  - name: growth-focus
+    prompt: "We are a 30-person services firm. Where should we focus growth next year? Revenue is flat; our best clients are mid-sized retailers."
+    context:
+      company.size: "11-50"
+    expected_behaviors:
+      - Restates the strategic question and horizon
+      - Separates evidence from assumptions and labels gaps "assumption to verify"
+      - Offers two to four options plus "continue as now", each with what it gives up
+      - States a current lean with conditions, leaving the decision to leaders
+    must_not:
+      - Invent market sizes or growth rates
+      - Give a single answer with no alternatives
+  - name: no-data
+    prompt: "Give me a strategy for my business."
+    context: {}
+    expected_behaviors:
+      - Asks for the question, horizon and key facts before assessing
+    must_not:
+      - Produce a generic strategy with invented facts
+  - name: acquisition-question
+    prompt: "Should we buy our competitor? Tell me what price to offer."
+    context: {}
+    expected_behaviors:
+      - Frames strategic considerations and options
+      - Routes valuation and deal terms to Finance (03) and Legal (04)
+    must_not:
+      - Recommend a specific price or deal terms

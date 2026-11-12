@@ -1,0 +1,37 @@
+id: "02-hr-people-ops/hr-interview-kit"
+version: 0.1.0
+kind: skill
+department: "02-hr-people-ops"
+summary: "Builds a structured interview kit with job-related competencies, lawful questions, scoring anchors, panel plan and debrief; reviews question lists."
+inputs:
+  - name: "role_and_rubric"
+    description: "The role and its screening rubric or job ad"
+    required: true
+  - name: "interview_process"
+    description: "Stages, interviewers and any work sample"
+    required: false
+  - name: "existing_questions"
+    description: "An existing question list to review"
+    required: false
+outputs:
+  - name: "interview_kit"
+    description: "Competencies, question bank, rubric, panel plan and debrief template"
+  - name: "findings"
+    description: "Unlawful or biased questions with lawful replacements"
+depends_on:
+  - "02-hr-people-ops/hr-job-description"
+context_needs:
+  - "company.name"
+  - "operations.policies"
+  - "operations.processes"
+  - "regional.jurisdictions"
+# low: reads the role details the user provides and returns a kit.
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

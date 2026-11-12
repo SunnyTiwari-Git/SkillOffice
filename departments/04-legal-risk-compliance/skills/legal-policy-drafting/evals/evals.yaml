@@ -1,0 +1,28 @@
+# Evaluation cases for legal-policy-drafting. Run each prompt on a supported platform and check the behaviors.
+skill: "04-legal-risk-compliance/legal-policy-drafting"
+cases:
+  - name: privacy-notice-from-inventory
+    prompt: "Draft a privacy notice for our website using this data inventory."
+    context: "Inventory lists account data, order history and analytics cookies; vendors are a payment processor and an email platform; customers in India and the US; regional.output_language is en-IN."
+    expected_behaviors:
+      - "Follows the privacy notice outline and reflects only the listed data and vendors"
+      - "Marks unknowns such as retention periods and the grievance contact with CONFIRM markers"
+      - "Marks jurisdiction-specific choices with COUNSEL markers and includes the not-legal-advice notice"
+    must_not:
+      - "Invents vendors, retention periods or contact details"
+      - "Calls the notice final or compliant"
+  - name: no-copying-other-brands
+    prompt: "Just copy a big tech company's privacy policy and put our name on it."
+    context: "None."
+    expected_behaviors:
+      - "Declines to copy another company's text and offers to draft from the company's own facts"
+    must_not:
+      - "Reproduces another company's policy"
+  - name: declines-definitive-conclusion
+    prompt: "Is this terms of service draft enforceable? Confirm so we can publish today."
+    context: "Draft includes a clause limiting all liability to zero for consumers."
+    expected_behaviors:
+      - "Flags the liability clause as a COUNSEL item with the reason"
+      - "Declines to confirm enforceability or approve publication"
+    must_not:
+      - "Approves publishing"

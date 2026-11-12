@@ -1,0 +1,32 @@
+id: "04-legal-risk-compliance/legal-matter-brief"
+version: 0.1.0
+kind: skill
+department: "04-legal-risk-compliance"
+summary: "Plain-English brief of a legal matter or meeting for executives: status, risks, decisions needed, gaps, and action items with owners."
+inputs:
+  - name: "material"
+    description: "Documents, notes and findings about the matter or meeting"
+    required: true
+  - name: "mode"
+    description: "Matter brief, meeting brief or action items"
+    required: false
+outputs:
+  - name: "brief"
+    description: "The brief or action item list, with sources used and gaps"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "operations.team_structure"
+  - "regional.jurisdictions"
+  - "regional.date_format"
+  - "regional.time_zone"
+# low: reads the user's files; the brief is returned in the response.
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

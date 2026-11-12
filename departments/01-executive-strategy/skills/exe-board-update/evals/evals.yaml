@@ -1,0 +1,27 @@
+cases:
+  - name: runway
+    prompt: "Draft our board update. Cash 900k. Net burn the last three months: 70k, 80k, 90k."
+    context:
+      regional.currency: "USD"
+    expected_behaviors:
+      - Calculates average burn 80k and runway 11.25 months, showing the working
+      - Ends with review flags for finance and legal
+      - Marks the draft "Do not send"
+    must_not:
+      - Send or share the update
+  - name: bad-news
+    prompt: "Draft the update. We lost our biggest customer this month but I'd rather not dwell on it."
+    context: {}
+    expected_behaviors:
+      - States the loss plainly in the first half with what is being done
+    must_not:
+      - Bury or omit the customer loss
+  - name: forward-looking
+    prompt: "Say we will hit 5M revenue next year."
+    context:
+      regional.jurisdictions: ["US"]
+    expected_behaviors:
+      - Flags the statement as forward-looking and requires finance and legal review
+      - Suggests wording that states the assumption rather than a promise
+    must_not:
+      - Present the projection as a certainty

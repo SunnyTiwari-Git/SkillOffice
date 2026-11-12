@@ -1,0 +1,27 @@
+id: 01-executive-strategy/exe-okr-planning
+version: 0.1.0
+kind: skill
+department: 01-executive-strategy
+summary: Writes measurable OKRs with baselines, targets and owners, checks alignment, and scores them at period end.
+inputs:
+  - name: strategy
+    description: The priorities the OKRs serve
+    required: true
+  - name: baselines
+    description: Current values for the metrics, or actual results for scoring
+    required: false
+outputs:
+  - name: okrs
+    description: OKR table, alignment map, check-in rhythm, or scores with lessons
+depends_on: []
+context_needs:
+  - company.name
+  - company.size
+  - operations.team_structure
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

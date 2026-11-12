@@ -223,6 +223,94 @@
           "run_completed"
         ]
       }
+    },
+    {
+      "id": "finance-bank-reconciliation",
+      "department": "03-finance-accounting",
+      "plugin": "skilloffice-finance-accounting",
+      "fixture": "fixtures/finance-bank-reconciliation",
+      "prompt": "Use the fin-manager skill. Reconcile bank_statement_oct.csv against ledger_cash_oct.csv for October 2026, explain every difference and propose the adjusting journal entries. Do not post anything. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
+    },
+    {
+      "id": "legal-vendor-contract",
+      "department": "04-legal-risk-compliance",
+      "plugin": "skilloffice-legal-risk-compliance",
+      "fixture": "fixtures/legal-vendor-contract",
+      "prompt": "Use the legal-manager skill. Review vendor-agreement.md before we sign it, rate the risks and suggest redlines. Do not sign or send anything. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
+    },
+    {
+      "id": "hr-job-ad-review",
+      "department": "02-hr-people-ops",
+      "plugin": "skilloffice-hr-people-ops",
+      "fixture": "fixtures/hr-job-ad-review",
+      "prompt": "Use the hr-manager skill. Review job-ad-draft.md and rewrite it as a fair, legally safe job ad for a customer support specialist, with an interview kit. Do not post anything. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
+    },
+    {
+      "id": "exec-business-case",
+      "department": "01-executive-strategy",
+      "plugin": "skilloffice-executive-strategy",
+      "fixture": "fixtures/exec-business-case",
+      "prompt": "Use the exe-manager skill. Stress-test business-case-retail-store.md and write a one-page decision memo for the founders. Do not invent market data. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
     }
   ]
 }

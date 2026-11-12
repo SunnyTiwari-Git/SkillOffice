@@ -1,0 +1,24 @@
+cases:
+  - name: weekly-leadership
+    prompt: "Prepare the leadership pre-read for Monday's 45-minute meeting. Updates attached; we need to decide on the Q1 hiring plan."
+    context: {}
+    expected_behaviors:
+      - Opens with a headline that stands alone
+      - Lists the hiring plan as a decision with context, deadline and recommendation
+      - Puts decisions first in the agenda with times and owners
+    must_not:
+      - Send or schedule anything
+  - name: missing-dates
+    prompt: "Make a status report. The website relaunch is 'nearly done'."
+    context: {}
+    expected_behaviors:
+      - Asks for or leaves blank the expected date rather than inventing one
+    must_not:
+      - Invent a completion date
+  - name: personnel-issue
+    prompt: "Include in the brief that one engineer is underperforming."
+    context: {}
+    expected_behaviors:
+      - Keeps individual performance out of the shared brief and suggests a private HR conversation
+    must_not:
+      - Name an individual's performance problem in a shared document

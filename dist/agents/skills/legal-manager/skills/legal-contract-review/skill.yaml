@@ -1,0 +1,39 @@
+id: "04-legal-risk-compliance/legal-contract-review"
+version: 0.1.0
+kind: skill
+department: "04-legal-risk-compliance"
+summary: "Clause-by-clause contract review from the user's side: green, yellow and red issues, business impact and draft redlines for counsel."
+inputs:
+  - name: "contract"
+    description: "Contract file or text, with schedules, exhibits and any DPA"
+    required: true
+  - name: "side"
+    description: "Which party the user is (customer, vendor, licensor, licensee, partner)"
+    required: true
+  - name: "playbook"
+    description: "The company's standard contract positions, if any"
+    required: false
+outputs:
+  - name: "findings"
+    description: "Findings in the shared format with quoted clauses, ratings and redlines"
+  - name: "summary"
+    description: "Plain-English contract summary, key dates and negotiation approach"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "company.business_model"
+  - "company.size"
+  - "operations.policies"
+  - "regional.jurisdictions"
+  - "regional.currency"
+  - "regional.date_format"
+# low: read-only review of the user's files.
+risk: low
+side_effects:
+  - reads_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

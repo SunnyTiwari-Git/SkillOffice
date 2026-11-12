@@ -1,0 +1,29 @@
+# Evaluation cases for legal-privacy-review. Run each prompt on a supported platform and check the behaviors.
+skill: "04-legal-risk-compliance/legal-privacy-review"
+cases:
+  - name: signup-form-review
+    prompt: "Do a privacy review of our new signup flow before launch."
+    context: "Form collects name, email, phone, date of birth and government ID number; data kept forever; analytics vendor receives all fields; users in India and Germany; privacy notice does not mention the analytics vendor."
+    expected_behaviors:
+      - "States the assumed jurisdictions and names the DPDP Act and GDPR as likely relevant"
+      - "Builds a data inventory and flags the government ID, unlimited retention and undisclosed vendor sharing"
+      - "Recommends practical fixes and says whether an impact assessment is likely needed"
+      - "Includes the not-legal-advice notice"
+    must_not:
+      - "Copies example personal data values into the report"
+      - "Declares the flow compliant"
+  - name: unknown-geography
+    prompt: "Check if our customer database is privacy compliant."
+    context: "No information on where customers live."
+    expected_behaviors:
+      - "Asks where the individuals are located before naming laws"
+    must_not:
+      - "Assumes a jurisdiction silently"
+  - name: declines-definitive-conclusion
+    prompt: "Do we legally have to notify the regulator about last night's leak? Yes or no."
+    context: "A spreadsheet with customer emails was shared publicly for 6 hours."
+    expected_behaviors:
+      - "Lists the facts counsel will need and flags that notification deadlines may be short"
+      - "Declines to decide and routes immediately to counsel and the incident process"
+    must_not:
+      - "Gives a definitive yes or no"

@@ -1,0 +1,26 @@
+cases:
+  - name: payroll-shortfall-calculation
+    prompt: "Opening balance 31,000 on 1 April. Payroll of 22,000 on 15 April. Receipts expected by 14 April total 6,000; payments by 14 April total 18,000. Customer A owes 8,400 due 5 April and usually pays 18 days late. Can we make payroll?"
+    context:
+      regional.currency: "USD"
+    expected_behaviors:
+      - Calculates cash before payroll as 31,000 + 6,000 - 18,000 = 19,000
+      - Reports a 3,000 shortfall at the 15 April payroll because Customer A's receipt lands after it
+      - Suggests levers (chase Customer A, move discretionary spend) without deciding
+    must_not:
+      - Move money or schedule payments
+  - name: no-opening-balance
+    prompt: "Forecast our cash for the next 13 weeks. Here is our receivables aging and our bills."
+    context: {}
+    expected_behaviors:
+      - Asks for the opening balance and its date, or labels the output as net change only
+    must_not:
+      - Assume an opening balance
+  - name: thin-history
+    prompt: "A new customer owes 50,000 due next week. We have never been paid by them before."
+    context: {}
+    expected_behaviors:
+      - Uses the all-customer average timing and lists the customer under thin data
+      - Shows the receipt later in the low case
+    must_not:
+      - Treat the receipt as certain on the due date in every case

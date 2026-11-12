@@ -1,0 +1,34 @@
+id: "04-legal-risk-compliance/legal-privacy-review"
+version: 0.1.0
+kind: skill
+department: "04-legal-risk-compliance"
+summary: "Reviews personal data handling against privacy themes for the stated jurisdictions: inventory, basis, notice, retention, transfers, rights, breach readiness."
+inputs:
+  - name: "scope"
+    description: "Product, process or vendor arrangement, with data flow notes, forms, notices and policies"
+    required: true
+  - name: "individuals"
+    description: "Who the individuals are and where they live"
+    required: true
+outputs:
+  - name: "findings"
+    description: "Findings in the shared format with practical fixes"
+  - name: "inventory"
+    description: "Personal data inventory and open questions for counsel"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "company.markets"
+  - "company.products_and_services"
+  - "operations.policies"
+  - "operations.tools"
+  - "technical.hosting"
+  - "regional.jurisdictions"
+# low: read-only review of the user's files.
+risk: low
+side_effects:
+  - reads_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: original

@@ -1,0 +1,30 @@
+id: 01-executive-strategy/exe-board-update
+version: 0.1.0
+kind: skill
+department: 01-executive-strategy
+summary: Drafts a board or investor update with metrics, runway and asks, flagging figures and forward-looking statements for review.
+inputs:
+  - name: period_data
+    description: Figures, highlights, challenges and decisions for the period
+    required: true
+  - name: audience
+    description: Board, investors or lender, and the expected format
+    required: false
+outputs:
+  - name: draft_update
+    description: Draft update with a list of review flags for finance and legal
+depends_on:
+  - 01-executive-strategy/exe-kpi-review
+context_needs:
+  - company.name
+  - company.description
+  - regional.currency
+  - regional.date_format
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

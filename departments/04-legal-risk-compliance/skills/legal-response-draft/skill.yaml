@@ -1,0 +1,36 @@
+id: "04-legal-risk-compliance/legal-response-draft"
+version: 0.1.0
+kind: skill
+department: "04-legal-risk-compliance"
+summary: "Drafts replies to legal inquiries after an escalation check; demand letters, legal process and regulators always go to counsel. Never sends."
+inputs:
+  - name: "inquiry"
+    description: "The letter, email, request or notice and when it was received"
+    required: true
+  - name: "template"
+    description: "Company template or past response, if any"
+    required: false
+outputs:
+  - name: "escalation_check"
+    description: "Which triggers apply and the recommended escalation path"
+  - name: "draft"
+    description: "Draft reply marked for review, plus follow-up actions"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "company.website"
+  - "operations.policies"
+  - "operations.team_structure"
+  - "regional.jurisdictions"
+  - "regional.date_format"
+  - "regional.output_language"
+# low: reads the user's files; the draft is returned in the response.
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

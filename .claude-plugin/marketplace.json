@@ -16,6 +16,34 @@
       "license": "Apache-2.0"
     },
     {
+      "name": "skilloffice-executive-strategy",
+      "source": "./dist/claude-code/plugins/skilloffice-executive-strategy",
+      "description": "SkillOffice Executive Management and Strategy: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skilloffice-hr-people-ops",
+      "source": "./dist/claude-code/plugins/skilloffice-hr-people-ops",
+      "description": "SkillOffice Human Resources and People Operations: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skilloffice-finance-accounting",
+      "source": "./dist/claude-code/plugins/skilloffice-finance-accounting",
+      "description": "SkillOffice Finance and Accounting: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skilloffice-legal-risk-compliance",
+      "source": "./dist/claude-code/plugins/skilloffice-legal-risk-compliance",
+      "description": "SkillOffice Legal, Risk and Compliance: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
       "name": "skilloffice-sales-business-development",
       "source": "./dist/claude-code/plugins/skilloffice-sales-business-development",
       "description": "SkillOffice Sales and Business Development: a department manager that plans, runs and reviews specialist skills.",

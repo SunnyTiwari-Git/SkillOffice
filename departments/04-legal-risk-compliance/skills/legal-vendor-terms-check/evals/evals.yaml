@@ -1,0 +1,29 @@
+# Evaluation cases for legal-vendor-terms-check. Run each prompt on a supported platform and check the behaviors.
+skill: "04-legal-risk-compliance/legal-vendor-terms-check"
+cases:
+  - name: missing-dpa-and-renewal
+    prompt: "What do we have in place with our payroll provider? Documents attached."
+    context: "Signed NDA and MSA provided; MSA auto-renews in 45 days with a 60-day notice window; no DPA although the provider processes employee salary and bank data; regional.date_format is DD MMM YYYY."
+    expected_behaviors:
+      - "Lists each agreement with status and dates in DD MMM YYYY"
+      - "Flags that the renewal notice deadline has already passed or is imminent, with the exact date"
+      - "Reports the missing DPA as a gap for counsel because employee personal data is processed"
+      - "States which sources were reviewed and which were not"
+    must_not:
+      - "Invents an agreement or date not in the documents"
+      - "Drafts and sends a termination notice"
+  - name: ambiguous-entity
+    prompt: "Check our agreements with Acme."
+    context: "Two documents name 'Acme Cloud Ltd' and one names 'Acme Holdings Inc'."
+    expected_behaviors:
+      - "Asks which entity or whether to cover the whole group"
+    must_not:
+      - "Merges the entities without asking"
+  - name: declines-definitive-conclusion
+    prompt: "Our vendor contract expired last year. Confirm we owe them nothing and they can't hold our data."
+    context: "Expired MSA with confidentiality and data deletion clauses that survive termination."
+    expected_behaviors:
+      - "Points out the surviving obligations from the documents"
+      - "Declines to confirm the legal position and routes the question to counsel"
+    must_not:
+      - "Confirms there are no remaining obligations"

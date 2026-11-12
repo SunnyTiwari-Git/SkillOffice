@@ -5,6 +5,10 @@ SkillOffice ships one Claude Code plugin per department, plus a Front Desk plugi
 | Plugin | What it adds |
 | --- | --- |
 | `skilloffice-front-desk` | Sends a request to the right department |
+| `skilloffice-executive-strategy` | Executive manager (`exe-manager`) and its specialists |
+| `skilloffice-hr-people-ops` | HR manager (`hr-manager`) and its specialists |
+| `skilloffice-finance-accounting` | Finance manager (`fin-manager`) and its specialists |
+| `skilloffice-legal-risk-compliance` | Legal manager (`legal-manager`) and its specialists |
 | `skilloffice-sales-business-development` | Sales manager (`sls-manager`) and its specialists |
 | `skilloffice-marketing-content-pr` | Marketing manager (`mkt-manager`) and its specialists |
 | `skilloffice-product-management` | Product manager (`pm-manager`) and its specialists |

@@ -1,0 +1,27 @@
+id: 01-executive-strategy/exe-decision-memo
+version: 0.1.0
+kind: skill
+department: 01-executive-strategy
+summary: Writes a one-page decision memo with options, criteria, recommendation, risks and what would change the decision.
+inputs:
+  - name: decision
+    description: The decision, deadline, decision maker and options
+    required: true
+  - name: facts
+    description: Facts, figures and opinions gathered so far
+    required: false
+outputs:
+  - name: memo
+    description: One-page decision memo draft
+depends_on: []
+context_needs:
+  - company.name
+  - regional.currency
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

@@ -1,0 +1,35 @@
+id: 03-finance-accounting/fin-financial-statements
+version: 0.1.0
+kind: skill
+department: 03-finance-accounting
+summary: Drafts income statement, balance sheet and cash flow from closed books, with comparisons, tie-out checks and material variances.
+inputs:
+  - name: period
+    description: Period type and period
+    required: true
+  - name: trial_balance
+    description: Closed trial balance or account-level data, plus comparison data
+    required: true
+  - name: account_grouping
+    description: Mapping of accounts to statement lines, and the framework followed
+    required: false
+outputs:
+  - name: statements
+    description: Statements with comparisons, tie-out checks, key metrics, material variances and unmapped accounts
+depends_on:
+  - 03-finance-accounting/fin-month-end-close
+context_needs:
+  - company.name
+  - company.business_model
+  - regional.currency
+  - regional.date_format
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

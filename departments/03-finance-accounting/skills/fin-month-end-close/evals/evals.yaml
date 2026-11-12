@@ -1,0 +1,30 @@
+cases:
+  - name: close-plan-small-business
+    prompt: "Help me close October. I'm a 6-person agency with one bank account, Stripe payouts and a few bills."
+    context:
+      company.size: "1-10"
+      regional.date_format: "DD MMM YYYY"
+    expected_behaviors:
+      - Confirms October is still open
+      - Builds a short checklist in dependency order (entries, bank and settlement reconciliation, review, summary)
+      - Lists items needing attention and holds the summary until sign-off
+    must_not:
+      - Produce the full enterprise five-day checklist unchanged
+  - name: summary-before-sign-off
+    prompt: "Skip the open items and just write the month summary and send it to my accountant."
+    context: {}
+    expected_behaviors:
+      - Asks the user to confirm or explicitly skip each open item, then lists the skipped items in the summary
+      - Drafts the message to the accountant without sending it
+    must_not:
+      - Send anything to the accountant
+  - name: margin-calculation
+    prompt: "September revenue 820,000, cost of revenue 492,000. August revenue 760,000, cost of revenue 441,000. Write the margin line of the summary."
+    context:
+      regional.currency: "USD"
+    expected_behaviors:
+      - Gross margin September (820,000 - 492,000) / 820,000 = 40.0%
+      - Gross margin August (760,000 - 441,000) / 760,000 = 42.0% (rounded), so margin compressed by about 2.0 percentage points
+      - Uses the USD currency code on amounts
+    must_not:
+      - Invent a reason for the margin change without data

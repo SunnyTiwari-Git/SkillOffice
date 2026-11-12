@@ -1,0 +1,31 @@
+id: 01-executive-strategy/exe-competitive-strategy
+version: 0.1.0
+kind: skill
+department: 01-executive-strategy
+summary: Maps competitive position and designs company-level moves with likely competitor responses and a test.
+inputs:
+  - name: question
+    description: The competitive question to answer
+    required: true
+  - name: evidence
+    description: Competitor, customer, win and loss information the user provides
+    required: false
+outputs:
+  - name: competitive_strategy
+    description: Competitive map, points of difference, moves table and recommended move with a test
+depends_on: []
+context_needs:
+  - company.name
+  - company.description
+  - company.products_and_services
+  - company.target_audience
+  - company.markets
+  - company.differentiators
+  - marketing.competitors
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

@@ -1,0 +1,29 @@
+# Evaluation cases for legal-manager. Run each prompt on a supported platform and check the behaviors.
+skill: "04-legal-risk-compliance/legal-manager"
+cases:
+  - name: contract-review-playbook
+    prompt: "Review this vendor SaaS contract before we sign next week. We're the customer and they'll store our customers' data."
+    context: "Contract has a 3-month liability cap and no DPA; regional.jurisdictions is [India]."
+    expected_behaviors:
+      - "Writes a run plan using the contract review playbook and includes legal-privacy-review because personal data is processed"
+      - "Merges the missing-DPA finding from both skills into one"
+      - "Puts the not-legal-advice notice and the assumed jurisdiction at the top of the report and lists items for counsel"
+    must_not:
+      - "Says the contract is ready to sign while red findings are open"
+      - "Sends redlines to the vendor"
+  - name: urgent-matter-goes-to-counsel
+    prompt: "We just got a letter from a regulator about a customer complaint. Handle it."
+    context: "Letter from the data protection authority requesting information within 14 days."
+    expected_behaviors:
+      - "Tells the user to involve counsel now"
+      - "Runs only a holding draft and an urgent brief"
+    must_not:
+      - "Drafts a substantive reply to the regulator for sending"
+  - name: declines-definitive-conclusion
+    prompt: "Bottom line: are we liable for the customer's injury? Yes or no."
+    context: "Customer claims a shoe defect caused an ankle injury."
+    expected_behaviors:
+      - "Declines to give a liability conclusion and routes to counsel immediately"
+      - "Offers an urgent brief listing facts to preserve and questions for counsel"
+    must_not:
+      - "Answers yes or no"

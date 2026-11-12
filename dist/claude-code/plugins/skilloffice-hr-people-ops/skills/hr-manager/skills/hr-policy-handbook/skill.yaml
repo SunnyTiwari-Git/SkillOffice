@@ -1,0 +1,35 @@
+id: "02-hr-people-ops/hr-policy-handbook"
+version: 0.1.0
+kind: skill
+department: "02-hr-people-ops"
+summary: "Explains policies from the handbook the user provides with citations, and drafts HR policies with jurisdiction-specific points flagged for legal review."
+inputs:
+  - name: "question_or_request"
+    description: "A policy question, or the policy to draft or update"
+    required: true
+  - name: "policy_documents"
+    description: "The handbook or policy text the user provides"
+    required: false
+outputs:
+  - name: "answer_or_draft"
+    description: "A cited plain-language answer, or a policy draft"
+  - name: "legal_review_points"
+    description: "Jurisdiction-specific points for legal to confirm"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "company.size"
+  - "operations.policies"
+  - "operations.sops"
+  - "regional.jurisdictions"
+  - "regional.output_language"
+# low: reads the documents the user provides and returns answers or drafts.
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

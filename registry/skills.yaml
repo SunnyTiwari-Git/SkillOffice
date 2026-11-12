@@ -33,6 +33,353 @@ skills:
     risk: medium
     provenance: original
     platforms_tested: []
+  - id: 01-executive-strategy/exe-manager
+    version: 0.1.0
+    kind: manager
+    department: 01-executive-strategy
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 01-executive-strategy/exe-board-update
+    version: 0.1.0
+    kind: skill
+    department: 01-executive-strategy
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 01-executive-strategy/exe-business-case
+    version: 0.1.0
+    kind: skill
+    department: 01-executive-strategy
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 01-executive-strategy/exe-competitive-strategy
+    version: 0.1.0
+    kind: skill
+    department: 01-executive-strategy
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 01-executive-strategy/exe-decision-memo
+    version: 0.1.0
+    kind: skill
+    department: 01-executive-strategy
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 01-executive-strategy/exe-kpi-review
+    version: 0.1.0
+    kind: skill
+    department: 01-executive-strategy
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 01-executive-strategy/exe-meeting-brief
+    version: 0.1.0
+    kind: skill
+    department: 01-executive-strategy
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 01-executive-strategy/exe-okr-planning
+    version: 0.1.0
+    kind: skill
+    department: 01-executive-strategy
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 01-executive-strategy/exe-plan-review
+    version: 0.1.0
+    kind: skill
+    department: 01-executive-strategy
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 01-executive-strategy/exe-strategy-review
+    version: 0.1.0
+    kind: skill
+    department: 01-executive-strategy
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 02-hr-people-ops/hr-manager
+    version: 0.1.0
+    kind: manager
+    department: 02-hr-people-ops
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 02-hr-people-ops/hr-compensation-analysis
+    version: 0.1.0
+    kind: skill
+    department: 02-hr-people-ops
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 02-hr-people-ops/hr-interview-kit
+    version: 0.1.0
+    kind: skill
+    department: 02-hr-people-ops
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 02-hr-people-ops/hr-job-description
+    version: 0.1.0
+    kind: skill
+    department: 02-hr-people-ops
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 02-hr-people-ops/hr-offer-letter
+    version: 0.1.0
+    kind: skill
+    department: 02-hr-people-ops
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 02-hr-people-ops/hr-onboarding
+    version: 0.1.0
+    kind: skill
+    department: 02-hr-people-ops
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 02-hr-people-ops/hr-org-planning
+    version: 0.1.0
+    kind: skill
+    department: 02-hr-people-ops
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 02-hr-people-ops/hr-performance-review
+    version: 0.1.0
+    kind: skill
+    department: 02-hr-people-ops
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 02-hr-people-ops/hr-policy-handbook
+    version: 0.1.0
+    kind: skill
+    department: 02-hr-people-ops
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 02-hr-people-ops/hr-recruiting-pipeline
+    version: 0.1.0
+    kind: skill
+    department: 02-hr-people-ops
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 03-finance-accounting/fin-manager
+    version: 0.1.0
+    kind: manager
+    department: 03-finance-accounting
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 03-finance-accounting/fin-audit-prep
+    version: 0.1.0
+    kind: skill
+    department: 03-finance-accounting
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 03-finance-accounting/fin-cash-flow
+    version: 0.1.0
+    kind: skill
+    department: 03-finance-accounting
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 03-finance-accounting/fin-financial-statements
+    version: 0.1.0
+    kind: skill
+    department: 03-finance-accounting
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 03-finance-accounting/fin-invoicing-collections
+    version: 0.1.0
+    kind: skill
+    department: 03-finance-accounting
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 03-finance-accounting/fin-journal-entries
+    version: 0.1.0
+    kind: skill
+    department: 03-finance-accounting
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 03-finance-accounting/fin-month-end-close
+    version: 0.1.0
+    kind: skill
+    department: 03-finance-accounting
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 03-finance-accounting/fin-reconciliation
+    version: 0.1.0
+    kind: skill
+    department: 03-finance-accounting
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 03-finance-accounting/fin-tax-prep-organizer
+    version: 0.1.0
+    kind: skill
+    department: 03-finance-accounting
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 03-finance-accounting/fin-variance-analysis
+    version: 0.1.0
+    kind: skill
+    department: 03-finance-accounting
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 04-legal-risk-compliance/legal-manager
+    version: 0.1.0
+    kind: manager
+    department: 04-legal-risk-compliance
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 04-legal-risk-compliance/legal-compliance-check
+    version: 0.1.0
+    kind: skill
+    department: 04-legal-risk-compliance
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 04-legal-risk-compliance/legal-contract-review
+    version: 0.1.0
+    kind: skill
+    department: 04-legal-risk-compliance
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 04-legal-risk-compliance/legal-matter-brief
+    version: 0.1.0
+    kind: skill
+    department: 04-legal-risk-compliance
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 04-legal-risk-compliance/legal-nda-triage
+    version: 0.1.0
+    kind: skill
+    department: 04-legal-risk-compliance
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 04-legal-risk-compliance/legal-policy-drafting
+    version: 0.1.0
+    kind: skill
+    department: 04-legal-risk-compliance
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 04-legal-risk-compliance/legal-privacy-review
+    version: 0.1.0
+    kind: skill
+    department: 04-legal-risk-compliance
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 04-legal-risk-compliance/legal-response-draft
+    version: 0.1.0
+    kind: skill
+    department: 04-legal-risk-compliance
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 04-legal-risk-compliance/legal-risk-assessment
+    version: 0.1.0
+    kind: skill
+    department: 04-legal-risk-compliance
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 04-legal-risk-compliance/legal-vendor-terms-check
+    version: 0.1.0
+    kind: skill
+    department: 04-legal-risk-compliance
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
   - id: 05-sales-business-development/sls-account-research
     version: 0.1.0
     kind: skill

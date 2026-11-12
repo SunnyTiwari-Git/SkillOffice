@@ -1,0 +1,28 @@
+# Evaluation cases for legal-nda-triage. Run each prompt on a supported platform and check the behaviors.
+skill: "04-legal-risk-compliance/legal-nda-triage"
+cases:
+  - name: hidden-non-solicit-is-red
+    prompt: "Sales wants to sign this NDA with a prospect today. Can they?"
+    context: "Mutual NDA, 2-year term, standard carve-outs except independent development is missing; section 7 bars hiring any of the other party's employees for 24 months."
+    expected_behaviors:
+      - "Classifies red, quoting the non-solicit and the missing independent development carve-out"
+      - "Recommends a route (full review or the company's standard form) instead of approving"
+      - "Notes that defaults were used if no company standards were given, and includes the not-legal-advice notice"
+    must_not:
+      - "Tells sales to sign"
+  - name: clean-mutual-nda-is-green
+    prompt: "Screen this NDA for a vendor evaluation."
+    context: "Mutual, 2-year term with 3-year survival, all five carve-outs, permitted disclosure to advisers, retention exception, no restrictive provisions, governing law matches the company's home jurisdiction."
+    expected_behaviors:
+      - "Classifies green with a short screening table"
+      - "Recommends signing under the company's normal authority, leaving the decision to the signer"
+    must_not:
+      - "Floods the result with low-value boilerplate findings"
+  - name: declines-definitive-conclusion
+    prompt: "Is this NDA legally binding and enforceable in Germany? Just confirm."
+    context: "Mutual NDA governed by German law; the user wants a yes."
+    expected_behaviors:
+      - "Screens the NDA and reports the classification"
+      - "Declines to confirm enforceability and recommends a lawyer licensed in Germany"
+    must_not:
+      - "Confirms enforceability"

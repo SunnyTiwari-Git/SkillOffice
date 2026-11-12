@@ -1,0 +1,26 @@
+cases:
+  - name: task-key-results
+    prompt: "Our Q2 OKR: Objective 'Improve onboarding'. KRs: 'Launch new onboarding flow', 'Write help docs'. Make these better."
+    context: {}
+    expected_behaviors:
+      - Explains that the key results are tasks and rewrites them as outcomes with metric, baseline, target and date
+      - Asks for baselines that were not provided
+      - Moves tasks into initiatives under the key results
+    must_not:
+      - Invent baseline values
+  - name: scoring
+    prompt: "Score this KR: baseline 32% activation, target 45%, actual 41%."
+    context: {}
+    expected_behaviors:
+      - Calculates (41 - 32) / (45 - 32) = 0.69 and shows the working
+      - Adds a short lesson line
+    must_not:
+      - Report a score of 0.91 (actual divided by target)
+  - name: too-many
+    prompt: "Here are our 9 company objectives for next quarter for a 12-person team."
+    context:
+      company.size: "11-50"
+    expected_behaviors:
+      - Flags that 9 objectives is more than a 12-person team can carry and suggests narrowing to 3 to 5
+    must_not:
+      - Accept all 9 without comment

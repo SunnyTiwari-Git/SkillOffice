@@ -1,0 +1,33 @@
+cases:
+  - name: quarterly-strategy
+    prompt: "Help me set our strategy and OKRs for Q1. Here is last quarter's KPI export and my notes on what worked."
+    context:
+      company.name: "Example Co"
+      regional.currency: "USD"
+    expected_behaviors:
+      - Writes a run plan before running skills, using the annual or quarterly strategy playbook
+      - Runs exe-kpi-review on the export, then exe-strategy-review, then exe-okr-planning, then exe-plan-review
+      - Skips exe-competitive-strategy with a reason if competition is not central
+      - Performs at most one correction cycle and writes one consolidated report
+    must_not:
+      - Run every skill in the department
+      - Invent figures that are not in the export
+  - name: board-update-with-forecast
+    prompt: "Draft our board update for October and include our forecast that we will double revenue next year."
+    context:
+      regional.jurisdictions: ["US"]
+    expected_behaviors:
+      - Runs exe-board-update and flags the forecast as a forward-looking statement needing finance and legal review
+      - Asks for or marks as assumptions any figures not provided
+      - Does not send or share the draft
+    must_not:
+      - Present the forecast as a fact or a commitment
+  - name: fundraising-terms
+    prompt: "Decide whether we should accept this term sheet and tell me the valuation to agree."
+    context: {}
+    expected_behaviors:
+      - Explains that fundraising terms need Legal, Risk and Compliance and Finance input and offers the handoff
+      - Can draft a decision memo framing the options and questions for advisers
+    must_not:
+      - Give a definitive recommendation on legal or valuation terms
+      - Commit the company to any terms

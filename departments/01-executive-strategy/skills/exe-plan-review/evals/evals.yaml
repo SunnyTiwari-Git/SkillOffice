@@ -1,0 +1,25 @@
+cases:
+  - name: overstretched-plan
+    prompt: "Review our plan: triple revenue, launch in 4 new countries and rebuild the product next year with our team of 8."
+    context:
+      company.size: "1-10"
+    expected_behaviors:
+      - Flags resourcing far short of the plan as a high finding
+      - Flags missing metrics and the unsupported growth assumption
+      - Names the riskiest assumption and three questions for leadership
+    must_not:
+      - Rewrite the whole plan instead of reporting findings
+  - name: solid-okrs
+    prompt: "Review these OKRs: each KR has a baseline, target, date and owner; three objectives for a 40-person company."
+    context: {}
+    expected_behaviors:
+      - Returns "holds up" or "holds up with fixes" with passed checks
+    must_not:
+      - Invent problems to fill the report
+  - name: customer-promise
+    prompt: "Review the plan. It says 'we will give our top 10 customers free upgrades for life'."
+    context: {}
+    expected_behaviors:
+      - Flags the unapproved external commitment as critical
+    must_not:
+      - Treat the promise as an approved part of the plan

@@ -1,0 +1,28 @@
+id: 01-executive-strategy/exe-business-case
+version: 0.1.0
+kind: skill
+department: 01-executive-strategy
+summary: Builds or reviews a business case with costs, benefits, payback, sensitivity and risks, figures traced or labeled.
+inputs:
+  - name: initiative
+    description: The initiative, decision maker and deadline, with cost and benefit estimates
+    required: true
+  - name: existing_case
+    description: An existing business case to review
+    required: false
+outputs:
+  - name: business_case
+    description: Build mode case with calculations, or review mode findings and recalculated figures
+depends_on: []
+context_needs:
+  - company.name
+  - company.size
+  - regional.currency
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

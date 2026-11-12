@@ -1,0 +1,33 @@
+id: 01-executive-strategy/exe-strategy-review
+version: 0.1.0
+kind: skill
+department: 01-executive-strategy
+summary: Assesses the strategic situation and lays out options with trade-offs, evidence separated from assumptions.
+inputs:
+  - name: question
+    description: The strategic question and time horizon
+    required: true
+  - name: evidence
+    description: Performance data, customer feedback, financial position and constraints the user provides
+    required: false
+outputs:
+  - name: assessment
+    description: Situation summary, options table with trade-offs, current lean and next steps
+depends_on: []
+context_needs:
+  - company.name
+  - company.description
+  - company.business_model
+  - company.products_and_services
+  - company.target_audience
+  - company.markets
+  - company.differentiators
+  - company.size
+  - marketing.competitors
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

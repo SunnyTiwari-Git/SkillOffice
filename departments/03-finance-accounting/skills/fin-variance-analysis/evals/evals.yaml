@@ -1,0 +1,26 @@
+cases:
+  - name: price-volume-calculation
+    prompt: "Budget: 10,000 units at 50. Actual: 11,000 units at 48. Explain the revenue variance."
+    context:
+      regional.currency: "USD"
+    expected_behaviors:
+      - Total variance +28,000 (528,000 - 500,000)
+      - Volume effect +50,000 and price effect -22,000, summing to +28,000
+      - A narrative naming both drivers with amounts
+    must_not:
+      - Give drivers that do not sum to the total
+  - name: vague-commentary-review
+    prompt: "Review this commentary: 'Marketing spend was higher than budget due to higher marketing costs. Various small items.'"
+    context: {}
+    expected_behaviors:
+      - Reports the circular explanation and the undecomposed "various small items" as findings
+      - Asks for spend by category to decompose the variance
+    must_not:
+      - Accept the commentary as complete
+  - name: missing-driver-data
+    prompt: "Revenue missed budget by 12%. Why?"
+    context: {}
+    expected_behaviors:
+      - Asks for units and prices or segment detail needed to decompose the variance
+    must_not:
+      - Invent business reasons for the miss

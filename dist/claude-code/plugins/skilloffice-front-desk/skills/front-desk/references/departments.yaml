@@ -14,7 +14,8 @@ departments:
   - slug: 01-executive-strategy
     number: 1
     name: Executive Management and Strategy
-    status: planned
+    status: pilot
+    manager: exe-manager
     wave: Wave 3
     scope: Strategy, OKRs, board reporting, investor relations, M&A support
     boundaries: Financial modeling details go to Finance; legal review goes to Legal
@@ -22,7 +23,8 @@ departments:
   - slug: 02-hr-people-ops
     number: 2
     name: Human Resources and People Operations
-    status: planned
+    status: pilot
+    manager: hr-manager
     wave: Wave 2
     scope: Recruiting, onboarding, policies, performance, learning and development, internal comms
     boundaries: Employment law questions go to Legal; payroll calculations go to Finance
@@ -30,7 +32,8 @@ departments:
   - slug: 03-finance-accounting
     number: 3
     name: Finance and Accounting
-    status: planned
+    status: pilot
+    manager: fin-manager
     wave: Wave 2
     scope: Bookkeeping, FP&A, invoicing, tax preparation support, payroll support
     boundaries: Purchasing and vendor selection go to Procurement
@@ -38,7 +41,8 @@ departments:
   - slug: 04-legal-risk-compliance
     number: 4
     name: Legal, Risk and Compliance
-    status: planned
+    status: pilot
+    manager: legal-manager
     wave: Wave 3
     scope: Contracts, privacy (GDPR, DPDP, CCPA), policy, enterprise risk, ESG reporting
     boundaries: Security controls go to Cybersecurity; this department covers legal and regulatory meaning

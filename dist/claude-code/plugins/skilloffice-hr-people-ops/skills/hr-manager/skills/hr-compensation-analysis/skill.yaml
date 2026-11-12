@@ -1,0 +1,37 @@
+id: "02-hr-people-ops/hr-compensation-analysis"
+version: 0.1.0
+kind: skill
+department: "02-hr-people-ops"
+summary: "Reviews pay data the user provides: band placement, outliers, compression, equity modeling and aggregate equity checks; individuals masked; never sets pay."
+inputs:
+  - name: "pay_data"
+    description: "Pay data by employee code, role, level and location"
+    required: true
+  - name: "pay_bands"
+    description: "The company's pay bands and philosophy"
+    required: false
+  - name: "benchmarks"
+    description: "Market benchmarks supplied by the user, with source and date"
+    required: false
+outputs:
+  - name: "findings"
+    description: "Pay consistency and equity findings by code or group"
+  - name: "summary_tables"
+    description: "Band placement, spread and modeling tables with workings"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "company.size"
+  - "operations.policies"
+  - "regional.jurisdictions"
+  - "regional.currency"
+# low: read-only review of the data the user provides.
+risk: low
+side_effects:
+  - reads_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

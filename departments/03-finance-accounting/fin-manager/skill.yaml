@@ -1,0 +1,37 @@
+id: 03-finance-accounting/fin-manager
+version: 0.1.0
+kind: manager
+department: 03-finance-accounting
+summary: Coordinates Finance and Accounting skills; plans, runs, merges findings, one correction cycle, one report; drafts only.
+inputs:
+  - name: request
+    description: The user's finance request or a Front Desk handoff
+    required: true
+outputs:
+  - name: report
+    description: Consolidated report saved to .skilloffice/reports/<runId>.md
+depends_on:
+  - 03-finance-accounting/fin-journal-entries
+  - 03-finance-accounting/fin-reconciliation
+  - 03-finance-accounting/fin-month-end-close
+  - 03-finance-accounting/fin-financial-statements
+  - 03-finance-accounting/fin-variance-analysis
+  - 03-finance-accounting/fin-cash-flow
+  - 03-finance-accounting/fin-invoicing-collections
+  - 03-finance-accounting/fin-audit-prep
+  - 03-finance-accounting/fin-tax-prep-organizer
+context_needs:
+  - company.name
+  - company.size
+  - regional.currency
+  - regional.date_format
+  - regional.jurisdictions
+  - operations.policies
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

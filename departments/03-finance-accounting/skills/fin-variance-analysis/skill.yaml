@@ -1,0 +1,33 @@
+id: 03-finance-accounting/fin-variance-analysis
+version: 0.1.0
+kind: skill
+department: 03-finance-accounting
+summary: Decomposes material variances into drivers that reconcile exactly, with narratives; reports unexplained variances as findings.
+inputs:
+  - name: lines_and_basis
+    description: Line items and the comparison basis
+    required: true
+  - name: driver_data
+    description: Actual and comparison data at driver level (units, prices, headcount, spend categories)
+    required: true
+  - name: thresholds_and_events
+    description: Materiality thresholds and known business events
+    required: false
+outputs:
+  - name: variance_commentary
+    description: Bridges, reconciliation tables, narratives, findings and questions for the business
+depends_on: []
+context_needs:
+  - company.business_model
+  - company.products_and_services
+  - regional.currency
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

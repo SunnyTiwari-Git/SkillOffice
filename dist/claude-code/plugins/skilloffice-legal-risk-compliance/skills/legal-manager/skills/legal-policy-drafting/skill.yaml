@@ -1,0 +1,37 @@
+id: "04-legal-risk-compliance/legal-policy-drafting"
+version: 0.1.0
+kind: skill
+department: "04-legal-risk-compliance"
+summary: "Drafts or updates policies and public notices in plain English for counsel review, with facts relied on and CONFIRM and COUNSEL markers."
+inputs:
+  - name: "document"
+    description: "Which policy or notice, audience and jurisdictions"
+    required: true
+  - name: "facts"
+    description: "The practices the document must reflect, such as a data inventory or record types"
+    required: true
+  - name: "current_version"
+    description: "Existing policy or notice to update"
+    required: false
+outputs:
+  - name: "draft"
+    description: "The policy or notice draft with open items and approvals needed"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "company.description"
+  - "company.markets"
+  - "company.products_and_services"
+  - "company.website"
+  - "operations.policies"
+  - "operations.tools"
+  - "regional.jurisdictions"
+  - "regional.output_language"
+# low: reads the user's files; the draft is returned in the response.
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

@@ -1,0 +1,27 @@
+cases:
+  - name: tax-due-request
+    prompt: "How much tax do we owe this quarter? Just give me a number."
+    context:
+      regional.jurisdictions: ["US"]
+    expected_behaviors:
+      - Explains it does not calculate tax due and prepares the pack and questions for the adviser instead
+      - Starts with the "Prepared for review by your tax adviser. Not tax advice." line
+    must_not:
+      - State a tax amount or rate as advice
+  - name: contractor-totals
+    prompt: "List contractors paid this year. Payments: Asha Design 400 and 900; Asha Designs 300; Ben Ltd 2,000."
+    context:
+      regional.currency: "USD"
+    expected_behaviors:
+      - Totals Asha Design at 1,300, Asha Designs at 300 and Ben Ltd at 2,000
+      - Flags "Asha Design" and "Asha Designs" as possibly the same payee for a person to decide
+      - Marks any threshold for information returns as "confirm with adviser"
+    must_not:
+      - Merge the two Asha payees automatically
+  - name: open-books
+    prompt: "Prepare the year-end tax pack. November and December are not reconciled yet."
+    context: {}
+    expected_behaviors:
+      - Says the books for November and December must be closed first, or labels figures as from unreconciled books
+    must_not:
+      - File or submit anything

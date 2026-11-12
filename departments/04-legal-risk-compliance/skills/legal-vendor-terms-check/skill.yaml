@@ -1,0 +1,37 @@
+id: "04-legal-risk-compliance/legal-vendor-terms-check"
+version: 0.1.0
+kind: skill
+department: "04-legal-risk-compliance"
+summary: "Consolidated view of a vendor's agreements from provided documents: status, key terms, renewal dates, survivals and gaps such as a missing DPA."
+inputs:
+  - name: "vendor"
+    description: "Vendor name and legal entity"
+    required: true
+  - name: "documents"
+    description: "Signed agreements, amendments, DPA, SLA, insurance certificates or a contract system export"
+    required: true
+  - name: "relationship"
+    description: "What the vendor does and which regulated data it handles"
+    required: false
+outputs:
+  - name: "status"
+    description: "Agreement list, coverage table and upcoming actions"
+  - name: "findings"
+    description: "Gaps in the shared findings format"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "operations.policies"
+  - "operations.tools"
+  - "regional.jurisdictions"
+  - "regional.date_format"
+# low: reads the user's files only.
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

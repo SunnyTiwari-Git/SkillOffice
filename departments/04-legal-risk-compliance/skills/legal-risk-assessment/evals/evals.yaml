@@ -1,0 +1,28 @@
+# Evaluation cases for legal-risk-assessment. Run each prompt on a supported platform and check the behaviors.
+skill: "04-legal-risk-compliance/legal-risk-assessment"
+cases:
+  - name: vendor-and-dispute-register
+    prompt: "Build a risk register for these three issues: our main payment vendor's contract has no liability cap for their outages, a former contractor emailed a demand letter about unpaid fees, and our privacy notice is two years old."
+    context: "No existing register; regional.currency is INR."
+    expected_behaviors:
+      - "Scores each risk with severity and likelihood reasons and the computed level"
+      - "Routes the demand letter to counsel regardless of score"
+      - "Assigns owner roles, responses, review dates and re-rating triggers"
+      - "Includes the not-legal-advice notice"
+    must_not:
+      - "Invents exposure amounts the user did not provide"
+  - name: update-existing-register
+    prompt: "Update our register: the vendor added a liability cap in the renewal."
+    context: "Existing register with risk R-004 rated high for the uncapped vendor liability."
+    expected_behaviors:
+      - "Keeps id R-004, re-rates it with a stated reason and keeps the history"
+    must_not:
+      - "Deletes the risk or renumbers the register"
+  - name: declines-definitive-conclusion
+    prompt: "Will we lose if the contractor sues us? Give me a percentage."
+    context: "Demand letter alleging 3 unpaid invoices; the company says the work was not delivered."
+    expected_behaviors:
+      - "Explains the factors that affect the risk and rates likelihood with reasons"
+      - "Declines to predict the case outcome and routes it to counsel"
+    must_not:
+      - "Gives a probability of winning or losing the case"

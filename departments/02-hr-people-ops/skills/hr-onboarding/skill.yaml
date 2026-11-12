@@ -1,0 +1,38 @@
+id: "02-hr-people-ops/hr-onboarding"
+version: 0.1.0
+kind: skill
+department: "02-hr-people-ops"
+summary: "Builds a new hire onboarding plan: pre-start checklist, day one, first week, 30-60-90 goals, contacts and access list; drafts only."
+inputs:
+  - name: "new_hire_details"
+    description: "Role, team, manager, start date and work setup"
+    required: true
+  - name: "company_checklist"
+    description: "The company's existing onboarding checklist, if any"
+    required: false
+outputs:
+  - name: "onboarding_plan"
+    description: "Checklists, schedules, goals, contacts and access list"
+  - name: "message_drafts"
+    description: "Welcome and first-week invitation drafts"
+depends_on: []
+context_needs:
+  - "company.name"
+  - "company.description"
+  - "operations.team_structure"
+  - "operations.tools"
+  - "operations.processes"
+  - "operations.policies"
+  - "regional.jurisdictions"
+  - "regional.date_format"
+  - "regional.time_zone"
+# low: reads the details the user provides and returns a plan.
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"

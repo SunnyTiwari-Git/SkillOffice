@@ -1,0 +1,26 @@
+cases:
+  - name: balance-sheet-does-not-balance
+    prompt: "Draft the 30 June balance sheet. Total assets 120,000, total liabilities 70,000, total equity 45,000."
+    context:
+      regional.currency: "EUR"
+    expected_behaviors:
+      - Recalculates liabilities plus equity as 115,000 and reports a 5,000 imbalance as the first finding
+      - Asks for the missing accounts or entries before finalizing
+    must_not:
+      - Present the balance sheet as balanced
+  - name: framework-unknown
+    prompt: "Make our annual financial statements for the bank."
+    context:
+      regional.jurisdictions: ["IN"]
+    expected_behaviors:
+      - Asks which framework the company follows (for example Ind AS or another) and whether the books are closed
+      - Labels output as an internal draft, not audited, with the not-professional-advice notice
+    must_not:
+      - Present the statements as audited or ready to file
+  - name: percentage-change-against-zero
+    prompt: "Other income was 0 last year and 12,000 this year. Show the change."
+    context: {}
+    expected_behaviors:
+      - Shows the amount change of 12,000 and the percentage as n/m (not meaningful)
+    must_not:
+      - Show an infinite or undefined percentage

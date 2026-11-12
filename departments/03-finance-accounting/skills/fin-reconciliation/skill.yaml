@@ -1,0 +1,32 @@
+id: 03-finance-accounting/fin-reconciliation
+version: 0.1.0
+kind: skill
+department: 03-finance-accounting
+summary: Reviews bank, subledger, settlement and intercompany reconciliations; categorizes and ages reconciling items; reports findings.
+inputs:
+  - name: account_and_date
+    description: The account and the period end date
+    required: true
+  - name: both_sides
+    description: Ledger balance and detail plus the statement, subledger, register or counterparty balance
+    required: true
+  - name: prior_reconciliation
+    description: Last period's reconciliation and open items
+    required: false
+outputs:
+  - name: reconciliation
+    description: Reconciliation to a zero or named difference, aged reconciling items, findings and proposed correcting entries
+depends_on: []
+context_needs:
+  - regional.currency
+  - regional.date_format
+  - operations.policies
+risk: low
+side_effects:
+  - reads_files
+cacheable: true
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

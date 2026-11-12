@@ -1,0 +1,36 @@
+id: "02-hr-people-ops/hr-manager"
+version: 0.1.0
+kind: manager
+department: "02-hr-people-ops"
+summary: "Coordinates HR and People Operations: plans skills, runs them in order, merges findings, one correction cycle, one report; people decide."
+inputs:
+  - name: "request"
+    description: "The user's HR or people request with any documents or data"
+    required: true
+outputs:
+  - name: "report"
+    description: "Consolidated report with the notice, assumed jurisdictions, decisions for people and items for legal"
+depends_on:
+  - "02-hr-people-ops/hr-job-description"
+  - "02-hr-people-ops/hr-recruiting-pipeline"
+  - "02-hr-people-ops/hr-interview-kit"
+  - "02-hr-people-ops/hr-offer-letter"
+  - "02-hr-people-ops/hr-onboarding"
+  - "02-hr-people-ops/hr-performance-review"
+  - "02-hr-people-ops/hr-compensation-analysis"
+  - "02-hr-people-ops/hr-policy-handbook"
+  - "02-hr-people-ops/hr-org-planning"
+context_needs:
+  - "company.name"
+  - "operations.policies"
+  - "regional.jurisdictions"
+  - "regional.date_format"
+# medium: writes memory and reports in the user's project.
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

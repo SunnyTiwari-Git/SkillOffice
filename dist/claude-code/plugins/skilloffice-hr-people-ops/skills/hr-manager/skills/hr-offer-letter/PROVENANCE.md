@@ -1,0 +1,32 @@
+# Provenance: hr-offer-letter
+
+| Field | Value |
+| --- | --- |
+| Type | adapted |
+| Source id | anthropics-knowledge-work-plugins |
+| Upstream repository | https://github.com/anthropics/knowledge-work-plugins |
+| Upstream path | human-resources/skills/draft-offer/SKILL.md |
+| Upstream commit | ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d |
+| Upstream license | Apache-2.0 |
+| Security review | registry/security-reviews/02-hr-people-ops--hr-offer-letter.md |
+| Imported on | 2026-11-12 |
+| Imported by | Claude (AI agent), pending owner sign-off |
+
+## Changes made from the upstream version
+
+Modified by SkillOffice on 2026-11-12:
+
+- Kept the inputs, the compensation package table and the hiring manager notes; rewrote them in SkillOffice wording with placeholders instead of dollar signs, using the profile's currency and date format.
+- Removed the HRIS and ATS connector steps (comp band lookup, headcount check, status updates), the CONNECTORS.md pointer and the slash-command usage block.
+- Replaced the US-specific "Full-time, Exempt" default with a list of jurisdiction-specific clauses that always need legal review (references/offer-letter-outline.md).
+- Added: the not-legal-or-employment-advice notice, never invent or change pay figures, the protected characteristics rule, never send or sign, no personal data in memory, the managed-run section and the handoff.
+
+## Files not imported
+
+- human-resources/CONNECTORS.md and the plugin's .mcp.json.
+
+## Attribution
+
+Portions of this skill are adapted from anthropics/knowledge-work-plugins.
+
+Licensed under the Apache License, Version 2.0 (the "License"). The upstream repository has no NOTICE file. A copy of the License is in the LICENSE file at the root of this repository and at https://www.apache.org/licenses/LICENSE-2.0. This file was modified by SkillOffice; the changes are listed above.

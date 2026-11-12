@@ -1,0 +1,40 @@
+id: "02-hr-people-ops/hr-recruiting-pipeline"
+version: 0.1.0
+kind: skill
+department: "02-hr-people-ops"
+summary: "Scores applications against the written rubric only, with quoted evidence and coded candidates; drafts replies and pipeline metrics; a person decides."
+inputs:
+  - name: "screening_rubric"
+    description: "The rubric from hr-job-description, or the job ad to derive it from"
+    required: true
+  - name: "applications"
+    description: "Resumes and applications the user provides"
+    required: false
+  - name: "pipeline_data"
+    description: "Exported pipeline stages and dates for a status update"
+    required: false
+outputs:
+  - name: "shortlist"
+    description: "Candidates by code with scores, quoted evidence and bands"
+  - name: "reply_drafts"
+    description: "Invite, hold, decline and clarifying question drafts"
+  - name: "pipeline_metrics"
+    description: "Aggregate stage counts, conversion and time to fill"
+depends_on:
+  - "02-hr-people-ops/hr-job-description"
+context_needs:
+  - "company.name"
+  - "operations.policies"
+  - "regional.jurisdictions"
+  - "regional.date_format"
+  - "brand.voice"
+# low: reads the applications the user provides and returns notes and drafts.
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: "anthropics-knowledge-work-plugins"
+  upstream_commit: "ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d"
