@@ -1,0 +1,34 @@
+id: 17-procurement-vendor-management/proc-sourcing-plan
+version: 0.1.0
+kind: skill
+department: 17-procurement-vendor-management
+summary: "Plans a purchase before vendors are approached: need, make or buy, sourcing route by threshold, criteria and weights, risks, draft timeline."
+inputs:
+  - name: need
+    description: What is needed, why, by when and for whom
+    required: true
+  - name: budget
+    description: Expected budget or spend range
+    required: false
+  - name: constraints
+    description: Security, data, compliance, location or current-contract constraints
+    required: false
+outputs:
+  - name: sourcing_plan
+    description: Draft sourcing plan with route, weighted criteria, risk flags and approval route
+depends_on: []
+context_needs:
+  - company.name
+  - company.size
+  - operations.policies
+  - operations.tools
+  - regional.currency
+  - regional.date_format
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

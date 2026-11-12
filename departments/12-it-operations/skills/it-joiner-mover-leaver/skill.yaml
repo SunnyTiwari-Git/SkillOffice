@@ -1,0 +1,30 @@
+id: 12-it-operations/it-joiner-mover-leaver
+version: 0.1.0
+kind: skill
+department: 12-it-operations
+summary: "Onboarding, role change and offboarding IT checklists: least-privilege access, session and token revocation, ownership transfer, data preserved per policy."
+inputs:
+  - name: event
+    description: Joiner, mover or leaver, role or code, dates and time, location
+    required: true
+  - name: retention_rules
+    description: Data-retention and access rules from HR or legal, for leavers
+    required: false
+outputs:
+  - name: checklist
+    description: Checklist with owners, times and verification, approvals pending and message drafts
+depends_on:
+  - 12-it-operations/it-access-request
+context_needs:
+  - company.name
+  - operations.tools
+  - operations.policies
+  - operations.team_structure
+  - regional.time_zone
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

@@ -1,0 +1,37 @@
+id: 12-it-operations/it-manager
+version: 0.1.0
+kind: manager
+department: 12-it-operations
+summary: Coordinates internal IT skills; plans, runs, merges findings, one correction cycle, one report. Least privilege and verified identity.
+inputs:
+  - name: request
+    description: The user's IT request, ticket batch or a Front Desk handoff
+    required: true
+outputs:
+  - name: report
+    description: Consolidated report saved to .skilloffice/reports/<runId>.md
+depends_on:
+  - 12-it-operations/it-helpdesk-triage
+  - 12-it-operations/it-access-request
+  - 12-it-operations/it-joiner-mover-leaver
+  - 12-it-operations/it-runbook
+  - 12-it-operations/it-change-management
+  - 12-it-operations/it-asset-inventory
+  - 12-it-operations/it-saas-management
+  - 12-it-operations/it-troubleshooting
+  - 12-it-operations/it-backup-recovery-review
+context_needs:
+  - company.name
+  - company.size
+  - operations.tools
+  - operations.policies
+  - operations.team_structure
+  - regional.time_zone
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

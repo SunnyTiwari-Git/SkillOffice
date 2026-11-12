@@ -1,0 +1,9 @@
+# Fictional company used only for SkillOffice workflow tests.
+name: Northwind Running Co.
+industry: Retail, footwear
+business_model: Direct to consumer online store
+size: 11-50
+description: Northwind designs road and trail running shoes and sells them online in the United States.
+products_and_services: [Road running shoes, Trail running shoes]
+target_audience: [Recreational runners in the United States]
+markets: [United States]

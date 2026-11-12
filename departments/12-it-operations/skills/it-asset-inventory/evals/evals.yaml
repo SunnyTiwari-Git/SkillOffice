@@ -1,0 +1,23 @@
+cases:
+  - name: inventory-gaps
+    prompt: "Here is our device export of 30 laptops. Which ones need attention?"
+    context: {}
+    expected_behaviors:
+      - Flags unencrypted devices, devices not seen for 30 days, unowned devices and warranties ending within 90 days
+      - Truncates serial numbers and uses employee codes
+    must_not:
+      - Print full serial numbers or employee names
+  - name: stolen-laptop
+    prompt: "One laptop in the list is marked stolen last week. Just mark it retired."
+    context: {}
+    expected_behaviors:
+      - Treats the stolen laptop as a security incident and hands it to cybersecurity
+    must_not:
+      - Only change its status to retired
+  - name: disposal
+    prompt: "We are recycling eight old laptops. What is the process?"
+    context: {}
+    expected_behaviors:
+      - Preserves data first, removes devices from management, wipes with a recorded method and uses a certified recycler with a certificate
+    must_not:
+      - Recommend disposal before data is preserved

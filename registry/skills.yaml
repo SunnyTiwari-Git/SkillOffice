@@ -33,6 +33,88 @@ skills:
     risk: medium
     provenance: original
     platforms_tested: []
+  - id: 00-shared-productivity/sp-document-drafting
+    version: 0.1.0
+    kind: skill
+    department: 00-shared-productivity
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 00-shared-productivity/sp-email-draft
+    version: 0.1.0
+    kind: skill
+    department: 00-shared-productivity
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 00-shared-productivity/sp-meeting-notes
+    version: 0.1.0
+    kind: skill
+    department: 00-shared-productivity
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 00-shared-productivity/sp-presentation-outline
+    version: 0.1.0
+    kind: skill
+    department: 00-shared-productivity
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 00-shared-productivity/sp-research-brief
+    version: 0.1.0
+    kind: skill
+    department: 00-shared-productivity
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 00-shared-productivity/sp-summarize
+    version: 0.1.0
+    kind: skill
+    department: 00-shared-productivity
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 00-shared-productivity/sp-task-planning
+    version: 0.1.0
+    kind: skill
+    department: 00-shared-productivity
+    status: draft
+    risk: medium
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 00-shared-productivity/sp-translate-localize
+    version: 0.1.0
+    kind: skill
+    department: 00-shared-productivity
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 00-shared-productivity/sp-writing-review
+    version: 0.1.0
+    kind: skill
+    department: 00-shared-productivity
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 00-shared-productivity/sp-manager
+    version: 0.1.0
+    kind: manager
+    department: 00-shared-productivity
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
   - id: 01-executive-strategy/exe-manager
     version: 0.1.0
     kind: manager
@@ -1042,6 +1124,88 @@ skills:
     provenance: adapted
     source_id: anthropics-skills
     platforms_tested: []
+  - id: 12-it-operations/it-manager
+    version: 0.1.0
+    kind: manager
+    department: 12-it-operations
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 12-it-operations/it-access-request
+    version: 0.1.0
+    kind: skill
+    department: 12-it-operations
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 12-it-operations/it-asset-inventory
+    version: 0.1.0
+    kind: skill
+    department: 12-it-operations
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 12-it-operations/it-backup-recovery-review
+    version: 0.1.0
+    kind: skill
+    department: 12-it-operations
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 12-it-operations/it-change-management
+    version: 0.1.0
+    kind: skill
+    department: 12-it-operations
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 12-it-operations/it-helpdesk-triage
+    version: 0.1.0
+    kind: skill
+    department: 12-it-operations
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 12-it-operations/it-joiner-mover-leaver
+    version: 0.1.0
+    kind: skill
+    department: 12-it-operations
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 12-it-operations/it-runbook
+    version: 0.1.0
+    kind: skill
+    department: 12-it-operations
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 12-it-operations/it-saas-management
+    version: 0.1.0
+    kind: skill
+    department: 12-it-operations
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 12-it-operations/it-troubleshooting
+    version: 0.1.0
+    kind: skill
+    department: 12-it-operations
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
   - id: 13-devops-sre/ops-manager
     version: 0.1.0
     kind: manager
@@ -1312,4 +1476,162 @@ skills:
     risk: medium
     provenance: adapted
     source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 16-operations-project-management/biz-manager
+    version: 0.1.0
+    kind: manager
+    department: 16-operations-project-management
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 16-operations-project-management/biz-capacity-plan
+    version: 0.1.0
+    kind: skill
+    department: 16-operations-project-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 16-operations-project-management/biz-change-request
+    version: 0.1.0
+    kind: skill
+    department: 16-operations-project-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 16-operations-project-management/biz-facilities-admin
+    version: 0.1.0
+    kind: skill
+    department: 16-operations-project-management
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 16-operations-project-management/biz-process-documentation
+    version: 0.1.0
+    kind: skill
+    department: 16-operations-project-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 16-operations-project-management/biz-process-improvement
+    version: 0.1.0
+    kind: skill
+    department: 16-operations-project-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 16-operations-project-management/biz-project-plan
+    version: 0.1.0
+    kind: skill
+    department: 16-operations-project-management
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 16-operations-project-management/biz-project-review
+    version: 0.1.0
+    kind: skill
+    department: 16-operations-project-management
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 16-operations-project-management/biz-raid-log
+    version: 0.1.0
+    kind: skill
+    department: 16-operations-project-management
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 16-operations-project-management/biz-status-report
+    version: 0.1.0
+    kind: skill
+    department: 16-operations-project-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 17-procurement-vendor-management/proc-manager
+    version: 0.1.0
+    kind: manager
+    department: 17-procurement-vendor-management
+    status: draft
+    risk: medium
+    provenance: original
+    platforms_tested: []
+  - id: 17-procurement-vendor-management/proc-contract-renewal
+    version: 0.1.0
+    kind: skill
+    department: 17-procurement-vendor-management
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 17-procurement-vendor-management/proc-purchase-request
+    version: 0.1.0
+    kind: skill
+    department: 17-procurement-vendor-management
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 17-procurement-vendor-management/proc-rfp
+    version: 0.1.0
+    kind: skill
+    department: 17-procurement-vendor-management
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 17-procurement-vendor-management/proc-sourcing-plan
+    version: 0.1.0
+    kind: skill
+    department: 17-procurement-vendor-management
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 17-procurement-vendor-management/proc-spend-analysis
+    version: 0.1.0
+    kind: skill
+    department: 17-procurement-vendor-management
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 17-procurement-vendor-management/proc-supplier-scorecard
+    version: 0.1.0
+    kind: skill
+    department: 17-procurement-vendor-management
+    status: draft
+    risk: low
+    provenance: original
+    platforms_tested: []
+  - id: 17-procurement-vendor-management/proc-vendor-evaluation
+    version: 0.1.0
+    kind: skill
+    department: 17-procurement-vendor-management
+    status: draft
+    risk: low
+    provenance: adapted
+    source_id: anthropics-knowledge-work-plugins
+    platforms_tested: []
+  - id: 17-procurement-vendor-management/proc-vendor-risk-review
+    version: 0.1.0
+    kind: skill
+    department: 17-procurement-vendor-management
+    status: draft
+    risk: low
+    provenance: original
     platforms_tested: []

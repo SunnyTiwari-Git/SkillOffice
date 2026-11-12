@@ -1,0 +1,31 @@
+id: 16-operations-project-management/biz-change-request
+version: 0.1.0
+kind: skill
+department: 16-operations-project-management
+summary: Prepares a change request with options, impact on time, cost, quality and people, rollback, communication and approvers.
+inputs:
+  - name: change
+    description: The requested change and who asked for it
+    required: true
+  - name: baseline
+    description: Current scope, schedule and budget
+    required: false
+outputs:
+  - name: change_request
+    description: Draft change request pending approval
+depends_on: []
+context_needs:
+  - company.name
+  - operations.team_structure
+  - operations.processes
+  - regional.date_format
+  - regional.currency
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

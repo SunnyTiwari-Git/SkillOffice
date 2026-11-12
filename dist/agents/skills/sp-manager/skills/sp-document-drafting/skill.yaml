@@ -1,0 +1,30 @@
+id: 00-shared-productivity/sp-document-drafting
+version: 0.1.0
+kind: skill
+department: 00-shared-productivity
+summary: "Drafts memos, one-pagers, internal announcements, FAQs and how-to notes, outline first, with missing facts marked."
+inputs:
+  - name: brief
+    description: Document type, purpose and audience
+    required: true
+  - name: source_material
+    description: Notes, facts, figures or earlier versions
+    required: false
+outputs:
+  - name: document_draft
+    description: Outline, then the draft, with gaps to confirm
+depends_on: []
+context_needs:
+  - company.name
+  - brand.voice
+  - brand.tone_dos
+  - brand.tone_donts
+  - regional.output_language
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

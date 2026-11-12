@@ -1,0 +1,36 @@
+id: 00-shared-productivity/sp-manager
+version: 0.1.0
+kind: manager
+department: 00-shared-productivity
+summary: "Coordinates everyday productivity skills; plans, runs, merges findings, one correction cycle, one report. Drafts only."
+inputs:
+  - name: request
+    description: The user's request or a handoff from another department manager or the Front Desk
+    required: true
+outputs:
+  - name: report
+    description: Consolidated report saved to .skilloffice/reports/<runId>.md
+depends_on:
+  - 00-shared-productivity/sp-meeting-notes
+  - 00-shared-productivity/sp-email-draft
+  - 00-shared-productivity/sp-document-drafting
+  - 00-shared-productivity/sp-research-brief
+  - 00-shared-productivity/sp-task-planning
+  - 00-shared-productivity/sp-summarize
+  - 00-shared-productivity/sp-presentation-outline
+  - 00-shared-productivity/sp-translate-localize
+  - 00-shared-productivity/sp-writing-review
+context_needs:
+  - company.name
+  - brand.voice
+  - regional.output_language
+  - regional.date_format
+  - regional.time_zone
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

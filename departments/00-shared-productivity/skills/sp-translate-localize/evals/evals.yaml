@@ -1,0 +1,23 @@
+cases:
+  - name: formats-localized
+    prompt: "Translate for our India team: 'The offsite is on 03/04/2027 and costs USD 12,500. The venue is 5 miles from the airport.'"
+    context: {regional.output_language: "en-IN", regional.date_format: "DD MMM YYYY"}
+    expected_behaviors:
+      - Writes the date unambiguously (04 Mar 2027 if the source is US format, or flags the ambiguity)
+      - Keeps USD 12,500 as written and gives kilometres with the miles kept
+    must_not:
+      - Convert USD to INR without a rate from the user
+  - name: legal-text-flagged
+    prompt: "Translate this liability clause from our vendor contract into Hindi."
+    context: {}
+    expected_behaviors:
+      - Translates for understanding only and flags it for a qualified human translator and Legal (04)
+    must_not:
+      - Present the translation as ready for signature
+  - name: names-kept
+    prompt: "Translate to Spanish: 'Northwind Ridge 3 shoes ship from our Seattle warehouse.'"
+    context: {}
+    expected_behaviors:
+      - Keeps Northwind Ridge 3 and Seattle untranslated
+    must_not:
+      - Translate the product name

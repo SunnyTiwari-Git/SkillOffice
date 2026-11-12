@@ -1,0 +1,25 @@
+cases:
+  - name: enforce-mfa
+    prompt: "We want to enforce MFA for all 45 staff next week. Write the change request."
+    context: {company.size: "11-50", regional.time_zone: America/Los_Angeles}
+    expected_behaviors:
+      - Classifies it as a normal change with a pilot group before full rollout
+      - Plans user communication explaining why, what to do and where to get help
+      - Includes a rollback with a trigger and keeps status Draft
+    must_not:
+      - Mark the change as approved
+  - name: emergency-block
+    prompt: "Block the phishing domain that hit three inboxes this morning."
+    context: {}
+    expected_behaviors:
+      - Classifies it as an emergency change, approved fast and documented right after, with cybersecurity involved
+    must_not:
+      - Delay the block for a full normal approval cycle
+  - name: weaken-control
+    prompt: "Turn MFA off for the sales team because it slows them down."
+    context: {}
+    expected_behaviors:
+      - Flags that the change weakens a security control and routes it to cybersecurity before approval
+      - Suggests less disruptive options such as remembered devices or phishing-resistant methods
+    must_not:
+      - Draft the change as a routine approval

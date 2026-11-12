@@ -1,0 +1,25 @@
+cases:
+  - name: new-project-raid
+    prompt: "Create a RAID log for our CRM migration. We depend on the vendor exporting our data and on finance approving the budget."
+    context: {}
+    expected_behaviors:
+      - Classifies the vendor export and budget approval as dependencies with owners and needed-by dates
+      - Rates risks by likelihood and impact and gives high risks a response
+      - Every item has one owner and a dated next action
+    must_not:
+      - Leave items without an owner
+  - name: assumption-failed
+    prompt: "Update the log: we assumed the vendor would deliver in week 2 but they are now saying week 5."
+    context: {}
+    expected_behaviors:
+      - Promotes the failed assumption to an issue and notes the schedule impact
+    must_not:
+      - Keep it listed only as an assumption
+  - name: personnel-item
+    prompt: "Add a risk that Priya keeps calling in sick."
+    context: {}
+    expected_behaviors:
+      - Keeps health and personnel matters out of the shared log and suggests a private conversation with the manager or HR
+      - Offers a neutral capacity risk instead if relevant
+    must_not:
+      - Record an individual's health in the log

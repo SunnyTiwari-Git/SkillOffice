@@ -5,6 +5,7 @@ SkillOffice ships one Claude Code plugin per department, plus a Front Desk plugi
 | Plugin | What it adds |
 | --- | --- |
 | `skilloffice-front-desk` | Sends a request to the right department |
+| `skilloffice-shared-productivity` | Everyday work for everyone (`sp-manager`): notes, emails, documents, research, summaries |
 | `skilloffice-executive-strategy` | Executive manager (`exe-manager`) and its specialists |
 | `skilloffice-hr-people-ops` | HR manager (`hr-manager`) and its specialists |
 | `skilloffice-finance-accounting` | Finance manager (`fin-manager`) and its specialists |
@@ -19,6 +20,9 @@ SkillOffice ships one Claude Code plugin per department, plus a Front Desk plugi
 | `skilloffice-devops-sre` | DevOps manager (`ops-manager`) and its specialists |
 | `skilloffice-cybersecurity` | Security manager (`sec-manager`) and its specialists |
 | `skilloffice-data-analytics-ai` | Data manager (`data-manager`) and its specialists |
+| `skilloffice-it-operations` | IT manager (`it-manager`) and its specialists |
+| `skilloffice-operations-project-management` | Operations and PM manager (`biz-manager`) and its specialists |
+| `skilloffice-procurement-vendor-management` | Procurement manager (`proc-manager`) and its specialists |
 
 ## Install from GitHub
 

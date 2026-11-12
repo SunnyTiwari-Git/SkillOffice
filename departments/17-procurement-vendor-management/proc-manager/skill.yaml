@@ -1,0 +1,36 @@
+id: 17-procurement-vendor-management/proc-manager
+version: 0.1.0
+kind: manager
+department: 17-procurement-vendor-management
+summary: Coordinates Procurement and Vendor Management skills; plans, runs, merges findings, one correction cycle, one report.
+inputs:
+  - name: request
+    description: The user's procurement or vendor request, or a Front Desk handoff
+    required: true
+outputs:
+  - name: report
+    description: Consolidated report saved to .skilloffice/reports/<runId>.md
+depends_on:
+  - 17-procurement-vendor-management/proc-sourcing-plan
+  - 17-procurement-vendor-management/proc-rfp
+  - 17-procurement-vendor-management/proc-vendor-evaluation
+  - 17-procurement-vendor-management/proc-vendor-risk-review
+  - 17-procurement-vendor-management/proc-purchase-request
+  - 17-procurement-vendor-management/proc-spend-analysis
+  - 17-procurement-vendor-management/proc-contract-renewal
+  - 17-procurement-vendor-management/proc-supplier-scorecard
+context_needs:
+  - company.name
+  - company.size
+  - operations.policies
+  - regional.currency
+  - regional.date_format
+  - regional.jurisdictions
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

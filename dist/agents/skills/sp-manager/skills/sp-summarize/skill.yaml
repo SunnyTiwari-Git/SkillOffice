@@ -1,0 +1,26 @@
+id: 00-shared-productivity/sp-summarize
+version: 0.1.0
+kind: skill
+department: 00-shared-productivity
+summary: "Summarizes material at the requested length, keeping numbers, names, dates and caveats exactly and adding nothing."
+inputs:
+  - name: material
+    description: The document, thread, report or transcript to summarize
+    required: true
+  - name: length
+    description: One line, about 100 words, or a structured summary
+    required: false
+outputs:
+  - name: summary
+    description: The summary and a note of anything omitted or unclear
+depends_on: []
+context_needs:
+  - regional.output_language
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

@@ -16,6 +16,13 @@
       "license": "Apache-2.0"
     },
     {
+      "name": "skilloffice-shared-productivity",
+      "source": "./dist/claude-code/plugins/skilloffice-shared-productivity",
+      "description": "SkillOffice Shared Productivity: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
       "name": "skilloffice-executive-strategy",
       "source": "./dist/claude-code/plugins/skilloffice-executive-strategy",
       "description": "SkillOffice Executive Management and Strategy: a department manager that plans, runs and reviews specialist skills.",
@@ -93,6 +100,13 @@
       "license": "Apache-2.0"
     },
     {
+      "name": "skilloffice-it-operations",
+      "source": "./dist/claude-code/plugins/skilloffice-it-operations",
+      "description": "SkillOffice IT Operations and Technical Support: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
       "name": "skilloffice-devops-sre",
       "source": "./dist/claude-code/plugins/skilloffice-devops-sre",
       "description": "SkillOffice Cloud Infrastructure, DevOps and SRE: a department manager that plans, runs and reviews specialist skills.",
@@ -110,6 +124,20 @@
       "name": "skilloffice-data-analytics-ai",
       "source": "./dist/claude-code/plugins/skilloffice-data-analytics-ai",
       "description": "SkillOffice Data, Analytics and AI: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skilloffice-operations-project-management",
+      "source": "./dist/claude-code/plugins/skilloffice-operations-project-management",
+      "description": "SkillOffice Business Operations and Project Management: a department manager that plans, runs and reviews specialist skills.",
+      "version": "0.1.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "skilloffice-procurement-vendor-management",
+      "source": "./dist/claude-code/plugins/skilloffice-procurement-vendor-management",
+      "description": "SkillOffice Procurement and Vendor Management: a department manager that plans, runs and reviews specialist skills.",
       "version": "0.1.0",
       "license": "Apache-2.0"
     }

@@ -1,0 +1,24 @@
+cases:
+  - name: overloaded-plan
+    prompt: "Review this plan: 60 days of work, two people who also run support, deadline in 4 weeks, no risks listed."
+    context: {}
+    expected_behaviors:
+      - Shows the capacity arithmetic and flags the schedule as unsupported (high)
+      - Flags the missing risk log and missing buffer
+      - Gives a verdict and three priority actions
+    must_not:
+      - Declare the plan healthy
+  - name: unconfirmed-client-date
+    prompt: "Our account manager already told the client we deliver on the 1st. Review the plan."
+    context: {}
+    expected_behaviors:
+      - Flags the unconfirmed external commitment and checks whether the plan can meet it
+    must_not:
+      - Treat the promised date as agreed by the delivery team
+  - name: solid-plan
+    prompt: "Review this plan. It has goals, owners, estimates, a critical path, buffer and a RAID log."
+    context: {}
+    expected_behaviors:
+      - Lists passed checks and only real findings
+    must_not:
+      - Invent problems to fill the report

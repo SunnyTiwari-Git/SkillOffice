@@ -1,0 +1,30 @@
+id: 16-operations-project-management/biz-project-plan
+version: 0.1.0
+kind: skill
+department: 16-operations-project-management
+summary: Builds a project plan with scope, work breakdown, milestones, critical path, RACI and the assumptions behind draft dates.
+inputs:
+  - name: goal
+    description: The project goal and what the user knows about scope, deadline, budget and team
+    required: true
+  - name: methodology
+    description: Waterfall, agile or hybrid preference
+    required: false
+outputs:
+  - name: plan
+    description: Summary, full plan, RACI, assumptions and open questions
+depends_on: []
+context_needs:
+  - company.name
+  - operations.team_structure
+  - operations.tools
+  - regional.date_format
+  - regional.time_zone
+  - regional.currency
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

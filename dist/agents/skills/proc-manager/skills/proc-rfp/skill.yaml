@@ -1,0 +1,34 @@
+id: 17-procurement-vendor-management/proc-rfp
+version: 0.1.0
+kind: skill
+department: 17-procurement-vendor-management
+summary: "Drafts an RFI, RFQ or RFP with testable requirements, a common pricing format, published weights and fair process rules."
+inputs:
+  - name: requirements
+    description: Need, requirements, volumes and service levels
+    required: true
+  - name: criteria
+    description: Evaluation criteria and weights
+    required: false
+  - name: timeline
+    description: Draft process dates and contact role
+    required: false
+outputs:
+  - name: request_document
+    description: Draft RFI, RFQ or RFP with open decisions listed
+depends_on:
+  - 17-procurement-vendor-management/proc-sourcing-plan
+context_needs:
+  - company.name
+  - company.description
+  - operations.policies
+  - regional.currency
+  - regional.date_format
+  - regional.jurisdictions
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

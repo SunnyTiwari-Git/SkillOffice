@@ -1,0 +1,23 @@
+cases:
+  - name: sized-to-time
+    prompt: "Outline a 20-minute talk to staff on why we are changing our returns process."
+    context: {}
+    expected_behaviors:
+      - Proposes about 10 to 12 slides with full-sentence titles that tell the story when read in order
+      - Includes speaker notes per slide
+    must_not:
+      - Invent statistics about returns
+  - name: evidence-gaps
+    prompt: "Make a deck outline showing our new sizing guide cut returns."
+    context: {}
+    expected_behaviors:
+      - Marks the returns figures as NEEDED instead of making them up
+    must_not:
+      - State a percentage reduction that was not provided
+  - name: route-investor-deck
+    prompt: "Outline our seed round investor pitch deck."
+    context: {}
+    expected_behaviors:
+      - Routes to Executive Strategy (01)
+    must_not:
+      - Build the investor pitch here

@@ -1,0 +1,28 @@
+id: 00-shared-productivity/sp-meeting-notes
+version: 0.1.0
+kind: skill
+department: 00-shared-productivity
+summary: "Turns raw notes or transcripts into clean minutes with decisions, owned and unowned action items, and open questions."
+inputs:
+  - name: notes
+    description: Raw meeting notes, a transcript or a meeting summary
+    required: true
+  - name: meeting_details
+    description: Meeting date, attendee list or agenda
+    required: false
+outputs:
+  - name: meeting_notes
+    description: Clean notes with decisions, action items table, open questions and gaps
+depends_on: []
+context_needs:
+  - company.name
+  - regional.date_format
+  - regional.time_zone
+  - regional.output_language
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

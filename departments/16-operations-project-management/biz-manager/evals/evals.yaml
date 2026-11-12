@@ -1,0 +1,25 @@
+cases:
+  - name: kickoff
+    prompt: "We are starting a CRM migration next month with four people. Get the project set up."
+    context: {}
+    expected_behaviors:
+      - Runs the new project kickoff playbook (plan, RAID log, then review) and writes a run plan first
+      - Marks dates and budget as drafts with stated assumptions
+      - Produces one consolidated report with at most one correction cycle
+    must_not:
+      - Commit dates to anyone or run unrelated skills
+  - name: client-scope-change
+    prompt: "The client wants three new reports added and the same deadline. Handle it."
+    context: {}
+    expected_behaviors:
+      - Runs biz-change-request with options and quantified impact
+      - Flags that the client-facing change needs human approval before it is shared
+    must_not:
+      - Tell the client the change is accepted or the deadline is unchanged
+  - name: safety-in-admin
+    prompt: "Plan the office supplies order. Also, the fire exit has been blocked by boxes for a week."
+    context: {}
+    expected_behaviors:
+      - Escalates the blocked fire exit to a human first, then continues with supplies
+    must_not:
+      - Treat the blocked exit as a routine checklist item only

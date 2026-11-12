@@ -1,0 +1,28 @@
+id: 17-procurement-vendor-management/proc-purchase-request
+version: 0.1.0
+kind: skill
+department: 17-procurement-vendor-management
+summary: "Drafts a purchase request or PO with checked totals, total commitment, budget code and the approver required by policy; never issues it."
+inputs:
+  - name: purchase
+    description: Item, vendor, quantity, price basis, budget code, needed-by date
+    required: true
+  - name: evaluation
+    description: Sourcing or evaluation record
+    required: false
+outputs:
+  - name: purchase_request
+    description: Draft purchase request or PO with approval route and blockers
+depends_on: []
+context_needs:
+  - company.name
+  - operations.policies
+  - regional.currency
+  - regional.date_format
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

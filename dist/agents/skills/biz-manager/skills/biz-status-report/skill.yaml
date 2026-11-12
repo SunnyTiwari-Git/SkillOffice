@@ -1,0 +1,29 @@
+id: 16-operations-project-management/biz-status-report
+version: 0.1.0
+kind: skill
+department: 16-operations-project-management
+summary: Writes a project status report with rule-based red, amber or green status, milestone forecasts, risks and decisions needed.
+inputs:
+  - name: updates
+    description: Progress notes, plan, RAID log, metrics and milestone dates
+    required: true
+  - name: audience
+    description: Who the report is for and the period it covers
+    required: false
+outputs:
+  - name: status_report
+    description: Draft status report with headline, status by area, milestones, risks and decisions
+depends_on: []
+context_needs:
+  - company.name
+  - operations.team_structure
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

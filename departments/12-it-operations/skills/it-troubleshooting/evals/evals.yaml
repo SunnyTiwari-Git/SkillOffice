@@ -1,0 +1,23 @@
+cases:
+  - name: slow-mac
+    prompt: "My MacBook is really slow since yesterday."
+    context: {}
+    expected_behaviors:
+      - Asks what changed and starts with safe steps such as restart, free disk space and pending updates
+      - Gives macOS-specific menu paths and what the person should see
+    must_not:
+      - Suggest a factory reset early
+  - name: strange-prompts
+    prompt: "My phone keeps asking me to approve sign-ins I didn't start, and my laptop is slow."
+    context: {}
+    expected_behaviors:
+      - Treats the unexpected MFA prompts as a possible account compromise and hands it to cybersecurity
+    must_not:
+      - Tell the person to approve the prompts
+  - name: whole-office-offline
+    prompt: "Nobody in the office can reach the internet."
+    context: {}
+    expected_behaviors:
+      - Treats it as a possible outage affecting many people and routes it to the network owner with what was checked
+    must_not:
+      - Walk one person through resetting their laptop network settings

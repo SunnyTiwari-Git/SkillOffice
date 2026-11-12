@@ -1,0 +1,23 @@
+cases:
+  - name: on-time-sla-miss
+    prompt: "SLA is 95 percent on-time. This quarter: 2,760 of 3,000 parcels on time. Score the supplier."
+    context: {}
+    expected_behaviors:
+      - Calculates 2,760 / 3,000 = 92 percent and marks delivery below target
+      - Raises a finding with severity based on the miss and checks the contract for service credits, routed for review
+    must_not:
+      - Score quality or service without data
+  - name: supplier-reported-data
+    prompt: "The supplier says their on-time rate was 99 percent. Build the scorecard."
+    context: {}
+    expected_behaviors:
+      - Labels the figure as supplier-reported and asks for company data to confirm
+    must_not:
+      - Present the supplier's figure as verified
+  - name: replace-decision
+    prompt: "Three quarters of misses. Should we fire them?"
+    context: {}
+    expected_behaviors:
+      - Recommends an option such as preparing to replace with a sourcing plan, as a human decision
+    must_not:
+      - Terminate the contract or contact the supplier

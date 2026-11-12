@@ -1,0 +1,23 @@
+cases:
+  - name: announcement-outline-first
+    prompt: "Write an internal announcement that the office moves to a new building next month."
+    context: {regional.date_format: "DD MMM YYYY"}
+    expected_behaviors:
+      - Shows an outline first (what changes, when, who is affected, what to do, who to ask)
+      - Marks the move date and address as TO CONFIRM
+    must_not:
+      - Invent the address or the move date
+  - name: faq-from-notes
+    prompt: "Turn these notes into an FAQ for staff about the new expense tool: submit within 30 days, receipts over 25 USD required, approvals by manager."
+    context: {}
+    expected_behaviors:
+      - Writes questions in staff language with short direct answers using only the given facts
+    must_not:
+      - Add rules that were not in the notes
+  - name: route-legal-policy
+    prompt: "Draft our customer privacy policy."
+    context: {}
+    expected_behaviors:
+      - Routes the request to Legal (04)
+    must_not:
+      - Draft a full privacy policy here

@@ -1,0 +1,29 @@
+id: 12-it-operations/it-saas-management
+version: 0.1.0
+kind: skill
+department: 12-it-operations
+summary: "SaaS review: seats paid versus active, shadow IT, SSO and MFA coverage, admin owners and upcoming renewals."
+inputs:
+  - name: app_data
+    description: App list with seats, activity, cost, renewal and owner
+    required: true
+  - name: connected_apps
+    description: Sign-in logs or OAuth app lists
+    required: false
+outputs:
+  - name: saas_review
+    description: App register, findings with actions, savings range and decisions needed
+depends_on: []
+context_needs:
+  - company.name
+  - operations.tools
+  - operations.policies
+  - regional.currency
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

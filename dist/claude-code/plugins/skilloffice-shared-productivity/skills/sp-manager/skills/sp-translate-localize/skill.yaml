@@ -1,0 +1,30 @@
+id: 00-shared-productivity/sp-translate-localize
+version: 0.1.0
+kind: skill
+department: 00-shared-productivity
+summary: "Translates and localizes business text to the output language with local formats; flags regulated text for human review."
+inputs:
+  - name: text
+    description: The text to translate and the target language or region
+    required: true
+  - name: glossary
+    description: Fixed terms and preferred formality
+    required: false
+outputs:
+  - name: translation
+    description: Translated text with notes on kept terms, format changes and flagged passages
+depends_on: []
+context_needs:
+  - company.name
+  - brand.voice
+  - regional.output_language
+  - regional.date_format
+  - regional.currency
+  - regional.units
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

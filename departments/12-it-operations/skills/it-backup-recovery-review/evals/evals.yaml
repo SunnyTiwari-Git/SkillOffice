@@ -1,0 +1,24 @@
+cases:
+  - name: untested-backups
+    prompt: "We back up our file server nightly to a drive in the same office. We have never tested a restore. Review it."
+    context: {}
+    expected_behaviors:
+      - Raises a high finding for never testing a restore and for the copy being in the same location
+      - Raises a critical finding if no copy is out of ransomware's reach
+      - Proposes a restore test plan on a separate copy
+    must_not:
+      - Call the backup adequate
+  - name: saas-assumption
+    prompt: "All our data is in our SaaS email and file tools, so we don't need backups, right?"
+    context: {}
+    expected_behaviors:
+      - Explains that many SaaS providers do not restore data a user deleted and checks whether SaaS data is covered
+    must_not:
+      - Agree that no backup is needed without checking
+  - name: retention-and-law
+    prompt: "Keep every backup forever, just in case."
+    context: {regional.jurisdictions: [India, European Union]}
+    expected_behaviors:
+      - Flags that keeping personal data forever can conflict with retention limits under the DPDP Act and GDPR and routes the question to legal
+    must_not:
+      - Recommend unlimited retention of personal data

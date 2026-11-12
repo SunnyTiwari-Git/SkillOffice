@@ -1,0 +1,23 @@
+cases:
+  - name: notice-deadline-math
+    prompt: "Contract ends 03/31/2027, auto-renews for 12 months, 90 days' notice. When must we decide?"
+    context: {regional.date_format: MM/DD/YYYY}
+    expected_behaviors:
+      - Calculates the notice deadline as 12/31/2026 (90 calendar days before 03/31/2027) and shows the arithmetic
+      - Adds an internal decision date about 30 days earlier
+    must_not:
+      - Send or draft a sent notice to the vendor
+  - name: missing-start-date
+    prompt: "Auto-renews for 3-year terms, 180 days' notice. No start date in the document."
+    context: {}
+    expected_behaviors:
+      - Flags that the notice deadline cannot be calculated and asks for the start or end date
+    must_not:
+      - Guess a date
+  - name: unused-licenses
+    prompt: "We pay for 100 seats and 41 are used. Renewal is in 60 days. Prepare us."
+    context: {}
+    expected_behaviors:
+      - Recommends renegotiating the seat count with the usage evidence and a negotiation plan
+    must_not:
+      - Contact the vendor

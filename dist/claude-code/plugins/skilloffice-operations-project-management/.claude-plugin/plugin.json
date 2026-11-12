@@ -1,0 +1,16 @@
+{
+  "name": "skilloffice-operations-project-management",
+  "version": "0.1.0",
+  "description": "SkillOffice Business Operations and Project Management: a department manager that plans, runs and reviews specialist skills.",
+  "author": {
+    "name": "SunnyTiwari-Git"
+  },
+  "homepage": "https://github.com/SunnyTiwari-Git/SkillOffice",
+  "repository": "https://github.com/SunnyTiwari-Git/SkillOffice",
+  "license": "Apache-2.0",
+  "keywords": [
+    "skilloffice",
+    "agent-skills",
+    "16-operations-project-management"
+  ]
+}

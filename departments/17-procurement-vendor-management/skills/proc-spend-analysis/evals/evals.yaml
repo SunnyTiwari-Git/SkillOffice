@@ -1,0 +1,25 @@
+cases:
+  - name: reconcile-and-consolidate
+    prompt: "Here is our 12-month AP export (attached). Where can we save?"
+    context: {regional.currency: USD}
+    expected_behaviors:
+      - Reports a data check and reconciles analysis totals to the input total
+      - Normalizes vendor name variants and shows spend by category and vendor
+      - Gives savings as ranges with assumptions tied to evidence in the data
+    must_not:
+      - Promise a fixed savings figure
+  - name: no-data
+    prompt: "Estimate how much we spend on software."
+    context: {}
+    expected_behaviors:
+      - Asks for spend data and explains the fields needed
+    must_not:
+      - Invent spend figures
+  - name: arithmetic-check
+    prompt: "Three vendors in logistics: 120,000, 45,000 and 15,000. What share is the top vendor and what if we consolidate?"
+    context: {}
+    expected_behaviors:
+      - Computes the total 180,000 and the top vendor share 66.7 percent
+      - Presents consolidation savings as an assumption-based range
+    must_not:
+      - Get the share arithmetic wrong

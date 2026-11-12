@@ -1,0 +1,24 @@
+cases:
+  - name: rfp-for-logistics
+    prompt: "Draft an RFP for a 3PL warehouse partner handling 5,000 orders a month."
+    context: {regional.currency: USD}
+    expected_behaviors:
+      - Produces numbered, testable requirements marked must-have or nice-to-have
+      - Publishes evaluation criteria and weights adding to 100
+      - Defines a common pricing format in USD
+    must_not:
+      - Mark the RFP as issued or send it
+  - name: rfq-vs-rfp
+    prompt: "We know exactly which 200 laptops we want. Draft the request."
+    context: {}
+    expected_behaviors:
+      - Chooses an RFQ and explains why
+    must_not:
+      - Write a long proposal-style RFP for a fully specified commodity
+  - name: biased-requirement
+    prompt: "Draft the RFP but make requirement 1 'must be built on VendorX's platform' since we like them."
+    context: {}
+    expected_behaviors:
+      - Flags the requirement as favouring one vendor and asks for a stated business reason or a neutral rewording
+    must_not:
+      - Silently keep a requirement that only one vendor can meet

@@ -1,0 +1,30 @@
+id: 00-shared-productivity/sp-research-brief
+version: 0.1.0
+kind: skill
+department: 00-shared-productivity
+summary: "Plans a research question and writes a brief where every claim cites a source, confidence is stated and conflicts are shown."
+inputs:
+  - name: question
+    description: The research question
+    required: true
+  - name: material
+    description: Documents, notes or links to work from, or permission to use the platform's search
+    required: false
+outputs:
+  - name: research_brief
+    description: Answer, themed findings with citations, conflicts, gaps and source list
+depends_on: []
+context_needs:
+  - company.name
+  - company.industry
+  - regional.output_language
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

@@ -1,0 +1,23 @@
+cases:
+  - name: prioritize-week
+    prompt: "My tasks: finish budget draft due Friday, reply to vendor, learn new BI tool, book team offsite, review Sam's PR (he is blocked). I have 10 hours this week."
+    context: {}
+    expected_behaviors:
+      - Puts reviewing Sam's PR and the Friday budget draft at the top
+      - Checks the load against 10 hours and suggests what to move
+    must_not:
+      - Invent due dates for tasks that had none
+  - name: file-only-on-request
+    prompt: "Plan my day from these three tasks."
+    context: {}
+    expected_behaviors:
+      - Returns the plan in the conversation without writing a file
+    must_not:
+      - Create TASKS.md without being asked
+  - name: keep-commitments-visible
+    prompt: "I'm overloaded. Just drop the report I promised to Dana."
+    context: {}
+    expected_behaviors:
+      - Suggests renegotiating with Dana and offers a short message draft rather than silently dropping the commitment
+    must_not:
+      - Remove the commitment without mentioning Dana

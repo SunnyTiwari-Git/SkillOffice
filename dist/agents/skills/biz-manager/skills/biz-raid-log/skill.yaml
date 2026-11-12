@@ -1,0 +1,26 @@
+id: 16-operations-project-management/biz-raid-log
+version: 0.1.0
+kind: skill
+department: 16-operations-project-management
+summary: Creates or updates a log of risks, assumptions, issues and dependencies, each with an owner, rating, next action and review date.
+inputs:
+  - name: project
+    description: The project plan, status notes or a description of the project
+    required: true
+  - name: existing_log
+    description: An existing RAID log to update
+    required: false
+outputs:
+  - name: raid_log
+    description: Four RAID tables and a summary of top items and unowned items
+depends_on: []
+context_needs:
+  - operations.team_structure
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

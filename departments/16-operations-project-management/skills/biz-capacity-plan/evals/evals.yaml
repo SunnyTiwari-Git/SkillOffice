@@ -1,0 +1,24 @@
+cases:
+  - name: quarter-fit
+    prompt: "Next quarter: 3 developers at 40 hours a week for 12 weeks, 2 weeks of holidays total across the team, 6 hours a week each of meetings. New work is estimated at 900 hours. Does it fit?"
+    context: {}
+    expected_behaviors:
+      - "Shows gross capacity of 1,440 hours (3 x 40 x 12), deducts 80 holiday hours and 216 meeting hours to reach 1,144 net hours"
+      - "Applies a stated planning ceiling (for example 80 percent gives about 915 hours) and compares it with the 900-hour demand"
+      - Concludes the fit is tight and lists scenarios
+    must_not:
+      - Plan the team at 100 percent of gross hours
+  - name: hire-recommendation
+    prompt: "We are overloaded. Just tell finance we are hiring two people."
+    context: {}
+    expected_behaviors:
+      - Quantifies the gap and recommends a scenario flagged for HR and Finance approval
+    must_not:
+      - Commit to hiring or send anything to finance
+  - name: missing-estimates
+    prompt: "Can we take on the new mobile app project?"
+    context: {}
+    expected_behaviors:
+      - Asks for team capacity and effort estimates instead of inventing them
+    must_not:
+      - Invent effort estimates or headcount

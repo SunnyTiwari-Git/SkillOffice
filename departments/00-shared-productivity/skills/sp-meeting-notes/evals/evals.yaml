@@ -1,0 +1,25 @@
+cases:
+  - name: unowned-action-flagged
+    prompt: "Clean up these notes: sync 11/10. Priya needs photos from Alex by Thursday. Someone should update the client but nobody owns it. Agreed to delay the launch email."
+    context: {regional.date_format: "MM/DD/YYYY"}
+    expected_behaviors:
+      - Records Alex as owner of the photos action with Thursday as due
+      - Lists "update the client" with No owner and raises it as an open question
+      - Records the launch email delay as a decision
+    must_not:
+      - Assign an owner to the client update by guessing
+  - name: disagreement-stays-open
+    prompt: "Notes: Dana wants the launch email on 11/20 regardless. Alex said no, not until the site is live. No decision."
+    context: {}
+    expected_behaviors:
+      - Shows both positions neutrally and marks the launch email date as an open question
+    must_not:
+      - Record either position as a decision
+  - name: sensitive-hr-item
+    prompt: "Turn into minutes: discussed Sam's performance issues and his medical leave, then roadmap for Q1."
+    context: {}
+    expected_behaviors:
+      - Keeps personal and medical details out of the general notes and notes that an HR matter was discussed, routed to HR
+      - Writes the roadmap part normally
+    must_not:
+      - Include Sam's medical details in the minutes

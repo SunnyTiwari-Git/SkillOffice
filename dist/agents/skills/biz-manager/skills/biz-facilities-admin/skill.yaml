@@ -1,0 +1,28 @@
+id: 16-operations-project-management/biz-facilities-admin
+version: 0.1.0
+kind: skill
+department: 16-operations-project-management
+summary: Prepares office and admin checklists such as moves, safety basics, supplies and visitors, flagging local rules for qualified review.
+inputs:
+  - name: task
+    description: The facilities or admin task and known facts such as location, headcount and dates
+    required: true
+outputs:
+  - name: checklist
+    description: Checklist with owners and draft dates, items for qualified review and a draft staff notice
+depends_on: []
+context_needs:
+  - company.name
+  - company.size
+  - operations.policies
+  - operations.tools
+  - regional.jurisdictions
+  - regional.date_format
+  - regional.currency
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

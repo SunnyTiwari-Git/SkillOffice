@@ -1,0 +1,29 @@
+id: 17-procurement-vendor-management/proc-contract-renewal
+version: 0.1.0
+kind: skill
+department: 17-procurement-vendor-management
+summary: "Builds a renewal calendar with calculated notice deadlines, flags missing terms, and prepares renewal decisions and negotiation plans."
+inputs:
+  - name: contracts
+    description: Contracts or a contract list with dates, renewal and notice terms
+    required: true
+  - name: usage
+    description: Usage or performance data per contract
+    required: false
+outputs:
+  - name: renewal_calendar
+    description: Calendar with notice deadlines, decision briefs and negotiation plans
+depends_on: []
+context_needs:
+  - company.name
+  - operations.policies
+  - regional.currency
+  - regional.date_format
+  - regional.time_zone
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

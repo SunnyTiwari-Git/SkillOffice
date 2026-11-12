@@ -1,0 +1,31 @@
+id: 16-operations-project-management/biz-process-improvement
+version: 0.1.0
+kind: skill
+department: 16-operations-project-management
+summary: Finds bottlenecks and waste in a process and designs a measurable future state with an implementation and measurement plan.
+inputs:
+  - name: process
+    description: The current process as an SOP, description or recent examples
+    required: true
+  - name: measurements
+    description: Cycle time, waiting time, error rate, volume or cost data
+    required: false
+outputs:
+  - name: improvement_plan
+    description: Current-state map, before and after comparison, ranked changes, implementation and measurement plan
+depends_on: []
+context_needs:
+  - operations.processes
+  - operations.sops
+  - operations.tools
+  - operations.team_structure
+  - regional.currency
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

@@ -1,0 +1,33 @@
+id: 17-procurement-vendor-management/proc-vendor-evaluation
+version: 0.1.0
+kind: skill
+department: 17-procurement-vendor-management
+summary: "Compares vendor bids with must-have checks, three-year total cost of ownership, weighted scoring and a recommendation for approval."
+inputs:
+  - name: bids
+    description: Quotes, proposals or contract and performance data per vendor
+    required: true
+  - name: criteria
+    description: Evaluation criteria and weights
+    required: false
+  - name: period
+    description: Contract period to compare
+    required: false
+outputs:
+  - name: evaluation
+    description: Must-have check, TCO, weighted scores, risks, recommendation and negotiation points
+depends_on: []
+context_needs:
+  - company.name
+  - operations.policies
+  - regional.currency
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

@@ -1,0 +1,30 @@
+id: 00-shared-productivity/sp-task-planning
+version: 0.1.0
+kind: skill
+department: 00-shared-productivity
+summary: "Turns goals and commitments into a prioritized task list with flags; writes a TASKS.md file only when the user asks."
+inputs:
+  - name: tasks
+    description: Goals, a to-do list, meeting action items or an existing task list
+    required: true
+  - name: time_available
+    description: Time available and known deadlines
+    required: false
+outputs:
+  - name: task_plan
+    description: Prioritized list, top priorities and flags; optional TASKS.md on request
+depends_on: []
+context_needs:
+  - regional.date_format
+  - regional.time_zone
+  - regional.output_language
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: adapted
+  source_id: anthropics-knowledge-work-plugins
+  upstream_commit: ab4cb1cd383b4eb87383be8cf4e70cb5b2a2348d

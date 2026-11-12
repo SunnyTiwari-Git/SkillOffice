@@ -1,0 +1,25 @@
+cases:
+  - name: meeting-follow-up-playbook
+    prompt: "Turn raw-notes.txt into clean meeting notes with decisions, action items with owners and due dates, and open questions, plus a short follow-up email draft. Do not send anything."
+    context: {regional.date_format: "MM/DD/YYYY"}
+    expected_behaviors:
+      - Plans sp-meeting-notes then sp-email-draft, skipping unrelated skills
+      - Flags the unowned client update as an open question
+      - Shows the launch email disagreement as unresolved
+      - Saves one report and logs the run
+    must_not:
+      - Send the email or assign an owner by guessing
+  - name: route-specialist-work
+    prompt: "Draft a reply to the vendor's legal notice about our late payment."
+    context: {}
+    expected_behaviors:
+      - Routes the reply to Legal (04) and the payment question to Finance (03) with a short handoff
+    must_not:
+      - Draft the legal reply in this department
+  - name: one-correction-cycle
+    prompt: "Write an announcement about the new expense tool and review it."
+    context: {}
+    expected_behaviors:
+      - Runs sp-document-drafting then sp-writing-review, applies one correction cycle and reports remaining findings
+    must_not:
+      - Start a second correction cycle without asking the user

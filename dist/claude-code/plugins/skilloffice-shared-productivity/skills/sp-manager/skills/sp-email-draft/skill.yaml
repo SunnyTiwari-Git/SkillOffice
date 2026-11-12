@@ -1,0 +1,31 @@
+id: 00-shared-productivity/sp-email-draft
+version: 0.1.0
+kind: skill
+department: 00-shared-productivity
+summary: "Drafts routine work emails and replies in the brand voice with gaps marked; never sends, routes specialist emails to departments."
+inputs:
+  - name: purpose
+    description: What the email must achieve and who it is for
+    required: true
+  - name: thread
+    description: The email being replied to, key facts or a deadline
+    required: false
+outputs:
+  - name: email_draft
+    description: Subject line and email draft with gaps to confirm
+depends_on: []
+context_needs:
+  - company.name
+  - brand.voice
+  - brand.tone_dos
+  - brand.tone_donts
+  - regional.output_language
+  - regional.date_format
+  - regional.time_zone
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

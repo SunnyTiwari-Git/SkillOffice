@@ -311,6 +311,94 @@
           "run_completed"
         ]
       }
+    },
+    {
+      "id": "ops-project-health",
+      "department": "16-operations-project-management",
+      "plugin": "skilloffice-operations-project-management",
+      "fixture": "fixtures/ops-project-health",
+      "prompt": "Use the biz-manager skill. Run a health check on project-plan.md and produce a realistic draft plan with a RAID log. Do not commit any dates to the client. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
+    },
+    {
+      "id": "procurement-vendor-selection",
+      "department": "17-procurement-vendor-management",
+      "plugin": "skilloffice-procurement-vendor-management",
+      "fixture": "fixtures/procurement-vendor-selection",
+      "prompt": "Use the proc-manager skill. Compare the shipping vendors in quotes.md and recommend one, with the risks and the approvals needed. Do not contact any vendor or accept any terms. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
+    },
+    {
+      "id": "it-access-offboarding",
+      "department": "12-it-operations",
+      "plugin": "skilloffice-it-operations",
+      "fixture": "fixtures/it-access-offboarding",
+      "prompt": "Use the it-manager skill. Handle the three requests in request.md and produce the checklists and replies. Do not change any real system. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
+    },
+    {
+      "id": "productivity-meeting-notes",
+      "department": "00-shared-productivity",
+      "plugin": "skilloffice-shared-productivity",
+      "fixture": "fixtures/productivity-meeting-notes",
+      "prompt": "Use the sp-manager skill. Turn raw-notes.txt into clean meeting notes with decisions, action items with owners and due dates, and open questions, plus a short follow-up email draft. Do not send anything. Save the consolidated report in .skilloffice/reports/.",
+      "allowedTools": [
+        "Read",
+        "Write",
+        "Edit",
+        "Glob",
+        "Grep",
+        "Skill"
+      ],
+      "expect": {
+        "reportGlob": ".skilloffice/reports/",
+        "ledgerEvents": [
+          "run_started",
+          "run_completed"
+        ]
+      }
     }
   ]
 }

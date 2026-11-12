@@ -1,0 +1,29 @@
+id: 12-it-operations/it-asset-inventory
+version: 0.1.0
+kind: skill
+department: 12-it-operations
+summary: "IT asset inventory from user data: owners, encryption, warranty and update gaps, refresh drafts and safe disposal with data wiping."
+inputs:
+  - name: asset_data
+    description: Device management export, spreadsheet, purchase records or list
+    required: true
+  - name: policies
+    description: Refresh and disposal policies
+    required: false
+outputs:
+  - name: inventory
+    description: Inventory table, gaps with actions, refresh list and disposal checklist
+depends_on: []
+context_needs:
+  - company.name
+  - company.size
+  - operations.tools
+  - operations.policies
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

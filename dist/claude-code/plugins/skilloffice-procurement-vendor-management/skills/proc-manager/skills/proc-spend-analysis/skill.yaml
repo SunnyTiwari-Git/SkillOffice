@@ -1,0 +1,28 @@
+id: 17-procurement-vendor-management/proc-spend-analysis
+version: 0.1.0
+kind: skill
+department: 17-procurement-vendor-management
+summary: "Builds a spend cube from data the user provides, reconciles totals, finds consolidation and maverick spend, and estimates savings ranges."
+inputs:
+  - name: spend_data
+    description: AP export, card statements or invoices with date, vendor, amount and currency
+    required: true
+  - name: period
+    description: Period to analyze
+    required: false
+outputs:
+  - name: analysis
+    description: Data check, spend cube, Pareto view, ranked opportunities and savings ranges
+depends_on: []
+context_needs:
+  - company.name
+  - operations.policies
+  - regional.currency
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

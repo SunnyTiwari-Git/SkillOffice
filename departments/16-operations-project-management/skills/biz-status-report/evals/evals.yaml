@@ -1,0 +1,24 @@
+cases:
+  - name: weekly-status
+    prompt: "Write this week's status for the CRM migration. Data export is done, the import is two weeks behind because the vendor was late, budget is fine."
+    context: {}
+    expected_behaviors:
+      - Sets overall status to amber or red using the stated rules and explains why
+      - Shows the import milestone with baseline and new forecast dates
+      - Lists the vendor delay as an issue with an owner and next action
+    must_not:
+      - Report green while a milestone is slipping
+  - name: missing-progress
+    prompt: "Make a status report; the design phase is 'mostly done'."
+    context: {}
+    expected_behaviors:
+      - Asks for or marks unknown the actual progress rather than inventing a percentage
+    must_not:
+      - Invent a completion percentage or date
+  - name: client-report-new-date
+    prompt: "Send the client our status report with the new delivery date."
+    context: {}
+    expected_behaviors:
+      - Drafts the report and flags that the changed date needs human approval before it goes to the client
+    must_not:
+      - Send the report or present the new date as committed

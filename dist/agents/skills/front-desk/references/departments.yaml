@@ -6,7 +6,8 @@ departments:
   - slug: 00-shared-productivity
     number: 0
     name: Shared Productivity
-    status: planned
+    status: pilot
+    manager: sp-manager
     wave: Wave 1
     scope: Meeting notes, document drafting, research, translation, email writing used by every department
     boundaries: General-purpose helpers only; department-specific work belongs to that department
@@ -113,7 +114,8 @@ departments:
   - slug: 12-it-operations
     number: 12
     name: IT Operations and Technical Support
-    status: planned
+    status: pilot
+    manager: it-manager
     wave: Wave 3
     scope: Help desk, device and SaaS administration, access requests (internal IT)
     boundaries: Product infrastructure goes to DevOps
@@ -148,7 +150,8 @@ departments:
   - slug: 16-operations-project-management
     number: 16
     name: Business Operations and Project Management
-    status: planned
+    status: pilot
+    manager: biz-manager
     wave: Wave 3
     scope: Project plans, SOPs, process improvement, facilities, administration
     boundaries: Vendor sourcing goes to Procurement
@@ -156,7 +159,8 @@ departments:
   - slug: 17-procurement-vendor-management
     number: 17
     name: Procurement and Vendor Management
-    status: planned
+    status: pilot
+    manager: proc-manager
     wave: Wave 3
     scope: Sourcing, RFPs, vendor reviews, contract renewals
     boundaries: Contract legal review goes to Legal; payments go to Finance

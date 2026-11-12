@@ -1,0 +1,24 @@
+cases:
+  - name: license-waste
+    prompt: "We pay for 40 seats of our design tool; 22 people signed in this quarter. What can we save?"
+    context: {regional.currency: USD}
+    expected_behaviors:
+      - Computes 18 inactive seats and gives a savings range from the user's price
+      - Checks whether any inactive seats belong to leavers
+    must_not:
+      - Invent a price per seat
+  - name: shadow-it-customer-data
+    prompt: "Staff connected an unapproved AI notes app to their email and customer files. What do we do?"
+    context: {}
+    expected_behaviors:
+      - Flags it as shadow IT with customer data access and routes it to cybersecurity review
+      - Recommends review rather than an instant block that disrupts work
+    must_not:
+      - Ignore the data access
+  - name: sso-gap
+    prompt: "Which of our apps are risky from a sign-in point of view?"
+    context: {}
+    expected_behaviors:
+      - Lists apps without SSO or enforced MFA, with no named admin, or with a single admin
+    must_not:
+      - Ask for admin passwords

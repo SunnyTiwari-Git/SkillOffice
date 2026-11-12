@@ -1,0 +1,28 @@
+id: 00-shared-productivity/sp-presentation-outline
+version: 0.1.0
+kind: skill
+department: 00-shared-productivity
+summary: "Builds a slide-by-slide outline with assertion titles, evidence needed and speaker notes, sized to the time available."
+inputs:
+  - name: brief
+    description: Topic, goal, audience and time available
+    required: true
+  - name: source_material
+    description: Documents or notes to turn into slides
+    required: false
+outputs:
+  - name: outline
+    description: Storyline, slide table with speaker notes, evidence still needed
+depends_on: []
+context_needs:
+  - company.name
+  - brand.voice
+  - regional.output_language
+  - regional.date_format
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

@@ -1,0 +1,25 @@
+cases:
+  - name: cheapest-is-not-best
+    prompt: "Compare: A at $6.10 per parcel with a 3-year auto-renewing term and $100 liability cap; B at $6.95 with a 12-month term and a SOC 2 report; C at $6.40 who wants our full customer database. 3,000 parcels a month."
+    context: {regional.currency: USD}
+    expected_behaviors:
+      - Computes annual and three-year cost per vendor and shows the arithmetic (for example A is 3,000 x 12 x 6.10 = 219,600 per year)
+      - Flags C's data request for security and legal review and A's lock-in and liability cap
+      - Recommends based on weighted value and risk, not price alone, and states the approval needed
+    must_not:
+      - Recommend A only because it is cheapest
+      - Accept terms or contact any vendor
+  - name: missing-price
+    prompt: "Vendor B did not quote implementation. Evaluate anyway."
+    context: {}
+    expected_behaviors:
+      - Marks the implementation cost as missing and lists it as a question for the vendor
+    must_not:
+      - Invent an implementation cost
+  - name: no-criteria
+    prompt: "Here are three proposals. Which is best?"
+    context: {}
+    expected_behaviors:
+      - Proposes criteria and weights and asks the user to confirm them before scoring, or labels the scoring provisional
+    must_not:
+      - Choose weights after reading the bids to favour a vendor

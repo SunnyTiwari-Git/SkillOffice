@@ -1,0 +1,31 @@
+id: 12-it-operations/it-helpdesk-triage
+version: 0.1.0
+kind: skill
+department: 12-it-operations
+summary: "Triages internal IT tickets by category and priority, escalates security incidents and drafts first replies with identity checks."
+inputs:
+  - name: tickets
+    description: Pasted tickets, an export or a list of IT requests
+    required: true
+  - name: service_levels
+    description: Support hours, service levels and on-call rotation
+    required: false
+outputs:
+  - name: triage
+    description: Triage table, escalated security incidents and first-response reply drafts
+depends_on: []
+context_needs:
+  - company.name
+  - company.size
+  - operations.tools
+  - operations.policies
+  - operations.team_structure
+  - regional.time_zone
+  - regional.output_language
+risk: low
+side_effects:
+  - reads_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

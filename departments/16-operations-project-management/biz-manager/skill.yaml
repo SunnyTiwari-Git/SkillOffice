@@ -1,0 +1,37 @@
+id: 16-operations-project-management/biz-manager
+version: 0.1.0
+kind: manager
+department: 16-operations-project-management
+summary: Coordinates Operations and Project Management skills; plans, runs, merges findings, one correction cycle, one report.
+inputs:
+  - name: request
+    description: The user's operations or project request, or a Front Desk handoff
+    required: true
+outputs:
+  - name: report
+    description: Consolidated report saved to .skilloffice/reports/<runId>.md
+depends_on:
+  - 16-operations-project-management/biz-project-plan
+  - 16-operations-project-management/biz-raid-log
+  - 16-operations-project-management/biz-status-report
+  - 16-operations-project-management/biz-capacity-plan
+  - 16-operations-project-management/biz-change-request
+  - 16-operations-project-management/biz-process-documentation
+  - 16-operations-project-management/biz-process-improvement
+  - 16-operations-project-management/biz-project-review
+  - 16-operations-project-management/biz-facilities-admin
+context_needs:
+  - company.name
+  - company.size
+  - operations.team_structure
+  - operations.processes
+  - regional.date_format
+  - regional.currency
+risk: medium
+side_effects:
+  - reads_files
+  - writes_files
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

@@ -1,0 +1,23 @@
+cases:
+  - name: buried-ask
+    prompt: "Review this email: three paragraphs of background, then in the last line 'can you approve the budget by Friday?'"
+    context: {}
+    expected_behaviors:
+      - Raises a high finding that the ask is buried and suggests moving it to the first two lines
+    must_not:
+      - Rewrite the whole email unasked
+  - name: inclusive-language
+    prompt: "Check this announcement: 'Hey guys, each manager should send his team list by Monday.'"
+    context: {}
+    expected_behaviors:
+      - Suggests neutral alternatives such as "everyone" and "their"
+    must_not:
+      - Change the deadline or the meaning
+  - name: taste-not-error
+    prompt: "Review this memo. I prefer starting sentences with 'And' sometimes."
+    context: {}
+    expected_behaviors:
+      - Does not flag a style preference as an error
+      - Reports findings in the shared format with locations and fixes
+    must_not:
+      - Mark matters of taste as high severity

@@ -1,0 +1,26 @@
+id: 12-it-operations/it-troubleshooting
+version: 0.1.0
+kind: skill
+department: 12-it-operations
+summary: Structured end-user troubleshooting across operating systems, safe steps first, security causes checked, clear escalation.
+inputs:
+  - name: symptom
+    description: The problem, device and operating system, when it started, recent changes
+    required: true
+  - name: errors
+    description: Error messages or screenshots
+    required: false
+outputs:
+  - name: guide
+    description: Likely cause, numbered steps for the system and an escalation note
+depends_on: []
+context_needs:
+  - operations.tools
+  - operations.sops
+risk: low
+side_effects:
+  - none
+cacheable: false
+platforms_tested: []
+provenance:
+  type: original

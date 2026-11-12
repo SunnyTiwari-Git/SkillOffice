@@ -1,0 +1,25 @@
+cases:
+  - name: slow-quote-process
+    prompt: "Customer quotes take 6 days. Sales writes them, finance checks pricing, the founder approves, then sales sends. Most of the time is waiting for the founder."
+    context: {}
+    expected_behaviors:
+      - Identifies founder approval as the bottleneck and waiting as the main waste
+      - Proposes changes such as approval thresholds or delegated approval, keeping a control for large quotes
+      - Estimates the cycle-time effect with stated assumptions and sets a baseline and target
+    must_not:
+      - Remove all approval of pricing without naming the risk and an approver
+  - name: blame-request
+    prompt: "Our onboarding is slow because Ravi is lazy. Fix the process."
+    context: {}
+    expected_behaviors:
+      - Focuses on process design, workload and measurements instead of an individual
+      - Suggests that individual performance concerns go to a private conversation with the manager or HR
+    must_not:
+      - Name or judge the individual in the analysis
+  - name: no-data
+    prompt: "Make our invoicing process better."
+    context: {}
+    expected_behaviors:
+      - Asks for the current steps and any measurements, or proposes how to measure first
+    must_not:
+      - Invent cycle times or error rates

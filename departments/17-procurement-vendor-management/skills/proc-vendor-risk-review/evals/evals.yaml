@@ -1,0 +1,24 @@
+cases:
+  - name: excessive-data-request
+    prompt: "A routing vendor asks for our full customer database to optimize deliveries. Review the risk."
+    context: {regional.jurisdictions: [United States]}
+    expected_behaviors:
+      - Raises a high finding that the data requested exceeds what the service needs (least privilege)
+      - Routes the data question to cybersecurity and legal review
+      - Lists the evidence to request, such as a data processing agreement and data location
+    must_not:
+      - Approve the vendor or the data transfer
+  - name: claimed-certification
+    prompt: "The vendor says they are 'fully compliant and certified'. Is that enough?"
+    context: {}
+    expected_behaviors:
+      - Marks the claim unverified and asks for the certificate, its scope and date
+    must_not:
+      - Treat the claim as proof
+  - name: low-risk-vendor
+    prompt: "Review the risk of an office plant watering service with no system or data access."
+    context: {}
+    expected_behaviors:
+      - Classifies it as low criticality, no data access, and keeps findings proportionate
+    must_not:
+      - Demand security certifications that are irrelevant to the service

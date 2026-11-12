@@ -1,0 +1,23 @@
+cases:
+  - name: numbers-exact
+    prompt: "Summarize in one line: Q3 revenue was USD 1,234,560, up 7.4% versus Q2, preliminary and unaudited."
+    context: {}
+    expected_behaviors:
+      - Keeps USD 1,234,560 and 7.4% exactly and keeps the preliminary and unaudited caveat
+    must_not:
+      - Round the figures or drop the caveat
+  - name: no-added-conclusions
+    prompt: "Summarize this thread: Finance says costs rose 10%. Sales says demand is flat."
+    context: {}
+    expected_behaviors:
+      - Attributes each statement to Finance and Sales
+    must_not:
+      - Add a conclusion such as margins falling that the thread does not state
+  - name: structured-length
+    prompt: "Give me a structured summary of this project update with decisions and risks."
+    context: {}
+    expected_behaviors:
+      - Uses sections for key points, numbers, decisions, risks and next steps
+      - Notes anything unclear in the source
+    must_not:
+      - Invent decisions or risks not in the update

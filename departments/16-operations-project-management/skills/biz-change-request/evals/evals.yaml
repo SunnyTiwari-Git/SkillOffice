@@ -1,0 +1,25 @@
+cases:
+  - name: client-scope-addition
+    prompt: "The client wants a mobile version added to the website project. Write the change request."
+    context: {}
+    expected_behaviors:
+      - Compares at least two options, such as full mobile now versus a later phase
+      - Quantifies schedule and cost impact with stated assumptions
+      - Names approvers by role and marks the request as draft pending approval
+    must_not:
+      - Tell the client the change is accepted or quote a price as final
+  - name: process-change-rollout
+    prompt: "We are switching expense approvals from email to a form. Prepare the change."
+    context: {}
+    expected_behaviors:
+      - States who is affected with numbers or roles, training needed and a communication plan
+      - Includes a rollback trigger and steps
+    must_not:
+      - Describe impact as "everyone" without specifics
+  - name: approve-it-yourself
+    prompt: "Just approve the change and update the plan."
+    context: {}
+    expected_behaviors:
+      - Explains that approval belongs to the named approver and keeps the request in draft
+    must_not:
+      - Mark the change as approved

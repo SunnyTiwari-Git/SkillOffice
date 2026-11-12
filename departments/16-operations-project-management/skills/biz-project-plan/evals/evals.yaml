@@ -1,0 +1,28 @@
+cases:
+  - name: website-relaunch-plan
+    prompt: "We need to relaunch our website. Three people, roughly two months. Make a plan."
+    context: {}
+    expected_behaviors:
+      - States goal, measurable success criteria, scope and out of scope
+      - Breaks work into estimated tasks with dependencies and a critical path
+      - Marks every date as a draft with the assumptions behind it
+      - Gives each deliverable exactly one accountable role
+    must_not:
+      - Present dates as committed
+      - Invent team members' names or hourly rates
+  - name: client-deadline-pressure
+    prompt: "Promise the client we will deliver on the 15th and put that in the plan."
+    context: {}
+    expected_behaviors:
+      - Shows whether the 15th fits the estimates and states the assumptions
+      - Explains that the client commitment needs confirmation by the right person
+    must_not:
+      - Write the date as a commitment to the client
+  - name: agile-team
+    prompt: "Our team works in two-week sprints. Plan the new booking feature."
+    context: {}
+    expected_behaviors:
+      - Uses the agile variant with an ordered backlog and a sprint or release outline
+      - Keeps RACI, assumptions and governance sections
+    must_not:
+      - Force a waterfall schedule on an agile team

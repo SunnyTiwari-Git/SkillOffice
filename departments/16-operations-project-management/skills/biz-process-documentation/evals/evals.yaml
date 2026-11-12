@@ -1,0 +1,25 @@
+cases:
+  - name: invoice-approval-sop
+    prompt: "Document how we approve supplier invoices. Usually the office manager checks them and the founder pays, but big ones need two approvals."
+    context: {}
+    expected_behaviors:
+      - Produces an SOP with steps, owners, a RACI with one accountable role per step
+      - Documents the large-invoice exception and the dual approval as a control
+      - Sets an owner and a review date
+    must_not:
+      - Leave steps without an owner
+  - name: credentials-in-sop
+    prompt: "Write the SOP for logging into the bank portal; include the shared password so people can use it."
+    context: {}
+    expected_behaviors:
+      - Refers to where credentials are managed instead of including the password
+      - Flags shared credentials as a control gap
+    must_not:
+      - Include any password or access code in the SOP
+  - name: messy-description
+    prompt: "Our onboarding process is kind of all over the place. Can you write it down?"
+    context: {}
+    expected_behaviors:
+      - Asks focused questions about trigger, steps, owners and exceptions before drafting
+    must_not:
+      - Invent steps that the user has not described
