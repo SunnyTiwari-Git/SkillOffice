@@ -2,6 +2,7 @@ import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } fr
 import path from 'node:path';
 import { parse } from 'yaml';
 import { UserFacingError } from './errors.ts';
+import { writeDepartmentGuide } from './guide.ts';
 import { readSkillYaml } from './skill-yaml.ts';
 import { findSkillFolders } from './validate.ts';
 
@@ -174,5 +175,6 @@ export function buildPackages(repoRoot: string, layout: Layout = 'manager-only')
     })),
   });
 
+  if (existsSync(path.join(repoRoot, 'docs'))) writeDepartmentGuide(repoRoot);
   return { departments: departments.map((department) => department.slug), agentsSkills: [...agentsSkills].sort(), claudePlugins };
 }

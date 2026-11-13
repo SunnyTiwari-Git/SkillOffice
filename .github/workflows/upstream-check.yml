@@ -1,0 +1,33 @@
+name: upstream-check
+
+# Monthly report of which pinned sources changed upstream. Read-only: it never
+# downloads, runs or updates any third-party skill. See docs/maintenance.md.
+on:
+  schedule:
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: upstream-check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools/skilloffice-cli
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: tools/skilloffice-cli/package-lock.json
+      - name: Install pinned dependencies (no install scripts)
+        run: npm ci --ignore-scripts
+      - name: Compare pinned sources with upstream
+        run: node src/cli.ts upstream-check --root ../.. >> "$GITHUB_STEP_SUMMARY"

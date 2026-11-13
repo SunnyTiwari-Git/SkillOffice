@@ -2,7 +2,7 @@
 
 **A free, open-source library of professional AI skills, organized like a company.** Each department (Marketing, Design, Engineering, Sales, HR, Finance and more) has its own manager that picks the right skills for your task, runs them in order, and gives you one clear report.
 
-> Status: **pre-release, Phase 1 (foundations).** The shared core is being built. No department skills are released yet. See [CHANGELOG.md](CHANGELOG.md).
+> Status: **pre-release preview.** All 18 departments (168 skills) are built and each has passed a test run on Claude Code. Testing on a second AI tool is still to come, so nothing is production-ready yet. See [CHANGELOG.md](CHANGELOG.md).
 
 ## Who it is for
 
@@ -18,45 +18,35 @@ Software companies first, then any business: agencies, startups, freelancers, e-
 
 ## Departments
 
-| # | Department | Status |
-| --- | --- | --- |
-| 00 | Shared Productivity | Planned |
-| 01 | Executive Management and Strategy | Planned |
-| 02 | Human Resources and People Operations | Planned |
-| 03 | Finance and Accounting | Planned |
-| 04 | Legal, Risk and Compliance | Planned |
-| 05 | Sales and Business Development | Planned |
-| 06 | Marketing, Content and PR | **Pilot** |
-| 07 | Customer Support and Customer Success | Planned |
-| 08 | Product Management and Research | Planned |
-| 09 | UI/UX, Graphic Design and Branding | Planned |
-| 10 | Software Development and Engineering | **Pilot** |
-| 11 | Quality Assurance and Testing | Planned |
-| 12 | IT Operations and Technical Support | Planned |
-| 13 | Cloud Infrastructure, DevOps and SRE | Planned |
-| 14 | Cybersecurity | Planned |
-| 15 | Data, Analytics and AI | Planned |
-| 16 | Business Operations and Project Management | Planned |
-| 17 | Procurement and Vendor Management | Planned |
-| 18 | E-commerce and Retail Operations | Later |
-| 19 | Supply Chain, Logistics and Manufacturing | Later |
+18 departments are ready to try, each with a manager and 8 to 11 specialist skills. The full list, with what each skill does, is in [docs/departments.md](docs/departments.md).
 
-Industry packs (healthcare administration, education, hospitality and more) will follow.
+| Code | Department | Code | Department |
+| --- | --- | --- | --- |
+| `sp` | Shared Productivity | `pm` | Product Management and Research |
+| `exe` | Executive Management and Strategy | `dsn` | UI/UX, Graphic Design and Branding |
+| `hr` | Human Resources and People Operations | `dev` | Software Development and Engineering |
+| `fin` | Finance and Accounting | `qa` | Quality Assurance and Testing |
+| `legal` | Legal, Risk and Compliance | `it` | IT Operations and Technical Support |
+| `sls` | Sales and Business Development | `ops` | Cloud Infrastructure, DevOps and SRE |
+| `mkt` | Marketing, Content and PR | `sec` | Cybersecurity |
+| `sup` | Customer Support and Customer Success | `data` | Data, Analytics and AI |
+| `biz` | Business Operations and Project Management | `proc` | Procurement and Vendor Management |
 
-## Quick start (helper tool, early preview)
+Coming later: E-commerce and Retail Operations, Supply Chain and Manufacturing, and industry packs (healthcare administration, education, hospitality and more).
 
-The optional `skilloffice` helper sets up your project. It needs Node.js 22 or newer. Until it is published, run it from a copy of this repository:
+## Quick start (early preview)
+
+The `skilloffice` helper needs Node.js 22 or newer. Until it is published, run it from a copy of this repository:
 
 ```bash
-# Set up the private .skilloffice/ folder in your project
-node tools/skilloffice-cli/src/cli.ts init /path/to/your-project
+# See the departments you can install
+node tools/skilloffice-cli/src/cli.ts install --list
 
-# Check skills for format and safety problems
-node tools/skilloffice-cli/src/cli.ts validate departments
-node tools/skilloffice-cli/src/cli.ts scan departments
+# Install the ones you need into your project (use --platform agents for Antigravity, Gemini CLI, Codex, Cursor, Copilot or Windsurf)
+node tools/skilloffice-cli/src/cli.ts install /path/to/your-project --platform claude-code --departments marketing,sales
 ```
 
-Then fill in `.skilloffice/context/default/` in your project. See [docs/getting-started.md](docs/getting-started.md).
+Then fill in `.skilloffice/context/default/` in your project and restart your AI tool. Claude Code users can also install departments as plugins. See [docs/getting-started.md](docs/getting-started.md).
 
 ## Supported AI tools
 
@@ -64,8 +54,8 @@ SkillOffice uses the open [Agent Skills](https://agentskills.io/specification) f
 
 | Tool | Status |
 | --- | --- |
-| Claude Code | Primary test platform |
-| Google Antigravity | Primary test platform |
+| Claude Code | All 18 departments passed a test run |
+| Google Antigravity | First runs of 2 departments passed; full testing on hold |
 | OpenAI Codex, Cursor, GitHub Copilot, Windsurf/Devin, Lovable | Planned; support the same format, not yet tested |
 
 A tool is listed as supported only after a department's main workflows pass on it.

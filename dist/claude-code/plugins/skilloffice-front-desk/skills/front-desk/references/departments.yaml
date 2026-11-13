@@ -8,8 +8,7 @@ departments:
     name: Shared Productivity
     status: pilot
     manager: sp-manager
-    wave: Wave 1
-    scope: Meeting notes, document drafting, research, translation, email writing used by every department
+    scope: Meeting notes, emails, documents, research briefs, task planning, summaries, presentation outlines, translation and writing review, used by every department
     boundaries: General-purpose helpers only; department-specific work belongs to that department
 
   - slug: 01-executive-strategy
@@ -17,8 +16,7 @@ departments:
     name: Executive Management and Strategy
     status: pilot
     manager: exe-manager
-    wave: Wave 3
-    scope: Strategy, OKRs, board reporting, investor relations, M&A support
+    scope: Strategy reviews, OKRs, business cases, decision memos, board updates, KPI reviews, competitive strategy, executive briefings and plan stress tests
     boundaries: Financial modeling details go to Finance; legal review goes to Legal
 
   - slug: 02-hr-people-ops
@@ -26,8 +24,7 @@ departments:
     name: Human Resources and People Operations
     status: pilot
     manager: hr-manager
-    wave: Wave 2
-    scope: Recruiting, onboarding, policies, performance, learning and development, internal comms
+    scope: Job descriptions, recruiting, interview kits, offer letter drafts, onboarding, performance reviews, compensation analysis, HR policies and org planning
     boundaries: Employment law questions go to Legal; payroll calculations go to Finance
 
   - slug: 03-finance-accounting
@@ -35,8 +32,7 @@ departments:
     name: Finance and Accounting
     status: pilot
     manager: fin-manager
-    wave: Wave 2
-    scope: Bookkeeping, FP&A, invoicing, tax preparation support, payroll support
+    scope: Journal entries, reconciliations, month-end close, financial statements, variance analysis, cash-flow forecasts, invoicing and collections drafts, audit preparation and tax document organizing
     boundaries: Purchasing and vendor selection go to Procurement
 
   - slug: 04-legal-risk-compliance
@@ -44,8 +40,7 @@ departments:
     name: Legal, Risk and Compliance
     status: pilot
     manager: legal-manager
-    wave: Wave 3
-    scope: Contracts, privacy (GDPR, DPDP, CCPA), policy, enterprise risk, ESG reporting
+    scope: Contract and NDA review, vendor terms, compliance checks, risk registers, privacy reviews (GDPR, DPDP, CCPA and more), policy drafting, legal response drafts and matter briefs
     boundaries: Security controls go to Cybersecurity; this department covers legal and regulatory meaning
 
   - slug: 05-sales-business-development
@@ -53,8 +48,7 @@ departments:
     name: Sales and Business Development
     status: pilot
     manager: sls-manager
-    wave: Wave 2
-    scope: Prospecting, proposals, CRM hygiene, partnerships
+    scope: Account research, prospecting, outreach drafts, call prep and summaries, objection handling, deal and pipeline reviews, battlecards, win-loss reviews and sales enablement
     boundaries: Campaigns and content go to Marketing; post-sale accounts go to Customer Success
 
   - slug: 06-marketing-content-pr
@@ -62,8 +56,7 @@ departments:
     name: Marketing, Content and PR
     status: pilot
     manager: mkt-manager
-    wave: Pilot
-    scope: Brand marketing, SEO and GEO, content, social, email, PR, events
+    scope: Marketing plans, content strategy, copywriting and editing, SEO audits, email sequences, social content, PR, brand review and performance reports
     boundaries: Visual design production goes to Design; online store operations go to E-commerce (later)
 
   - slug: 07-customer-support-success
@@ -71,8 +64,7 @@ departments:
     name: Customer Support and Customer Success
     status: pilot
     manager: sup-manager
-    wave: Wave 2
-    scope: Ticket triage, knowledge base, onboarding, health scores, churn reviews
+    scope: Ticket triage, reply drafts, escalations, knowledge base articles, customer insights, onboarding, churn prevention, health scores, business reviews and reply review
     boundaries: Bugs go to Software Development; contract changes go to Sales or Legal
 
   - slug: 08-product-management
@@ -80,8 +72,7 @@ departments:
     name: Product Management and Research
     status: pilot
     manager: pm-manager
-    wave: Wave 1
-    scope: PRDs, roadmaps, user research, prioritization
+    scope: Product brainstorming, research synthesis, competitive briefs, PRDs and PRD review, roadmaps, sprint planning, metrics reviews and stakeholder updates
     boundaries: Interface design goes to Design; implementation goes to Software Development
 
   - slug: 09-design-branding
@@ -89,8 +80,7 @@ departments:
     name: UI/UX, Graphic Design and Branding
     status: pilot
     manager: dsn-manager
-    wave: Wave 1
-    scope: UX, UI, design systems, brand identity, accessibility
+    scope: User research, site structure, visual direction, design systems, brand identity, UX copy, design critique, accessibility, responsive and AI-pattern reviews, and developer handoff
     boundaries: Front-end code goes to Software Development; campaign strategy goes to Marketing
 
   - slug: 10-software-development
@@ -98,8 +88,7 @@ departments:
     name: Software Development and Engineering
     status: pilot
     manager: dev-manager
-    wave: Pilot
-    scope: Web, mobile, backend, code review, architecture
+    scope: Requirements, system design, implementation plans, test-driven development, debugging, code review, documentation, tech debt and verification
     boundaries: Test strategy goes to QA; infrastructure and deployment go to DevOps; security audits go to Cybersecurity
 
   - slug: 11-quality-assurance
@@ -107,8 +96,7 @@ departments:
     name: Quality Assurance and Testing
     status: pilot
     manager: qa-manager
-    wave: Wave 1
-    scope: Test plans, automation, regression, performance testing (software)
+    scope: Test strategy and plans, test case design, exploratory, web UI and API testing, regression suite review, bug reports and release verification (software)
     boundaries: Manufacturing quality control belongs to Supply Chain (later)
 
   - slug: 12-it-operations
@@ -116,8 +104,7 @@ departments:
     name: IT Operations and Technical Support
     status: pilot
     manager: it-manager
-    wave: Wave 3
-    scope: Help desk, device and SaaS administration, access requests (internal IT)
+    scope: Help desk triage, access requests, joiners and leavers, runbooks, change management, asset inventory, SaaS management, troubleshooting and backup reviews (internal IT)
     boundaries: Product infrastructure goes to DevOps
 
   - slug: 13-devops-sre
@@ -125,8 +112,7 @@ departments:
     name: Cloud Infrastructure, DevOps and SRE
     status: pilot
     manager: ops-manager
-    wave: Wave 1
-    scope: CI/CD, infrastructure as code, monitoring, incident response (product infrastructure)
+    scope: CI/CD pipelines, secrets management, infrastructure as code, Kubernetes, observability, SLOs, incident response, postmortems, cloud cost reviews and deploy verification (product infrastructure)
     boundaries: Employee devices and SaaS admin go to IT Operations
 
   - slug: 14-cybersecurity
@@ -134,8 +120,7 @@ departments:
     name: Cybersecurity
     status: pilot
     manager: sec-manager
-    wave: Wave 2
-    scope: Security review, threat modeling, vulnerability management, security policies
+    scope: Threat modeling, secure code review, security requirements and mitigations, SAST setup, dependency and secrets reviews, security policies and incident triage (defensive only)
     boundaries: Regulatory interpretation goes to Legal
 
   - slug: 15-data-analytics-ai
@@ -143,8 +128,7 @@ departments:
     name: Data, Analytics and AI
     status: pilot
     manager: data-manager
-    wave: Wave 3
-    scope: BI dashboards, SQL, data quality, ML and LLM integration
+    scope: Data exploration, SQL, analysis, visualization, dashboards, data validation, data storytelling, data dictionaries and AI feature reviews
     boundaries: Application code around models goes to Software Development
 
   - slug: 16-operations-project-management
@@ -152,8 +136,7 @@ departments:
     name: Business Operations and Project Management
     status: pilot
     manager: biz-manager
-    wave: Wave 3
-    scope: Project plans, SOPs, process improvement, facilities, administration
+    scope: Project plans, RAID logs, status reports, capacity plans, change requests, process documentation and improvement, project health checks and facilities administration
     boundaries: Vendor sourcing goes to Procurement
 
   - slug: 17-procurement-vendor-management
@@ -161,15 +144,13 @@ departments:
     name: Procurement and Vendor Management
     status: pilot
     manager: proc-manager
-    wave: Wave 3
-    scope: Sourcing, RFPs, vendor reviews, contract renewals
+    scope: Sourcing plans, RFPs, vendor evaluation, vendor risk reviews, purchase request drafts, spend analysis, contract renewals and supplier scorecards
     boundaries: Contract legal review goes to Legal; payments go to Finance
 
   - slug: 18-ecommerce-retail
     number: 18
     name: E-commerce and Retail Operations
     status: later
-    wave: After the software-company set
     scope: Product listings, marketplaces, merchandising, store operations, returns
     boundaries: Campaigns go to Marketing; logistics go to Supply Chain
 
@@ -177,7 +158,6 @@ departments:
     number: 19
     name: Supply Chain, Logistics and Manufacturing
     status: later
-    wave: After the software-company set
     scope: Inventory, demand planning, warehousing, shipping, production, quality control
     boundaries: Supplier contracts go to Procurement and Legal
 

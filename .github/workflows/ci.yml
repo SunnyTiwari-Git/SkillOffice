@@ -44,4 +44,4 @@ jobs:
       - name: Committed packages match the source
         run: |
           node src/cli.ts build --root ../..
-          git -C ../.. diff --exit-code -- dist .claude-plugin || { echo "dist/ is out of date. Run: npm run build"; exit 1; }
+          git -C ../.. diff --exit-code -- dist .claude-plugin docs/departments.md || { echo "Packages or the department guide are out of date. Run: npm run build"; exit 1; }

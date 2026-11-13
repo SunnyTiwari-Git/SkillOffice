@@ -14,6 +14,7 @@ import { initWorkspace } from './init.ts';
 import { installDepartments, listAvailable, uninstallDepartments } from './install.ts';
 import { forget, logEvent, logEvents, parseBatch } from './memory.ts';
 import { scanPaths } from './scan.ts';
+import { checkUpstream, formatUpstream } from './upstream.ts';
 import { validatePaths } from './validate.ts';
 
 const EXIT_OK = 0;
@@ -52,7 +53,8 @@ Skill library:
   validate [paths...]                  Check skills against the Agent Skills spec and skill.yaml rules
   scan [paths...]                      Static security scan (nothing is executed)
   catalog <department-dir>             Regenerate a department's catalog.yaml
-  build [--layout manager-only|full]   Build dist/ packages for Claude Code and .agents/skills (run at repo root)
+  build [--layout manager-only|full]   Build dist/ packages and docs/departments.md (run at repo root)
+  upstream-check                       Compare each pinned source with its latest upstream commit (read-only)
 
 Options: --root <dir>  --json  --help`;
 
@@ -234,6 +236,11 @@ async function run(argv: string[]): Promise<number> {
       const target = path.resolve(root, args[0] ?? '.');
       const removed = uninstallDepartments(target, text(flags, 'platform'), list(flags['departments']));
       print({ removed }, asJson, () => `Removed: ${removed.join(', ')}. Your context and memory were kept.`);
+      return EXIT_OK;
+    }
+    case 'upstream-check': {
+      const results = checkUpstream(root);
+      print(results, asJson, () => formatUpstream(results));
       return EXIT_OK;
     }
     case 'evidence': {
