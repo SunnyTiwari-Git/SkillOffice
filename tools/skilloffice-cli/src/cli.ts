@@ -11,6 +11,7 @@ import { collectEvidence, formatEvidence } from './evidence.ts';
 import { fileStatus, verifyFile } from './fingerprint.ts';
 import { formatFindings, isBlocking, type Finding } from './findings.ts';
 import { initWorkspace } from './init.ts';
+import { installDepartments, listAvailable, uninstallDepartments } from './install.ts';
 import { forget, logEvent, logEvents, parseBatch } from './memory.ts';
 import { scanPaths } from './scan.ts';
 import { validatePaths } from './validate.ts';
@@ -38,6 +39,14 @@ Workspace (run inside your project, or pass --root):
   log --batch <file|->                 Append several events at once (JSON Lines; all or nothing)
   forget --all | --older-than <days>   Delete memory (context is kept)
   evidence [dir]                       Platform test results from the files a run left behind
+
+Install departments into a project:
+  install --list                       Show departments ready to install
+  install [dir] --platform claude-code|agents --departments finance,legal|all
+                                       Copy skills into the project and set up .skilloffice/
+                                       (agents = Antigravity, Gemini CLI, Codex, Cursor, Copilot, Windsurf)
+  uninstall [dir] --platform <p> --departments <list>|all
+                                       Remove installed departments (context and memory are kept)
 
 Skill library:
   validate [paths...]                  Check skills against the Agent Skills spec and skill.yaml rules
@@ -102,6 +111,9 @@ async function run(argv: string[]): Promise<number> {
       'older-than': { type: 'string' },
       layout: { type: 'string' },
       batch: { type: 'string' },
+      platform: { type: 'string' },
+      departments: { type: 'string' },
+      list: { type: 'boolean' },
     },
   });
   const flags = values as Flags;
@@ -203,6 +215,25 @@ async function run(argv: string[]): Promise<number> {
       if (!target) throw new UserFacingError('Name the department folder.');
       const catalog = writeCatalog(path.resolve(root, target));
       print(catalog, asJson, () => `Wrote catalog.yaml with ${catalog.skills.length} skill(s).`);
+      return EXIT_OK;
+    }
+    case 'install': {
+      if (flags['list'] === true) {
+        const available = listAvailable();
+        print(available, asJson, () => available.map((item) => `${item.manager.replace(/-manager$/, '').padEnd(6)} ${item.name}`).join('\n'));
+        return EXIT_OK;
+      }
+      const target = path.resolve(root, args[0] ?? '.');
+      const result = installDepartments(target, text(flags, 'platform'), list(flags['departments']));
+      print(result, asJson, () =>
+        `Installed into ${result.directory}\nNew: ${result.installed.join(', ') || 'none'}\nUpdated: ${result.updated.join(', ') || 'none'}\nNext: fill in .skilloffice/context/default/ and restart your AI tool.`,
+      );
+      return EXIT_OK;
+    }
+    case 'uninstall': {
+      const target = path.resolve(root, args[0] ?? '.');
+      const removed = uninstallDepartments(target, text(flags, 'platform'), list(flags['departments']));
+      print({ removed }, asJson, () => `Removed: ${removed.join(', ')}. Your context and memory were kept.`);
       return EXIT_OK;
     }
     case 'evidence': {

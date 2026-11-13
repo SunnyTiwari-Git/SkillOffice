@@ -1,6 +1,6 @@
 # Getting started with SkillOffice
 
-This guide is for anyone, technical or not. SkillOffice is in early preview, so some steps will get simpler over time.
+This guide is for anyone, technical or not. SkillOffice is in early preview: all 18 departments are built and have been tested on Claude Code, and testing on a second AI tool is still to come. Some steps will get simpler over time.
 
 ## What you get
 
@@ -42,7 +42,34 @@ Put logo files in `brand-assets/`. Leave anything you do not know empty. Skills 
 
 ## Step 3: Install department skills
 
-Department skills are not released yet. When they are, this section will show how to install them into Claude Code and Antigravity.
+Pick the departments you need. You do not have to install all 18.
+
+See what is available:
+
+```bash
+node tools/skilloffice-cli/src/cli.ts install --list
+```
+
+Install into your project. Use plain department words or the short codes from the list:
+
+```bash
+# For Claude Code
+node tools/skilloffice-cli/src/cli.ts install /path/to/your-project --platform claude-code --departments marketing,sales
+
+# For Antigravity, Gemini CLI, Codex, Cursor, GitHub Copilot or Windsurf
+node tools/skilloffice-cli/src/cli.ts install /path/to/your-project --platform agents --departments finance,legal
+```
+
+This copies each department's manager into your project (its specialist skills travel inside it), plus the shared SkillOffice rules and the Front Desk router. It also does Step 1 for you if you skipped it. Restart your AI tool afterwards so it notices the new skills.
+
+Good to know:
+
+- Running the same install again updates those departments to the latest version.
+- If a word fits more than one department (for example "operations"), the installer lists the options instead of guessing.
+- The installer never overwrites a skill folder you created yourself.
+- To remove a department: `node tools/skilloffice-cli/src/cli.ts uninstall /path/to/your-project --platform claude-code --departments sales`. Your company details and memory are kept.
+
+Claude Code users can also install departments as plugins; see [Claude Code](platforms/claude-code.md).
 
 ## Step 4: Ask for work
 

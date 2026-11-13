@@ -1,0 +1,107 @@
+{
+  "platform": "claude-code",
+  "results": [
+    {
+      "scenario": "ops-project-health",
+      "run": "cold",
+      "ok": true,
+      "inputTokens": 45,
+      "cacheReadTokens": 2003105,
+      "cacheWriteTokens": 103098,
+      "outputTokens": 40505,
+      "costUsd": 2.0359816750000004,
+      "turns": 61,
+      "durationMs": 410575,
+      "reportWritten": true,
+      "ledgerEvents": [
+        "run_started",
+        "skill_skipped",
+        "skill_skipped",
+        "skill_skipped",
+        "skill_completed",
+        "skill_completed",
+        "skill_completed",
+        "correction_cycle",
+        "test_result",
+        "test_result",
+        "test_result",
+        "decision",
+        "issue_opened",
+        "run_completed"
+      ],
+      "commandPassed": null
+    },
+    {
+      "scenario": "procurement-vendor-selection",
+      "run": "cold",
+      "ok": true,
+      "inputTokens": 37,
+      "cacheReadTokens": 1335326,
+      "cacheWriteTokens": 73883,
+      "outputTokens": 22193,
+      "costUsd": 1.3025641749999999,
+      "turns": 40,
+      "durationMs": 207579,
+      "reportWritten": true,
+      "ledgerEvents": [
+        "run_started",
+        "skill_completed",
+        "skill_completed",
+        "skill_skipped",
+        "decision",
+        "test_result",
+        "run_completed"
+      ],
+      "commandPassed": null
+    },
+    {
+      "scenario": "it-access-offboarding",
+      "run": "cold",
+      "ok": true,
+      "inputTokens": 35,
+      "cacheReadTokens": 1373979,
+      "cacheWriteTokens": 74654,
+      "outputTokens": 22211,
+      "costUsd": 1.31651243,
+      "turns": 46,
+      "durationMs": 231336,
+      "reportWritten": true,
+      "ledgerEvents": [
+        "run_started",
+        "skill_skipped",
+        "skill_completed",
+        "skill_completed",
+        "skill_completed",
+        "decision",
+        "correction_cycle",
+        "test_result",
+        "test_result",
+        "run_completed"
+      ],
+      "commandPassed": null
+    },
+    {
+      "scenario": "productivity-meeting-notes",
+      "run": "cold",
+      "ok": true,
+      "inputTokens": 27,
+      "cacheReadTokens": 983558,
+      "cacheWriteTokens": 63325,
+      "outputTokens": 14493,
+      "costUsd": 0.9934101300000001,
+      "turns": 33,
+      "durationMs": 145810,
+      "reportWritten": true,
+      "ledgerEvents": [
+        "run_started",
+        "skill_skipped",
+        "skill_skipped",
+        "skill_completed",
+        "skill_completed",
+        "issue_opened",
+        "run_completed"
+      ],
+      "commandPassed": null
+    }
+  ]
+}

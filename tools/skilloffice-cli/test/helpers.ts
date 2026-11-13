@@ -1,6 +1,7 @@
 import { mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
+import { writeCatalog } from '../src/catalog.ts';
 import { initWorkspace } from '../src/init.ts';
 
 export function tempDir(): string {
@@ -67,4 +68,37 @@ export function writeValidSkill(root: string, folder = 'departments/06-marketing
   writeFile(root, `${folder}/skill.yaml`, VALID_SKILL_YAML);
   writeFile(root, `${folder}/references/checklist.md`, '- Title tag present\n');
   return path.join(root, folder);
+}
+
+export const PILOT_SLUG = '06-marketing-content-pr';
+
+function skillMd(name: string): string {
+  return VALID_SKILL_MD.replace('name: seo-audit', `name: ${name}`);
+}
+
+/** A tiny repo with core, one pilot department (manager + one specialist) and one planned department. */
+export function fakeRepo(): string {
+  const root = tempDir();
+  writeFile(root, 'LICENSE', 'Apache License');
+  writeFile(root, 'NOTICE', 'SkillOffice');
+  writeFile(root, 'registry/licenses/upstream.txt', 'MIT License');
+  writeFile(root, 'registry/departments.yaml',
+    `departments:\n  - { slug: ${PILOT_SLUG}, name: Marketing, status: pilot, manager: mkt-manager }\n  - { slug: 05-sales, name: Sales, status: planned }\n`);
+  writeFile(root, 'core/protocols/memory.md', '# Memory');
+  writeFile(root, 'context-templates/company.yaml', 'name: ""\n');
+  writeFile(root, 'core/templates/agents-md-section.md', '## SkillOffice\n');
+  writeFile(root, 'core/templates/report.md', '# Report');
+  writeFile(root, 'core/templates/handoff.md', '# Handoff');
+  writeFile(root, 'core/skilloffice-core/SKILL.md', skillMd('skilloffice-core'));
+  writeFile(root, 'core/skilloffice-core/skill.yaml', 'id: core/skilloffice-core\nversion: 0.1.0\nkind: core\n');
+  writeFile(root, 'core/front-desk/SKILL.md', skillMd('front-desk'));
+  writeFile(root, 'core/front-desk/skill.yaml', 'id: core/front-desk\nversion: 0.1.0\nkind: core\n');
+
+  const specialist = writeValidSkill(root, `departments/${PILOT_SLUG}/skills/seo-audit`);
+  writeFile(specialist, 'evals/evals.yaml', 'cases: []');
+  const manager = path.join(root, 'departments', PILOT_SLUG, 'mkt-manager');
+  writeFile(manager, 'SKILL.md', skillMd('mkt-manager'));
+  writeFile(manager, 'skill.yaml', VALID_SKILL_YAML.replace('kind: skill', 'kind: manager').replace('/seo-audit', '/mkt-manager'));
+  writeCatalog(path.join(root, 'departments', PILOT_SLUG));
+  return root;
 }

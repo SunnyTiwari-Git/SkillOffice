@@ -3,39 +3,9 @@ import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { describe, it } from 'node:test';
 import { buildPackages } from '../src/build.ts';
-import { writeCatalog } from '../src/catalog.ts';
-import { tempDir, VALID_SKILL_MD, VALID_SKILL_YAML, writeFile, writeValidSkill } from './helpers.ts';
+import { fakeRepo, PILOT_SLUG } from './helpers.ts';
 
-const SLUG = '06-marketing-content-pr';
-
-function skillMd(name: string): string {
-  return VALID_SKILL_MD.replace('name: seo-audit', `name: ${name}`);
-}
-
-/** A tiny repo with core, one pilot department (manager + one specialist) and one planned department. */
-function fakeRepo(): string {
-  const root = tempDir();
-  writeFile(root, 'LICENSE', 'Apache License');
-  writeFile(root, 'NOTICE', 'SkillOffice');
-  writeFile(root, 'registry/licenses/upstream.txt', 'MIT License');
-  writeFile(root, 'registry/departments.yaml',
-    `departments:\n  - { slug: ${SLUG}, name: Marketing, status: pilot }\n  - { slug: 05-sales, name: Sales, status: planned }\n`);
-  writeFile(root, 'core/protocols/memory.md', '# Memory');
-  writeFile(root, 'core/templates/report.md', '# Report');
-  writeFile(root, 'core/templates/handoff.md', '# Handoff');
-  writeFile(root, 'core/skilloffice-core/SKILL.md', skillMd('skilloffice-core'));
-  writeFile(root, 'core/skilloffice-core/skill.yaml', 'id: core/skilloffice-core\nversion: 0.1.0\nkind: core\n');
-  writeFile(root, 'core/front-desk/SKILL.md', skillMd('front-desk'));
-  writeFile(root, 'core/front-desk/skill.yaml', 'id: core/front-desk\nversion: 0.1.0\nkind: core\n');
-
-  const specialist = writeValidSkill(root, `departments/${SLUG}/skills/seo-audit`);
-  writeFile(specialist, 'evals/evals.yaml', 'cases: []');
-  const manager = path.join(root, 'departments', SLUG, 'mkt-manager');
-  writeFile(manager, 'SKILL.md', skillMd('mkt-manager'));
-  writeFile(manager, 'skill.yaml', VALID_SKILL_YAML.replace('kind: skill', 'kind: manager').replace('/seo-audit', '/mkt-manager'));
-  writeCatalog(path.join(root, 'departments', SLUG));
-  return root;
-}
+const SLUG = PILOT_SLUG;
 
 function snapshot(dir: string): Record<string, string> {
   return Object.fromEntries(
