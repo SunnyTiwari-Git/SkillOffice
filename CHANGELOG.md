@@ -4,6 +4,10 @@ All notable changes to SkillOffice are documented here. The format follows [Keep
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-16
+
+First preview release.
+
 ### Added
 
 - Phase 0: repository foundations, Apache-2.0 license, NOTICE, security policy, governance, contribution policy and a GitHub security checklist.
@@ -13,7 +17,7 @@ All notable changes to SkillOffice are documented here. The format follows [Keep
 - Company context templates, including regional settings.
 - Department, source and skill registries, and the third-party security review template.
 - `skilloffice` helper tool (preview): init, validate, scan, status, verify-file, cache, log, forget and catalog commands.
-- Architecture decision records 0001 to 0005.
+- Architecture decision records 0001 to 0006.
 - 18 departments, each with a manager and specialist skills (168 in total, 114 adapted from 7 pinned open-source sources and 54 original): Shared Productivity, Executive Strategy, HR, Finance, Legal, Sales, Marketing, Customer Support, Product, Design, Software Development, QA, IT Operations, DevOps and SRE, Cybersecurity, Data and AI, Business Operations and PM, Procurement.
 - Security reviews, provenance records and evals for every adapted skill; third-party license texts in `registry/licenses/` and attributions in NOTICE.
 - `skilloffice-core` skill bundling the shared rules and report templates.
@@ -26,3 +30,7 @@ All notable changes to SkillOffice are documented here. The format follows [Keep
 
 - Risk labels follow one rule from side effects, enforced by the validator.
 - Managers save reusable results with their fingerprints before corrections and write memory in batches.
+- Testing and support are Claude Code only (decision 0006). The `.agents/skills` install option stays, labelled untested.
+
+[Unreleased]: https://github.com/SunnyTiwari-Git/SkillOffice/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/SunnyTiwari-Git/SkillOffice/releases/tag/v0.1.0

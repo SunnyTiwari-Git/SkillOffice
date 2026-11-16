@@ -43,14 +43,14 @@ A new version never reuses an old cached result, because the version is part of 
 
 ## Quarterly
 
-- Re-test one sample project per department on each supported AI tool, and record the results with `skilloffice evidence`.
-- Re-read the platform documentation for Claude Code, Antigravity and the other tools in `docs/platforms/`, because skill folders and limits change.
+- Re-test one sample project per department on Claude Code, and record the results with `skilloffice evidence`.
+- Re-read the Claude Code skills and plugins documentation, because skill folders and limits change.
 - Review `registry/skills.yaml` for skills that should move from `draft` to `released`.
 
 ## Releases
 
 1. Move the "Unreleased" changelog entries under a new version number and date.
-2. Tag the release in git and publish release notes on GitHub, built from the changelog.
+2. Write release notes in `docs/releases/vX.Y.Z.md` from the changelog, tag the release in git and publish the notes on GitHub.
 3. Publishing the helper to npm and changing repository visibility are owner decisions, made separately each time.
 
 ## If a bad skill ships

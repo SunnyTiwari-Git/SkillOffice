@@ -19,7 +19,7 @@ Examples of what to report:
 
 ## Supported versions
 
-SkillOffice is pre-release. Only the latest version on the `main` branch receives security fixes until version 1.0.
+SkillOffice is in early preview (0.x). Only the latest release and the `main` branch receive security fixes until version 1.0.
 
 ## How we respond to an incident
 
