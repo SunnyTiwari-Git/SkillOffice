@@ -1,6 +1,6 @@
 # Customer Support and Customer Success
 
-Status: **pilot, not yet platform-tested.** Planned test platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 This department helps a business answer customers well, route problems to the right people, turn solved problems into self-service help, and keep customers successful over time. It works for any company with customers: software firms, online shops, agencies, service businesses or manufacturers. Your company details (products, policies, team structure, brand voice, currency, date format, legal jurisdictions) come from your SkillOffice context profile, so you only enter them once.
 

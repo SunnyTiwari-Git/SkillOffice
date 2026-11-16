@@ -1,6 +1,6 @@
 # Legal, Risk and Compliance
 
-**Status:** pilot, not yet platform-tested. Planned test platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 > **Not legal advice.** This department prepares drafts, issue lists, redlines, risk registers and briefs to help you and your lawyers move faster. A qualified lawyer licensed in the relevant jurisdiction must review its work before anyone signs, sends, files, publishes or relies on it.
 

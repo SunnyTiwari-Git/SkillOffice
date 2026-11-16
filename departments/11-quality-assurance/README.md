@@ -1,6 +1,6 @@
 # Quality Assurance and Testing
 
-**Status:** pilot, not yet platform-tested. Planned test platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 This department helps you test software properly: decide where testing matters most, plan it, design good test cases, test web pages and APIs, explore for problems scripts miss, check whether your existing tests can be trusted, write bug reports developers can act on, and decide with evidence whether a release is ready. It works with any language, framework or testing tool. Your project details (stack, testing tools, deployment process) come from your SkillOffice company context.
 

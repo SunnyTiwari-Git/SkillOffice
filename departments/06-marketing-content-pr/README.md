@@ -1,6 +1,6 @@
 # Marketing, Content and PR
 
-Status: **pilot, not yet platform-tested.** Planned test platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 This department helps a business plan its marketing, create content, get press coverage and check that everything it publishes is on-brand, accurate and measurable. It works for any kind of company: software firms, agencies, shops, clinics, manufacturers or freelancers. Your company details (name, brand voice, ideal customers, currency, date format) come from your SkillOffice context profile, so you only enter them once.
 

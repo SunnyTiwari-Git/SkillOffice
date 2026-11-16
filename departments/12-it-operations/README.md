@@ -1,6 +1,6 @@
 # IT Operations and Technical Support
 
-Status: **pilot, not yet platform-tested.** Planned platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 > **Checklists, not changes.** This department never changes your systems itself. It produces tickets, checklists, replies and step-by-step procedures for whoever runs IT at your company to carry out, after the right approvals.
 

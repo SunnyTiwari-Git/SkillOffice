@@ -1,6 +1,6 @@
 # Cloud Infrastructure, DevOps and SRE
 
-**Status:** pilot, not yet platform-tested. Planned test platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 This department helps you build and run software reliably: set up automated build and release pipelines, write and review cloud infrastructure code, configure Kubernetes safely, handle passwords and keys properly, add monitoring and sensible alerts, set reliability targets, respond to outages, learn from them, keep cloud bills under control, and check whether a release is ready to go live. It works with any cloud and any CI system. Your details (stack, hosting, deployment process, tools) come from your SkillOffice company context.
 

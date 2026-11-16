@@ -2,7 +2,7 @@
 
 **A free, open-source library of professional AI skills, organized like a company.** Each department (Marketing, Design, Engineering, Sales, HR, Finance and more) has its own manager that picks the right skills for your task, runs them in order, and gives you one clear report.
 
-> Status: **pre-release preview.** All 18 departments (168 skills) are built and each has passed a test run on Claude Code. Testing on a second AI tool is still to come, so nothing is production-ready yet. See [CHANGELOG.md](CHANGELOG.md).
+> Status: **version 0.1.0, early preview.** All 18 departments (168 skills) are built and each has passed a full workflow test on Claude Code. Skills are marked draft until they have more real-world use. See [CHANGELOG.md](CHANGELOG.md).
 
 ## Who it is for
 
@@ -42,7 +42,7 @@ The `skilloffice` helper needs Node.js 22 or newer. Until it is published, run i
 # See the departments you can install
 node tools/skilloffice-cli/src/cli.ts install --list
 
-# Install the ones you need into your project (use --platform agents for Antigravity, Gemini CLI, Codex, Cursor, Copilot or Windsurf)
+# Install the ones you need into your project
 node tools/skilloffice-cli/src/cli.ts install /path/to/your-project --platform claude-code --departments marketing,sales
 ```
 
@@ -54,11 +54,10 @@ SkillOffice uses the open [Agent Skills](https://agentskills.io/specification) f
 
 | Tool | Status |
 | --- | --- |
-| Claude Code | All 18 departments passed a test run |
-| Google Antigravity | First runs of 2 departments passed; full testing on hold |
-| OpenAI Codex, Cursor, GitHub Copilot, Windsurf/Devin, Lovable | Planned; support the same format, not yet tested |
+| Claude Code | Supported. All 18 departments passed a full workflow test |
+| Google Antigravity, Gemini CLI, OpenAI Codex, Cursor, GitHub Copilot, Windsurf | Untested. They read the same format, so `--platform agents` may work. See [other tools](docs/platforms/other-tools.md) |
 
-A tool is listed as supported only after a department's main workflows pass on it.
+We test on Claude Code only ([decision 0006](docs/decisions/0006-claude-code-only-testing.md)).
 
 ## Security
 

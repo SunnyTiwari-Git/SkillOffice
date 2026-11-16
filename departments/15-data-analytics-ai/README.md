@@ -1,6 +1,6 @@
 # Data, Analytics and AI
 
-Status: **pilot, not yet platform-tested.** Planned platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 This department helps founders, analysts, managers and product teams get trustworthy answers from their data. It profiles datasets, writes SQL, analyzes results with sound statistics, builds honest charts and KPI dashboards, checks analyses before they are shared, turns results into a clear story, documents what the data means, and reviews AI features for privacy, safety and cost.
 

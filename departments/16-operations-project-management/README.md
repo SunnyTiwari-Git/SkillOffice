@@ -1,6 +1,6 @@
 # Business Operations and Project Management
 
-Status: **pilot, not yet platform-tested.** Planned platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 > **Drafts, not promises.** Dates, budgets and resource plans from this department are drafts with stated assumptions. Nothing is committed to clients, managers or staff until the right person confirms it.
 

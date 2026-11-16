@@ -1,6 +1,6 @@
 # Sales and Business Development
 
-Status: **pilot, not yet platform-tested.** Planned test platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 This department helps a business find the right customers, prepare for and follow up on conversations, handle objections, keep deals and the forecast honest, and give sellers material they can trust. It works for any company that sells: software firms, agencies, manufacturers, distributors, service businesses or freelancers. Your company details (products, differentiators, ideal customers, sales process, currency, date format, legal jurisdictions) come from your SkillOffice context profile, so you only enter them once.
 

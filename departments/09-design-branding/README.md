@@ -1,6 +1,6 @@
 # UI/UX, Graphic Design and Branding
 
-Status: **pilot, not yet platform-tested.** Planned test platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 This department helps a business plan, design and check its websites, apps and brand. It works for any kind of company: software firms, agencies, shops, clinics, manufacturers or freelancers. Your company details (name, audience, brand voice, colors, fonts, logos) come from your SkillOffice context profile, so you only enter them once.
 

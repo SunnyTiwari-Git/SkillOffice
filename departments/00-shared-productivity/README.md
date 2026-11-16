@@ -2,7 +2,7 @@
 
 Everyday work that every employee does: meeting notes, emails, documents, research, summaries, task lists, slide outlines, translations and proofreading. Any department can call on these skills, and its manager, `sp-manager`, sends specialist work to the right department.
 
-**Status:** pilot, not yet platform-tested.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 **Drafts only.** These skills never send emails or messages, schedule meetings or share documents. You review every draft and send it yourself. They also never invent facts, figures, owners or dates: anything missing is marked for you to fill in.
 
@@ -39,4 +39,4 @@ Fill in `brand.voice` and `regional.*` (language, date format, time zone) in you
 
 ## Platforms
 
-Planned: Claude Code and Antigravity. Not yet tested on either.
+Tested on Claude Code. Other AI tools that read Agent Skills may work but are not tested.

@@ -12,9 +12,6 @@
 #     - platform: claude-code
 #       date: 2026-11-06
 #       result: pass
-#     - platform: antigravity
-#       date: 2026-11-06
-#       result: pass
 
 skills:
   - id: core/front-desk

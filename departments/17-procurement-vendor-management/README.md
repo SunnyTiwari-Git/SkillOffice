@@ -1,6 +1,6 @@
 # Procurement and Vendor Management
 
-Status: **pilot, not yet platform-tested.** Planned platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 > **Drafts, not commitments.** This department never contacts vendors, signs, accepts terms, issues purchase orders or commits spend. Outputs are drafts, comparisons and recommendations for a person to approve within your company's approval limits.
 

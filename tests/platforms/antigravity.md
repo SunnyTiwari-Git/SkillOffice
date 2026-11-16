@@ -1,6 +1,6 @@
-# Antigravity test results
+# Antigravity test results (archived)
 
-Fill in one table per test session. Steps: `docs/platforms/antigravity.md`.
+Antigravity testing stopped on 2026-11-16 (see `docs/decisions/0006-claude-code-only-testing.md`). This record is kept for reference only.
 
 ## Session: 2026-11-06
 

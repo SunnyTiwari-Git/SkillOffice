@@ -1,6 +1,6 @@
 # Product Management and Research
 
-Status: **pilot, not yet platform-tested.** Planned platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 This department helps product managers, founders and team leads decide what to build and why. It explores ideas, makes sense of research, compares competitors, writes and reviews specs, keeps the roadmap realistic, plans sprints, reviews metrics and drafts updates for different audiences.
 

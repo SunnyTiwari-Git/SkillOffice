@@ -14,7 +14,7 @@ The working name "SkillMaster" and the alternative "SkillHub" were already used 
 - **Ownership:** the owner's personal GitHub account, SunnyTiwari-Git, repository `SunnyTiwari-Git/SkillOffice`. No collaborators have write access.
 - **Contributions:** issues only until at least version 1.0.
 - **Scope order:** software-company departments (00 to 17) first; E-commerce, Supply Chain and industry packs later.
-- **Primary test platforms:** Claude Code and Google Antigravity.
+- **Primary test platforms:** Claude Code and Google Antigravity. (Replaced by 0006: Claude Code only.)
 
 ## Consequences
 

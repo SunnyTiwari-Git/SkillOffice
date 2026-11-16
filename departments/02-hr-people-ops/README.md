@@ -1,6 +1,6 @@
 # Human Resources and People Operations
 
-**Status:** pilot, not yet platform-tested. Planned test platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 > **Not legal or employment advice.** HR decisions affecting a person need human review and, where required, legal review in the relevant jurisdiction. This department prepares drafts, plans and checks; people make every hiring, pay and employment decision.
 

@@ -42,7 +42,7 @@ export interface InstallResult {
 
 function assertPlatform(platform: string): asserts platform is Platform {
   if (!PLATFORMS.includes(platform as Platform)) {
-    throw new UserFacingError(`--platform must be one of: ${PLATFORMS.join(', ')} (agents = Antigravity, Gemini CLI, Codex, Cursor, Copilot, Windsurf).`);
+    throw new UserFacingError(`--platform must be one of: ${PLATFORMS.join(', ')} (agents = untested: Antigravity, Gemini CLI, Codex, Cursor, Copilot, Windsurf).`);
   }
 }
 

@@ -1,14 +1,14 @@
 # Getting started with SkillOffice
 
-This guide is for anyone, technical or not. SkillOffice is in early preview: all 18 departments are built and have been tested on Claude Code, and testing on a second AI tool is still to come. Some steps will get simpler over time.
+This guide is for anyone, technical or not. SkillOffice is in early preview: all 18 departments are built and tested on Claude Code. Some steps will get simpler over time.
 
 ## What you get
 
-SkillOffice gives your AI assistant (such as Claude Code or Google Antigravity) a set of professional skills grouped by department. You ask for something in plain words, for example "review our landing page copy", and the right department manager plans the work, runs the needed skills, fixes problems once, and gives you a report.
+SkillOffice gives your AI assistant (Claude Code) a set of professional skills grouped by department. You ask for something in plain words, for example "review our landing page copy", and the right department manager plans the work, runs the needed skills, fixes problems once, and gives you a report.
 
 ## What you need
 
-- An AI tool that supports Agent Skills. Claude Code and Google Antigravity are the first tools we test.
+- Claude Code. SkillOffice is tested on Claude Code only. Other AI tools that read Agent Skills may work but are not tested; see [other tools](platforms/other-tools.md).
 - Node.js 22 or newer, only if you want to use the optional helper tool. Download it from [nodejs.org](https://nodejs.org).
 
 ## Step 1: Set up your project
@@ -56,7 +56,7 @@ Install into your project. Use plain department words or the short codes from th
 # For Claude Code
 node tools/skilloffice-cli/src/cli.ts install /path/to/your-project --platform claude-code --departments marketing,sales
 
-# For Antigravity, Gemini CLI, Codex, Cursor, GitHub Copilot or Windsurf
+# Untested: Antigravity, Gemini CLI, Codex, Cursor, GitHub Copilot or Windsurf
 node tools/skilloffice-cli/src/cli.ts install /path/to/your-project --platform agents --departments finance,legal
 ```
 

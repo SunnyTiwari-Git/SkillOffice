@@ -1,6 +1,6 @@
 # Executive Management and Strategy
 
-Status: **pilot, not yet platform-tested.** Planned platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 > **Review before it leaves the company.** Figures and forward-looking statements in anything meant for a board, investors, lenders or the public need review by finance and legal before they are shared. This department drafts and advises; leaders decide.
 

@@ -45,7 +45,7 @@ Install departments into a project:
   install --list                       Show departments ready to install
   install [dir] --platform claude-code|agents --departments finance,legal|all
                                        Copy skills into the project and set up .skilloffice/
-                                       (agents = Antigravity, Gemini CLI, Codex, Cursor, Copilot, Windsurf)
+                                       (agents = untested: Antigravity, Gemini CLI, Codex, Cursor, Copilot, Windsurf)
   uninstall [dir] --platform <p> --departments <list>|all
                                        Remove installed departments (context and memory are kept)
 

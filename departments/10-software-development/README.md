@@ -1,6 +1,6 @@
 # Software Development and Engineering
 
-**Status:** pilot, not yet platform-tested. Planned test platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 This department helps you build software the careful way: agree what to build, design it, plan it, write it test-first, review it, and prove it works before anyone calls it done. It works with any programming language or framework. Your project details (stack, testing tools, coding standards) come from your SkillOffice company context, so the skills fit your project instead of a generic one.
 

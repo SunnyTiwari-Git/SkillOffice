@@ -63,5 +63,5 @@ Ask in plain words, for example "Use the mkt-manager skill to review our landing
 
 ## Known limits
 
-- Tested status is recorded in each department README. A department is "pilot, not yet platform-tested" until its workflows pass on Claude Code and Antigravity.
+- Tested status is recorded in each department README. Every department has passed one full workflow test on Claude Code; skills stay marked draft until they have more real-world use.
 - The specialist skills are bundled inside the manager. Install with `npm run build -- --layout full` from a local copy if you want each specialist as its own skill.

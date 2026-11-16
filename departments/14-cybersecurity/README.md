@@ -1,6 +1,6 @@
 # Cybersecurity
 
-**Status:** pilot, not yet platform-tested. Planned test platforms: Claude Code and Antigravity.
+**Status:** pilot. Passed a full workflow test on Claude Code. Other AI tools that read Agent Skills may work but are not tested.
 
 This department helps you protect your own software and organization: understand how your systems could be attacked, review code for security weaknesses, check your third-party packages and look for leaked passwords or keys, turn risks into clear requirements and a fix plan, set up automatic security scanning, write practical security policies, and respond calmly if something goes wrong. It works with any language or cloud. Your details (technology, hosting, tools, where you operate) come from your SkillOffice company context.
 
