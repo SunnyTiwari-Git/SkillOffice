@@ -14,7 +14,10 @@ jobs:
     name: OpenSSF Scorecard
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # Job-level permissions replace the workflow default, so read access must be listed here too.
     permissions:
+      contents: read
+      actions: read
       security-events: write
       id-token: write
     steps:

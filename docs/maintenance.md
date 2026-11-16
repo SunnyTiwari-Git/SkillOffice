@@ -50,7 +50,7 @@ A new version never reuses an old cached result, because the version is part of 
 ## Releases
 
 1. Move the "Unreleased" changelog entries under a new version number and date.
-2. Write release notes in `docs/releases/vX.Y.Z.md` from the changelog, tag the release in git and publish the notes on GitHub.
+2. Write release notes in `docs/releases/vX.Y.Z.md` from the changelog (use full GitHub links, because the release page cannot follow relative links), tag the release in git and publish the notes on GitHub.
 3. Publishing the helper to npm and changing repository visibility are owner decisions, made separately each time.
 
 ## If a bad skill ships

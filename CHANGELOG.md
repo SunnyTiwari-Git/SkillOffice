@@ -4,6 +4,15 @@ All notable changes to SkillOffice are documented here. The format follows [Keep
 
 ## [Unreleased]
 
+### Fixed
+
+- The OpenSSF Scorecard workflow could not read the repository and failed on every run.
+- Release notes for 0.1.0 use full links so they work on the GitHub release page.
+
+### Changed
+
+- Dependabot no longer proposes major `@types/node` updates ahead of the Node version CI runs.
+
 ## [0.1.0] - 2026-11-16
 
 First preview release.
