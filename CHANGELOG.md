@@ -6,11 +6,13 @@ All notable changes to SkillOffice are documented here. The format follows [Keep
 
 ### Added
 
+- `tests/workflows/fixtures/README.md` explains that fixtures contain planted problems on purpose; the maintenance guide says how to handle their code scanning alerts.
 - Ask first: a core intake protocol (`core/protocols/intake.md`, decision 0007). Skills marked `asks_first: true` ask one short round of multiple-choice questions before creating anything; managers merge them into a single round per run and save lasting answers to the context profile after confirmation. The validator requires an "Ask first" section for these skills and the catalog shows the flag. `skilloffice-core` 0.2.0; all managers 0.1.1.
 - Design: a look-and-feel intake in `dsn-visual-direction` (0.2.0). Before any new design it asks about style, experience, motion, imagery, density and reference sites, offers 2 or 3 directions, and saves the answers as `brand.look_and_feel` so they are not asked again. The Design manager (0.1.1) stops to run it when the look is unknown.
 
 ### Fixed
 
+- `SECURITY.md` links directly to the private report form and states disclosure timelines (OpenSSF Scorecard Security-Policy check).
 - The OpenSSF Scorecard workflow could not read the repository and failed on every run.
 - Release notes for 0.1.0 use full links so they work on the GitHub release page.
 

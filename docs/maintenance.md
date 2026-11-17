@@ -41,6 +41,12 @@ A new version never reuses an old cached result, because the version is part of 
 - Commit messages follow Conventional Commits, for example `fix(finance): correct variance formula`.
 - `npm run check` and `npm run build` must pass, and the committed `dist/` and `docs/departments.md` must match the build (CI checks this).
 
+## Code scanning alerts
+
+- Alerts in `tests/workflows/fixtures/` are planted on purpose for tests. Dismiss them as "used in tests" (see `tests/workflows/fixtures/README.md`).
+- Scorecard alerts for Code-Review, Branch-Protection and Fuzzing are dismissed as "won't fix" while SkillOffice has a single maintainer. Revisit them if collaborators join.
+- Any other new alert is real until proven otherwise: fix it, or record why not.
+
 ## Quarterly
 
 - Re-test one sample project per department on Claude Code, and record the results with `skilloffice evidence`.

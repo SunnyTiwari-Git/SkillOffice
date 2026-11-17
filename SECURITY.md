@@ -4,11 +4,12 @@
 
 Please report security problems privately. Do not open a public issue.
 
-1. Go to the repository's **Security** tab.
-2. Choose **Report a vulnerability** (GitHub private vulnerability reporting).
-3. Describe the problem, the affected skill or file, and how to reproduce it.
+1. Open the private report form: https://github.com/SunnyTiwari-Git/SkillOffice/security/advisories/new (or go to the repository's **Security** tab and choose **Report a vulnerability**).
+2. Describe the problem, the affected skill or file, and how to reproduce it.
 
-You will get an acknowledgement within 7 days. Please allow time for a fix before sharing details publicly.
+You will get an acknowledgement within 7 days. We aim to confirm the problem within 14 days and publish a fix or a mitigation within 90 days of your report. Please do not disclose the vulnerability publicly before the fix is released, or before 90 days have passed, whichever comes first. We credit reporters in the security advisory unless you ask us not to.
+
+GitHub documentation on private reporting: https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability
 
 Examples of what to report:
 
