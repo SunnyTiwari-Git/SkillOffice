@@ -23,3 +23,14 @@ logos:                    # Paths relative to brand-assets/
   dark_background: ""
 
 guidelines_document: ""   # Path or URL to a full brand guide, if one exists
+
+look_and_feel:            # Filled in by the Design department after you confirm
+  style: ""               # e.g. "fashion editorial: huge type, sharp edges, no card boxes"
+  experience: ""          # quick page | scroll story | interactive tool
+  motion: ""              # none | subtle | scroll-driven storytelling
+  imagery: ""             # real photos | illustration | generated textures | product renders
+  density: ""             # airy | balanced | dense, plus playful or serious
+  liked_references:       # Sites you like, and what you like about them
+    - ""
+  disliked_references:
+    - ""

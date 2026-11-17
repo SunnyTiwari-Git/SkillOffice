@@ -1,5 +1,5 @@
 id: 09-design-branding/dsn-visual-direction
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 09-design-branding
 summary: Sets a distinctive visual direction - palette, type, layout concept and principles - grounded in brand and subject, avoiding templated defaults.
@@ -12,6 +12,9 @@ inputs:
     required: false
   - name: references
     description: Existing screens or sites the user likes or dislikes
+    required: false
+  - name: look_and_feel
+    description: Answers to the look-and-feel intake (style, experience, motion, imagery, density, references)
     required: false
 outputs:
   - name: design_plan
@@ -29,6 +32,7 @@ context_needs:
   - brand.typography
   - brand.logos
   - brand.guidelines_document
+  - brand.look_and_feel
 risk: low
 side_effects:
   - none

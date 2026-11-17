@@ -848,7 +848,7 @@ skills:
     source_id: anthropics-knowledge-work-plugins
     platforms_tested: []
   - id: 09-design-branding/dsn-manager
-    version: 0.1.0
+    version: 0.1.1
     kind: manager
     department: 09-design-branding
     status: draft
@@ -942,7 +942,7 @@ skills:
     source_id: anthropics-knowledge-work-plugins
     platforms_tested: []
   - id: 09-design-branding/dsn-visual-direction
-    version: 0.1.0
+    version: 0.2.0
     kind: skill
     department: 09-design-branding
     status: draft

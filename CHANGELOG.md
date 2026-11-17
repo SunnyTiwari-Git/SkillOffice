@@ -4,6 +4,10 @@ All notable changes to SkillOffice are documented here. The format follows [Keep
 
 ## [Unreleased]
 
+### Added
+
+- Design: a look-and-feel intake in `dsn-visual-direction` (0.2.0). Before any new design it asks about style, experience, motion, imagery, density and reference sites, offers 2 or 3 directions, and saves the answers as `brand.look_and_feel` so they are not asked again. The Design manager (0.1.1) stops to run it when the look is unknown.
+
 ### Fixed
 
 - The OpenSSF Scorecard workflow could not read the repository and failed on every run.

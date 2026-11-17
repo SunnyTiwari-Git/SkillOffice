@@ -25,6 +25,10 @@ Modified by SkillOffice on 2026-11-06:
 - Removed the instruction to take screenshots of one's own work, since not every platform supports it; critique is done in the review step and by `dsn-design-critique`.
 - Added inputs, output, quality checklist, safety and handoff sections.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0):
+
+- Added a look-and-feel intake step and `references/look-and-feel-intake.md` (original SkillOffice content): ask about style, experience, motion, imagery, density and references before planning, offer 2 or 3 directions, and save the answers as `brand.look_and_feel`.
+
 ## Files not imported
 
 - `skills/frontend-design/LICENSE.txt`: license text kept centrally in `registry/licenses/anthropics-skills.txt`, not copied into the skill.

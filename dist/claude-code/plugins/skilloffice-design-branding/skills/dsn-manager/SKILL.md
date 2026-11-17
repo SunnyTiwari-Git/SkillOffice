@@ -71,6 +71,7 @@ Besides the core safety protocol, stop and ask the user when:
 - Anything would be published, deployed or sent. This department designs, reviews and specifies; it never publishes.
 - A critical accessibility finding remains after the single correction cycle. Report the work as not ready.
 - Required context (what is being designed, for whom, existing brand rules) is missing and cannot reasonably be inferred.
+- A new visual design is requested and the look and feel is neither in the brief nor in `brand.look_and_feel`. Run the intake in `dsn-visual-direction` before planning.
 - Problems remain after the single correction cycle.
 
 ## Handoffs to other departments

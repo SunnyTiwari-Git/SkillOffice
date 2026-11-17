@@ -17,7 +17,7 @@ Act as the design lead of a studio known for giving every client a look that cou
 - The brief: what is being designed, for whom, and its main job.
 - Optional: the site structure from `dsn-site-structure`, existing screens, reference sites the user likes or dislikes.
 
-Context used from the active profile: `company.name`, `company.industry`, `company.description`, `company.target_audience`, `brand.voice`, `brand.colors`, `brand.typography`, `brand.logos`, `brand.guidelines_document`.
+Context used from the active profile: `company.name`, `company.industry`, `company.description`, `company.target_audience`, `brand.voice`, `brand.colors`, `brand.typography`, `brand.logos`, `brand.guidelines_document`, `brand.look_and_feel`.
 
 ## Rules of priority
 
@@ -27,6 +27,7 @@ Context used from the active profile: `company.name`, `company.industry`, `compa
 
 ## Steps
 
+0. **Ask about look and feel first.** For any new design, run the intake in [references/look-and-feel-intake.md](references/look-and-feel-intake.md) before planning: style, experience, motion, imagery, density and reference sites, asked once as multiple choice. Skip what the brief or `brand.look_and_feel` already answers. Turn vague words such as "modern" or "friendly" into concrete choices. Then offer 2 or 3 contrasting directions and build only the one the user picks. One round of questions up front costs less than redesigning after a miss.
 1. **Ground the design in the subject.** If the brief does not say what the product is, who it is for and the page's main job, propose one concrete answer for each and confirm with the user. The subject's industry, materials and vocabulary are where distinctive choices come from: a children's toy and a financial dashboard should look nothing alike.
 2. **Write a compact design plan** (no code yet):
    - Color: 4 to 6 named hex values with roles (background, text, primary, accent, support). Start from `brand.colors` when set.
@@ -51,7 +52,7 @@ Copy is design content. Name things the way users understand them, use active vo
 
 ## Output
 
-1. Brief summary: subject, audience, main job (confirmed or proposed).
+1. Brief summary: subject, audience, main job (confirmed or proposed), the look-and-feel answers and the direction the user picked.
 2. Design plan: color, type, layout (with ASCII wireframes), principles.
 3. What was revised in self-review, and why.
 4. The bold element and what was cut.
@@ -59,6 +60,7 @@ Copy is design content. Name things the way users understand them, use active vo
 
 ## Quality checklist
 
+- [ ] Look-and-feel intake answered (or already on file) and a direction picked by the user before building.
 - [ ] Brand colors, fonts and logo rules respected.
 - [ ] Every choice can be explained by the subject or brand, not habit.
 - [ ] No generic default used where the brief left freedom, unless justified.

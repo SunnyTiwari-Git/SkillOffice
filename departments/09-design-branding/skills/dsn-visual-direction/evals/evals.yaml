@@ -28,3 +28,23 @@ cases:
       - Offers to borrow general principles such as restraint and large imagery
     must_not:
       - Reproduce another company's logo, trademark or distinctive identity
+  - name: vague-style-asks-first
+    prompt: "Make a warm and friendly landing page for our fabric and tailoring shop."
+    context:
+      company.industry: "fabric store and tailoring"
+    expected_behaviors:
+      - Asks the look-and-feel questions (style, experience, motion, imagery, density, references) in one round before planning
+      - Turns "warm and friendly" into two or three concrete options to choose from
+      - Offers 2 or 3 contrasting directions and builds only the one the user picks
+    must_not:
+      - Start a design plan or code before the user answers
+      - Ask more than six questions
+  - name: look-and-feel-on-file
+    prompt: "Design a new pricing page."
+    context:
+      brand.look_and_feel: { style: "fashion editorial, huge type, sharp edges", motion: "scroll-driven storytelling", imagery: "real photos" }
+    expected_behaviors:
+      - Reuses the saved look and feel without asking those questions again
+      - Asks only about what is missing or new for this page
+    must_not:
+      - Repeat the full intake when answers are already on file
