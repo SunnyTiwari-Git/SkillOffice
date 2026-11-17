@@ -1,5 +1,5 @@
 id: 06-marketing-content-pr/mkt-content-strategy
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 06-marketing-content-pr
 summary: Plans content pillars, topic clusters by buyer stage, scored topic priorities, a calendar split and a distribution plan.
@@ -27,10 +27,12 @@ context_needs:
   - marketing.keywords
   - marketing.content_guidelines
   - regional.output_language
+  - marketing.channels
 risk: low
 side_effects:
   - none
 cacheable: true
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

@@ -26,6 +26,8 @@ Modified by SkillOffice on 2026-11-07:
 - Rewrote the burn-rate rules with explicit error ratio recording rules per window so they work as written.
 - Added declared context, rules, the managed-run section and the handoff.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - references/details.md: skimmed, not imported.

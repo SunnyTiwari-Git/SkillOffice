@@ -23,6 +23,8 @@ Modified by SkillOffice on 2026-11-06:
 - Team and process context comes from the SkillOffice context profile; dates follow regional settings.
 - Added a quality checklist, a safety note and a handoff section.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `product-management/.mcp.json`: connector configuration, never imported.

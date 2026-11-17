@@ -40,6 +40,8 @@ Modified by SkillOffice on 2026-11-07:
 - Condensed KPI levels, KPI sets by function and definition conflicts into `references/kpi-library.md`, and layouts, HTML build rules, size limits and alerting into `references/build-guide.md`. The upstream customer acquisition cost SQL example was not carried over because it double-counted spend per customer row.
 - Added declared context, a quality checklist, a safety note and a handoff section.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `data/.mcp.json` and `data/CONNECTORS.md` (knowledge-work-plugins): connector configuration, never imported.

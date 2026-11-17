@@ -7,6 +7,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 00-shared-productivity/sp-email-draft
     summary: Drafts routine work emails and replies in the brand voice with gaps
       marked; never sends, routes specialist emails to departments.
@@ -25,12 +26,14 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 00-shared-productivity/sp-research-brief
     summary: Plans a research question and writes a brief where every claim cites a
       source, confidence is stated and conflicts are shown.
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 00-shared-productivity/sp-summarize
     summary: Summarizes material at the requested length, keeping numbers, names,
       dates and caveats exactly and adding nothing.

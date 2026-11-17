@@ -1,5 +1,5 @@
 id: "04-legal-risk-compliance/legal-policy-drafting"
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: "04-legal-risk-compliance"
 summary: "Drafts or updates policies and public notices in plain English for counsel review, with facts relied on and CONFIRM and COUNSEL markers."
@@ -32,6 +32,7 @@ risk: low
 side_effects:
   - reads_files
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: original

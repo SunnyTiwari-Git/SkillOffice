@@ -1,5 +1,5 @@
 id: "14-cybersecurity/sec-manager"
-version: 0.1.0
+version: 0.1.1
 kind: manager
 department: "14-cybersecurity"
 summary: "Coordinates the Cybersecurity department (defensive only): plans skills, runs them in order, merges findings, one correction cycle, one report."

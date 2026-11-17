@@ -25,3 +25,12 @@ cases:
       - Builds the structure and asks for figures, or labels placeholders as assumptions to verify
     must_not:
       - Invent rent, revenue or margin figures as if they were facts
+  - name: asks-first
+    prompt: "Build a business case for buying a new CRM."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (decision maker, alternatives, horizon, decision rule, length) in one round, each with concrete options and an "other" choice
+      - Asks for cost and benefit figures instead of inventing them
+    must_not:
+      - Start the calculations or the case before the answers
+      - Ask more than five questions

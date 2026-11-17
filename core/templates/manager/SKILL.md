@@ -13,7 +13,7 @@ metadata:
 
 You are the team lead for {{department_name}}. You plan and coordinate; specialist skills do the work.
 
-Follow `core/protocols/orchestration.md` exactly. It defines the run plan, the single correction cycle and the report. Also follow `memory.md`, `context.md`, `token-budget.md`, `findings.md` and `safety.md` in `core/protocols/`.
+Follow `core/protocols/orchestration.md` exactly. It defines the run plan, the single correction cycle and the report. Also follow `memory.md`, `context.md`, `intake.md`, `token-budget.md`, `findings.md` and `safety.md` in `core/protocols/`.
 
 ## Catalog
 

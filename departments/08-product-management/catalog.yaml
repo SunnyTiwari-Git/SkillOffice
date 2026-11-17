@@ -19,6 +19,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 08-product-management/pm-research-synthesis
     summary: Synthesizes user research the user provides into prioritized,
       evidence-backed findings, segments, opportunities and recommendations.
@@ -31,6 +32,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 08-product-management/pm-spec-review
     summary: Reviews a spec or PRD for problem clarity, measurable metrics, testable
       requirements, edge cases, risks, privacy and accessibility.
@@ -55,3 +57,4 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true

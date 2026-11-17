@@ -31,3 +31,14 @@ cases:
     must_not:
       - Use "just checking in"
       - Invent customer results or statistics
+  - name: asks-first
+    prompt: "Write some outreach to a prospect for us."
+    context:
+      company.name: "HelpDeskly"
+    expected_behaviors:
+      - Asks the Ask first questions (the one ask, why now, format, tone, proof) in one round before drafting
+      - Offers concrete multiple-choice options with an "other" option for each question
+      - Proposes saving the tone to brand.voice only after the person confirms
+    must_not:
+      - Start drafting the email before the answers arrive
+      - Ask more than five questions

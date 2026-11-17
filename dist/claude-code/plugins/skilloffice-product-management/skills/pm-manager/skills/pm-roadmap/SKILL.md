@@ -4,7 +4,7 @@ description: Creates, updates or reprioritizes a product roadmap in Now/Next/Lat
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "08-product-management"
 ---
 
@@ -20,9 +20,42 @@ Keep the roadmap a communication tool about outcomes and priorities, not a task 
 
 Context used from the active profile: `company.products_and_services`, `operations.team_structure`, `operations.processes`, `regional.date_format`.
 
+## Ask first
+
+Ask these in one round before changing or building the roadmap, skipping any the request or the listed context fields already answer. In the same round, ask the person to paste or describe the current roadmap if they have not.
+
+1. **What do you need?** (skip if the request says)
+   - Add one initiative and decide what moves to make room.
+   - Reprioritize or move timing after something changed.
+   - A status update on the current roadmap.
+   - A new roadmap from scratch.
+   - Other.
+2. **Which format?** (skip if the existing roadmap already uses one)
+   - Now, Next, Later columns without firm dates.
+   - Quarterly themes.
+   - OKR-aligned: each item tied to an objective.
+   - Other.
+3. **How far ahead?**
+   - This quarter.
+   - The next six months.
+   - The next year.
+   - Other.
+4. **Who will read it?**
+   - The team: a working plan with owners, statuses and dependencies.
+   - Leadership: themes, trade-offs and top risks on one page.
+   - Customers: a version without firm dates that needs approval before sharing.
+   - Other.
+5. **What capacity should I plan against?** (skip if `operations.team_structure` gives team size)
+   - I will give team size and availability.
+   - Assume the usual 60 to 70 percent of time for planned feature work.
+   - Skip the capacity check this time (flagged as a gap).
+   - Other.
+
+Unless the person names a method, prioritize with value versus effort and say so. Propose saving team size and availability as `operations.team_structure` and the planning format and cadence as `operations.processes`, only after the person confirms. Other answers apply to this request only.
+
 ## Steps
 
-1. **Understand the current state.** Ask the user to paste or describe the roadmap in any format. Note items without owners, dates or a clear "why".
+1. **Ask first, then understand the current state.** Run the Ask first questions in one round, including the request to paste or describe the roadmap in any format. Note items without owners, dates or a clear "why".
 2. **Determine the operation:**
    - Add: name, description, priority, effort, target timeframe, owner, dependencies. Suggest where it fits and what moves to make room.
    - Update status: not started, on track, at risk, blocked, done or cut. For at risk or blocked, record the blocker and mitigation.

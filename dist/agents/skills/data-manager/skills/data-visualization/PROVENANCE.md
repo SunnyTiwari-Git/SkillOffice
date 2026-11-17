@@ -23,6 +23,8 @@ Modified by SkillOffice on 2026-11-07:
 - Condensed chart selection, color, accuracy, layout and accessibility guidance into `references/chart-guide.md`.
 - Added declared context, a quality checklist, a safety note and a handoff section.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `data/.mcp.json` and `data/CONNECTORS.md`: connector configuration, never imported.

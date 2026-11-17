@@ -25,6 +25,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 05-sales-business-development/sls-deal-review
     summary: Reviews one deal for health, stage reality and gaps to close as
       findings; drafts a business case and mutual action plan on request.
@@ -43,6 +44,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 05-sales-business-development/sls-pipeline-forecast
     summary: Reviews a pipeline export for health, coverage and at-risk deals as
       findings; writes the forecast and models deal slips.
@@ -61,6 +63,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 05-sales-business-development/sls-win-loss-review
     summary: Finds win and loss patterns in a closed-deals export with sample sizes,
       coded reasons and recommended actions.

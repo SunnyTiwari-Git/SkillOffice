@@ -22,6 +22,8 @@ Modified by SkillOffice on 2026-11-13:
 - Removed: connector placeholders and source-specific query syntax for chat, wiki, email, cloud storage and project trackers; the requirement to search all connected sources in parallel; the numeric relevance weight table; the CONNECTORS.md reference; the `user-invocable` frontmatter field; worked examples that named people.
 - Moved the source and confidence tables into `references/synthesis-guide.md`.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `enterprise-search/.mcp.json`, `enterprise-search/CONNECTORS.md` and plugin commands: connector configuration, never imported.

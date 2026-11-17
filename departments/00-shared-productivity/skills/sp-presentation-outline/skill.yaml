@@ -1,5 +1,5 @@
 id: 00-shared-productivity/sp-presentation-outline
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 00-shared-productivity
 summary: "Builds a slide-by-slide outline with assertion titles, evidence needed and speaker notes, sized to the time available."
@@ -23,6 +23,7 @@ risk: low
 side_effects:
   - reads_files
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: original

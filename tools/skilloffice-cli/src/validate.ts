@@ -184,6 +184,18 @@ function validateSkillYaml(skillDir: string, label: string, findings: Finding[])
   if (typeof data['cacheable'] !== 'boolean') {
     report('high', 'cacheable-invalid', 'cacheable must be true or false', String(data['cacheable']), 'Set cacheable.');
   }
+  // Optional: a skill that asks the user a short round of questions before working (core/protocols/intake.md).
+  if (data['asks_first'] !== undefined && typeof data['asks_first'] !== 'boolean') {
+    report('high', 'asks-first-invalid', 'asks_first must be true or false when present', String(data['asks_first']), 'Set asks_first to true or false, or remove it.');
+  }
+  if (data['asks_first'] === true) {
+    const skillMd = path.join(skillDir, 'SKILL.md');
+    const text = existsSync(skillMd) ? readFileSync(skillMd, 'utf8') : '';
+    if (!/^## Ask first\s*$/m.test(text)) {
+      report('high', 'ask-first-missing', 'asks_first is true but SKILL.md has no "## Ask first" section', label,
+        'Add the section with its questions, or set asks_first to false.');
+    }
+  }
 
   const effects = data['side_effects'];
   if (!isStringList(effects) || effects.length === 0 || !effects.every((effect) => SIDE_EFFECTS.includes(effect as never))) {

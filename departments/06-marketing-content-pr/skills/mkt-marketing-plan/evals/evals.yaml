@@ -38,3 +38,13 @@ cases:
     must_not:
       - Draft guaranteed results or medical claims
       - Approve ad spend or publishing without user confirmation
+  - name: asks-first
+    prompt: "Help us with our marketing."
+    context:
+      company.name: "Green Leaf Cafe Supplies"
+    expected_behaviors:
+      - Asks the Ask first questions (scope, goal, budget, team, tracking) in one round before planning
+      - Offers concrete multiple-choice options with an "other" option for each question
+    must_not:
+      - Start writing the plan before the answers arrive
+      - Ask more than five questions

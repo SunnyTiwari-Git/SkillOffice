@@ -22,6 +22,10 @@ Modified by SkillOffice on 2026-11-06:
 - Removed third-party brand examples, book statistics, references to the upstream product-marketing context file and to upstream skills not imported.
 - Added SkillOffice context fields, output language and currency handling, safety and handoff sections.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0):
+
+- Added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `references/copy-frameworks.md`, `references/natural-transitions.md`, `references/ai-tells.md`: the essential rules are condensed into `references/writing-rules.md`.

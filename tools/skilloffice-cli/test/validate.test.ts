@@ -14,6 +14,22 @@ describe('validate', () => {
     assert.deepEqual(findings, []);
   });
 
+  it('requires an "Ask first" section when a skill sets asks_first, and passes once it is added', () => {
+    const root = tempDir();
+    const dir = writeValidSkill(root);
+    writeFile(dir, 'skill.yaml', `${VALID_SKILL_YAML}asks_first: true\n`);
+    assert.ok(ids(root).includes('ask-first-missing'));
+    writeFile(dir, 'SKILL.md', `${VALID_SKILL_MD}\n## Ask first\n\n1. Which page? Options: home, pricing.\n`);
+    assert.deepEqual(ids(root), []);
+  });
+
+  it('flags asks_first values that are not true or false', () => {
+    const root = tempDir();
+    const dir = writeValidSkill(root);
+    writeFile(dir, 'skill.yaml', `${VALID_SKILL_YAML}asks_first: sometimes\n`);
+    assert.ok(ids(root).includes('asks-first-invalid'));
+  });
+
   it('flags frontmatter fields outside the six standard fields', () => {
     const root = tempDir();
     const dir = writeValidSkill(root);

@@ -4,7 +4,7 @@ description: Builds or documents a company's brand foundations - positioning, pe
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "09-design-branding"
 ---
 
@@ -15,20 +15,54 @@ Give the company a clear, written brand that every other skill can follow. This 
 ## Inputs
 
 - What exists today: logo files in `brand-assets/`, colors and fonts in use, any brand guide, example materials.
-- Optional: a short interview with the user (questions below), competitor names, examples the user likes or dislikes.
+- Optional: a short interview with the user (see Ask first), competitor names, examples the user likes or dislikes.
 
-Context used from the active profile: `company.name`, `company.description`, `company.industry`, `company.target_audience`, `company.differentiators`, `company.markets`, `marketing.competitors`, `brand.voice`, `brand.tone_dos`, `brand.tone_donts`, `brand.colors`, `brand.typography`, `brand.logos`, `brand.guidelines_document`.
+Context used from the active profile: `company.name`, `company.description`, `company.industry`, `company.target_audience`, `company.differentiators`, `company.markets`, `marketing.competitors`, `brand.voice`, `brand.tone_dos`, `brand.tone_donts`, `brand.colors`, `brand.typography`, `brand.logos`, `brand.guidelines_document`, `brand.look_and_feel`.
+
+## Ask first
+
+This interview is the core of the skill, so it keeps six questions. Ask them in one round before proposing anything, skipping any the request, the brand assets or the listed context fields already answer.
+
+1. **Who is the main customer, and what must they believe about you?** (skip the first part if `company.target_audience` is set)
+   - That you are expert and reliable.
+   - That you are affordable and easy to deal with.
+   - That you are premium and worth paying more for.
+   - That you are local and personal.
+   - Other.
+2. **Which three words should describe you, and which three never?** (skip if `brand.voice`, `brand.tone_dos` and `brand.tone_donts` are set)
+   - Expert, calm, precise.
+   - Warm, personal, welcoming.
+   - Bold, energetic, playful.
+   - Refined, quiet, premium.
+   - Other, plus the words to avoid.
+3. **What do you do differently from competitors?** (skip if `company.differentiators` is set)
+   - Quality or craft.
+   - Price or value.
+   - Speed or convenience.
+   - Service and relationships.
+   - Other.
+4. **Which brands, in any industry, feel right or wrong, and why?** (skip if `brand.look_and_feel` lists liked and disliked references)
+   - Name one to three you like and what you like (colors, type, tone).
+   - Name one you dislike and why.
+   - No references; describe the feel in words instead.
+5. **Where will the brand appear most?** (pick up to two)
+   - Website or app.
+   - Print and packaging.
+   - Signage or a physical space.
+   - Social media.
+   - Other.
+6. **Are there colors or fonts you must keep?** (skip if `brand.colors` and `brand.typography` are set)
+   - Keep everything we use now.
+   - Keep the logo colors only.
+   - Open to new colors and fonts.
+   - Other.
+
+Propose saving the answers as `brand.voice`, `brand.tone_dos`, `brand.tone_donts`, `brand.colors`, `brand.typography`, `company.differentiators` and the references as `brand.look_and_feel` (`liked_references`, `disliked_references`), and save only after the person confirms (step 9).
 
 ## Steps
 
 1. **Start from what exists.** Read the brand context and assets. If a brand already exists, document it faithfully; do not redesign it unless the user asks for a rebrand.
-2. **Fill gaps with a short interview** (ask only what is missing, at most 6 questions):
-   - Who is the main customer, and what do they need to believe about you?
-   - Which three words should people use to describe the company? Which three should they never use?
-   - What do you do differently from competitors?
-   - Which brands (in any industry) feel right or wrong to you, and why?
-   - Where will the brand appear most: website, app, print, signage, social?
-   - Are there colors or fonts you must keep?
+2. **Fill gaps with the Ask first interview.** Ask only what is missing, in one round, at most 6 questions.
 3. **Positioning:** one sentence (for whom, what, how it is different) and 3 to 5 brand personality traits, each with "this, not that" (for example "confident, not arrogant").
 4. **Voice summary:** how the brand writes, with do and do not examples. Detailed copy review belongs to the Marketing department.
 5. **Color system:** primary, secondary, accent, neutrals and semantic colors with hex values and roles; check text and background pairs against WCAG 2.2 AA. Keep existing brand colors unless rebranding.

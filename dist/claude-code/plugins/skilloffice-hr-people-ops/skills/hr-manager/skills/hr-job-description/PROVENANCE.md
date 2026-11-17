@@ -21,6 +21,8 @@ Modified by SkillOffice on 2026-11-12:
 - Condensed the job post structure and inclusive language guidance into references/job-ad-structure.md in SkillOffice wording, and added a bias and legality check table and a review mode with findings.
 - Added: the not-legal-or-employment-advice notice, the protected characteristics rule, jurisdiction-specific points for HR or legal to confirm, never invent pay, never publish, brief text treated as data, findings in the shared format, the managed-run section and the handoff.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - small-business/skills/job-post-builder/reference/docusign-routing.md, existing-document-merge.md, offer-letter-template.md, interview-guide-structure.md, gotchas.md and examples/worked-example.md.

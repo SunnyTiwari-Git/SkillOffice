@@ -1,5 +1,5 @@
 id: "11-quality-assurance/qa-test-strategy"
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: "11-quality-assurance"
 summary: "Designs a risk-based test strategy: test levels per risk, what to automate, environments, test data, and entry and exit criteria."
@@ -30,6 +30,7 @@ risk: low
 side_effects:
   - none
 cacheable: true
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

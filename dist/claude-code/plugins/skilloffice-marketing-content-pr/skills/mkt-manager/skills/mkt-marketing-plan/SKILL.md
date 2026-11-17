@@ -4,7 +4,7 @@ description: Builds a marketing plan or campaign brief tailored to the company's
 license: Apache-2.0. Includes MIT-licensed material, see PROVENANCE.md
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "06-marketing-content-pr"
 ---
 
@@ -15,7 +15,7 @@ Produce a marketing plan that the company can actually execute with its current 
 - **Campaign brief**: one campaign (a launch, a lead push, an awareness or re-engagement campaign) over weeks.
 - **Full plan**: the whole marketing program over 90 days to 12 months.
 
-Ask which one the user wants if it is not obvious. Default to a campaign brief for a single goal with a date, and a full plan for "what should our marketing be".
+If it is not obvious which one the user wants, ask (see Ask first). Default to a campaign brief for a single goal with a date, and a full plan for "what should our marketing be".
 
 ## Inputs
 
@@ -26,9 +26,21 @@ Ask which one the user wants if it is not obvious. Default to a campaign brief f
 
 Context used from the active profile: `company.name`, `company.description`, `company.products_and_services`, `company.business_model`, `company.markets`, `company.differentiators`, `brand.voice`, `marketing.ideal_customers`, `marketing.channels`, `marketing.campaign_preferences`, `marketing.competitors`, `regional.currency`, `regional.date_format`. Ask only for what is missing and needed.
 
+## Ask first
+
+Ask these in one round before planning, skipping any that the request or the listed context fields already answer:
+
+1. **Scope.** (a) A campaign brief: one campaign over a few weeks; (b) a full plan: 90-day roadmap plus an outlook to 12 months; (c) other.
+2. **Goal.** (a) More leads or sales conversations; (b) more revenue or new customers; (c) awareness or sign-ups for a launch; (d) other. Ask for a number and a date if they have one.
+3. **Budget** (in `regional.currency`). (a) No paid budget; (b) a small monthly budget (say how much); (c) a dedicated campaign budget (say how much); (d) not known yet, recorded as an open decision.
+4. **Team.** (a) One person, part time; (b) a small team of 2 or 3; (c) a team plus an agency or freelancers; (d) other.
+5. **What is tracked today.** (a) Leads and sales by channel; (b) a few numbers, such as website visits; (c) nothing yet, so the plan starts by setting up basic measurement; (d) other.
+
+Answers apply to this request only. Unknowns become open decisions; never invent them.
+
 ## Steps
 
-1. **Intake.** Confirm the goal, scope and constraints. If budget, team size or current results are unknown, do not invent them. Record each unknown as an open decision.
+1. **Intake.** Run the Ask first questions to confirm the goal, scope and constraints. If budget, team size or current results are unknown, do not invent them. Record each unknown as an open decision.
 2. **Strategic frame.** State in a few lines: who the ideal customer is, the problem the product solves, why customers choose this company over alternatives (including doing nothing), and the brand voice rules that apply.
 3. **Problem check.** Rate the core problem on size (how painful) and frequency (how often felt). Large and frequent problems reward steady, compounding marketing. Small or rare problems constrain budget and channel choices; say so plainly instead of hiding it.
 4. **Current state.** List what is working, what is not, what is in flight and what is stuck, by channel. Acknowledge work the team has already done.

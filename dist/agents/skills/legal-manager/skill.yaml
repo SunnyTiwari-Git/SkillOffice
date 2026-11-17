@@ -1,5 +1,5 @@
 id: "04-legal-risk-compliance/legal-manager"
-version: 0.1.0
+version: 0.1.1
 kind: manager
 department: "04-legal-risk-compliance"
 summary: "Coordinates Legal, Risk and Compliance: plans skills, runs them in order, merges findings, one correction cycle, one report; drafts only, for counsel."

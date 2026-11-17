@@ -1,5 +1,5 @@
 id: 17-procurement-vendor-management/proc-rfp
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 17-procurement-vendor-management
 summary: "Drafts an RFI, RFQ or RFP with testable requirements, a common pricing format, published weights and fair process rules."
@@ -29,6 +29,7 @@ risk: low
 side_effects:
   - none
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: original

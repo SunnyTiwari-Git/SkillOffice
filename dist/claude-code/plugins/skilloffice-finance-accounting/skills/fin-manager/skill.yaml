@@ -1,5 +1,5 @@
 id: 03-finance-accounting/fin-manager
-version: 0.1.0
+version: 0.1.1
 kind: manager
 department: 03-finance-accounting
 summary: Coordinates Finance and Accounting skills; plans, runs, merges findings, one correction cycle, one report; drafts only.

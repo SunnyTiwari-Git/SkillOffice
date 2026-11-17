@@ -1,5 +1,5 @@
 id: 06-marketing-content-pr/mkt-email-sequence
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 06-marketing-content-pr
 summary: Designs automated email sequences with full copy, timing, branching, exit rules, flow diagram, tests and metrics.
@@ -31,6 +31,7 @@ risk: low
 side_effects:
   - none
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

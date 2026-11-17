@@ -28,3 +28,13 @@ cases:
       - Recommends one agreed formula shown on the card
     must_not:
       - Pick one number as correct without checking definitions
+  - name: asks-first
+    prompt: "Make us a dashboard."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (audience and rhythm, decision, where it lives, data, comparison) in one round before designing
+      - Offers concrete multiple-choice options with an "other" choice for each question
+      - Proposes saving the dashboard tool to the context profile only after the user confirms
+    must_not:
+      - Start choosing KPIs or building the dashboard before the user answers
+      - Ask more than five questions

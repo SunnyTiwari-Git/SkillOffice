@@ -4,7 +4,7 @@ description: Sets a distinctive, intentional visual direction for a website, app
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "09-design-branding"
 ---
 
@@ -18,6 +18,10 @@ Act as the design lead of a studio known for giving every client a look that cou
 - Optional: the site structure from `dsn-site-structure`, existing screens, reference sites the user likes or dislikes.
 
 Context used from the active profile: `company.name`, `company.industry`, `company.description`, `company.target_audience`, `brand.voice`, `brand.colors`, `brand.typography`, `brand.logos`, `brand.guidelines_document`, `brand.look_and_feel`.
+
+## Ask first
+
+For any new design, ask the look-and-feel questions in [references/look-and-feel-intake.md](references/look-and-feel-intake.md) in one round (style, experience, motion, imagery, density, references), skipping any that `brand.look_and_feel` or the brief already answers. Propose saving the answers as `brand.look_and_feel` values.
 
 ## Rules of priority
 

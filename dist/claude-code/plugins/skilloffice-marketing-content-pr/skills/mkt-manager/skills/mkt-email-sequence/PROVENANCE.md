@@ -22,6 +22,10 @@ Modified by SkillOffice on 2026-11-06:
 - Added a compliance step (unsubscribe, sender address, regional consent), a rule against handling credentials or subscriber lists, regional time zone handling and a handoff section.
 - Benchmarks labeled as rough and secondary to the company's own data.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0):
+
+- Added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `skills/emails/references/*` (3 files from marketingskills): key points condensed.

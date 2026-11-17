@@ -1,5 +1,5 @@
 id: 05-sales-business-development/sls-outreach
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 05-sales-business-development
 summary: Drafts personalized outreach emails and multi-touch sequences for review, with a compliance checklist. Never sends.
@@ -33,6 +33,7 @@ risk: low
 side_effects:
   - none
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

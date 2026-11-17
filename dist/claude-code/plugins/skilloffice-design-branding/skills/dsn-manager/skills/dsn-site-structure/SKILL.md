@@ -4,7 +4,7 @@ description: Plans the information architecture of a website or app - sitemap, p
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "09-design-branding"
 ---
 
@@ -20,11 +20,43 @@ Decide what pages exist, how they connect and what each page must say, before an
 
 Context used from the active profile: `company.description`, `company.products_and_services`, `company.target_audience`, `company.markets`, `marketing.ideal_customers`, `marketing.keywords`, `regional.output_language`.
 
-If the goal is unclear, ask one question about what a visitor should do on the site. Do not guess the business model.
+If the goal is unclear, ask about it in the Ask first round below. Do not guess the business model.
+
+## Ask first
+
+Ask these in one round before planning, skipping any the request or the listed context fields already answer. Never guess the business model.
+
+1. **What should a visitor do on the site?** (skip if the request says)
+   - Get in touch, request a quote or book.
+   - Buy products online.
+   - Get help as an existing customer.
+   - Learn about the company and trust it.
+   - Other.
+2. **Is this new or a reorganization?**
+   - A brand new site.
+   - A redesign of an existing site (share the page list or sitemap).
+   - One new section on an existing site.
+   - Other.
+3. **Roughly how big?**
+   - Small: 5 to 10 pages.
+   - Medium: 10 to 40 pages in a few sections.
+   - Large: many pages that need search.
+   - Other.
+4. **Who are the main visitors?** (skip if `company.target_audience` or `marketing.ideal_customers` is set)
+   - One main audience.
+   - Two or three distinct audiences, such as buyers and partners.
+   - Other.
+5. **Which languages and regions?** (skip if `regional.output_language` and `company.markets` answer it)
+   - One language.
+   - Several languages with a language switcher.
+   - Separate sections per country.
+   - Other.
+
+Propose saving the audiences as `company.target_audience` and the languages as `regional.output_language`, only after the person confirms. Other answers apply to this request only.
 
 ## Steps
 
-1. **Define audiences and top tasks.** For each audience in `company.target_audience` or `marketing.ideal_customers`, list the 3 to 5 tasks they come to do. Rank tasks by business value and frequency.
+1. **Define audiences and top tasks,** starting from the Ask first answers. For each audience in `company.target_audience` or `marketing.ideal_customers`, list the 3 to 5 tasks they come to do. Rank tasks by business value and frequency.
 2. **Inventory content.** For a redesign, list existing pages and mark each keep, merge, rewrite or remove, with a reason. For a new site, list the pages the top tasks require. Avoid pages nobody needs.
 3. **Group and label.** Group pages by how the audience thinks, not by internal team structure. Use the words visitors use (check `marketing.keywords` and research), not internal jargon.
 4. **Draw the sitemap.** A tree, at most 3 levels deep for most sites. Every page reachable in 3 clicks or fewer from the home page.

@@ -19,6 +19,7 @@ skills:
     depends_on: []
     risk: medium
     cacheable: false
+    asks_first: true
   - id: 09-design-branding/dsn-design-critique
     summary: Reviews a design for first impression, usability, hierarchy, brand and
       system consistency, and basic accessibility; outputs findings.
@@ -37,6 +38,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 09-design-branding/dsn-responsive-review
     summary: Reviews a page or component across screen widths - reflow, overflow,
       touch targets, navigation, type and images - and reports findings.
@@ -49,6 +51,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 09-design-branding/dsn-user-research
     summary: Plans user research studies and synthesizes research data into themes,
       insights and prioritized recommendations.
@@ -61,9 +64,11 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 09-design-branding/dsn-visual-direction
     summary: Sets a distinctive visual direction - palette, type, layout concept and
       principles - grounded in brand and subject, avoiding templated defaults.
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true

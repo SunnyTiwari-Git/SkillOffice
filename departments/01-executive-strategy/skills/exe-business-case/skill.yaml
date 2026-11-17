@@ -1,5 +1,5 @@
 id: 01-executive-strategy/exe-business-case
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 01-executive-strategy
 summary: Builds or reviews a business case with costs, benefits, payback, sensitivity and risks, figures traced or labeled.
@@ -23,6 +23,7 @@ risk: low
 side_effects:
   - reads_files
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: original

@@ -1,5 +1,5 @@
 id: "10-software-development/dev-manager"
-version: 0.1.0
+version: 0.1.1
 kind: manager
 department: "10-software-development"
 summary: "Coordinates the Software Development department: plans skills, runs them in order, merges findings, one correction cycle, one report."

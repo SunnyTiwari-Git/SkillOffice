@@ -16,12 +16,14 @@ skills:
       - 02-hr-people-ops/hr-job-description
     risk: low
     cacheable: false
+    asks_first: true
   - id: 02-hr-people-ops/hr-job-description
     summary: Writes an inclusive job ad and a resume screening rubric from a hiring
       brief; reviews existing ads for biased or unlawful wording.
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 02-hr-people-ops/hr-offer-letter
     summary: Drafts an offer letter and total compensation summary from approved
       terms, with placeholders and clauses flagged for legal review; never
@@ -55,6 +57,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 02-hr-people-ops/hr-recruiting-pipeline
     summary: Scores applications against the written rubric only, with quoted
       evidence and coded candidates; drafts replies and pipeline metrics; a

@@ -1,5 +1,5 @@
 id: 15-data-analytics-ai/data-visualization
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 15-data-analytics-ai
 summary: Picks the right chart for a message and builds it honestly and accessibly from user data, with an insight title, alt text and data table.
@@ -23,11 +23,13 @@ context_needs:
   - regional.currency
   - regional.date_format
   - regional.units
+  - operations.tools
 risk: medium
 side_effects:
   - reads_files
   - writes_files
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

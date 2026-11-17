@@ -1,5 +1,5 @@
 id: "10-software-development/dev-system-design"
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: "10-software-development"
 summary: "Designs systems, APIs and data models, records architecture decisions (ADRs) and evaluates design proposals with explicit trade-offs."
@@ -28,6 +28,7 @@ side_effects:
   - reads_files
   - writes_files
 cacheable: true
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

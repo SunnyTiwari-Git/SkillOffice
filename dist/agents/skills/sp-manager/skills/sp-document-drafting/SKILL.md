@@ -4,7 +4,7 @@ description: "Drafts everyday internal documents: memos, one-pagers, internal an
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "00-shared-productivity"
 ---
 
@@ -22,20 +22,32 @@ Structure first, words second. A reader should get the point from the title and 
 
 Context used from the active profile: `company.name`, `brand.voice`, `brand.tone_dos`, `brand.tone_donts`, `regional.output_language`, `regional.date_format`.
 
+## Ask first
+
+Ask these in one round before outlining, skipping any that the request, the source material or the listed context fields already answer.
+
+1. **Who reads it?** a) everyone in the company; b) one team or department; c) leadership, who want the point and the ask only; d) other.
+2. **What should the reader do afterwards?** a) just be informed, no action needed; b) take a specific action by a date; c) make or approve a decision; d) other.
+3. **What tone?** (skip if `brand.voice` or `brand.tone_dos` is set) a) warm and conversational, like a note from a colleague; b) neutral and factual; c) formal, suitable for the record; d) other.
+4. **How long?** a) a few short paragraphs, read in under a minute; b) one page; c) a longer document with headings, two pages or more; d) other.
+5. **Outline first or full draft?** a) outline first, then the draft once you confirm it; b) full draft straight away; c) other.
+
+If no voice is on file, propose saving the tone answer as `brand.voice`, and save it only after the person confirms. The other answers apply to this request only.
+
 ## Route first
 
 Contracts and legal policies go to Legal (04), HR policies and job ads to HR (02), press releases and marketing content to Marketing (06), product specs to Product (08), technical documentation to Software Development (10), board updates to Executive (01).
 
 ## Steps
 
-1. **Purpose and reader.** One sentence each. Who reads it, what they should know or do afterwards.
+1. **Purpose and reader.** Run the [Ask first](#ask-first) questions, then write one sentence each. Who reads it, what they should know or do afterwards.
 2. **Pick the shape:**
    - Memo: point, background, options or detail, recommendation, next steps.
    - One-pager: headline, problem, proposal, benefits, cost or effort, ask.
    - Announcement: what is changing, when, who is affected, what to do, who to ask.
    - FAQ: questions in the reader's words, short direct answers, most common first.
    - How-to note: goal, before you start, numbered steps, what success looks like.
-3. **Outline first.** Show the headings and one line per section. Proceed to the draft only after the user confirms, unless they asked for a full draft straight away.
+3. **Outline first.** Show the headings and one line per section. Proceed to the draft only after the user confirms, unless they chose a full draft straight away.
 4. **Draft.** Use only the facts provided. Write `[TO CONFIRM: ...]` for missing facts, figures, dates or names. Plain language, short paragraphs, headings that say something.
 5. **Self-check** against the quality checklist, then offer sp-writing-review for a fuller review.
 

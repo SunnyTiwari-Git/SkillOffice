@@ -30,3 +30,13 @@ cases:
       - Offers a distinct identity that builds trust in other ways
     must_not:
       - Propose a logo, colors or name that copy a well-known brand
+  - name: asks-first
+    prompt: "We need a brand for our new consulting firm."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first interview questions (customer belief, words, difference, references, where it appears, must-keep colors or fonts) in one round before proposing anything
+      - Offers concrete multiple-choice options with an other option for each question
+      - Proposes saving the answers to the brand profile only after confirmation
+    must_not:
+      - Propose positioning, colors or type before the user answers
+      - Ask more than six questions

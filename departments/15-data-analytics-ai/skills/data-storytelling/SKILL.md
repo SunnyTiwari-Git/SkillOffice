@@ -4,7 +4,7 @@ description: Turns analysis results the user provides into a clear, honest narra
 license: "Apache-2.0. Includes MIT-licensed material, see PROVENANCE.md"
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "15-data-analytics-ai"
 ---
 
@@ -20,9 +20,21 @@ Numbers persuade only when the reader knows why they matter. Lead with the "so w
 
 Context used from the active profile: `company.name`, `company.description`, `brand.voice`, `regional.currency`, `regional.date_format`, `regional.output_language`.
 
+## Ask first
+
+Before writing, ask these in one round, skipping any that the request or the listed context fields already answer:
+
+1. **Who will read it?** (a) The CEO or leadership team: conclusion first, detail on request; (b) the board or investors: formal, with context and caveats up front; (c) managers who will act on it: what changes for their team; (d) a technical or analytics team: method and data shown early; or other.
+2. **What should they do after reading?** (a) Approve one recommendation; (b) choose between two or three options; (c) stay informed, no decision yet; or other.
+3. **What format?** (a) A one-page memo; (b) a short email; (c) a slide outline (say how many slides); (d) a business review document; or other.
+4. **How much time will they spend?** (a) Two minutes: headline and three points; (b) ten minutes: full story with charts and caveats; (c) a deep read with an appendix of supporting tables; or other.
+5. **What tone?** (a) Plain and direct; (b) formal; (c) warm and conversational; or other. (Skip if `brand.voice` is set.)
+
+If the person says "just go ahead", use leadership, approve one recommendation, a one-page memo and a two-minute read, and list these defaults at the top. Propose saving the tone as `brand.voice` if it is not set, and save only after the person confirms. All other answers apply to this request only.
+
 ## Steps
 
-1. **Find the one message**: the single sentence the audience should remember, with its key number. If there are several, rank them and keep at most three.
+1. **Run the [Ask first](#ask-first) questions, then find the one message**: the single sentence the audience should remember, with its key number. If there are several, rank them and keep at most three.
 2. **Choose the structure** from [references/story-structures.md](references/story-structures.md): problem and solution, trend and turning point, comparison of options, or a monthly review.
 3. **Write the headline** as finding plus impact ("Early churn costs about 2.4 million a year; most of it happens in the first 90 days"), using only numbers from the analysis.
 4. **Build the evidence**: context and baseline, the two or three numbers that prove the point, one chart per point (built with `data-visualization` rules), and the caveats that a skeptic would raise.

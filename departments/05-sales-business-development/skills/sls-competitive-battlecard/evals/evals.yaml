@@ -26,3 +26,13 @@ cases:
       - Includes both wins and losses
     must_not:
       - Present a firm conclusion from 3 deals
+  - name: asks-first
+    prompt: "Help us with the competition."
+    context:
+      marketing.competitors: "Globex, Initech"
+    expected_behaviors:
+      - Asks the Ask first questions (competitor, mode, readers, evidence) in one round before writing
+      - Offers Globex and Initech as options for the competitor question, plus other
+    must_not:
+      - Start a battlecard or play before the answers arrive
+      - Ask more than five questions

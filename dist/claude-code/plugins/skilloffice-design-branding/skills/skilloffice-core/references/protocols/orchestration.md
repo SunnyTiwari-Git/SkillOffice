@@ -2,7 +2,7 @@
 
 Every department manager follows this protocol. It turns a request into one run plan, one consolidated set of findings, one correction cycle and one report.
 
-Read alongside: [memory.md](memory.md), [context.md](context.md), [token-budget.md](token-budget.md), [findings.md](findings.md), [safety.md](safety.md).
+Read alongside: [memory.md](memory.md), [context.md](context.md), [intake.md](intake.md), [token-budget.md](token-budget.md), [findings.md](findings.md), [safety.md](safety.md).
 
 ## Rules that always apply
 
@@ -36,6 +36,10 @@ Read alongside: [memory.md](memory.md), [context.md](context.md), [token-budget.
 5. Write the plan to `state.json` as `currentRun.plan`, with `status: pending` for each skill to run, and set `correctionCyclesUsed: 0` and `maxCorrectionCycles: 1`.
 6. Log a `run_started` event (helper: `skilloffice log run_started --actor <manager> --summary "<request>"`; otherwise append the line by hand).
 7. Show the plan to the human in a short list: skill, why it runs or why it is skipped.
+
+### 3a. Ask first, once
+
+If any planned skill is marked `asks_first: true` in the catalog, follow [intake.md](intake.md) before executing: read only the "Ask first" section of each of those skills, drop questions the request or context profile already answers, merge the rest into one round of at most six multiple-choice questions, and ask them together with the plan. Pass each answer to the skill that asked for it. Propose saving lasting answers to the context profile; save only after the human confirms.
 
 ### 4. Execute the skills
 

@@ -4,7 +4,7 @@ description: Designs systems, services, APIs and data models, and records archit
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # System Design
@@ -15,7 +15,40 @@ Design systems and evaluate architectural decisions. Make every trade-off explic
 
 - Read the agreed design or requirements if one exists (often from `dev-requirements-brainstorm`).
 - Load only the context this skill declares: `technical.stack`, `technical.hosting`, `technical.website_architecture`, `technical.standards`, `company.size`. Build on what the project already uses unless there is a clear reason not to.
-- If scale, budget or deadline is unknown and changes the answer, ask once. Otherwise state your assumption.
+- If scale, budget or deadline is unknown and changes the answer, ask once, using the Ask first questions below. Otherwise state your assumption.
+
+## Ask first
+
+In Design and Decide modes, ask these in one round before designing, skipping any the request, an agreed design or the listed context fields already answer. In Evaluate mode, skip this round unless scale or team size is missing and changes the verdict.
+
+1. **What load should it handle?**
+   - Small: hundreds of users or requests a day.
+   - Growing: thousands to tens of thousands a day.
+   - Large: high traffic or sharp spikes.
+   - Other (give numbers if known).
+2. **How reliable must it be?**
+   - Best effort: short outages are acceptable.
+   - Must work during business hours.
+   - Always on, with failover.
+   - Other.
+3. **How free is the technology choice?** (skip if `technical.stack` and `technical.hosting` are set and the request does not question them)
+   - Stay on the current stack and hosting.
+   - Open to one new managed service.
+   - Open to a new choice.
+   - Other.
+4. **What data does it hold?**
+   - No personal data.
+   - Personal data (GDPR or DPDP may apply).
+   - Health or payment data (HIPAA or PCI DSS may apply).
+   - Other.
+5. **Which constraint matters most?** (skip the team part if `company.size` answers it)
+   - A tight deadline: the simplest thing that works.
+   - A tight budget for running costs.
+   - A small team to run and support it.
+   - None pressing.
+   - Other.
+
+Propose saving the stack as `technical.stack` and hosting as `technical.hosting`, only after the person confirms. Load, reliability, data and constraint answers apply to this request only.
 
 ## Modes
 
@@ -27,7 +60,7 @@ Design systems and evaluate architectural decisions. Make every trade-off explic
 
 ## Framework
 
-1. **Requirements.** Functional (what it does), non-functional (scale, latency, availability, cost, security, privacy), and constraints (team size, timeline, existing stack, regulations).
+1. **Requirements,** starting from the Ask first answers. Functional (what it does), non-functional (scale, latency, availability, cost, security, privacy), and constraints (team size, timeline, existing stack, regulations).
 2. **High-level design.** Components, data flow, API contracts, storage choices. Draw a simple text diagram.
 3. **Deep dive.** Data model, API design (REST, GraphQL, RPC), caching, queues or events, error handling and retries, idempotency.
 4. **Scale and reliability.** Load estimate, scaling approach, failover and redundancy, monitoring and alerting.

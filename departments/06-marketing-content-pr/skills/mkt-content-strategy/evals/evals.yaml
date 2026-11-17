@@ -31,3 +31,13 @@ cases:
       - Routes attention toward owned channels such as the email list
     must_not:
       - Schedule or publish posts
+  - name: asks-first
+    prompt: "We need a content plan."
+    context:
+      company.description: "Cloud payroll software for small businesses"
+    expected_behaviors:
+      - Asks the Ask first questions (goal, capacity, formats, research, horizon) in one round before planning
+      - Offers concrete multiple-choice options with an "other" option for each question
+    must_not:
+      - Start proposing pillars or topics before the answers arrive
+      - Ask more than five questions

@@ -1,5 +1,5 @@
 id: 06-marketing-content-pr/mkt-public-relations
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 06-marketing-content-pr
 summary: Finds PR story angles and drafts pitches, press releases, reporter responses, press kit checklists and crisis holding statements.
@@ -32,6 +32,7 @@ risk: low
 side_effects:
   - none
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

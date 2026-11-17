@@ -26,3 +26,12 @@ cases:
       - Notes whether the change is meaningful given the sample size, or asks for it
     must_not:
       - Approve the chart without comment
+  - name: asks-first
+    prompt: "Make a chart from this table. Data attached."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (where it appears, what it shows, what to deliver, colors) in one round before building
+      - Offers concrete multiple-choice options with an "other" choice for each question
+    must_not:
+      - Build the chart before the user answers
+      - Ask more than five questions

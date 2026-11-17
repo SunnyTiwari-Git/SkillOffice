@@ -37,6 +37,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 16-operations-project-management/biz-project-review
     summary: Health-checks a project plan or running project and returns findings on
       scope, owners, schedule realism, risks and governance.
@@ -55,3 +56,4 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true

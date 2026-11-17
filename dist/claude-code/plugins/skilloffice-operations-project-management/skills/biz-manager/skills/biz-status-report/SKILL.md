@@ -4,7 +4,7 @@ description: Writes a project or team status report with a headline summary, ove
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "16-operations-project-management"
 ---
 
@@ -18,7 +18,18 @@ Tell stakeholders, in the first three lines, whether the project is on track and
 - The audience (team, sponsor, steering committee, client) and the period.
 - Never invent progress, percentages or dates. If something is unknown, say so.
 
-Context used from the active profile: `company.name`, `operations.team_structure`, `regional.date_format`.
+Context used from the active profile: `company.name`, `operations.team_structure`, `operations.processes`, `regional.date_format`.
+
+## Ask first
+
+Before writing, ask these in one round, skipping any that the request or the listed context fields already answer:
+
+1. **Who is the report for?** (a) The project team; (b) the sponsor or manager; (c) a steering committee; (d) a client, which means a human approves it before it goes out; or other.
+2. **What period and rhythm?** (a) Weekly; (b) every sprint; (c) monthly; (d) a one-off update; or other. (Skip if `operations.processes` sets the reporting rhythm.)
+3. **How long?** (a) A five-line headline for an email or chat; (b) one page with status by area, milestones and decisions; (c) the full layout with every table; or other.
+4. **Which status rules?** (a) The default red, amber and green rules below; (b) the project's own rules, which you share; or other. (Skip if `operations.processes` defines status rules.)
+
+If the person says "just go ahead", use the sponsor, this week, one page and the default rules, and list these defaults at the top. Propose saving the reporting rhythm and any project status rules to `operations.processes` if they are not set, and save only after the person confirms. All other answers apply to this request only.
 
 ## Status rules
 
@@ -34,7 +45,7 @@ Status is set by the evidence, not by optimism. If two areas differ, report the 
 
 ## Steps
 
-1. **Headline.** Three to four sentences: overall status and why, the key win, and what is needed from the audience.
+1. **Headline.** Run the [Ask first](#ask-first) questions first. Then write three to four sentences: overall status and why, the key win, and what is needed from the audience.
 2. **Status by area.** Scope, schedule, budget and quality, each with a status and one line of evidence.
 3. **Milestones.** Table: milestone, baseline date, current forecast, status. A changed forecast always shows the old and new date.
 4. **Key metrics.** Table: metric, target, actual, trend.

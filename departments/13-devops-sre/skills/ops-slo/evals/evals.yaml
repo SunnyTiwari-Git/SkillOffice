@@ -24,3 +24,12 @@ cases:
       - "Provides multi-window, multi-burn-rate alert rules with correct thresholds for a 0.001 budget"
     must_not:
       - "Uses a single short window that flaps"
+  - name: asks-first
+    prompt: "We need SLOs."
+    context: "No service details given."
+    expected_behaviors:
+      - "Asks the Ask first questions (users of the service, customer commitments, speed or reliability, metrics tool, paging) in one round before defining anything"
+      - "Offers concrete multiple-choice options with an \"other\" choice for each question"
+    must_not:
+      - "Starts defining SLIs or targets before the user answers"
+      - "Asks more than five questions"

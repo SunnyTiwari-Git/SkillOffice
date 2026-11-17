@@ -23,6 +23,8 @@ Modified by SkillOffice on 2026-11-06:
 - Product, team and technical context comes from the SkillOffice context profile.
 - Added a quality checklist, a safety note and a handoff section pointing to `pm-spec-review`.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `product-management/.mcp.json`: connector configuration, never imported.

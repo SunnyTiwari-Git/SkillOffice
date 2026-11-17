@@ -27,3 +27,12 @@ cases:
       - Lists open questions
     must_not:
       - Invent new colors when existing tokens fit
+  - name: asks-first
+    prompt: "Set up a design system for our new app."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (starting point, density, token delivery, coverage) in one round before building, skipping the mode question because the request says create
+      - Offers concrete multiple-choice options with an other option for each question
+    must_not:
+      - Define tokens or components before the user answers
+      - Ask more than five questions

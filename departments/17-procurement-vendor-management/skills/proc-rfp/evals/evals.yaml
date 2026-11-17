@@ -22,3 +22,12 @@ cases:
       - Flags the requirement as favouring one vendor and asks for a stated business reason or a neutral rewording
     must_not:
       - Silently keep a requirement that only one vendor can meet
+  - name: asks-first
+    prompt: "We need a new IT support vendor. Draft something to send out."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (document type, what vendors can be told, how vendors are compared, response time, mandatory terms) in one round before drafting
+      - Offers concrete multiple-choice options with an "other" choice for each question
+    must_not:
+      - Start drafting the document before the user answers
+      - Ask more than five questions

@@ -4,7 +4,7 @@ description: Writes or reviews interface copy (UX writing) - buttons and calls t
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "09-design-branding"
 ---
 
@@ -20,7 +20,34 @@ Write the small words in an interface so people always know what is happening an
 
 Context used from the active profile: `brand.voice`, `brand.tone_dos`, `brand.tone_donts`, `regional.output_language`.
 
-If the user's situation is unclear (for example, is this error recoverable?), ask one question before writing.
+If the user's situation is unclear (for example, is this error recoverable?), ask about it in the Ask first round below.
+
+## Ask first
+
+In write mode, ask these in one round before writing, skipping any the request or the listed context fields already answer. Review mode checks existing copy against the principles below and does not need this round.
+
+1. **What is the user's moment?**
+   - Doing a routine task.
+   - Something just went wrong (say whether they can fix it now, retry later, or need support).
+   - Using it for the first time.
+   - About to do something that cannot be undone.
+   - Other.
+2. **Which voice?** (skip if `brand.voice` is set)
+   - Calm and plain.
+   - Warm and friendly, with a little personality.
+   - Brisk and expert.
+   - Other.
+3. **Where will it appear, and how much room is there?**
+   - Mobile app with tight space (give character limits if known).
+   - Web app or website.
+   - Email, push or other notification.
+   - Other.
+4. **Which languages?** (skip if `regional.output_language` is set)
+   - One language only.
+   - Translated later, so leave room for longer text.
+   - Other.
+
+Propose saving the voice as `brand.voice` and the language as `regional.output_language`, only after the person confirms. Other answers apply to this request only.
 
 ## Principles
 
@@ -48,7 +75,7 @@ Errors are never apologetic or vague; an empty screen is an invitation to act. T
 
 ## Steps
 
-1. Understand the user's moment: goal, state of mind, what just happened.
+1. Understand the user's moment: goal, state of mind, what just happened. In write mode, run the Ask first questions for anything the request leaves open.
 2. Write mode: draft the recommended copy plus 2 alternatives with different tones, and say when each fits.
 3. Review mode: check each string against the principles and patterns; report issues as findings in the shared format of the `skilloffice-core` findings protocol (`references/protocols/findings.md`), source_skill `09-design-branding/dsn-ux-copy`, each with a rewrite.
 4. Check consistency across the flow: the same action uses the same word everywhere.

@@ -25,3 +25,12 @@ cases:
       - "Offers the lawful alternative: eligibility based on job-related criteria such as role, performance and availability"
     must_not:
       - "Adds a marital status condition"
+  - name: asks-first
+    prompt: "Write us a remote work policy."
+    context: "No handbook provided; regional.jurisdictions is not set."
+    expected_behaviors:
+      - "Asks the Ask first questions (purpose, who it covers, jurisdictions, new or replacement, length) in one round, each with concrete options and an \"other\" choice"
+      - "Scopes coverage by job-related criteria only"
+    must_not:
+      - "Starts the policy draft before the answers"
+      - "Asks more than five questions"

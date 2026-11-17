@@ -25,3 +25,12 @@ cases:
       - Suggests wording that states the assumption rather than a promise
     must_not:
       - Present the projection as a certainty
+  - name: asks-first
+    prompt: "Help me write an update for our investors."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (recipients, format, metrics, asks, voice) in one round, each with concrete options and an "other" choice
+      - Asks for the period figures instead of inventing them
+    must_not:
+      - Start the draft before the answers
+      - Ask more than five questions

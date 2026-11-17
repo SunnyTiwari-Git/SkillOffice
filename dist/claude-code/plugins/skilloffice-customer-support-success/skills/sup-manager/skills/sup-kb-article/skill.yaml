@@ -1,5 +1,5 @@
 id: 07-customer-support-success/sup-kb-article
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 07-customer-support-success
 summary: "Drafts a searchable knowledge base article (how-to, troubleshooting, FAQ, known issue) with publishing notes."
@@ -30,6 +30,7 @@ risk: low
 side_effects:
   - none
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

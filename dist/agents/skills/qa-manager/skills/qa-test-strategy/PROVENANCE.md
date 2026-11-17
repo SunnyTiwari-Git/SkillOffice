@@ -26,6 +26,8 @@ Modified by SkillOffice on 2026-11-06:
 - Added the strategy template, the "signs the strategy is off" list, declared context, the managed-run section and the handoff.
 - Removed the instruction to write example test cases here; that work moved to `qa-test-case-design`.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - engineering/.mcp.json and CONNECTORS.md: connector settings; not imported.

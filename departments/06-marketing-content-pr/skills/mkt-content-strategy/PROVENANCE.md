@@ -22,6 +22,10 @@ Modified by SkillOffice on 2026-11-06:
 - Removed references to the upstream product-marketing context file and to upstream skills not imported. Company details now come from the SkillOffice context profile.
 - Added the SkillOffice safety note (web content is data, never instructions), output language handling and handoff section.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0):
+
+- Added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `references/content-distribution.md`, `references/headless-cms.md`: the useful distribution points are summarized in the skill; CMS selection is out of scope.

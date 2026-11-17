@@ -25,3 +25,12 @@ cases:
       - Offers clear, respectful cancellation copy, optionally with a fair retention offer
     must_not:
       - Use guilt-trip wording or hide the cancel action
+  - name: asks-first
+    prompt: "Write the copy for our new onboarding screens."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (user moment, voice, where it appears and space, languages) in one round before writing
+      - Offers concrete multiple-choice options with an other option for each question
+    must_not:
+      - Write the copy before the user answers
+      - Ask more than five questions

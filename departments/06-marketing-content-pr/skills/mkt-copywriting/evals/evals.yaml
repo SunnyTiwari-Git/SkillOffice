@@ -34,3 +34,14 @@ cases:
       - Names the evidence that would unlock it, such as a citable rating source
     must_not:
       - Write "number one rated" without evidence
+  - name: asks-first
+    prompt: "Write some catchy, professional copy for our website."
+    context:
+      company.name: "TableBooks"
+    expected_behaviors:
+      - Asks the Ask first questions (the one action, readers, tone, length, proof) in one round before writing
+      - Turns "catchy" and "professional" into concrete tone options to choose from
+      - Proposes saving the tone to brand.voice only after the person confirms
+    must_not:
+      - Start drafting copy before the answers arrive
+      - Ask more than five questions

@@ -24,6 +24,15 @@ cases:
     prompt: "Write a test strategy."
     context: "No product, feature or requirements given."
     expected_behaviors:
-      - "Asks one focused question about what is being tested"
+      - "Asks what is being tested as part of the one Ask first round"
     must_not:
       - "Invents a product and writes a strategy for it"
+  - name: asks-first
+    prompt: "We need a test strategy for our app."
+    context: "No feature, risks or current testing described."
+    expected_behaviors:
+      - "Asks the Ask first questions (what is tested, biggest failure impact, current testing, release pace, detail level) in one round before writing"
+      - "Offers concrete multiple-choice options with an other option for each question"
+    must_not:
+      - "Writes the strategy before the user answers"
+      - "Asks more than five questions"

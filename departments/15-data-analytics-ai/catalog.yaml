@@ -22,6 +22,7 @@ skills:
     depends_on: []
     risk: medium
     cacheable: false
+    asks_first: true
   - id: 15-data-analytics-ai/data-dictionary
     summary: Documents entities, tables, metric definitions, standard filters and
       gotchas into a data dictionary file through interviews and schema exports.
@@ -46,6 +47,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 15-data-analytics-ai/data-validation
     summary: Reviews an analysis, query, chart, dataset or pipeline for correctness
       and data quality; returns findings and a ready, caveats or revise verdict.
@@ -58,3 +60,4 @@ skills:
     depends_on: []
     risk: medium
     cacheable: false
+    asks_first: true

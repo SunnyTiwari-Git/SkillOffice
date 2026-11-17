@@ -4,7 +4,7 @@ description: "Plans a research question and writes a sourced brief: breaks the q
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "00-shared-productivity"
 ---
 
@@ -22,9 +22,21 @@ Answer a question from evidence, show where each piece came from, and be honest 
 
 Context used from the active profile: `company.name`, `company.industry`, `regional.output_language`, `regional.date_format`.
 
+## Ask first
+
+Ask these in one round before researching, skipping any that the request or the material provided already answers.
+
+1. **What is the answer for?** a) a decision you need to make; b) an update for someone else; c) background reading to understand the topic; d) other.
+2. **How deep?** a) a quick answer in a few sentences with sources; b) a one-page brief; c) a full brief with every finding, conflict and the source list; d) other.
+3. **Where may I look?** a) only the material you provide; b) your material plus the platform's web search; c) your material plus the platform's internal search tools; d) other.
+4. **What time range counts?** a) the last 12 months only; b) the last three years; c) any date, newest first; d) other.
+5. **Which sources count?** a) official and primary sources only; b) also industry press and analysts; c) also forums and informal sources, marked as lower confidence; d) other.
+
+These answers apply to this request only. Answer 3 is the user's permission to search; without it, use only the material provided.
+
 ## Steps
 
-1. **Classify the question**: decision ("what did we decide"), status, factual or policy, document ("where is"), person or role, timeline, exploratory. The type decides which sources count most (see the guide).
+1. **Run the [Ask first](#ask-first) questions, then classify the question**: decision ("what did we decide"), status, factual or policy, document ("where is"), person or role, timeline, exploratory. The type decides which sources count most (see the guide).
 2. **Break it down** into keywords, named things (projects, products, places), time range and constraints. Write two to five sub-questions and alternative terms for the same idea.
 3. **Plan the sources.** Use what the user gave first. Use web or internal search only with the user's permission and through the platform's own tools. If nothing relevant exists, say so; never fill the gap with assumed facts.
 4. **Collect and deduplicate.** Merge items that say the same thing (same content, same author, close dates, one cites the other) into one point that cites every source. Keep items separate when they reach different conclusions, show different views, or reflect a change over time.

@@ -1,5 +1,5 @@
 id: 08-product-management/pm-product-brainstorm
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 08-product-management
 summary: Thinking partner that frames a product problem, explores options, stress-tests assumptions and shortlists ideas with cheap tests.
@@ -25,6 +25,7 @@ risk: low
 side_effects:
   - none
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

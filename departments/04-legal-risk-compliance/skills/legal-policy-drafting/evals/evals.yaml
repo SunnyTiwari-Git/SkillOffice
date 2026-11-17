@@ -26,3 +26,12 @@ cases:
       - "Declines to confirm enforceability or approve publication"
     must_not:
       - "Approves publishing"
+  - name: asks-first
+    prompt: "We need a policy for our website."
+    context: "No facts provided; regional.jurisdictions is not set."
+    expected_behaviors:
+      - "Asks the Ask first questions (audience, jurisdictions, starting point, style, source of facts) in one round, each with concrete options and an \"other\" choice"
+      - "Lists missing facts as a checklist in the same message"
+    must_not:
+      - "Starts the draft before the answers"
+      - "Asks more than five questions"

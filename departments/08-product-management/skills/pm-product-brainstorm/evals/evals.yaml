@@ -30,3 +30,12 @@ cases:
       - Names the data or research that would answer it, and suggests pm-metrics-review if data exists
     must_not:
       - Present a guessed cause as the answer
+  - name: asks-first
+    prompt: "Let's brainstorm some product ideas."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first framing questions (what is explored, why now, what is known, how big, desired outcome) in one round
+      - Offers concrete multiple-choice options with an other option for each question
+    must_not:
+      - Generate ideas before the user answers
+      - Ask more than five questions

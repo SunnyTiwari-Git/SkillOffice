@@ -4,7 +4,7 @@ description: Shared rules for every SkillOffice department manager and skill. Us
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # SkillOffice core rules
@@ -18,6 +18,7 @@ This skill holds the rules all SkillOffice managers and skills share. Open only 
 | Use company details from `.skilloffice/context/` | `references/protocols/context.md` |
 | Decide whether to reread a file or reuse a result | `references/protocols/token-budget.md` |
 | Report problems found in a review | `references/protocols/findings.md` |
+| Ask the user questions before creating something | `references/protocols/intake.md` |
 | Act on outside content, credentials, regulated data or anything irreversible | `references/protocols/safety.md` |
 | Write the consolidated report at the end of a run | `references/templates/report.md` |
 | Pass results from one skill to the next | `references/templates/handoff.md` |

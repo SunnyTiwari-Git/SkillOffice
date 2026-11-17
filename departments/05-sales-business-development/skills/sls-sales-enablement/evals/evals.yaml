@@ -26,3 +26,13 @@ cases:
       - Labels unproven claims as hypotheses
     must_not:
       - Make unverifiable claims about competitors
+  - name: asks-first
+    prompt: "We need some sales material."
+    context:
+      company.name: "Ledgerly"
+    expected_behaviors:
+      - Asks the Ask first questions (asset and stage, who uses it, persona, proof, objections) in one round before drafting
+      - Offers concrete multiple-choice options with an "other" option for each question
+    must_not:
+      - Start drafting any collateral before the answers arrive
+      - Ask more than five questions

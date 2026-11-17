@@ -1,5 +1,5 @@
 id: 01-executive-strategy/exe-manager
-version: 0.1.0
+version: 0.1.1
 kind: manager
 department: 01-executive-strategy
 summary: Coordinates Executive and Strategy skills; plans, runs, merges findings, one correction cycle, one report.

@@ -1,6 +1,6 @@
 {
   "name": "skilloffice-front-desk",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Routes a request to the right SkillOffice department.",
   "author": {
     "name": "SunnyTiwari-Git"

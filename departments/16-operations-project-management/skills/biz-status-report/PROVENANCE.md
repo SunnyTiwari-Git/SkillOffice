@@ -23,6 +23,8 @@ Modified by SkillOffice on 2026-11-13:
 - Added rules against invented progress, approval before client-facing date changes, and a handoff section.
 - Kept the report layout inline in SKILL.md under "Layout".
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `operations/.mcp.json` and `operations/CONNECTORS.md`: connector configuration, never imported.

@@ -1,5 +1,5 @@
 id: 15-data-analytics-ai/data-dashboard-design
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 15-data-analytics-ai
 summary: Designs decision-focused KPI dashboards with defined metrics, layout and refresh plan, and can build a self-contained HTML dashboard from user data.
@@ -25,11 +25,13 @@ context_needs:
   - regional.currency
   - regional.date_format
   - regional.time_zone
+  - operations.tools
 risk: medium
 side_effects:
   - reads_files
   - writes_files
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

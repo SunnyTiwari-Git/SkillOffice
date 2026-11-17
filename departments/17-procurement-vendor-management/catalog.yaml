@@ -20,6 +20,7 @@ skills:
       - 17-procurement-vendor-management/proc-sourcing-plan
     risk: low
     cacheable: false
+    asks_first: true
   - id: 17-procurement-vendor-management/proc-sourcing-plan
     summary: "Plans a purchase before vendors are approached: need, make or buy,
       sourcing route by threshold, criteria and weights, risks, draft timeline."

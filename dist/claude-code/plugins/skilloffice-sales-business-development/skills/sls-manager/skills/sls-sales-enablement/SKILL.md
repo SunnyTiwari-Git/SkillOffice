@@ -4,7 +4,7 @@ description: Creates sales collateral that sellers actually use, including pitch
 license: Apache-2.0. Includes MIT-licensed material, see PROVENANCE.md
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "05-sales-business-development"
 ---
 
@@ -14,15 +14,22 @@ Make collateral that is specific to a situation, scannable in seconds and built 
 
 ## Inputs
 
-Ask once for what is missing:
-
-1. Which asset is needed, and for which sales stage (prospecting, discovery, demo, negotiation, close).
-2. Who will use it: a seller, a champion inside the customer, or the prospect directly.
-3. The target persona (title, seniority, department).
-4. What exists today and what sellers ask for most.
-5. The top 3 objections heard.
+- The asset, its user, the sales stage and the target persona (required; see Ask first).
+- Optional: existing collateral, what sellers ask for most, proof points, case studies and common objections.
 
 Context used from the active profile: `company.name`, `company.description`, `company.products_and_services`, `company.differentiators`, `company.target_audience`, `marketing.ideal_customers`, `marketing.competitors`, `brand.voice`, `regional.currency`.
+
+## Ask first
+
+Ask these in one round before drafting, skipping any that the request or the listed context fields already answer. Also invite the person to paste any collateral that exists today.
+
+1. **Asset and stage.** (a) Prospecting material, such as a one-pager or cold call script; (b) discovery or demo material, such as a pitch deck, demo script or talk track; (c) closing material, such as a proposal template, objection document or ROI calculator; (d) other.
+2. **Who uses it.** (a) A seller, live on a call, so it is scannable talk tracks; (b) a champion inside the customer, so it stands alone and avoids jargon; (c) the prospect directly, as a polished leave-behind; (d) other.
+3. **Target persona** (skip if `marketing.ideal_customers` names one). (a) A technical lead, who cares how it works, integration and risk; (b) a finance or budget owner, who cares about cost, return and payback; (c) an operations or line manager, who cares about daily workflow and time saved; (d) other.
+4. **Proof available.** (a) Customer results you may name, with permission; (b) anonymized results or internal data; (c) none yet, so advantages are written as hypotheses to test; (d) other.
+5. **Top objections** (pick up to three). (a) Price or budget; (b) "we already have something" or doing nothing; (c) switching risk or implementation effort; (d) other.
+
+If `marketing.ideal_customers` was empty, propose saving the persona there, and save only after the person confirms. All other answers apply to this request only.
 
 ## Principles
 
@@ -51,7 +58,7 @@ Structures for each asset are in [references/asset-structures.md](references/ass
 
 ## Steps
 
-1. Confirm the asset, user, stage and persona.
+1. Run the Ask first questions to confirm the asset, user, stage and persona.
 2. Draft it with the structure from the reference file, in `brand.voice`, using only proof the user provided or that is publicly verifiable with a source.
 3. Mark every number, customer name and quote that needs confirmation. Never invent a statistic, logo, customer or quote.
 4. Check it against the quality checklist below.

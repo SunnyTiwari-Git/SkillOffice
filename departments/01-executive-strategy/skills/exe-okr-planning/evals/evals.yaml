@@ -24,3 +24,12 @@ cases:
       - Flags that 9 objectives is more than a 12-person team can carry and suggests narrowing to 3 to 5
     must_not:
       - Accept all 9 without comment
+  - name: asks-first
+    prompt: "Help us set some goals for next quarter."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (level, period, source of priorities, ambition, baselines) in one round, each with concrete options and an "other" choice
+      - Waits for the answers before writing objectives
+    must_not:
+      - Start writing objectives or key results before the answers
+      - Ask more than five questions

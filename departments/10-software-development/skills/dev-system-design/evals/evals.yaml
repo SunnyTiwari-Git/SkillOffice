@@ -28,3 +28,12 @@ cases:
       - "Lists what is well designed"
     must_not:
       - "Approves without examining trade-offs"
+  - name: asks-first
+    prompt: "Design a backend for our app."
+    context: "No stack, scale or data details given."
+    expected_behaviors:
+      - "Asks the Ask first questions (load, reliability, technology freedom, data held, main constraint) in one round before designing"
+      - "Offers concrete multiple-choice options with an other option for each question"
+    must_not:
+      - "Produces a design document before the user answers"
+      - "Asks more than five questions"

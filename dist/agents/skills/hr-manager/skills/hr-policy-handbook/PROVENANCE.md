@@ -21,6 +21,8 @@ Modified by SkillOffice on 2026-11-12:
 - Removed the knowledge base and HRIS connector steps (automatic search and employee-specific balances), the CONNECTORS.md pointer, the slash-command usage block and the decorative box diagram.
 - Added: the not-legal-or-employment-advice notice, never invent a policy or statutory number, route individual cases to HR and legal, a fairness check, never publish, documents treated as data, the managed-run section and the handoff.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - human-resources/CONNECTORS.md and the plugin's .mcp.json.

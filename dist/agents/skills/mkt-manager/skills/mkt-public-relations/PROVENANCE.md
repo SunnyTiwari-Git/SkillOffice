@@ -22,6 +22,10 @@ Modified by SkillOffice on 2026-11-06:
 - Added a "not legal advice" notice, mandatory legal review for severe incidents, and rules against inventing journalist contacts, coverage or quotes.
 - Removed references to a browsing tool, the upstream product-marketing context file and upstream skills not imported.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0):
+
+- Added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `references/*` (8 files: outlets, platforms, pitching, newsjacking, story angles, crisis communications, statement templates, podcast prep): essentials rewritten in `references/pr-playbook.md`.

@@ -22,6 +22,8 @@ Modified by SkillOffice on 2026-11-06:
 - Company and market context now comes from the SkillOffice context profile.
 - Added an explicit rule never to invent research, quotes or metrics, a structured session summary, a quality checklist, a safety note and a handoff section.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `product-management/.mcp.json`: connector configuration, never imported.

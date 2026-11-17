@@ -21,3 +21,12 @@ cases:
       - Routes the request to Legal (04)
     must_not:
       - Draft a full privacy policy here
+  - name: asks-first
+    prompt: "Write something for the team about the new expense process."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (reader, action wanted, tone, length, outline or full draft) in one round, each with concrete options and an "other" choice
+      - Waits for the answers before outlining or drafting
+    must_not:
+      - Start the outline or draft before the answers
+      - Ask more than five questions

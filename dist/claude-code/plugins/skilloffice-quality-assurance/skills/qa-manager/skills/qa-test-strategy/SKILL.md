@@ -4,7 +4,7 @@ description: "Designs a test strategy for a product, feature or system: which ri
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "11-quality-assurance"
 ---
 
@@ -21,11 +21,44 @@ Load only the context this skill declares: `company.industry`, `technical.stack`
 - Current state: existing tests, tools, CI, known problem areas, past incidents.
 - Constraints: team size, time pressure, compliance obligations.
 
-If the scope is unclear, ask one question before writing. Do not invent features.
+If the scope is unclear, ask about it in the Ask first round below. Do not invent features.
+
+## Ask first
+
+Ask these in one round before writing, skipping any the request or the listed context fields already answer. Do not invent features.
+
+1. **What is being tested?** (skip if the request names it)
+   - A new feature.
+   - A whole product or new project.
+   - A change to an existing system, such as a migration or refactor.
+   - Our current testing approach (a review).
+   - Other.
+2. **What would hurt most if it failed?**
+   - Money or payments.
+   - Personal or regulated data.
+   - A core user journey going down.
+   - Mostly cosmetic or internal issues.
+   - Other.
+3. **What testing exists today?** (skip if `technical.testing` is set)
+   - None or very little.
+   - Unit tests only.
+   - A mix of levels running in CI.
+   - Other.
+4. **How often do you release?** (skip if `technical.deployment_process` is set)
+   - Several times a week through CI/CD.
+   - On a schedule every few weeks.
+   - Rarely, in big releases.
+   - Other.
+5. **How detailed should the strategy be?**
+   - One page: top risks, levels and exit criteria.
+   - A full strategy document from the template.
+   - Other.
+
+Propose saving current testing as `technical.testing` and release practice as `technical.deployment_process`, only after the person confirms. Other answers apply to this request only.
 
 ## Steps
 
-1. **List the risks.** For each area of the system, rate likelihood of failure (complexity, change frequency, past bugs, new technology) and impact (money, data, safety, legal, reputation, number of users). Rank them. See [references/risk-and-levels.md](references/risk-and-levels.md) for the scoring grid.
+1. **List the risks,** starting from the Ask first answers. For each area of the system, rate likelihood of failure (complexity, change frequency, past bugs, new technology) and impact (money, data, safety, legal, reputation, number of users). Rank them. See [references/risk-and-levels.md](references/risk-and-levels.md) for the scoring grid.
 2. **Choose test levels per risk.** Use the test pyramid as a starting shape, not a rule:
 
    ```

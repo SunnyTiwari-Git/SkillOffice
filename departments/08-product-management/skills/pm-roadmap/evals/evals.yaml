@@ -27,3 +27,12 @@ cases:
       - States the customer version needs the user's approval before sharing
     must_not:
       - Commit exact feature dates to customers
+  - name: asks-first
+    prompt: "Can you sort out our roadmap?"
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (operation, format, horizon, audience, capacity) in one round and asks for the current roadmap in the same round
+      - Offers concrete multiple-choice options with an other option for each question
+    must_not:
+      - Build or reprioritize a roadmap before the user answers
+      - Ask more than five questions

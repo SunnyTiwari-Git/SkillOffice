@@ -4,7 +4,7 @@ description: Creates social media content and plans for LinkedIn, X (Twitter), I
 license: Apache-2.0. Includes MIT-licensed material, see PROVENANCE.md
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "06-marketing-content-pr"
 ---
 
@@ -20,9 +20,21 @@ Create social content that tells the company's story well. Platform tactics ampl
 
 Context used from the active profile: `company.name`, `company.description`, `company.differentiators`, `brand.voice`, `brand.tone_dos`, `brand.tone_donts`, `marketing.ideal_customers`, `marketing.channels`, `marketing.content_guidelines`, `regional.output_language`, `regional.time_zone`.
 
+## Ask first
+
+Ask these in one round before drafting, skipping any that the request or the listed context fields already answer:
+
+1. **Goal.** (a) Awareness: more people know the company; (b) leads or website traffic; (c) community and conversation with existing followers; (d) other.
+2. **Whose voice.** (a) The company page; (b) a founder or leader's personal profile; (c) both; (d) other.
+3. **Platforms** (skip if `marketing.channels` is set). (a) LinkedIn; (b) Instagram and Facebook; (c) X, TikTok or YouTube Shorts; (d) other.
+4. **What you need.** (a) A few ready-to-paste posts; (b) a weekly calendar with content pillars; (c) one long piece repurposed into posts; (d) short video scripts, if video is possible; or other.
+5. **Tone** (skip if `brand.voice` is set). (a) Practical and plain, useful tips; (b) warm and personal, real stories; (c) bold, clear opinions on the industry; (d) other.
+
+If `marketing.channels` or `brand.voice` was empty, propose saving the platforms or tone answer there, and save only after the person confirms. All other answers apply to this request only.
+
 ## Steps
 
-1. **Pick platforms** where the ideal customer is active. Reference: [references/platforms.md](references/platforms.md).
+1. **Ask first, then pick platforms.** Run the Ask first questions, then choose platforms where the ideal customer is active. Reference: [references/platforms.md](references/platforms.md).
 2. **Set 3-5 content pillars** with a share of output each (for example insights 30%, behind the scenes 25%, education 25%, personal stories 15%, promotion 5%). For each, ask: what unique view do we have, what does the audience ask, what can we produce consistently.
 3. **Draft posts.** The first line decides whether anyone reads the rest. Use a hook shape (curiosity, story, value, contrarian) and fill it with a specific fact, number or true story. Each post must stand alone without other context.
 4. **Repurpose long content.** From a blog, podcast, webinar or newsletter, extract 5-10 self-contained "content atoms" (a quotable line, a mini story, a tactical tip, a data point, a strong opinion) and adapt each to its best platform. Video needs captions because most is watched without sound.

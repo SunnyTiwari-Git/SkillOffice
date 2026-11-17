@@ -4,7 +4,7 @@ description: Builds a business case for an investment or initiative with costs, 
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "01-executive-strategy"
 ---
 
@@ -22,9 +22,21 @@ Help leaders decide whether an initiative is worth it. Show the money, the risks
 
 Context used from the active profile: `company.name`, `company.size`, `regional.currency`, `regional.date_format`.
 
+## Ask first
+
+In build mode, ask these in one round before calculating, skipping any that the request already answers. Review mode does not ask; it reports findings.
+
+1. **Who decides, and what convinces them?** a) a founder or CEO, who wants payback and cash impact; b) finance, who wants figures traced to sources and net present value; c) a board or investors, who want strategic fit and risk; d) other.
+2. **What should it be compared with?** a) this initiative against doing nothing; b) two or three options plus doing nothing; c) a pilot first against a full rollout; d) other.
+3. **What time horizon?** a) one year; b) three years; c) five years; d) other.
+4. **What decision rule?** a) payback within a set number of months; b) net present value at your discount rate; c) no fixed rule, so show both; d) other.
+5. **How long?** a) a one-page summary with tables; b) a full case with sensitivity and a risk register; c) other.
+
+These answers apply to this request only.
+
 ## Build mode
 
-1. **State the decision** in one line and the alternatives, always including "do nothing".
+1. **Run the [Ask first](#ask-first) questions, then state the decision** in one line and the alternatives, always including "do nothing".
 2. **List costs**: one-off (purchase, build, setup) and ongoing (licenses, people, maintenance), by period.
 3. **List benefits**: revenue gained, costs avoided, risk reduced. Count each benefit once. Show how each is estimated.
 4. **Label every figure**: "from user data" or "assumption to verify". Never invent market sizes, prices or conversion rates.

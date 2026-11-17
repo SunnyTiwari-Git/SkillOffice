@@ -28,3 +28,13 @@ cases:
       - Uses the regional date format
     must_not:
       - Draft a message committing the date to the customer as final
+  - name: asks-first
+    prompt: "Write a spec for a better dashboard."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (who has the problem, success measure, spec size, firm constraints, evidence) in one round before drafting
+      - Offers concrete multiple-choice options with an other option for each question
+      - Skips any question the request or context already answers
+    must_not:
+      - Start drafting the PRD before the user answers
+      - Ask more than five questions

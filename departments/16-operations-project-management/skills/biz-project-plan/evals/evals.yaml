@@ -26,3 +26,13 @@ cases:
       - Keeps RACI, assumptions and governance sections
     must_not:
       - Force a waterfall schedule on an agile team
+  - name: asks-first
+    prompt: "Plan our new project."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (way of working, what is fixed, team, audience, reporting rhythm) in one round before planning
+      - Offers concrete multiple-choice options with an "other" choice for each question
+      - Proposes saving the way of working to operations.processes only after the user confirms
+    must_not:
+      - Start the plan or propose dates before the user answers
+      - Ask more than five questions

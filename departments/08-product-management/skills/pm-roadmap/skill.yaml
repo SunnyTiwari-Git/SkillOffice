@@ -1,5 +1,5 @@
 id: 08-product-management/pm-roadmap
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 08-product-management
 summary: Creates or updates a roadmap with prioritization, dependencies, a capacity check and a summary of what changed and why.
@@ -26,6 +26,7 @@ risk: low
 side_effects:
   - none
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

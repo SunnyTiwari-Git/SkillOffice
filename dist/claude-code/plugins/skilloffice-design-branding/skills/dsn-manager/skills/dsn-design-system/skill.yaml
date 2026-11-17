@@ -1,5 +1,5 @@
 id: 09-design-branding/dsn-design-system
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 09-design-branding
 summary: Creates, audits, documents or extends a design system - tokens as CSS variables, components with all states, usage rules.
@@ -24,10 +24,12 @@ context_needs:
   - brand.typography
   - technical.stack
   - technical.standards
+  - brand.look_and_feel
 risk: low
 side_effects:
   - reads_files
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

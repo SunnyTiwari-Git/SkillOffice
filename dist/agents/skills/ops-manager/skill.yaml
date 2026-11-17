@@ -1,5 +1,5 @@
 id: "13-devops-sre/ops-manager"
-version: 0.1.0
+version: 0.1.1
 kind: manager
 department: "13-devops-sre"
 summary: "Coordinates the Cloud Infrastructure, DevOps and SRE department: plans skills, runs them in order, merges findings, one correction cycle, one report."

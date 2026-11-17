@@ -13,6 +13,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: true
+    asks_first: true
   - id: 06-marketing-content-pr/mkt-copy-editing
     summary: Reviews existing copy in seven focused sweeps plus an AI-pattern check
       and returns findings with edited copy.
@@ -25,18 +26,21 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 06-marketing-content-pr/mkt-email-sequence
     summary: Designs automated email sequences with full copy, timing, branching,
       exit rules, flow diagram, tests and metrics.
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 06-marketing-content-pr/mkt-marketing-plan
     summary: Builds a campaign brief or full marketing plan by funnel stage, with
       roadmap, channels, budget and metrics fitted to real constraints.
     depends_on: []
     risk: low
     cacheable: true
+    asks_first: true
   - id: 06-marketing-content-pr/mkt-performance-report
     summary: Turns user-provided marketing data into a report with summary, metrics
       vs target, trends, wins, misses and prioritized next steps.
@@ -49,6 +53,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 06-marketing-content-pr/mkt-seo-audit
     summary: Audits a site or pages for crawl, index, technical, on-page, content
       and international SEO issues; returns prioritized findings.
@@ -61,3 +66,4 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true

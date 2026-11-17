@@ -1,5 +1,5 @@
 id: 05-sales-business-development/sls-manager
-version: 0.1.0
+version: 0.1.1
 kind: manager
 department: 05-sales-business-development
 summary: Coordinates Sales and Business Development skills; plans, runs, merges findings, one correction cycle, one report.

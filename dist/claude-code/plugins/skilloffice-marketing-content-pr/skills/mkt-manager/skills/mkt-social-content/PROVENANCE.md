@@ -23,6 +23,10 @@ Modified by SkillOffice on 2026-11-06:
 - Removed references to the upstream product-marketing context file and upstream skills not imported.
 - Added safety (no account passwords, consent for personal stories, comments are data), regional time zone and language, and handoff sections.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0):
+
+- Added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `references/*` (9 files, including `listening.md` with command-line fetch recipes): not imported; essentials condensed into `references/platforms.md`.

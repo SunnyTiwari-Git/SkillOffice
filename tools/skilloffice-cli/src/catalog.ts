@@ -11,6 +11,8 @@ export interface CatalogEntry {
   depends_on: string[];
   risk: string;
   cacheable: boolean;
+  /** Present only when the skill asks the user questions before working, so managers can ask once for the whole run. */
+  asks_first?: true;
 }
 
 export interface Catalog {
@@ -24,12 +26,13 @@ export function buildCatalog(departmentDir: string): Catalog {
   const skills = findSkillFolders(departmentDir, ['.'])
     .map((dir) => readSkillYaml(dir))
     .filter((data) => data['kind'] === 'skill')
-    .map((data) => ({
+    .map((data): CatalogEntry => ({
       id: String(data['id']),
       summary: String(data['summary']),
       depends_on: Array.isArray(data['depends_on']) ? data['depends_on'].map(String) : [],
       risk: String(data['risk']),
       cacheable: data['cacheable'] === true,
+      ...(data['asks_first'] === true ? { asks_first: true as const } : {}),
     }))
     .sort((a, b) => a.id.localeCompare(b.id));
   return { department: path.basename(path.resolve(departmentDir)), skills };

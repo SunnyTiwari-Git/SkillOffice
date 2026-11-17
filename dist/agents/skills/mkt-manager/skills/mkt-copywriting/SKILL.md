@@ -4,7 +4,7 @@ description: Writes or rewrites marketing copy for web pages (homepage, landing,
 license: Apache-2.0. Includes MIT-licensed material, see PROVENANCE.md
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "06-marketing-content-pr"
 ---
 
@@ -20,9 +20,21 @@ Write marketing copy that is clear, specific and drives one action. Clarity beat
 
 Context used from the active profile: `company.name`, `company.description`, `company.products_and_services`, `company.differentiators`, `brand.voice`, `brand.tone_dos`, `brand.tone_donts`, `marketing.ideal_customers`, `regional.output_language`, `regional.currency`.
 
+## Ask first
+
+Ask these in one round before writing, skipping any that the request or the listed context fields already answer. Skip this section for a point edit (situation C below).
+
+1. **The one action.** (a) Book a call or consultation; (b) start a trial or sign up; (c) buy, or request pricing; (d) other.
+2. **Who reads it** (skip if `marketing.ideal_customers` covers it). (a) Cold visitors from ads or search who do not know the company; (b) warm visitors who know the problem and are comparing options; (c) existing customers or returning visitors; (d) other.
+3. **Tone** (skip if `brand.voice` is set). Instead of "professional" or "catchy": (a) plain and direct, short sentences, no jargon; (b) warm and conversational, like talking to a neighbor; (c) expert and precise, using the terms the audience uses; (d) other.
+4. **Length.** (a) Headline, subhead and CTA options only; (b) a short page: hero and three sections; (c) a full page: hero, proof, benefits, how it works, FAQ and final CTA; (d) other.
+5. **Proof available.** (a) Numbers or results you can share; (b) testimonials or reviews you have permission to use; (c) none yet, so lines that need proof are marked `[NEED: ...]`; (d) other. Never fabricate statistics or testimonials.
+
+If `brand.voice` or `marketing.ideal_customers` was empty, propose saving the tone or audience answer there, and save only after the person confirms. All other answers apply to this request only.
+
 ## Steps
 
-1. **Diagnose first.** State in one line which situation applies, with evidence:
+1. **Ask, then diagnose.** Run the Ask first questions (not needed for a point edit). Then state in one line which situation applies, with evidence:
    - **A. Blank or generic**: build the argument from the brief and context. Freedom on angle, none on facts.
    - **B. Real voice present**: keep the author's argument, vocabulary and emphasis; fix the buried point, vague lines and structure.
    - **C. Point edit**: change only what was asked, plus the minimum around it. Return the rest untouched.

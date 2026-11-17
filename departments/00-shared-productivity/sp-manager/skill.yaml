@@ -1,5 +1,5 @@
 id: 00-shared-productivity/sp-manager
-version: 0.1.0
+version: 0.1.1
 kind: manager
 department: 00-shared-productivity
 summary: "Coordinates everyday productivity skills; plans, runs, merges findings, one correction cycle, one report. Drafts only."

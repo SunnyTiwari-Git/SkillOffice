@@ -4,7 +4,7 @@ description: Designs KPI dashboards that drive decisions, choosing a few meaning
 license: "Apache-2.0. Includes MIT-licensed material, see PROVENANCE.md"
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "15-data-analytics-ai"
 ---
 
@@ -19,11 +19,23 @@ A dashboard is a decision tool, not a data dump. Five to seven KPIs, each with a
 - Metric definitions and data (query results, exports or files). If the user only wants a design, data can come later.
 - Optional: existing dashboard to improve, brand colors, the tool it will live in (BI tool, spreadsheet, HTML file).
 
-Context used from the active profile: `company.business_model`, `company.products_and_services`, `brand.colors`, `brand.typography`, `regional.currency`, `regional.date_format`, `regional.time_zone`.
+Context used from the active profile: `company.business_model`, `company.products_and_services`, `brand.colors`, `brand.typography`, `regional.currency`, `regional.date_format`, `regional.time_zone`, `operations.tools`.
+
+## Ask first
+
+Before designing, ask these in one round, skipping any that the request or the listed context fields already answer:
+
+1. **Who uses it, and how often?** (a) Executives, monthly or quarterly: a few strategic KPIs against targets; (b) managers, weekly: trends and breakdowns to steer the team; (c) a team, daily or live: operational numbers with alerts; (d) a one-off snapshot to share; or other.
+2. **What decision should it help them make?** (a) Where to invest or cut; (b) whether targets are on track and where to step in; (c) what needs fixing today; or other.
+3. **Where will it live?** (a) A spec for your BI tool; (b) a spreadsheet; (c) a single self-contained HTML file; (d) a design only, no build; or other. (Skip if `operations.tools` names the dashboard tool.)
+4. **What data is there?** (a) Real data now, so the build uses it; (b) design now, data later; (c) a template with values labeled "example data"; or other.
+5. **What should each number be compared against?** (a) A target; (b) the previous period; (c) both; or other.
+
+If the person says "just go ahead", use executives monthly, compare against target and previous period, and design only, and list these defaults at the top. Propose saving the dashboard tool to `operations.tools` if it is not set, and save only after the person confirms. All other answers apply to this request only.
 
 ## Steps
 
-1. **Start from decisions.** For each decision, name the metric that informs it. Drop vanity metrics that no one acts on.
+1. **Ask first, then start from decisions.** Run the [Ask first](#ask-first) questions. Then, for each decision, name the metric that informs it. Drop vanity metrics that no one acts on.
 2. **Define each KPI** in a metric table: name, plain definition, exact formula, source, grain, update frequency, comparison (previous period or target), owner, and threshold for attention. Specific, measurable, relevant and time-bound. Example KPI sets by function: [references/kpi-library.md](references/kpi-library.md).
 3. **Pick the level**: strategic (monthly or quarterly, executives), tactical (weekly, managers) or operational (daily or real time, teams). Do not mix levels on one screen.
 4. **Lay it out**: headline KPI cards at the top (value, change, status against target), one to three charts for trends and breakdowns in the middle, an optional detail table at the bottom, filters in the header. Chart choice follows `data-visualization` rules.

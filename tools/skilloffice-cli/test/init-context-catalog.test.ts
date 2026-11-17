@@ -58,4 +58,16 @@ describe('catalog', () => {
     ]);
     assert.equal(parse(JSON.stringify(catalog)).department, '06-marketing-content-pr');
   });
+
+  it('marks skills that ask first, and leaves the flag out for the rest', () => {
+    const root = tempDir();
+    const department = path.join(root, '06-marketing-content-pr');
+    writeValidSkill(root, '06-marketing-content-pr/skills/seo-audit');
+    writeValidSkill(root, '06-marketing-content-pr/skills/ad-copy');
+    writeFile(department, 'skills/ad-copy/skill.yaml', `${VALID_SKILL_YAML.replace('/seo-audit', '/ad-copy')}asks_first: true\n`);
+
+    const [adCopy, seoAudit] = buildCatalog(department).skills;
+    assert.equal(adCopy?.asks_first, true);
+    assert.equal(seoAudit !== undefined && 'asks_first' in seoAudit, false);
+  });
 });

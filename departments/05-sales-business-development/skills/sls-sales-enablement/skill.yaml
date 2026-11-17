@@ -1,5 +1,5 @@
 id: 05-sales-business-development/sls-sales-enablement
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 05-sales-business-development
 summary: Drafts sales collateral such as decks, one-pagers, objection docs, scripts, proposals and persona cards with defensible claims.
@@ -28,6 +28,7 @@ risk: low
 side_effects:
   - none
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

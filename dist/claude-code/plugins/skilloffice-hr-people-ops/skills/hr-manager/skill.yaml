@@ -1,5 +1,5 @@
 id: "02-hr-people-ops/hr-manager"
-version: 0.1.0
+version: 0.1.1
 kind: manager
 department: "02-hr-people-ops"
 summary: "Coordinates HR and People Operations: plans skills, runs them in order, merges findings, one correction cycle, one report; people decide."

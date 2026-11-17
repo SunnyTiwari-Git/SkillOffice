@@ -23,6 +23,8 @@ Modified by SkillOffice on 2026-11-06:
 - Removed the slash-command usage block, the connectors note and link, and the "if connectors available" section (knowledge base, Figma).
 - Added quality checklist, safety and handoff sections.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `design/.mcp.json`: connector configuration, never imported.

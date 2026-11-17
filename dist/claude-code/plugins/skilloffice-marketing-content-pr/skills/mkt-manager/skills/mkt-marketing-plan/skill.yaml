@@ -1,5 +1,5 @@
 id: 06-marketing-content-pr/mkt-marketing-plan
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 06-marketing-content-pr
 summary: Builds a campaign brief or full marketing plan by funnel stage, with roadmap, channels, budget and metrics fitted to real constraints.
@@ -35,6 +35,7 @@ risk: low
 side_effects:
   - none
 cacheable: true
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

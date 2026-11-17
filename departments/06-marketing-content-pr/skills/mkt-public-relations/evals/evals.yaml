@@ -31,3 +31,13 @@ cases:
       - Recommends setting up a press page
     must_not:
       - Promise coverage
+  - name: asks-first
+    prompt: "We want some press coverage."
+    context:
+      company.name: "RouteWise"
+    expected_behaviors:
+      - Asks the Ask first questions (task, news hook, outlets, spokesperson, timing) in one round before drafting
+      - Offers concrete multiple-choice options with an "other" option for each question
+    must_not:
+      - Start drafting a pitch or release before the answers arrive
+      - Ask more than five questions

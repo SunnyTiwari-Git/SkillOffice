@@ -1,5 +1,5 @@
 id: 12-it-operations/it-manager
-version: 0.1.0
+version: 0.1.1
 kind: manager
 department: 12-it-operations
 summary: Coordinates internal IT skills; plans, runs, merges findings, one correction cycle, one report. Least privilege and verified identity.

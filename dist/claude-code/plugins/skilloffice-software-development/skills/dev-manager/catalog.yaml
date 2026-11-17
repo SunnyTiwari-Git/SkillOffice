@@ -34,6 +34,7 @@ skills:
     depends_on: []
     risk: medium
     cacheable: true
+    asks_first: true
   - id: 10-software-development/dev-systematic-debugging
     summary: Finds the root cause of bugs and failures through evidence before any
       fix, then fixes it with a regression test.

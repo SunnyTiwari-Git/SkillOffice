@@ -4,7 +4,7 @@ description: A sharp product thinking partner for exploring a problem space, gen
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "08-product-management"
 ---
 
@@ -19,9 +19,44 @@ Think alongside the user like an experienced product lead: challenge assumptions
 
 Context used from the active profile: `company.description`, `company.products_and_services`, `company.target_audience`, `company.markets`, `company.differentiators`, `marketing.competitors`.
 
+## Ask first
+
+These questions are the framing step. Ask them in one round before generating any ideas, skipping any the request or the listed context fields already answer.
+
+1. **What are we exploring?** (this sets the mode)
+   - A user problem: who struggles, with what.
+   - A solution idea to stress-test.
+   - A new opportunity or market (skip if the request and `company.markets` make it clear).
+   - A strategic direction or bet.
+   - Other.
+2. **Why now?**
+   - Customer feedback, complaints or churn.
+   - A competitor move.
+   - A new goal or strategy.
+   - New technology makes something possible.
+   - Other.
+3. **What do we already know?**
+   - Research or data I can share.
+   - Anecdotes and hunches only.
+   - Nothing yet.
+   - Other.
+4. **How big can the ideas be?**
+   - Small bets within the current product and team.
+   - Open to a new product, segment or business model.
+   - Within a hard limit (budget, deadline or regulation; say which).
+   - Other.
+5. **What should you leave with?**
+   - A wide list of options to react to.
+   - A shortlist of 2 or 3 ideas with the cheapest test for each.
+   - The riskiest assumption in one idea and how to test it.
+   - A direction ready to take into a spec.
+   - Other.
+
+Answers apply to this session only; nothing is saved to the context profile.
+
 ## Steps
 
-1. **Frame first.** Confirm what is being explored, why now, what is already known, the constraints, and what a good outcome of the session looks like. Do not generate ideas until the frame is clear.
+1. **Frame first with the Ask first questions:** what is being explored, why now, what is already known, the constraints, and what a good outcome of the session looks like. Do not generate ideas until the frame is clear.
 2. **Pick the mode** that fits, and switch when the conversation moves:
    - Problem exploration: who has the problem, what they do today, symptoms versus root causes, how it varies by segment.
    - Solution ideation: at least 5 to 7 distinct options varied by scope, approach (product, process or policy) and timing, including one "do the opposite" option and one that removes something.

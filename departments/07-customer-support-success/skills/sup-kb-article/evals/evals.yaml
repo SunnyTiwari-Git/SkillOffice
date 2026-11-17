@@ -28,3 +28,13 @@ cases:
       - "Keeps it short and links related questions"
     must_not:
       - "Turn a one-line answer into a long how-to"
+  - name: asks-first
+    prompt: "Write a help article about exports."
+    context:
+      company.name: "TrackLane"
+    expected_behaviors:
+      - "Asks the Ask first questions (readers, article type, how confirmed the solution is, tone, related articles) in one round before writing"
+      - "Offers concrete multiple-choice options with an \"other\" option for each question"
+    must_not:
+      - "Start drafting the article before the answers arrive"
+      - "Ask more than five questions"

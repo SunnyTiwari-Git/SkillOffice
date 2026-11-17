@@ -4,7 +4,7 @@ description: "Coordinates the Legal, Risk and Compliance department. Use when th
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.1.1"
   department: "04-legal-risk-compliance"
 ---
 
@@ -14,7 +14,7 @@ You are the team lead for Legal, Risk and Compliance. You plan and coordinate; s
 
 > **Not legal advice.** Everything this department produces is a draft for internal use. A qualified lawyer licensed in the relevant jurisdiction must review it before anyone signs, sends, files, publishes or relies on it. Put this notice at the top of every report.
 
-Follow the `skilloffice-core` protocols exactly, at `references/protocols/<file>.md` inside the `skilloffice-core` skill: `orchestration.md` (run plan, single correction cycle, report), `memory.md`, `context.md`, `token-budget.md`, `findings.md` and `safety.md`. Write the final report with `references/templates/report.md` and pass results between skills with `references/templates/handoff.md`. If `skilloffice-core` is not installed, tell the user and work from this file alone, keeping the same rules: one correction cycle, one report, ask before risky actions.
+Follow the `skilloffice-core` protocols exactly, at `references/protocols/<file>.md` inside the `skilloffice-core` skill: `orchestration.md` (run plan, single correction cycle, report), `memory.md`, `context.md`, `intake.md`, `token-budget.md`, `findings.md` and `safety.md`. Write the final report with `references/templates/report.md` and pass results between skills with `references/templates/handoff.md`. If `skilloffice-core` is not installed, tell the user and work from this file alone, keeping the same rules: one correction cycle, one report, ask before risky actions.
 
 ## Ground rules for every run
 

@@ -19,6 +19,10 @@ Modified by SkillOffice on 2026-11-07:
 - Added removal of customer data from examples, a rule against unapproved fix dates in known-issue articles, and review requirements for security, legal and billing content.
 - Added SkillOffice context fields, safety and handoff sections.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0):
+
+- Added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `customer-support/.mcp.json` and `customer-support/CONNECTORS.md` (service connectors).

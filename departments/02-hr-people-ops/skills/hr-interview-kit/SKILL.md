@@ -4,7 +4,7 @@ description: "Creates a structured interview kit for a role: competencies tied t
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "02-hr-people-ops"
 ---
 
@@ -19,12 +19,23 @@ Load only the context this skill declares: `company.name`, `operations.policies`
 ## Inputs
 
 - The role and its rubric from `hr-job-description` (or the job ad).
-- The interview process: stages, who interviews, panel or one-to-one, any work sample or take-home exercise. Ask if not given; suggest a simple default (screen, one or two focused interviews, debrief).
+- The interview process: stages, who interviews, panel or one-to-one, any work sample or take-home exercise. Asked in the Ask first round if not given.
 - Optional: an existing question list to review.
+
+## Ask first
+
+When building a kit, ask these in one round before writing questions, skipping any that the request, the rubric or the listed context fields already answer. Reviewing an existing question list does not ask; it reports findings. Ask only about the role and the process, never about protected characteristics of candidates.
+
+1. **What are the stages?** (skip if `operations.processes` describes the hiring process) a) the simple default: a short screen, one focused interview and a debrief; b) a screen, two interviews and a debrief; c) a screen, interviews and a work sample or take-home exercise; d) other.
+2. **Who interviews?** a) one interviewer per stage; b) a panel of two or three per stage; c) other.
+3. **What level is the role?** a) entry level, so questions lean on situations and potential; b) experienced, so questions lean on past work; c) leadership, so questions cover leading people and making decisions; d) other.
+4. **How full a kit?** a) short: core questions and a scoring sheet per interview; b) full: probes, scoring anchors, panel plan and debrief template; c) other.
+
+If no hiring process is on file, propose saving the chosen stages under `operations.processes`, and save only after the person confirms. The other answers apply to this request only.
 
 ## Steps
 
-1. **Choose four to six competencies** that come straight from the rubric. Each competency belongs to one stage, so two interviewers do not ask the same thing.
+1. **Run the [Ask first](#ask-first) questions, then choose four to six competencies** that come straight from the rubric. Each competency belongs to one stage, so two interviewers do not ask the same thing.
 2. **Write questions** per competency: two or three behavioral ("Tell me about a time..."), one or two situational ("How would you handle..."), and follow-up probes. Use [references/lawful-questions.md](references/lawful-questions.md) to keep every question job-related.
 3. **Write the scoring rubric:** a 1 to 4 scale per competency with a short anchor describing what each level looks like for this role.
 4. **Plan the panel:** who covers which competency, timing per stage, and a work-sample debrief section if there is one. Offer reasonable adjustments to candidates who need them.

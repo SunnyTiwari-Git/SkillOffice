@@ -61,3 +61,4 @@ skills:
     depends_on: []
     risk: medium
     cacheable: false
+    asks_first: true

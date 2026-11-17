@@ -4,7 +4,7 @@ description: Builds a project plan with scope and out-of-scope, a work breakdown
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "16-operations-project-management"
 ---
 
@@ -17,14 +17,26 @@ Turn a goal into a plan the team can run: what is in scope, what gets done, in w
 ## Inputs
 
 - The project goal and the problem it solves.
-- What the user knows about scope, deadline, budget, team and constraints. Ask for what is missing; do not invent team members, rates or deadlines.
+- What the user knows about scope, deadline, budget, team and constraints. Ask for what is missing through the Ask first questions below; do not invent team members, rates or deadlines.
 - Methodology preference (waterfall, agile, hybrid). If none is given, pick the lighter fit and say why.
 
-Context used from the active profile: `company.name`, `operations.team_structure`, `operations.tools`, `regional.date_format`, `regional.time_zone`, `regional.currency`.
+Context used from the active profile: `company.name`, `operations.team_structure`, `operations.tools`, `operations.processes`, `regional.date_format`, `regional.time_zone`, `regional.currency`.
+
+## Ask first
+
+Before planning, ask these in one round, skipping any that the request or the listed context fields already answer:
+
+1. **How does the team work?** (a) Fixed phases with dates for each (waterfall); (b) short sprints with an ordered backlog (agile); (c) phases with sprints inside them (hybrid); (d) you pick the lighter fit; or other. (Skip if `operations.processes` describes it.)
+2. **What is fixed?** (a) A hard deadline, so scope flexes; (b) a fixed budget; (c) a fixed scope, so dates flex; (d) nothing yet; or other.
+3. **Who is on the team?** (a) A small dedicated team; (b) people shared with other work part of the week; (c) includes vendors or other departments; or other, with roles and how much time each has. (Skip if `operations.team_structure` gives it.)
+4. **Who is the plan for?** (a) A sponsor or client: one-page summary with milestones; (b) the team: task-level working plan; (c) both; or other.
+5. **How often should progress be reported?** (a) Weekly status; (b) at every sprint review; (c) a monthly steering meeting; or other. (Skip if `operations.processes` sets it.)
+
+If the person says "just go ahead", use the lighter methodology, dates that flex, both views and weekly status, and list these defaults at the top. Propose saving the way the team works and its reporting rhythm to `operations.processes`, and roles to `operations.team_structure`, if they are not set, and save only after the person confirms. All other answers apply to this request only.
 
 ## Steps
 
-1. **Objective and success.** One sentence for the goal. Two to four measurable success criteria, each with a target and how it will be checked.
+1. **Objective and success.** Run the [Ask first](#ask-first) questions first. Then write one sentence for the goal. Two to four measurable success criteria, each with a target and how it will be checked.
 2. **Scope.** In scope, out of scope and open questions. Out of scope is as important as in scope.
 3. **Work breakdown.** Break the work into deliverables, then into tasks small enough to estimate (one to five days of effort for waterfall; stories or tasks sized for one sprint for agile). Keep each item a noun phrase with a clear done condition.
 4. **Estimates.** Use ranges (best, likely, worst) when uncertainty is high. Name who gave each estimate, or mark it as an assumption.

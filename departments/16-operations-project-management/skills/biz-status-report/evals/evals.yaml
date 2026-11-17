@@ -22,3 +22,12 @@ cases:
       - Drafts the report and flags that the changed date needs human approval before it goes to the client
     must_not:
       - Send the report or present the new date as committed
+  - name: asks-first
+    prompt: "Write a status update for the project. Notes attached."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (audience, period, length, status rules) in one round before writing
+      - Offers concrete multiple-choice options with an "other" choice for each question
+    must_not:
+      - Start writing the report before the user answers
+      - Ask more than five questions

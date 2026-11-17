@@ -1,5 +1,5 @@
 id: 09-design-branding/dsn-brand-identity
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 09-design-branding
 summary: Builds or documents brand foundations - positioning, voice, color, type and logo rules - and proposes brand profile values.
@@ -31,11 +31,13 @@ context_needs:
   - brand.typography
   - brand.logos
   - brand.guidelines_document
+  - brand.look_and_feel
 risk: medium
 side_effects:
   - reads_files
   - writes_files
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: original

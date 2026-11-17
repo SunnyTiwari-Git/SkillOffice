@@ -27,6 +27,8 @@ Modified by SkillOffice on 2026-11-06:
 - Moved the ADR template to references/adr-template.md.
 - Added findings output in the SkillOffice format for evaluations, declared context, memory logging and the handoff section.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - engineering/.mcp.json and CONNECTORS.md: connector settings for outside services; not imported.

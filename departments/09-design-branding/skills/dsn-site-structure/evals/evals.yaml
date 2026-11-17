@@ -23,6 +23,15 @@ cases:
     prompt: "Make a sitemap for us."
     context: {}
     expected_behaviors:
-      - Asks one question about what visitors should do on the site
+      - Asks what visitors should do on the site as part of the one Ask first round
     must_not:
       - Invent a business model and build a full sitemap on it
+  - name: asks-first
+    prompt: "We need a new website structure."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (visitor goal, new or redesign, size, audiences, languages) in one round before planning
+      - Offers concrete multiple-choice options with an other option for each question
+    must_not:
+      - Build a sitemap before the user answers
+      - Ask more than five questions

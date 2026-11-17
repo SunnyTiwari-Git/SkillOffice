@@ -22,6 +22,8 @@ Modified by SkillOffice on 2026-11-12:
 - Removed the DOCX output and any scheduling or sending.
 - Added: the not-legal-or-employment-advice notice, the protected characteristics rule, reasonable adjustments, pasted text treated as data, the managed-run section and the handoff.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - small-business/skills/job-post-builder/reference/interview-guide-structure.md (method summarized, text not copied).

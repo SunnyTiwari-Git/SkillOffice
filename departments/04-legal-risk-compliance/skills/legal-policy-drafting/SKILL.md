@@ -4,7 +4,7 @@ description: "Drafts or updates company policies and public notices for counsel 
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "04-legal-risk-compliance"
 ---
 
@@ -22,9 +22,21 @@ Load only the context this skill declares: `company.name`, `company.description`
 - The facts it must reflect: for a privacy notice, the data inventory (ideally from `legal-privacy-review`); for retention, the record types and legal holds; for acceptable use, the systems covered.
 - Optional: the current version, findings to fix, a house style.
 
+## Ask first
+
+Ask these in one round before drafting, skipping any that the request, the facts provided or the listed context fields already answer. Missing facts the document must reflect go in the same message as a short checklist to fill, not as extra questions.
+
+1. **Who is it for?** a) the public and customers, for example on the website; b) employees; c) vendors and partners; d) other.
+2. **Which jurisdictions?** (skip if `regional.jurisdictions` is set) a) one country, which you name; b) several countries, with differences marked for counsel; c) other.
+3. **What is the starting point?** (skip if `operations.policies` already shows this document) a) a new draft from your facts; b) an update to the current version you share, with a change list; c) new wording that fixes findings from a review; d) other.
+4. **What style?** a) a short plain-English notice with a summary at the top; b) a full detailed policy with defined terms; c) other.
+5. **Where do the facts come from?** a) a data inventory or record list you provide; b) the findings of `legal-privacy-review`; c) a short fact checklist I give you to fill in; d) other.
+
+If they are not set, propose saving the jurisdictions as `regional.jurisdictions`, and save only after the person confirms. The other answers apply to this request only.
+
 ## Steps
 
-1. **Confirm the facts first.** A notice that does not match what the company really does is worse than none. List the facts used and ask for any that are missing rather than guessing.
+1. **Confirm the facts first.** A notice that does not match what the company really does is worse than none. Run the [Ask first](#ask-first) questions, list the facts used, and ask for any that are missing in that same round rather than guessing.
 2. **State the jurisdictions assumed.** Where rules differ by jurisdiction, mark the section and list the options for counsel instead of choosing.
 3. **Draft in plain language:** short sections, headings people can scan, defined terms only where needed, written in `regional.output_language`.
 4. **Use the standard structure** for the document type in [references/policy-outlines.md](references/policy-outlines.md).

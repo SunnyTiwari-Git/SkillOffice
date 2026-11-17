@@ -4,7 +4,7 @@ description: Plans and drafts public relations and earned media work, including 
 license: Apache-2.0. Includes MIT-licensed material, see PROVENANCE.md
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "06-marketing-content-pr"
 ---
 
@@ -22,9 +22,21 @@ Not legal advice: anything involving a data incident, injury, lawsuit, regulator
 
 Context used from the active profile: `company.name`, `company.description`, `company.website`, `company.markets`, `company.differentiators`, `brand.voice`, `marketing.ideal_customers`, `regional.output_language`, `regional.date_format`, `regional.jurisdictions`.
 
+## Ask first
+
+Ask these in one round before drafting, skipping any that the request or the listed context fields already answer. For a crisis, ask only what happened, what is confirmed and who will speak; do not delay a holding statement for the other questions.
+
+1. **The task.** (a) A pitch to journalists; (b) a press release; (c) a reporter request response or podcast prep; (d) a crisis holding statement; or other.
+2. **The news hook.** (a) Data or research the company owns; (b) a milestone with a story, such as a launch, expansion or funding; (c) a strong point of view on a trend; (d) not sure, so I first check whether PR fits.
+3. **Target outlets.** (a) Trade press for your industry; (b) local or regional news in your markets (`company.markets`); (c) national business press; (d) podcasts and newsletters; or other.
+4. **Spokesperson.** (a) Founder or chief executive; (b) a subject expert on the team; (c) no one named yet, so quotes stay as placeholders for approval; (d) other.
+5. **Timing.** (a) Send now to several outlets; (b) an exclusive to one outlet first; (c) an embargo until a set date; (d) other.
+
+Answers apply to this request only. Never invent facts, quotes, journalist names or contacts to fill a gap.
+
 ## Steps
 
-1. **Decide whether PR fits.** PR works when there is a real story (data, strong opinion, milestone with a narrative, a customer's sharp before and after, a fresh angle on a trend), a spokesperson with time, and a destination page. If not, say so and suggest what would create a story.
+1. **Decide whether PR fits.** Run the Ask first questions. PR works when there is a real story (data, strong opinion, milestone with a narrative, a customer's sharp before and after, a fresh angle on a trend), a spokesperson with time, and a destination page. If not, say so and suggest what would create a story.
 2. **Find the angle.** The story is the trend, the data, the conflict or the human; the product is the evidence. Common angles: founding story, small player against an established way of doing things, a broken system the company fights (never attack a named competitor). See [references/pr-playbook.md](references/pr-playbook.md).
 3. **Choose the mode(s).** Reactive (comment on news fast), proactive (pitch original stories), inbound (answer reporter requests), owned (press page and media kit). Most teams should run at least three.
 4. **Draft.**

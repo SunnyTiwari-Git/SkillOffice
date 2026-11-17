@@ -4,7 +4,7 @@ description: "Drafts a request for information (RFI), request for quotation (RFQ
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "17-procurement-vendor-management"
 ---
 
@@ -30,9 +30,21 @@ Write a request that lets vendors respond well and lets the company compare them
 
 Context used from the active profile: `company.name`, `company.description`, `operations.policies`, `regional.currency`, `regional.date_format`, `regional.jurisdictions`.
 
+## Ask first
+
+Before drafting, ask these in one round, skipping any that the request, the sourcing plan or the listed context fields already answer:
+
+1. **How well do you know what you need?** (a) Still exploring what the market offers: an RFI; (b) fully defined, and price is the main difference: an RFQ; (c) defined outcome, but vendors will propose different approaches: an RFP; (d) not sure, recommend one; or other.
+2. **What can vendors be told?** (a) Public information only; (b) the problem and volumes, but no budget; (c) fuller context, including a budget range, under a confidentiality agreement; or other.
+3. **How should vendors be compared?** (a) Mostly on price; (b) a balance of quality and price; (c) mostly on quality and fit; or other. (Skip if criteria and weights come from `proc-sourcing-plan`.)
+4. **How long do vendors get to respond?** (a) About two weeks, for simple purchases; (b) three to four weeks, the usual case; (c) six weeks or more, for complex services; or other.
+5. **Which mandatory terms apply?** (a) The company's standard terms and security requirements; (b) none set yet, so flag for legal (04) and cybersecurity (14); or other. (Skip if `operations.policies` sets them.)
+
+If the person says "just go ahead", recommend the document type, share the problem and volumes only, balance quality and price, allow three to four weeks and flag terms for legal, and list these defaults at the top. Propose saving the standard terms and security requirements to `operations.policies` if they are not set, and save only after the person confirms. All other answers apply to this request only.
+
 ## Steps
 
-1. Choose RFI, RFQ or RFP using the table above and say why.
+1. Run the [Ask first](#ask-first) questions. Then choose RFI, RFQ or RFP using the table above and say why.
 2. Write the background: who the company is (only what it is happy to share), the problem and the outcome wanted. Do not disclose confidential data, customer data or internal budgets unless the user asks.
 3. Write requirements as numbered, testable statements, marked must-have or nice-to-have. Ask for evidence (certifications, references, sample reports) instead of claims.
 4. Define a pricing format every vendor must use (one-time, recurring, per unit, assumptions, currency, validity period), so totals can be compared over the same period.

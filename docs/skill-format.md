@@ -46,6 +46,7 @@ The body stays under 500 lines (about 5,000 tokens). Move longer material into `
 | `risk` | `low` \| `medium` \| `high` | low: instructions only; medium: local files; high: scripts, network, credentials or external actions |
 | `side_effects` | list | Any of `none`, `reads_files`, `writes_files`, `runs_scripts`, `network`, `external_actions` |
 | `cacheable` | bool | Whether a result can be reused when inputs are unchanged |
+| `asks_first` | bool, optional | The skill asks the user a short round of questions before working. Requires a `## Ask first` section in SKILL.md. See `core/protocols/intake.md` |
 | `platforms_tested` | list | `{platform, date (YYYY-MM-DD), result: pass\|fail\|partial}` |
 | `provenance` | map | `{type: original\|adapted, source_id?, upstream_commit?}` |
 

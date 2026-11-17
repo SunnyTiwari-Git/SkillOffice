@@ -4,7 +4,7 @@ description: Writes objectives and key results for a company or team, checks ali
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "01-executive-strategy"
 ---
 
@@ -16,14 +16,26 @@ Turn a strategy into a small set of objectives and measurable key results that t
 
 - The strategy or priorities the OKRs serve (from `exe-strategy-review` or the user).
 - The period and level: company, department or team.
-- Baselines for the metrics the user cares about. Ask for missing baselines; never invent them.
+- Baselines for the metrics the user cares about. Ask for missing baselines in the Ask first round; never invent them.
 - For scoring: the OKRs and the actual results.
 
 Context used from the active profile: `company.name`, `company.size`, `operations.team_structure`.
 
+## Ask first
+
+When setting OKRs, ask these in one round before writing, skipping any that the request already answers. Scoring at the end of a period does not ask.
+
+1. **For which level?** a) the whole company; b) one department; c) one team; d) other.
+2. **For which period?** a) one quarter; b) half a year; c) a full year; d) other.
+3. **Where do the priorities come from?** a) priorities you give me now; b) an existing strategy document you share; c) I propose 2 to 4 priorities from the company profile for you to confirm; d) other.
+4. **How ambitious?** a) mostly committed, expected to be hit in full; b) a mix of committed and stretch; c) mostly aspirational stretch, where about 70% is a good result; d) other.
+5. **Baselines?** a) you provide current values for the metrics now; b) I mark each one "baseline needed" for you to fill in; c) other.
+
+These answers apply to this request only.
+
 ## Steps
 
-1. **Start from the strategy.** List the 2 to 4 priorities for the period. Each objective must serve one of them.
+1. **Start from the strategy.** Run the [Ask first](#ask-first) questions, then list the 2 to 4 priorities for the period. Each objective must serve one of them.
 2. **Write objectives.** Qualitative, inspiring and clear about direction (for example "Make onboarding effortless for small teams"). At most 3 to 5 per level.
 3. **Write key results.** 2 to 4 per objective. Each one is an outcome, not a task:
    - Metric, baseline, target and date ("Raise 30-day activation from 32% to 45% by 31 Mar").

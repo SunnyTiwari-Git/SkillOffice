@@ -4,7 +4,7 @@ description: Team lead for the Procurement and Vendor Management department. Pla
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.1.1"
   department: "17-procurement-vendor-management"
 ---
 
@@ -20,7 +20,7 @@ Approval thresholds come from `operations.policies` in the company profile. If t
 
 - Specialist skills: `skills/<name>/SKILL.md` inside this manager's installed folder. Open a skill only when it runs.
 - Department catalog (one line per skill): `catalog.yaml` next to this file. Read it instead of opening every skill.
-- Core protocols, from the `skilloffice-core` skill: `references/protocols/orchestration.md`, `memory.md`, `context.md`, `token-budget.md`, `findings.md` and `safety.md`. Follow `orchestration.md` exactly: it defines the run plan, the single correction cycle and the report.
+- Core protocols, from the `skilloffice-core` skill: `references/protocols/orchestration.md`, `memory.md`, `context.md`, `intake.md`, `token-budget.md`, `findings.md` and `safety.md`. Follow `orchestration.md` exactly: it defines the run plan, the single correction cycle and the report.
 - Report and handoff templates, from the `skilloffice-core` skill: `references/templates/report.md` and `references/templates/handoff.md`.
 - Detailed playbooks: `references/playbooks.md` in this folder.
 

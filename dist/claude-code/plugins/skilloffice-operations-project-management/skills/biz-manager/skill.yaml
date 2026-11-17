@@ -1,5 +1,5 @@
 id: 16-operations-project-management/biz-manager
-version: 0.1.0
+version: 0.1.1
 kind: manager
 department: 16-operations-project-management
 summary: Coordinates Operations and Project Management skills; plans, runs, merges findings, one correction cycle, one report.

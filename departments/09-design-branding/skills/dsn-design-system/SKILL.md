@@ -4,7 +4,7 @@ description: Creates, audits, documents or extends a design system - design toke
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "09-design-branding"
 ---
 
@@ -25,11 +25,44 @@ Turn a visual direction into reusable tokens, components and rules, so every scr
 - audit and document: the files to inspect (CSS, component code, token files, screenshots or a written description).
 - extend: the user need the new pattern solves.
 
-Context used from the active profile: `brand.colors`, `brand.typography`, `technical.stack`, `technical.standards`.
+Context used from the active profile: `brand.colors`, `brand.typography`, `brand.look_and_feel`, `technical.stack`, `technical.standards`.
+
+## Ask first
+
+In create and extend modes, ask these in one round before building, skipping any the request, the design plan or the listed context fields already answer. Audit and document modes report on existing files and do not need this round.
+
+1. **Which mode?** (skip if the request makes it clear)
+   - Create a new system.
+   - Audit an existing one for inconsistencies.
+   - Document an existing component.
+   - Extend the system with a new pattern.
+2. **What should the system start from?**
+   - An approved visual direction from `dsn-visual-direction`.
+   - Our current brand colors and fonts only (skip if `brand.colors` and `brand.typography` are set).
+   - Nothing yet: run `dsn-visual-direction` first.
+   - Other.
+3. **How dense should screens feel?** (skip if `brand.look_and_feel` sets density or the design plan does)
+   - Airy and calm, with generous spacing.
+   - Balanced.
+   - Dense and information-rich, for data-heavy screens.
+   - Other.
+4. **How should tokens be delivered?** (skip if `technical.stack` is set)
+   - CSS variables in one global file.
+   - CSS variables plus a Tailwind theme.
+   - A token file for a design tool only.
+   - Other.
+5. **How much should this cover?**
+   - Tokens only, light theme.
+   - Tokens and core components, light theme.
+   - Tokens and core components, light and dark themes.
+   - The full system with patterns and documentation.
+   - Other.
+
+Propose saving density as `brand.look_and_feel` (`density`) and the stack as `technical.stack`, only after the person confirms. Other answers apply to this request only.
 
 ## Steps: create
 
-1. **Tokens first.** Define named tokens, never raw values in components:
+1. **Tokens first,** after the Ask first round. Define named tokens, never raw values in components:
    - Color: brand, neutral scale, semantic (success, warning, error, info), each with text-on-color pairs that meet WCAG 2.2 AA contrast.
    - Typography: families, a type scale, weights, line heights.
    - Spacing: one scale (for example 4, 8, 12, 16, 24, 32, 48, 64).

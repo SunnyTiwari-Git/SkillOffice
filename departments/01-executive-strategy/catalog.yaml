@@ -8,12 +8,14 @@ skills:
       - 01-executive-strategy/exe-kpi-review
     risk: low
     cacheable: false
+    asks_first: true
   - id: 01-executive-strategy/exe-business-case
     summary: Builds or reviews a business case with costs, benefits, payback,
       sensitivity and risks, figures traced or labeled.
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 01-executive-strategy/exe-competitive-strategy
     summary: Maps competitive position and designs company-level moves with likely
       competitor responses and a test.
@@ -44,6 +46,7 @@ skills:
     depends_on: []
     risk: low
     cacheable: false
+    asks_first: true
   - id: 01-executive-strategy/exe-plan-review
     summary: Stress-tests a strategy, plan or OKR set for goals, metrics,
       assumptions, resourcing, risks and dependencies.

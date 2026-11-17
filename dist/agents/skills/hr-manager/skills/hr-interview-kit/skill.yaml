@@ -1,5 +1,5 @@
 id: "02-hr-people-ops/hr-interview-kit"
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: "02-hr-people-ops"
 summary: "Builds a structured interview kit with job-related competencies, lawful questions, scoring anchors, panel plan and debrief; reviews question lists."
@@ -30,6 +30,7 @@ risk: low
 side_effects:
   - reads_files
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

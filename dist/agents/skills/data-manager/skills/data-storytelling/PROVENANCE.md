@@ -23,6 +23,8 @@ Modified by SkillOffice on 2026-11-07:
 - Brand voice, output language, currency and date format come from the SkillOffice context profile.
 - Condensed story frameworks, slide outline, headline formula, uncertainty phrasing and do and avoid table into `references/story-structures.md`.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0): added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - wshobson business-analytics plugin `agents/` folder and plugin manifests: not needed.

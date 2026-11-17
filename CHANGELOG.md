@@ -6,6 +6,7 @@ All notable changes to SkillOffice are documented here. The format follows [Keep
 
 ### Added
 
+- Ask first: a core intake protocol (`core/protocols/intake.md`, decision 0007). Skills marked `asks_first: true` ask one short round of multiple-choice questions before creating anything; managers merge them into a single round per run and save lasting answers to the context profile after confirmation. The validator requires an "Ask first" section for these skills and the catalog shows the flag. `skilloffice-core` 0.2.0; all managers 0.1.1.
 - Design: a look-and-feel intake in `dsn-visual-direction` (0.2.0). Before any new design it asks about style, experience, motion, imagery, density and reference sites, offers 2 or 3 directions, and saves the answers as `brand.look_and_feel` so they are not asked again. The Design manager (0.1.1) stops to run it when the look is unknown.
 
 ### Fixed

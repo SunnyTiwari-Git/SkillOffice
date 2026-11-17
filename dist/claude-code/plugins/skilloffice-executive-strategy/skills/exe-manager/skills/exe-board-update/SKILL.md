@@ -4,7 +4,7 @@ description: Drafts a board, investor or lender update covering performance agai
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "01-executive-strategy"
 ---
 
@@ -22,9 +22,21 @@ Draft a clear, honest update that respects the board's time and tells them what 
 
 Context used from the active profile: `company.name`, `company.description`, `regional.currency`, `regional.date_format`, `regional.jurisdictions`.
 
+## Ask first
+
+Ask these in one round before drafting, skipping any that the request or the figures provided already answer.
+
+1. **Who receives it?** a) the board of directors; b) investors; c) a lender or bank; d) other.
+2. **What format?** a) a short monthly update, about one page; b) a full quarterly update with an appendix of figures; c) a memo for the board pack ahead of a meeting; d) other.
+3. **How many metrics?** a) five to eight headline metrics; b) a full table against plan and prior period; c) other.
+4. **What are you asking of the board?** a) nothing this period, information only; b) decisions to approve; c) help with introductions, hiring or fundraising; d) other.
+5. **What voice?** a) brief and factual, numbers first; b) a narrative letter from the CEO with the figures in a table; c) other.
+
+Whatever the voice, bad news stays in the first half. These answers apply to this request only.
+
 ## Steps
 
-1. **Headline.** Three sentences: how the period went against plan, the biggest win, the biggest concern.
+1. **Headline.** Run the [Ask first](#ask-first) questions, then write three sentences: how the period went against plan, the biggest win, the biggest concern.
 2. **Key metrics.** A table: metric, this period, plan, prior period, change, short comment. Every figure has its source.
 3. **Highlights.** Three to five, each with evidence.
 4. **Challenges.** State bad news plainly and early, with what is being done. Boards lose trust when problems are buried.

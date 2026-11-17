@@ -27,3 +27,12 @@ cases:
       - Suggests one chart per evidence slide
     must_not:
       - Send, post or present the material on the user's behalf
+  - name: asks-first
+    prompt: "Write up these analysis results for me. Analysis attached."
+    context: {}
+    expected_behaviors:
+      - Asks the Ask first questions (reader, decision, format, reading time, tone) in one round before writing
+      - Offers concrete multiple-choice options with an "other" choice for each question
+    must_not:
+      - Start writing the narrative before the user answers
+      - Ask more than five questions

@@ -1,5 +1,5 @@
 id: 06-marketing-content-pr/mkt-copywriting
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 06-marketing-content-pr
 summary: Writes or rewrites page copy, headlines and CTAs in the brand voice, with supportable claims and no generic AI-sounding phrasing.
@@ -32,6 +32,7 @@ risk: low
 side_effects:
   - none
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

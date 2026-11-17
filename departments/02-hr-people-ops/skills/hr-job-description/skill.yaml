@@ -1,5 +1,5 @@
 id: "02-hr-people-ops/hr-job-description"
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: "02-hr-people-ops"
 summary: "Writes an inclusive job ad and a resume screening rubric from a hiring brief; reviews existing ads for biased or unlawful wording."
@@ -35,6 +35,7 @@ risk: low
 side_effects:
   - reads_files
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

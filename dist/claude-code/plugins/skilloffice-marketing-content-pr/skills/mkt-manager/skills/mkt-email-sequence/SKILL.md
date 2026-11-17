@@ -4,7 +4,7 @@ description: Designs and drafts automated multi-email sequences (welcome, onboar
 license: Apache-2.0. Includes MIT-licensed material, see PROVENANCE.md
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "06-marketing-content-pr"
 ---
 
@@ -20,6 +20,18 @@ Design a complete automated email sequence: the strategy, every email's copy, th
 
 Context used from the active profile: `company.name`, `company.products_and_services`, `company.differentiators`, `brand.voice`, `brand.tone_donts`, `marketing.ideal_customers`, `regional.output_language`, `regional.time_zone`, `regional.jurisdictions`.
 
+## Ask first
+
+Ask these in one round before drafting, skipping any that the request or the listed context fields already answer:
+
+1. **Type and goal.** (a) Welcome or onboarding, to get new users to a first success; (b) lead nurture, to turn leads into a call or purchase; (c) re-engagement or win-back, for inactive or lapsed customers; (d) other, such as a launch, event follow-up or upsell.
+2. **Who enters and what they know** (skip if `marketing.ideal_customers` covers it). (a) Brand new, they just signed up and know little; (b) evaluating, they know the problem and are comparing options; (c) existing customers who know the product well; (d) other.
+3. **Length.** (a) Short: 3 emails over about a week; (b) standard: 5 or 6 emails over 2 to 3 weeks; (c) long: 7 to 10 emails over 4 to 6 weeks; (d) other.
+4. **Tone and sender** (skip if `brand.voice` is set). (a) Helpful and brief, product tips from the company; (b) personal and story-led, from a named founder or team member; (c) formal and polished; (d) other.
+5. **What the emails can offer.** (a) A discount or offer (marked for team approval); (b) case studies, testimonials or results you can share; (c) only product content such as guides and how-tos; (d) other. Never fabricate testimonials or results.
+
+If `brand.voice` was empty, propose saving the tone answer there, and save only after the person confirms. All other answers apply to this request only.
+
 ## Principles
 
 - **One email, one job**: one purpose and one primary call to action per email.
@@ -29,7 +41,7 @@ Context used from the active profile: `company.name`, `company.products_and_serv
 
 ## Steps
 
-1. **Strategy.** Define the narrative arc across the sequence, map each email to a journey stage, decide how intensity builds, and define the conversion event that ends the sequence.
+1. **Strategy.** Run the Ask first questions. Then define the narrative arc across the sequence, map each email to a journey stage, decide how intensity builds, and define the conversion event that ends the sequence.
 2. **Choose length and timing.** Start from the templates in [references/sequence-templates.md](references/sequence-templates.md). First email immediately after the trigger; early emails 1-2 days apart; nurture 2-4 days apart. Send in the recipient's local time; for business audiences avoid weekends.
 3. **Draft each email:**
    - 2-3 subject line options (clear over clever, about 40-60 characters, no fake "Re:" or "Fwd:").

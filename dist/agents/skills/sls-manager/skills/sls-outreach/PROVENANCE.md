@@ -20,6 +20,10 @@ Modified by SkillOffice on 2026-11-06:
 - Kept the relevance line, value bridge and one-ask structure, the short subject line rule, follow-up angle rotation, the avoid list and deliverability practices (as advice for the user, in `references/outreach-rules.md`).
 - Added a rule that pricing, discounts, terms and delivery dates are never committed, consent and opt-out checks tied to `regional.jurisdictions`, SkillOffice context fields, safety and handoff sections.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0):
+
+- Added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - All upstream cold-email `references/*.md` files (benchmarks, deliverability, LinkedIn, cadences, plays, reply handling and others). Essential rules are condensed into `references/outreach-rules.md`. No indirect source credits were found in the cold-email SKILL.md.

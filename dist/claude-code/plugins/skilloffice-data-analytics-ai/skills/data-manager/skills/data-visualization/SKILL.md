@@ -4,7 +4,7 @@ description: Chooses the right chart for a question and builds it from data the 
 license: Apache-2.0
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "15-data-analytics-ai"
 ---
 
@@ -18,11 +18,22 @@ One chart, one message. Choose the form that makes the message obvious and canno
 - The audience and destination: report, slide, dashboard, technical team or executives.
 - Optional: requested chart type, brand colors, preferred tool or library.
 
-Context used from the active profile: `brand.colors`, `brand.typography`, `regional.currency`, `regional.date_format`, `regional.units`.
+Context used from the active profile: `brand.colors`, `brand.typography`, `regional.currency`, `regional.date_format`, `regional.units`, `operations.tools`.
+
+## Ask first
+
+Before building, ask these in one round, skipping any that the request or the listed context fields already answer:
+
+1. **Where will the chart appear?** (a) A slide or board deck: one bold message, few labels; (b) a report or document: more detail and footnotes; (c) a dashboard tile: compact, no long title; (d) a working chart for analysts to explore; or other.
+2. **What should the chart show?** (a) A change over time; (b) a comparison or ranking; (c) how values are spread; (d) shares of a whole; or other, or "suggest one from the data".
+3. **What should you get back?** (a) An image file saved in your project; (b) chart code (for example Python or R) you can run; (c) step-by-step instructions for your spreadsheet or BI tool; or other. (Skip if `operations.tools` names the chart tool.)
+4. **Which colors?** (a) Brand colors, checked for contrast; (b) a neutral colorblind-safe palette; (c) match an existing deck or report you share; or other. (Skip if `brand.colors` is set.)
+
+If the person says "just go ahead", use a report chart, a neutral colorblind-safe palette and chart code, and list these defaults at the top. Propose saving the chart tool to `operations.tools` and brand colors to `brand.colors` if they are not set, and save only after the person confirms. All other answers apply to this request only.
 
 ## Steps
 
-1. **State the message** in one sentence. It becomes the chart title ("Revenue grew 23% year over year", not "Revenue by month").
+1. **Run the [Ask first](#ask-first) questions, then state the message** in one sentence. It becomes the chart title ("Revenue grew 23% year over year", not "Revenue by month").
 2. **Pick the chart** using [references/chart-guide.md](references/chart-guide.md): line for trends, bars for comparisons and rankings, histogram or box plot for distributions, stacked bars for composition, scatter for relationships. Avoid 3D, pies with more than five slices and dual axes unless both are clearly labeled.
 3. **Prepare the data**: aggregate first (a chart rarely needs raw rows), sort categories by value unless there is a natural order, use complete periods.
 4. **Design honestly**:

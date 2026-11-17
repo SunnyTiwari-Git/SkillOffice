@@ -20,6 +20,10 @@ Modified by SkillOffice on 2026-11-06:
 - Removed the KWP connector rules block, connector tiers, the scheduled weekly digest, page publishing, live CRM and enrichment pulls, and CRM field backfills.
 - Added a legal-risk flag for comparative claims, a handoff to marketing for public comparison pages, SkillOffice context fields, safety and handoff sections.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0):
+
+- Added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `sales/.mcp.json` and `sales/CONNECTORS.md` (service connectors).

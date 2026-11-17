@@ -23,6 +23,10 @@ Modified by SkillOffice on 2026-11-06:
 - Removed the upstream product-marketing context file, tool integration links (including a partner tool) and references to upstream skills not imported.
 - Added pricing and terms placeholders that require team approval, a customer-permission flag for names, logos and quotes, SkillOffice context fields, safety and handoff sections.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0):
+
+- Added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - All upstream `references/*.md` files (deck frameworks, one-pager templates, objection library, demo scripts, cold call scripts, win-loss analysis). No indirect source credits were found in the upstream SKILL.md.

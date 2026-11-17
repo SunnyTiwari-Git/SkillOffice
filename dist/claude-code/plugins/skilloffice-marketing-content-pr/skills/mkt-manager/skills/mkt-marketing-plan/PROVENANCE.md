@@ -24,6 +24,10 @@ Modified by SkillOffice on 2026-11-06:
 - Condensed the channel, calendar, budget and metrics tables from `campaign-plan` into `references/campaign-reference.md`.
 - Added SkillOffice safety, regional currency and date handling, and handoff sections.
 
+Modified by SkillOffice on 2026-11-17 (version 0.2.0):
+
+- Added an "Ask first" section (original SkillOffice content).
+
 ## Files not imported
 
 - `skills/marketing-plan/references/*` (14 files, including a long worked example and funding-stage tables): too SaaS and venture specific for a universal skill.

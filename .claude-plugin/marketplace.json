@@ -5,140 +5,140 @@
   },
   "metadata": {
     "description": "Department-based AI skills for businesses.",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
       "name": "skilloffice-front-desk",
       "source": "./dist/claude-code/plugins/skilloffice-front-desk",
       "description": "Routes a request to the right SkillOffice department.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-shared-productivity",
       "source": "./dist/claude-code/plugins/skilloffice-shared-productivity",
       "description": "SkillOffice Shared Productivity: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-executive-strategy",
       "source": "./dist/claude-code/plugins/skilloffice-executive-strategy",
       "description": "SkillOffice Executive Management and Strategy: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-hr-people-ops",
       "source": "./dist/claude-code/plugins/skilloffice-hr-people-ops",
       "description": "SkillOffice Human Resources and People Operations: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-finance-accounting",
       "source": "./dist/claude-code/plugins/skilloffice-finance-accounting",
       "description": "SkillOffice Finance and Accounting: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-legal-risk-compliance",
       "source": "./dist/claude-code/plugins/skilloffice-legal-risk-compliance",
       "description": "SkillOffice Legal, Risk and Compliance: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-sales-business-development",
       "source": "./dist/claude-code/plugins/skilloffice-sales-business-development",
       "description": "SkillOffice Sales and Business Development: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-marketing-content-pr",
       "source": "./dist/claude-code/plugins/skilloffice-marketing-content-pr",
       "description": "SkillOffice Marketing, Content and PR: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-customer-support-success",
       "source": "./dist/claude-code/plugins/skilloffice-customer-support-success",
       "description": "SkillOffice Customer Support and Customer Success: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-product-management",
       "source": "./dist/claude-code/plugins/skilloffice-product-management",
       "description": "SkillOffice Product Management and Research: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-design-branding",
       "source": "./dist/claude-code/plugins/skilloffice-design-branding",
       "description": "SkillOffice UI/UX, Graphic Design and Branding: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-software-development",
       "source": "./dist/claude-code/plugins/skilloffice-software-development",
       "description": "SkillOffice Software Development and Engineering: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-quality-assurance",
       "source": "./dist/claude-code/plugins/skilloffice-quality-assurance",
       "description": "SkillOffice Quality Assurance and Testing: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-it-operations",
       "source": "./dist/claude-code/plugins/skilloffice-it-operations",
       "description": "SkillOffice IT Operations and Technical Support: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-devops-sre",
       "source": "./dist/claude-code/plugins/skilloffice-devops-sre",
       "description": "SkillOffice Cloud Infrastructure, DevOps and SRE: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-cybersecurity",
       "source": "./dist/claude-code/plugins/skilloffice-cybersecurity",
       "description": "SkillOffice Cybersecurity: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-data-analytics-ai",
       "source": "./dist/claude-code/plugins/skilloffice-data-analytics-ai",
       "description": "SkillOffice Data, Analytics and AI: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-operations-project-management",
       "source": "./dist/claude-code/plugins/skilloffice-operations-project-management",
       "description": "SkillOffice Business Operations and Project Management: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     },
     {
       "name": "skilloffice-procurement-vendor-management",
       "source": "./dist/claude-code/plugins/skilloffice-procurement-vendor-management",
       "description": "SkillOffice Procurement and Vendor Management: a department manager that plans, runs and reviews specialist skills.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "Apache-2.0"
     }
   ]

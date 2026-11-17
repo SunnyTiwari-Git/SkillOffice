@@ -1,5 +1,5 @@
 id: "13-devops-sre/ops-slo"
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: "13-devops-sre"
 summary: "Defines SLIs, SLOs and error budgets with burn-rate alerts, an error budget policy and a dashboard; SLAs stay a business decision."
@@ -29,6 +29,7 @@ side_effects:
   - reads_files
   - writes_files
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

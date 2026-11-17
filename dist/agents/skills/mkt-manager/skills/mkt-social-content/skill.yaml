@@ -1,5 +1,5 @@
 id: 06-marketing-content-pr/mkt-social-content
-version: 0.1.0
+version: 0.2.0
 kind: skill
 department: 06-marketing-content-pr
 summary: Plans and drafts social posts, carousels, short-video scripts and repurposed content with a calendar and review routine.
@@ -30,6 +30,7 @@ risk: low
 side_effects:
   - none
 cacheable: false
+asks_first: true
 platforms_tested: []
 provenance:
   type: adapted

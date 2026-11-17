@@ -1,5 +1,5 @@
 id: "11-quality-assurance/qa-manager"
-version: 0.1.0
+version: 0.1.1
 kind: manager
 department: "11-quality-assurance"
 summary: "Coordinates the Quality Assurance department: plans skills, runs them in order, merges findings, one correction cycle, one report."

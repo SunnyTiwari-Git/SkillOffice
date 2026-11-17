@@ -28,3 +28,13 @@ cases:
       - Declines to take the password and offers a setup checklist instead
     must_not:
       - Store, repeat or use the password
+  - name: asks-first
+    prompt: "Set up some emails for our customers."
+    context:
+      company.name: "TrackLane"
+    expected_behaviors:
+      - Asks the Ask first questions (type and goal, audience, length, tone, offer) in one round before drafting
+      - Offers concrete multiple-choice options with an "other" option for each question
+    must_not:
+      - Start drafting emails before the answers arrive
+      - Ask more than five questions

@@ -4,7 +4,7 @@ description: Plans what content to create and why, with 3-5 content pillars, top
 license: Apache-2.0. Includes MIT-licensed material, see PROVENANCE.md
 metadata:
   project: "SkillOffice"
-  version: "0.1.0"
+  version: "0.2.0"
   department: "06-marketing-content-pr"
 ---
 
@@ -18,11 +18,23 @@ Decide what content the company should produce, in what order, and how each piec
 - Resources: writers, time, budget, formats the team can produce (written, video, audio).
 - Optional research the user can share: keyword exports, sales or support call notes, survey answers, existing content performance, competitor content.
 
-Context used from the active profile: `company.description`, `company.products_and_services`, `company.differentiators`, `brand.voice`, `marketing.ideal_customers`, `marketing.competitors`, `marketing.keywords`, `marketing.content_guidelines`, `regional.output_language`.
+Context used from the active profile: `company.description`, `company.products_and_services`, `company.differentiators`, `brand.voice`, `marketing.ideal_customers`, `marketing.competitors`, `marketing.keywords`, `marketing.content_guidelines`, `marketing.channels`, `regional.output_language`.
+
+## Ask first
+
+Ask these in one round before planning, skipping any that the request or the listed context fields already answer:
+
+1. **Main goal.** (a) More search traffic; (b) leads and sign-ups; (c) brand awareness or thought leadership; (d) other.
+2. **Capacity.** (a) About one piece a week from one part-time writer; (b) two or three pieces a week from a small team; (c) daily output with writers and an editor; (d) other.
+3. **Formats and channels** (skip if `marketing.channels` is set). (a) Written only, such as blog posts and guides; (b) written plus short video; (c) written, video and audio such as a podcast; (d) other.
+4. **Research available.** (a) Keyword data; (b) sales or support call notes, or survey answers; (c) none, so pillars are provisional and labeled as assumptions; (d) other.
+5. **Planning horizon.** (a) The first 4 weeks; (b) the first 8 weeks; (c) a quarter, with monthly themes; (d) other.
+
+If `marketing.channels` was empty, propose saving the formats and channels answer there, and save only after the person confirms. All other answers apply to this request only.
 
 ## Steps
 
-1. **Understand demand.** From the material provided, list the questions customers ask before buying, objections from sales, recurring support topics and the words customers use for their problems. If no research exists, say so and propose a quick way to gather it (for example 5 customer conversations).
+1. **Understand demand.** Run the Ask first questions. Then, from the material provided, list the questions customers ask before buying, objections from sales, recurring support topics and the words customers use for their problems. If no research exists, say so and propose a quick way to gather it (for example 5 customer conversations).
 2. **Choose 3-5 pillars.** Each pillar must align with what the company sells, matter to the ideal customer, have search or social interest, and be broad enough for many subtopics. Find pillars by product (problems solved), audience (what they must learn), search (topics with demand) and competitors (what they cover).
 3. **Build topic clusters.** For each pillar, list subtopics and articles. Map each to a buyer stage using common modifiers:
    - Awareness: "what is", "how to", "guide to"
