@@ -10,7 +10,7 @@ import { UserFacingError } from './errors.ts';
 import { collectEvidence, formatEvidence } from './evidence.ts';
 import { fileStatus, verifyFile } from './fingerprint.ts';
 import { formatFindings, isBlocking, type Finding } from './findings.ts';
-import { initWorkspace } from './init.ts';
+import { initWorkspace, PACKAGE_DIR } from './init.ts';
 import { installDepartments, listAvailable, uninstallDepartments } from './install.ts';
 import { forget, logEvent, logEvents, parseBatch } from './memory.ts';
 import { scanPaths } from './scan.ts';
@@ -56,7 +56,12 @@ Skill library:
   build [--layout manager-only|full]   Build dist/ packages and docs/departments.md (run at repo root)
   upstream-check                       Compare each pinned source with its latest upstream commit (read-only)
 
-Options: --root <dir>  --json  --help`;
+Options: --root <dir>  --json  --help  --version`;
+
+function packageVersion(): string {
+  const data = JSON.parse(readFileSync(path.join(PACKAGE_DIR, 'package.json'), 'utf8')) as { version?: string };
+  return data.version ?? 'unknown';
+}
 
 type Flags = Record<string, string | boolean | undefined>;
 
@@ -98,6 +103,7 @@ async function run(argv: string[]): Promise<number> {
       root: { type: 'string' },
       json: { type: 'boolean' },
       help: { type: 'boolean', short: 'h' },
+      version: { type: 'boolean', short: 'v' },
       profile: { type: 'string' },
       summary: { type: 'string' },
       by: { type: 'string' },
@@ -123,6 +129,10 @@ async function run(argv: string[]): Promise<number> {
   const root = path.resolve(typeof flags['root'] === 'string' ? flags['root'] : process.cwd());
   const asJson = flags['json'] === true;
 
+  if (flags['version']) {
+    console.log(packageVersion());
+    return EXIT_OK;
+  }
   if (!command || flags['help']) {
     console.log(HELP);
     return command ? EXIT_OK : EXIT_USAGE;

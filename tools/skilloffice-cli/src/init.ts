@@ -11,8 +11,16 @@ export const AGENTS_START = '<!-- skilloffice:start -->';
 export const AGENTS_END = '<!-- skilloffice:end -->';
 export const GITIGNORE_ENTRIES = ['.skilloffice/context/', '.skilloffice/memory/', '.skilloffice/reports/'];
 
-/** The SkillOffice repository root, where templates live. */
-export const REPO_ROOT = path.resolve(import.meta.dirname, '..', '..', '..');
+/** The helper's own folder: tools/skilloffice-cli in the repository, or the installed npm package. */
+export const PACKAGE_DIR = path.resolve(import.meta.dirname, '..');
+
+/**
+ * Where templates and built skills live. An npm package carries them in assets/ (added at pack time);
+ * inside the SkillOffice repository they are read from the repository root.
+ */
+export const REPO_ROOT = existsSync(path.join(PACKAGE_DIR, 'assets', 'registry', 'departments.yaml'))
+  ? path.join(PACKAGE_DIR, 'assets')
+  : path.resolve(PACKAGE_DIR, '..', '..');
 
 export interface InitResult {
   created: string[];

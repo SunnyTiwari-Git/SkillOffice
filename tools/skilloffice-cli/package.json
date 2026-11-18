@@ -1,23 +1,50 @@
 {
   "name": "skilloffice",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Optional helper for SkillOffice: set up a workspace, validate and scan skills, track file fingerprints, cache results and keep shared memory.",
+  "version": "0.2.0",
+  "description": "Install SkillOffice AI skill departments into your project and keep their shared memory. Works with Claude Code; other Agent Skills tools are untested.",
   "license": "Apache-2.0",
   "author": "SunnyTiwari-Git (https://github.com/SunnyTiwari-Git)",
+  "homepage": "https://github.com/SunnyTiwari-Git/SkillOffice#readme",
+  "bugs": {
+    "url": "https://github.com/SunnyTiwari-Git/SkillOffice/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SunnyTiwari-Git/SkillOffice.git",
+    "url": "git+https://github.com/SunnyTiwari-Git/SkillOffice.git",
     "directory": "tools/skilloffice-cli"
   },
+  "keywords": [
+    "ai",
+    "agent-skills",
+    "claude-code",
+    "skills",
+    "business",
+    "departments"
+  ],
   "type": "module",
+  "bin": {
+    "skilloffice": "lib/cli.js"
+  },
+  "files": [
+    "lib/",
+    "assets/",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
   "engines": {
     "node": ">=22.18.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "scripts": {
     "skilloffice": "node src/cli.ts",
     "test": "node --test \"test/**/*.test.ts\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepack": "node scripts/prepack.ts",
+    "postpack": "node scripts/postpack.ts"
   },
   "dependencies": {
     "yaml": "2.9.1"

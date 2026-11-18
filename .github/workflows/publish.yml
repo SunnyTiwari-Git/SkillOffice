@@ -1,0 +1,53 @@
+name: publish
+
+# Publishes the skilloffice helper to npm when the owner publishes a GitHub release.
+# Uses npm trusted publishing: GitHub proves its identity to npm for this one run, so no npm
+# token is stored anywhere, and npm records provenance linking the package to this workflow.
+# Setup steps for the owner are in docs/maintenance.md, "Publishing to npm".
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: publish to npm
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write
+    defaults:
+      run:
+        working-directory: tools/skilloffice-cli
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          cache: npm
+          cache-dependency-path: tools/skilloffice-cli/package-lock.json
+      - name: Use an npm version that supports trusted publishing
+        run: npm install -g npm@11.12.0
+      - name: Install pinned dependencies (no install scripts)
+        run: npm ci --ignore-scripts
+      - name: Release tag matches the package version
+        run: |
+          expected="v$(node -p "require('./package.json').version")"
+          if [ "$GITHUB_REF_NAME" != "$expected" ]; then
+            echo "Release tag $GITHUB_REF_NAME does not match package version $expected. Nothing was published."
+            exit 1
+          fi
+      - name: Unit tests and type check
+        run: npm test && npm run typecheck
+      - name: Validate and scan skills
+        run: |
+          node src/cli.ts validate --root ../..
+          node src/cli.ts scan --root ../..
+      - name: Publish with provenance
+        run: npm publish

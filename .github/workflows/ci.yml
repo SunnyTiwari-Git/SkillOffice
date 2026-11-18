@@ -45,3 +45,16 @@ jobs:
         run: |
           node src/cli.ts build --root ../..
           git -C ../.. diff --exit-code -- dist .claude-plugin docs/departments.md || { echo "Packages or the department guide are out of date. Run: npm run build"; exit 1; }
+      # Packs the npm package exactly as it would be published, installs it in an empty folder
+      # and runs it there, so a package that only works inside this repository never ships.
+      - name: npm package builds, installs and runs
+        run: |
+          npm pack --pack-destination "$RUNNER_TEMP"
+          mkdir -p "$RUNNER_TEMP/consumer" "$RUNNER_TEMP/project"
+          cd "$RUNNER_TEMP/consumer"
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund --ignore-scripts "$RUNNER_TEMP"/skilloffice-*.tgz
+          npx skilloffice --version
+          npx skilloffice install "$RUNNER_TEMP/project" --platform claude-code --departments sales
+          test -f "$RUNNER_TEMP/project/.claude/skills/sls-manager/SKILL.md"
+          test -f "$RUNNER_TEMP/project/.skilloffice/context/default/company.yaml"

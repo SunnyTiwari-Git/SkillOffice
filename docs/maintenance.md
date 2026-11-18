@@ -56,8 +56,27 @@ A new version never reuses an old cached result, because the version is part of 
 ## Releases
 
 1. Move the "Unreleased" changelog entries under a new version number and date.
-2. Write release notes in `docs/releases/vX.Y.Z.md` from the changelog (use full GitHub links, because the release page cannot follow relative links), tag the release in git and publish the notes on GitHub.
-3. Publishing the helper to npm and changing repository visibility are owner decisions, made separately each time.
+2. Set the same version in `tools/skilloffice-cli/package.json`. The release tag must be `v` plus that version, or the npm publish stops.
+3. Write release notes in `docs/releases/vX.Y.Z.md` from the changelog (use full GitHub links, because the release page cannot follow relative links).
+4. Publish the release on GitHub with the tag `vX.Y.Z`. **This also publishes the helper to npm** through `.github/workflows/publish.yml`, after it re-runs the tests, validation and security scan. A version number can never be reused on npm, so check the version before publishing the release.
+5. Changing repository visibility stays an owner decision, made separately each time.
+
+## Publishing to npm
+
+The helper is published as the `skilloffice` package using npm trusted publishing: no npm token is stored anywhere, and npm shows provenance linking each version to the GitHub workflow that built it.
+
+**What is in the package:** the compiled helper (`lib/`), the built skills from `dist/agents/skills`, the department list, the company profile templates, the AGENTS.md template, LICENSE, NOTICE and the third-party licenses. `scripts/prepack.ts` assembles it and `scripts/postpack.ts` cleans up. CI packs and test-installs it on every change.
+
+**Check what would be published** (from `tools/skilloffice-cli`): `npm pack --pack-destination /tmp` and look inside the `.tgz` file.
+
+**One-time setup (owner):**
+
+1. On npmjs.com, sign in with two-factor login turned on.
+2. If npm does not let you configure trusted publishing before the package exists, publish the first version by hand from `tools/skilloffice-cli`: `npm publish`, and enter the two-factor code. This is the only manual publish.
+3. On the package's page on npmjs.com, open Settings, then Trusted publishing, and add GitHub Actions with: owner `SunnyTiwari-Git`, repository `SkillOffice`, workflow `publish.yml`.
+4. In the same settings, set publishing access to require two-factor authentication and disallow tokens, so only the workflow (or you with 2FA) can publish.
+
+After that, every published GitHub release publishes to npm automatically.
 
 ## If a bad skill ships
 

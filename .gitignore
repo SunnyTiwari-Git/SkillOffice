@@ -20,3 +20,10 @@ Thumbs.db
 # Logs and coverage
 *.log
 coverage/
+
+# Generated when packing the npm package (tools/skilloffice-cli/scripts/prepack.ts)
+tools/skilloffice-cli/lib/
+tools/skilloffice-cli/assets/
+tools/skilloffice-cli/LICENSE
+tools/skilloffice-cli/NOTICE
+*.tgz
